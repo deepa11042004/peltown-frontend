@@ -265,7 +265,7 @@ export default function ServicesHero({
                 {ctaText && (
                   <Link
                     href="/about/contact"
-                    className={`underline font-bold inline-flex items-center gap-1 hover:opacity-80 transition-opacity ${configColor.text}`}
+                    className={`underline underline-offset-8 font-bold inline-flex items-center gap-1 hover:opacity-80 transition-opacity ${configColor.text}`}
                   >
                     <span>{ctaText}</span>
                     <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 inline-block" />
@@ -283,7 +283,7 @@ export default function ServicesHero({
             {/* Hand & Phone Mockup Wrapper */}
             <motion.div
               animate={{
-                y: [0, -15, 0],
+                y: [0, -20, 0],
               }}
               transition={{
                 duration: 6,
