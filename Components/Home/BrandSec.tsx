@@ -72,7 +72,7 @@ export default function EffortlessManagement() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl md:text-6xl font-bold tracking-tight text-zinc-900"
         >
-          Effortless Account Management 😂🧯❤️
+          Effortless Account Management
         </motion.h2>
 
         {/* Paragraph Description */}
