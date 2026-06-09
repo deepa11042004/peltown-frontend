@@ -71,10 +71,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
   "erp-system": {
     hero: {
       tagline: "Intelligent Automation",
-      title:
-        "ERP Development Company India: Custom Cloud ERP Solutions for Scaling Enterprises",
-      description:
-        "Eliminate disconnected systems. Centralize your data and operations with future-proof, AI-integrated enterprise software built specifically for your workflows.",
+      title: "ERP Development",
+      description: "Centralize your operations with future-proof, AI-driven software built for your workflows.",
       ctaText: "Get a Free Quote",
     },
     definition: {
@@ -257,9 +255,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
   "mobile-app": {
     hero: {
       tagline: "Expert Mobile Solutions",
-      title: "Mobile App Development Company in Delhi",
-      description:
-        "Turn your business ideas into reality with our custom mobile application development services for iOS and Android. We build AI-powered, high-performing, and secure apps ready for global scalability.",
+      title: "Mobile App Development",
+      description: "Build high-performing, secure iOS and Android apps tailored to your business needs.",
       ctaText: "Start Your App Project",
     },
     definition: {
@@ -451,10 +448,9 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
   "custom-crm": {
     hero: {
       tagline: "Bespoke Solutions",
-      title: "Custom CRM Development India",
-      description:
-        "Build a customer relationship management system tailored specifically to your unique workflows. Eliminate recurring per-user licensing fees and own your data.",
-      ctaText: "Get Your Free CRM Quote",
+      title: "Custom CRM Development",
+      description: "Build contact management software tailored to your workflows with zero recurring licensing fees.",
+      ctaText: "Get Your CRM Quote",
     },
     definition: {
       title: "What is Custom CRM Development?",
@@ -637,10 +633,9 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
   "seo-optimization": {
     hero: {
       tagline: "Dominate Search Results",
-      title: "AI-Driven SEO Strategies",
-      description:
-        "Stop guessing and start ranking. We combine data-driven insights with advanced AI tools to boost your visibility, drive organic traffic, and maximize ROI.",
-      ctaText: "Get Free Audit",
+      title: "SEO Optimization",
+      description: "Boost your organic visibility and drive high-intent traffic with data-driven search strategies.",
+      ctaText: "Get a Free Audit",
     },
     definition: {
       title: "SEO for Professional Service Business",
@@ -864,10 +859,9 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
 
   "social-media": {
     hero: {
-      tagline: "Viral Growth & Brand Loyalty",
-      title: "AI-Powered Social Media Marketing",
-      description:
-        "Transform your social presence into a revenue engine. We use AI-driven insights to create viral content, engage your audience, and build lasting community loyalty.",
+      tagline: "Viral Growth",
+      title: "Social Media Marketing",
+      description: "Grow your social presence and build brand loyalty with platform-specific content.",
       ctaText: "Start Growing",
     },
     definition: {
@@ -1093,9 +1087,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
   "digital-marketing": {
     hero: {
       tagline: "360° Solutions",
-      title: "Digital Marketing Services",
-      description:
-        "A holistic approach to online growth. We combine SEO, PPC, and Content Marketing to deliver measurable results.",
+      title: "Digital Marketing",
+      description: "Grow your online presence with integrated SEO, PPC, and content strategies focused on ROI.",
       ctaText: "Get a Strategy",
     },
     definition: {
@@ -1278,9 +1271,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
   "gmb-services": {
     hero: {
       tagline: "Local SEO",
-      title: "Google My Business Services",
-      description:
-        "Get discovered by local buyers in your city. We optimize your Google Business Profile to rank in the coveted local 3-pack search layout.",
+      title: "Google My Business",
+      description: "Optimize your Google Business Profile to rank higher in local map and search results.",
       ctaText: "Claim Your Local Rankings",
     },
     definition: {
@@ -1448,9 +1440,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
   "service-photoshoot": {
     hero: {
       tagline: "Visual Excellence",
-      title: "Professional Product Photoshoot",
-      description:
-        "Capture your customers' attention with stunning product visuals. We provide high-quality photography that highlights every detail and boosts conversions.",
+      title: "Product Photoshoot",
+      description: "Capture attention and build buyer trust with high-quality studio and lifestyle photography.",
       ctaText: "Book a Session",
     },
     definition: {
@@ -1624,8 +1615,7 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
     hero: {
       tagline: "Identity & Design",
       title: "Branding & Packaging",
-      description:
-        "Your brand is more than just a logo. It's the feeling your customers get when they unbox your product. We help you create an unforgettable experience.",
+      description: "Create memorable unboxing experiences and brand identities with cohesive packaging design.",
       ctaText: "Start Branding",
     },
     definition: {
@@ -1797,9 +1787,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
   "bulk-email": {
     hero: {
       tagline: "Grow Your Reach",
-      title: "Bulk Email Marketing Solutions",
-      description:
-        "Reach your audience effectively with our comprehensive bulk email services. Whether you need a web-based panel or personal desktop software, we have the right tool for you.",
+      title: "Bulk Email",
+      description: "Send high-volume newsletters and transactional emails directly to customer primary inboxes.",
       ctaText: "Get Started",
     },
     definition: {
@@ -1982,10 +1971,9 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
 
   "whatsapp-api": {
     hero: {
-      tagline: "Instant Communication",
-      title: "WhatsApp Business API",
-      description:
-        "Connect with your customers on their favorite messaging app. Send automated notifications, provide support, and drive sales.",
+      tagline: "Instant Messaging",
+      title: "WhatsApp API",
+      description: "Connect with buyers on WhatsApp using automated notifications, support chats, and broadcasts.",
       ctaText: "Get API Access",
     },
     definition: {
@@ -2153,9 +2141,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
   "email-solutions": {
     hero: {
       tagline: "Professional Identity",
-      title: "Establish Trust with Professional Business Email",
-      description:
-        "Secure, reliable, and branded email solutions powered by world-class leaders. Communicate with confidence using your own domain (you@yourcompany.com).",
+      title: "Business Email",
+      description: "Build credibility and communicate securely with custom professional domain emails.",
       ctaText: "Get Started",
     },
     definition: {

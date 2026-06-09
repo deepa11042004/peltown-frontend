@@ -62,8 +62,6 @@ export default function DetailSec({ detail }: DetailSecProps) {
               return (
                 <div
                   key={item.id}
-                  onMouseEnter={() => setActiveIndex(idx)}
-                  onMouseLeave={() => setActiveIndex(0)}
                   onClick={() => handleItemClick(idx)}
                   className="group relative border-b border-white/10 py-8 md:py-12 cursor-pointer z-10"
                 >

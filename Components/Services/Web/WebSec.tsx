@@ -2,7 +2,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Cpu,
@@ -12,7 +11,6 @@ import {
   Zap,
   ShieldCheck,
   ShoppingBag,
-  ArrowRight,
   Users,
   Layers,
   Gauge,
@@ -27,6 +25,8 @@ import IndustrySec, { IndustrySecProps } from "./IndustrySec";
 import ProcessSec, { ProcessSecProps } from "./ProcessSec";
 import LogoBanner, { LogoBannerProps } from "../LogoBanner";
 import BannerDetail, { BannerDetailProps } from "../BannerDetail";
+import ServicesHero from "../ServiceHero";
+import ServiceFeature from "../ServiceFeature";
 
 // --- Types ---
 export interface HeroConfig {
@@ -166,18 +166,12 @@ export interface WebSecProps {
 // --- Defaults ---
 const DEFAULT_HERO: HeroConfig = {
   tagline: "Next-Gen Web Solutions",
-  title: (
-    <>
-      The Premier Website Development Company in Delhi: Engineering{" "}
-      <span className="text-[#BFCA16]">High-Performance</span>, AI-Ready Digital
-      Solutions
-    </>
-  ),
+  title: "Website Development",
   description:
-    "Experience the future of web development. We build stunning, high-performance websites integrated with native AI features engineered for scale.",
+    "We build high-performance, responsive websites integrated with native AI features engineered for scale.",
   ctaText: "Get a Quote",
-  imageSrc: "/Img/hero.png",
-  imageAlt: "Delhi premier website engineering architecture overview graphic",
+  imageSrc: "/Img/mac.png",
+  imageAlt: "Website development presentation",
 };
 
 const DEFAULT_DEFINITION: DefinitionConfig = {
@@ -529,50 +523,21 @@ export default function WebSec({
     <div className="bg-white text-black font-sans antialiased overflow-hidden selection:bg-[#BFCA16]/20 selection:text-zinc-900">
       {/* 1. HERO SECTION */}
       {showHero && (
-        <section className="relative pt-24 px-6 md:px-12 lg:px-20 min-h-[85vh] flex items-center">
-          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            {/* Left Content */}
-            <div className="lg:col-span-7 text-left space-y-6">
-              {/* Tag Line */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#BFCA16]/10 border border-[#BFCA16]/20 shadow-xs">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
-                <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-[#BFCA16] uppercase">
-                  {hero.tagline}
-                </span>
-              </div>
+        <ServicesHero
+          tagline={hero.tagline}
+          title={hero.title}
+          description={hero.description}
+          ctaText={hero.ctaText}
+        />
+      )}
 
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-950 leading-[1.1]">
-                {hero.title}
-              </h1>
-
-              <div className="text-zinc-500 text-base md:text-lg font-medium leading-relaxed max-w-2xl">
-                {hero.description}
-              </div>
-
-              {hero.ctaText && (
-                <div className="pt-4">
-                  <button className="group inline-flex items-center gap-2 bg-zinc-950 hover:bg-[#BFCA16] text-white px-7 py-3.5 rounded-full font-bold text-sm tracking-wide transition-all duration-300 shadow-md shadow-zinc-950/10 active:scale-98">
-                    <span>{hero.ctaText}</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              )}
-            </div>
-
-            {/* Right Image */}
-            {hero.imageSrc && (
-              <div className="lg:col-span-5 relative w-full aspect-square max-w-md mx-auto">
-                <Image
-                  src={hero.imageSrc}
-                  alt={hero.imageAlt || ""}
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-            )}
-          </div>
-        </section>
+      {/* Dynamic Features Carousel */}
+      {showFeatures && features.list && (
+        <ServiceFeature
+          title={features.title}
+          desc={features.desc}
+          list={features.list}
+        />
       )}
 
       {showLogoBanner && <LogoBanner {...logoBanner} />}
@@ -648,52 +613,7 @@ export default function WebSec({
       {/* 4. INDUSTRY DEEP-DIVES COMPONENT */}
       {showIndustryDeepDives && <IndustrySec {...config.industryDeepDives} />}
 
-      {/* 5. CORE FEATURES */}
-      {showFeatures && features.list && (
-        <section className="py-24 px-6 md:px-12 lg:px-20">
-          <div className="max-w-7xl mx-auto space-y-12">
-            <div className="text-center space-y-6">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-950">
-                {features.title}
-              </h2>
-              {features.desc && (
-                <p className="text-zinc-600 font-medium text-md">
-                  {features.desc}
-                </p>
-              )}
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {features.list.map((feat, idx) => {
-                const FeatIcon = feat.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="bg-zinc-50 border border-zinc-200/60 p-6 md:p-10 rounded-2xl hover:border-[#BFCA16] hover:bg-white hover:shadow-xl hover:shadow-zinc-100 transition-all duration-300 group flex flex-col justify-between space-y-4 text-left h-full"
-                  >
-                    <div className="space-y-4">
-                      {/* Icon Container */}
-                      <div className="w-12 h-12 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-zinc-600 group-hover:text-[#BFCA16] group-hover:border-[#BFCA16] transition-all duration-300">
-                        <FeatIcon className="w-6 h-6" />
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="font-bold text-lg md:text-xl text-zinc-950 tracking-tight leading-snug">
-                        {feat.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="text-sm md:text-base text-zinc-600 font-medium leading-relaxed">
-                        {feat.desc}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* 6. GEN-AI SPECIAL HOVER BLOCK */}
       {showAiAdvantage && (
