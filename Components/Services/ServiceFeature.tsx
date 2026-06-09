@@ -66,19 +66,14 @@ function FeatureCard({
   title,
   description,
   isAccented = false,
-  accentColor,
 }: {
   icon: React.ReactNode;
   title: string;
   description: string;
   isAccented?: boolean;
-  accentColor?: string;
 }) {
   return (
     <div
-      style={
-        isAccented && accentColor ? { backgroundColor: accentColor } : undefined
-      }
       className={`shrink-0 w-95 md:w-112.5 p-6 md:p-10 rounded-4xl border transition-all duration-300 group flex flex-col justify-between space-y-4 text-left h-96
         ${
           isAccented
@@ -132,21 +127,20 @@ export interface ServiceFeatureProps {
   desc?: React.ReactNode;
   list?: ServiceFeatureItem[];
 }
-
-const ROUTE_COLORS: Record<string, string> = {
-  "web-development": "#ff5c26",
-  "erp-system": "#3b82f6",
-  "mobile-app": "#10b981",
-  "custom-crm": "#8b5cf6",
-  "seo-optimization": "#f59e0b",
-  "social-media": "#ec4899",
-  "digital-marketing": "#06b6d4",
-  "gmb-services": "#14b8a6",
-  "service-photoshoot": "#6366f1",
-  "service-branding": "#f43f5e",
-  "bulk-email": "#ef4444",
-  "whatsapp-api": "#22c55e",
-  "email-solutions": "#0ea5e9",
+const ROUTE_BGS: Record<string, string> = {
+  "web-development": "#BFCA16",
+  "erp-system": "#000000",
+  "mobile-app": "#BFCA16",
+  "custom-crm": "#000000",
+  "seo-optimization": "#BFCA16",
+  "social-media": "#000000",
+  "digital-marketing": "#BFCA16",
+  "gmb-services": "#000000",
+  "service-photoshoot": "#BFCA16",
+  "service-branding": "#000000",
+  "bulk-email": "#BFCA16",
+  "whatsapp-api": "#000000",
+  "email-solutions": "#BFCA16",
 };
 
 // Card dimensions – keep in sync with FeatureCard's w- classes
@@ -161,12 +155,11 @@ export default function ServiceFeature({
   list = [],
 }: ServiceFeatureProps) {
   const textSectionRef = useRef<HTMLDivElement>(null);
-  // This is the scroll-driver: it must be tall (no overflow clipping on it)
   const carouselContainerRef = useRef<HTMLDivElement>(null);
 
   const pathname = usePathname();
   const slug = pathname ? pathname.split("/").pop() : "";
-  const accentColor = (slug && ROUTE_COLORS[slug]) || "#ff5c26";
+  const targetBg = (slug && ROUTE_BGS[slug]) || "#000000";
 
   // ── Text section scroll progress
   const { scrollYProgress: textProgress } = useScroll({
@@ -186,11 +179,11 @@ export default function ServiceFeature({
     restDelta: 0.001,
   });
 
-  // Background color transition from white to black
+  // Background color transition
   const sectionBg = useTransform(
     carouselProgress,
     [0, 0.25],
-    ["#ffffff", "#000000"],
+    ["#ffffff", targetBg],
   );
 
   // Width and bottom border radius animations
@@ -319,7 +312,6 @@ export default function ServiceFeature({
                     title="Ready to start?"
                     description="Join hundreds of companies already designing with UMANO. Start your design journey today."
                     isAccented={true}
-                    accentColor={accentColor}
                   />
                 )}
               </motion.div>

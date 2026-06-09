@@ -26,7 +26,7 @@ const ROUTE_CONFIGS: Record<
   }
 > = {
   "web-development": {
-    bg: "#000000",
+    bg: "#BFCA16",
     text: "text-white",
     subtext: "text-white/80",
     dot: "bg-white",
@@ -42,7 +42,7 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-white/10",
   },
   "mobile-app": {
-    bg: "#000000",
+    bg: "#BFCA16",
     text: "text-white",
     subtext: "text-white/80",
     dot: "bg-white",
@@ -58,12 +58,12 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-white/10",
   },
   "seo-optimization": {
-    bg: "#000000",
-    text: "text-black",
-    subtext: "text-black/80",
-    dot: "bg-black",
-    badgeBorder: "border-black/20",
-    badgeBg: "bg-black/10",
+    bg: "#BFCA16",
+    text: "text-white",
+    subtext: "text-white/80",
+    dot: "bg-white",
+    badgeBorder: "border-white/20",
+    badgeBg: "bg-white/10",
   },
   "social-media": {
     bg: "#000000",
@@ -74,12 +74,12 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-white/10",
   },
   "digital-marketing": {
-    bg: "#000000",
-    text: "text-black",
-    subtext: "text-black/80",
-    dot: "bg-black",
-    badgeBorder: "border-black/20",
-    badgeBg: "bg-black/10",
+    bg: "#BFCA16",
+    text: "text-white",
+    subtext: "text-white/80",
+    dot: "bg-white",
+    badgeBorder: "border-white/20",
+    badgeBg: "bg-white/10",
   },
   "gmb-services": {
     bg: "#000000",
@@ -90,7 +90,7 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-white/10",
   },
   "service-photoshoot": {
-   bg: "#000000",
+    bg: "#BFCA16",
     text: "text-white",
     subtext: "text-white/80",
     dot: "bg-white",
@@ -106,7 +106,7 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-white/10",
   },
   "bulk-email": {
-    bg: "#000000",
+    bg: "#BFCA16",
     text: "text-white",
     subtext: "text-white/80",
     dot: "bg-white",
@@ -122,7 +122,7 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-white/10",
   },
   "email-solutions": {
-    bg: "#000000",
+    bg: "#BFCA16",
     text: "text-white",
     subtext: "text-white/80",
     dot: "bg-white",
