@@ -26,7 +26,7 @@ const ROUTE_CONFIGS: Record<
   }
 > = {
   "web-development": {
-    bg: "#ff5c26", // Orange
+    bg: "#000000",
     text: "text-white",
     subtext: "text-white/80",
     dot: "bg-white",
@@ -34,7 +34,7 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-white/10",
   },
   "erp-system": {
-    bg: "#3b82f6", // Blue
+    bg: "#000000",
     text: "text-white",
     subtext: "text-white/80",
     dot: "bg-white",
@@ -42,7 +42,7 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-white/10",
   },
   "mobile-app": {
-    bg: "#10b981", // Emerald
+    bg: "#000000",
     text: "text-white",
     subtext: "text-white/80",
     dot: "bg-white",
@@ -50,7 +50,7 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-white/10",
   },
   "custom-crm": {
-    bg: "#8b5cf6", // Purple
+    bg: "#000000",
     text: "text-white",
     subtext: "text-white/80",
     dot: "bg-white",
@@ -58,7 +58,7 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-white/10",
   },
   "seo-optimization": {
-    bg: "#f59e0b", // Amber
+    bg: "#000000",
     text: "text-black",
     subtext: "text-black/80",
     dot: "bg-black",
@@ -66,7 +66,7 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-black/10",
   },
   "social-media": {
-    bg: "#ec4899", // Pink
+    bg: "#000000",
     text: "text-white",
     subtext: "text-white/80",
     dot: "bg-white",
@@ -74,7 +74,7 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-white/10",
   },
   "digital-marketing": {
-    bg: "#06b6d4", // Cyan
+    bg: "#000000",
     text: "text-black",
     subtext: "text-black/80",
     dot: "bg-black",
@@ -82,7 +82,7 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-black/10",
   },
   "gmb-services": {
-    bg: "#14b8a6", // Teal
+    bg: "#000000",
     text: "text-white",
     subtext: "text-white/80",
     dot: "bg-white",
@@ -90,7 +90,7 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-white/10",
   },
   "service-photoshoot": {
-    bg: "#6366f1", // Indigo
+   bg: "#000000",
     text: "text-white",
     subtext: "text-white/80",
     dot: "bg-white",
@@ -98,7 +98,7 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-white/10",
   },
   "service-branding": {
-    bg: "#f43f5e", // Rose
+    bg: "#000000",
     text: "text-white",
     subtext: "text-white/80",
     dot: "bg-white",
@@ -106,7 +106,7 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-white/10",
   },
   "bulk-email": {
-    bg: "#ef4444", // Red
+    bg: "#000000",
     text: "text-white",
     subtext: "text-white/80",
     dot: "bg-white",
@@ -114,7 +114,7 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-white/10",
   },
   "whatsapp-api": {
-    bg: "#22c55e", // Green
+    bg: "#000000",
     text: "text-white",
     subtext: "text-white/80",
     dot: "bg-white",
@@ -122,7 +122,7 @@ const ROUTE_CONFIGS: Record<
     badgeBg: "bg-white/10",
   },
   "email-solutions": {
-    bg: "#0ea5e9", // Sky
+    bg: "#000000",
     text: "text-white",
     subtext: "text-white/80",
     dot: "bg-white",
@@ -132,7 +132,7 @@ const ROUTE_CONFIGS: Record<
 };
 
 const DEFAULT_CONFIG = {
-  bg: "#ff5c26",
+  bg: "#000000",
   text: "text-black",
   subtext: "text-black/80",
   dot: "bg-black",

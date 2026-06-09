@@ -520,7 +520,7 @@ export default function WebSec({
   const bannerDetail = config.bannerDetail || {};
 
   return (
-    <div className="bg-white text-black font-sans antialiased overflow-hidden selection:bg-[#BFCA16]/20 selection:text-zinc-900">
+    <div className="bg-white text-black font-sans antialiased selection:bg-[#BFCA16]/20 selection:text-zinc-900">
       {/* 1. HERO SECTION */}
       {showHero && (
         <ServicesHero
