@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronDown,
@@ -224,9 +225,14 @@ const companyData = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [activeMenu, setActiveMenu] = useState<
     "services" | "products" | "company" | null
   >(null);
+
+  if (pathname === "/login" || pathname === "/signup") {
+    return null;
+  }
 
   return (
     <header
@@ -343,7 +349,7 @@ export default function Navbar() {
               Login
             </Link>
             <Link
-              href="/contact"
+              href="/about/contact"
               className="text-sm font-bold bg-black text-white px-5 py-2.5 rounded-full hover:bg-zinc-800 transition-all shadow-sm"
             >
               Contact Us
