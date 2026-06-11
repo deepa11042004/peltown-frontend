@@ -69,12 +69,17 @@ export default function AboutSec() {
           {/* Right Column: Narrative Copy */}
           <div className="lg:col-span-7 space-y-6 text-left">
             <div className="space-y-3">
-              <div className="flex items-center gap-2">
+              <motion.div
+                initial={{ opacity: 0, x: -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.55 }}
+                className="inline-flex items-center gap-2 bg-black border border-[#BFCA16]/30 rounded-full px-4 py-1.5 mb-2"
+              >
                 <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
-                <span className="text-xs font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
+                <span className="text-[11px] font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
                   Our Genesis
                 </span>
-              </div>
+              </motion.div>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
                 The City of Pixels
               </h2>
@@ -210,12 +215,17 @@ export default function AboutSec() {
         <div className="space-y-12">
           {/* Header Block */}
           <div className="space-y-3 text-center flex flex-col items-center">
-            <div className="flex items-center gap-2">
+            <motion.div
+              initial={{ opacity: 0, x: -12 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.55 }}
+              className="inline-flex items-center gap-2 bg-black border border-[#BFCA16]/30 rounded-full px-4 py-1.5 mb-2"
+            >
               <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
-              <span className="text-xs font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
+              <span className="text-[11px] font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
                 Our Principles
               </span>
-            </div>
+            </motion.div>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
               Core Values
             </h2>

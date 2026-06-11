@@ -3,19 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
-import {
-  CloudLightning,
-  ShieldCheck,
-  RefreshCw,
-  TrendingUp,
-} from "lucide-react";
-
-const features = [
-  { icon: CloudLightning, text: "Performance Monitoring" },
-  { icon: ShieldCheck, text: "Billing Optimization" },
-  { icon: RefreshCw, text: "Automated Renewals" },
-  { icon: TrendingUp, text: "Maximum Uptime" },
-];
 
 const logos = [
   { name: "GoDaddy", src: "/Img/godaddy.webp" },
@@ -50,17 +37,17 @@ export default function EffortlessManagement() {
   };
 
   return (
-    <section className="bg-white text-black py-24 px-6 md:px-12 flex flex-col items-center justify-center min-h-screen">
+    <section className="bg-white text-black py-24 px-6 md:px-12 flex flex-col items-center justify-center">
       <div className="max-w-6xl mx-auto text-center space-y-12 w-full">
         {/* Top Tag */}
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex items-center justify-center gap-2 mb-2"
+          initial={{ opacity: 0, x: -12 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.55 }}
+          className="inline-flex items-center gap-2 bg-black border border-[#BFCA16]/30 rounded-full px-4 py-1.5 mb-2"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse"></span>
-          <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#BFCA16] uppercase">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
+          <span className="text-[11px] font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
             Hassle-Free Operations
           </span>
         </motion.div>
@@ -70,7 +57,7 @@ export default function EffortlessManagement() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-6xl font-bold tracking-tight text-zinc-900"
+          className="text-4xl md:text-5xl font-bold tracking-tight text-black"
         >
           Effortless Account Management
         </motion.h2>
@@ -80,56 +67,22 @@ export default function EffortlessManagement() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-zinc-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-light"
+          className="text-black text-md max-w-3xl mx-auto leading-relaxed font-medium"
         >
           Managing your hosting and domain accounts can be complex and
-          time-consuming. At{" "}
-          <span className="text-black font-bold">PELTOWN</span>, we simplify
-          this for you. We handle technical overheads so you can focus entirely
-          on scaling your business.
+          time-consuming. At PELTOWN, we simplify this for you. We handle
+          account management, renewals, billing optimization, and performance
+          monitoring for top platforms. Let us reduce your technical overheads
+          and ensure maximum uptime while you focus on scaling your business.
         </motion.p>
-
-        {/* Feature Badges */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-wrap justify-center gap-4 pt-4"
-        >
-          {features.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="flex items-center gap-2 bg-zinc-50 border border-zinc-200 rounded-full px-4 py-2 text-sm text-zinc-700 cursor-pointer"
-              >
-                <Icon className="w-4 h-4 text-zinc-500" />
-                <span>{item.text}</span>
-              </motion.div>
-            );
-          })}
-        </motion.div>
 
         {/* Separator Line */}
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="w-full h-px bg-linear-to-r from-transparent via-zinc-200 to-transparent my-16"
+          className="w-full h-px bg-linear-to-r from-transparent via-zinc-200 to-transparent"
         />
-
-        {/* Platform Integration Subheading */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="text-xs uppercase tracking-widest text-zinc-400 font-bold mb-8"
-        >
-          Supporting your favorite top platforms
-        </motion.p>
 
         {/* Logo Layout Container */}
         <motion.div

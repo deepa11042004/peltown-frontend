@@ -34,23 +34,28 @@ export default function BannerSec() {
   };
 
   return (
-    <section className="bg-white text-black py-24 px-6 md:px-12 lg:px-20 flex flex-col items-center justify-center min-h-screen overflow-hidden">
+    <section className="bg-white text-black py-24 px-6 md:px-12 lg:px-20 flex flex-col items-center justify-center overflow-hidden">
       <div className="max-w-6xl mx-auto w-full flex flex-col items-center text-center space-y-12">
         {/* --- HEADER BLOCK --- */}
-        <div className="flex flex-col items-center space-y-4 max-w-3xl">
+        <div className="flex flex-col items-center space-y-4 max-w-4xl">
           {/* Requested Highlight Tagline Implementation */}
-          <div className="flex items-center gap-2 mb-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse"></span>
-            <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#BFCA16] uppercase">
+          <motion.div
+            initial={{ opacity: 0, x: -12 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.55 }}
+            className="inline-flex items-center gap-2 bg-black border border-[#BFCA16]/30 rounded-full px-4 py-1.5 mb-2"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
+            <span className="text-[11px] font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
               Our Expertise, Your Advantage
             </span>
-          </div>
+          </motion.div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 max-w-2xl leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 max-w-3xl leading-tight">
             Software Built for Your Success
           </h2>
 
-          <p className="text-zinc-500 text-base md:text-lg max-w-2xl font-light leading-relaxed">
+          <p className="text-zinc-500 text-base md:text-md max-w-2xl font-medium leading-relaxed">
             At <span className="text-black font-semibold">PELTOWN</span>, we
             provide the best of both worlds. Whether you need a unique system
             designed specifically for you or a ready-made SaaS product to launch

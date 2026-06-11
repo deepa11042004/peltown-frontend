@@ -58,19 +58,19 @@ export default function ServiceSec() {
   };
 
   return (
-    <section className="bg-white text-black py-24 px-6 md:px-12 lg:px-16 w-full flex flex-col items-center justify-center min-h-screen overflow-hidden">
+    <section className="bg-white text-black py-24 px-6 md:px-12 lg:px-16 w-full flex flex-col items-center justify-center overflow-hidden">
       <div className="max-w-7xl mx-auto w-full space-y-16">
         {/* Top Header Split Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-end w-full">
           <div className="lg:col-span-6 space-y-2">
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="flex items-center gap-2 mb-2"
+              initial={{ opacity: 0, x: -12 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.55 }}
+              className="inline-flex items-center gap-2 bg-black border border-[#BFCA16]/30 rounded-full px-4 py-1.5 mb-2"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse"></span>
-              <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#BFCA16] uppercase">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
+              <span className="text-[11px] font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
                 What We Offer
               </span>
             </motion.div>
@@ -79,7 +79,7 @@ export default function ServiceSec() {
             </h2>
           </div>
           <div className="lg:col-span-6">
-            <p className="text-zinc-500 text-base md:text-lg font-light leading-relaxed max-w-xl lg:ml-auto">
+            <p className="text-zinc-500 text-base md:text-md font-medium leading-relaxed max-w-xl lg:ml-auto">
               From infrastructure management to custom software development, we
               provide the expertise to propel your business forward.
             </p>

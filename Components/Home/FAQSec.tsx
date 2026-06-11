@@ -103,13 +103,13 @@ export default function FAQSec() {
         {/* Section Headers */}
         <div className="mb-16 flex flex-col items-center text-center gap-4">
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center gap-2 mb-2"
+            initial={{ opacity: 0, x: -12 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.55 }}
+            className="inline-flex items-center gap-2 bg-black border border-[#BFCA16]/30 rounded-full px-4 py-1.5 mb-2"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse"></span>
-            <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#BFCA16] uppercase">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
+            <span className="text-[11px] font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
               Common Questions
             </span>
           </motion.div>

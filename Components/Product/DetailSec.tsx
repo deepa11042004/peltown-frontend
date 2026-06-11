@@ -39,12 +39,17 @@ export default function DetailSec({ detail }: DetailSecProps) {
       <div className="max-w-7xl mx-auto">
         {/* Centered Heading Section */}
         <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24 space-y-4">
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <span className="h-2 w-2 rounded-full bg-[#BFCA16] animate-pulse" />
-            <span className="text-xs md:text-sm font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55 }}
+            className="inline-flex items-center gap-2 bg-black border border-[#BFCA16]/30 rounded-full px-4 py-1.5 mb-2"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
+            <span className="text-[11px] font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
               {detail.tagline}
             </span>
-          </div>
+          </motion.div>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
             {detail.title}
           </h2>

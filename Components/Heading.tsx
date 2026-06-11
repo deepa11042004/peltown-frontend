@@ -52,15 +52,16 @@ export default function Heading({
       {/* Dynamic Tagline with Pulsing Indicator */}
       <motion.div
         variants={itemVariants}
-        className="flex items-center gap-2 mb-4"
+        className="inline-flex items-center gap-2 bg-black border rounded-full px-4 py-1.5 mb-4"
+        style={{ borderColor: `${highlightColor}4d` }}
       >
         <span
           style={{ backgroundColor: highlightColor }}
-          className="h-2 w-2 rounded-full animate-pulse"
+          className="h-1.5 w-1.5 rounded-full animate-pulse"
         />
         <span
           style={{ color: highlightColor }}
-          className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase"
+          className="text-[11px] font-bold tracking-[0.25em] uppercase"
         >
           {tagline}
         </span>

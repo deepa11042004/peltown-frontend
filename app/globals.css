@@ -3,3 +3,7 @@
 :root {
   --highlight: #BFCA16;
 }
+
+.hero-subtext {
+  color: var(--highlight);
+}

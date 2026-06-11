@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface ProductHeroProps {
   hero: {
@@ -21,12 +24,17 @@ function ProductHero({ hero }: ProductHeroProps) {
         {/* Left Content */}
         <div className="lg:col-span-7 text-left space-y-6">
           {/* Tag Line */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#BFCA16]/10 border border-[#BFCA16]/20 shadow-xs">
+          <motion.div
+            initial={{ opacity: 0, x: -12 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.55 }}
+            className="inline-flex items-center gap-2 bg-black border border-[#BFCA16]/30 rounded-full px-4 py-1.5"
+          >
             <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
-            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-[#BFCA16] uppercase">
+            <span className="text-[11px] font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
               {hero.tagline}
             </span>
-          </div>
+          </motion.div>
 
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-950 leading-[1.1]">
             {hero.title}

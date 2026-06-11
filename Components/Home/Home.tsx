@@ -1,206 +1,213 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  AnimatePresence,
-} from "framer-motion";
+
+import React, { useState, useEffect } from "react";
+import { motion, Variants, AnimatePresence } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { Monitor, Cpu, Smartphone, Target } from "lucide-react";
 
 const HERO_CONTENT = [
   {
-    tagline: "PELTOWN IT SOLUTIONS",
-    title: "Expert Website",
-    highlight: "Design & Mobile App Development.",
-    description:
-      'We don\'t just design logos; we architect the "Aura" that makes your brand the Main Character of your industry.',
+    tagline: "Design & Development",
+    highlight: "Website Design",
+    subtext: "App Development.",
+    desc: "The best place for all IT solutions in one place. We specialize in modern website development, high-performance mobile apps, and creative UI/UX design.",
   },
   {
-    tagline: "ENTERPRISE SOFTWARE",
-    title: "Custom CRM",
-    highlight: "ERP Solutions.",
-    description:
-      "Static is invisible. We engineer high-octane video and social ecosystems that turn casual scrollers into a loyal tribe.",
+    tagline: "Enterprise Systems",
+    highlight: "Custom CRM",
+    subtext: "ERP Solutions.",
+    desc: "Streamline your business operations with our bespoke CRM and ERP systems. Tailored specifically for your unique organizational workflows.",
   },
   {
-    tagline: "DIGITAL GROWTH",
-    title: "Results-Driven",
-    highlight: "Digital Marketing.",
-    description:
-      "Stop guessing and start scaling. We use Synthetic Cinema and Growth Alchemy to turn every ₹1 spent into predictable profit.",
+    tagline: "Digital Marketing",
+    highlight: "Results-Driven",
+    subtext: "Digital Marketing.",
+    desc: "Dominate search engines and social media. Let our experts drive targeted traffic and increase your online revenue exponentially.",
   },
 ];
 
 const SERVICES = [
-  {
-    id: "web",
-    label: "Web Development",
-    icon: Monitor,
-    targetIndex: 0,
-    description: "Custom premium web designs",
-  },
-  {
-    id: "ai",
-    label: "AI Solutions",
-    icon: Cpu,
-    targetIndex: 1,
-    description: "Smart CRM & ERP systems",
-  },
-  {
-    id: "mobile",
-    label: "Mobile Apps",
-    icon: Smartphone,
-    targetIndex: 0,
-    description: "Native iOS & Android apps",
-  },
-  {
-    id: "marketing",
-    label: "Digital Marketing",
-    icon: Target,
-    targetIndex: 2,
-    description: "Data-driven scale & ROI",
-  },
+  { label: "Web Development" },
+  { label: "AI Solutions" },
+  { label: "Mobile Apps" },
+  { label: "Digital Marketing" },
 ];
 
-export default function Hero() {
-  const ref = useRef<HTMLDivElement>(null);
+export default function Home() {
   const [index, setIndex] = useState(0);
 
-  // TEXT ANIMATION
+  // Loop through titles every 2 seconds
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % HERO_CONTENT.length);
-    }, 5000);
+      setIndex((prevIndex) => (prevIndex + 1) % HERO_CONTENT.length);
+    }, 2000);
     return () => clearInterval(timer);
   }, []);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
+  // Animation variants for staggered initial page fade-in
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  };
 
-  // PARALLAX EFFECTS
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] },
+    },
+  };
+
+  // Blur text animation variants
+  const blurVariants: Variants = {
+    enter: {
+      filter: "blur(12px)",
+      opacity: 0,
+      y: 10,
+    },
+    center: {
+      filter: "blur(0px)",
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut",
+      },
+    },
+    exit: {
+      filter: "blur(12px)",
+      opacity: 0,
+      y: -10,
+      transition: {
+        duration: 0.3,
+        ease: "easeIn",
+      },
+    },
+  };
 
   return (
-    <section
-      ref={ref}
-      className="relative min-h-screen lg:h-screen w-full bg-white lg:overflow-hidden flex flex-col justify-center py-12 lg:py-0"
-    >
-      {/* Main grid layout for left-text and right-image */}
-      <div className="relative z-30 grid grid-cols-1 lg:grid-cols-[4fr_6fr] gap-8 lg:gap-16 items-center h-full w-full max-w-384 mx-auto px-6 md:px-20 pt-10 pb-20">
-        {/* Left Column: ROTATING TEXT */}
+    <main className="relative min-h-screen bg-black text-white flex flex-col justify-between py-24 px-6 md:px-12 lg:px-20 overflow-hidden select-none">
+      {/* Background Subtle Glow */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.03),transparent_45%)] pointer-events-none" />
+
+      {/* Absolute Hero Image on Right */}
+      <div className="absolute right-6 md:right-12 lg:right-40 top-1/2 -translate-y-1/2 w-[40%] max-w-125 h-[50%] pointer-events-none hidden lg:block select-none z-0">
+        <Image
+          src="/Img/about_peltown.webp"
+          alt="Hero Illustration"
+          fill
+          priority
+          className="object-contain object-right"
+        />
+      </div>
+
+      {/* Main Hero Content Area */}
+      <motion.div
+        className="flex-1 flex flex-col justify-end max-w-6xl w-full relative z-10"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {/* Dynamic Blur Headline Container */}
         <motion.div
-          style={{ y: textY }}
-          className="text-black w-full flex flex-col justify-center"
+          variants={itemVariants}
+          className="mb-12 min-h-48 sm:min-h-64 md:min-h-80 lg:min-h-96 flex flex-col justify-end"
         >
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="space-y-6"
+              variants={blurVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              className="flex flex-col gap-4 items-start"
             >
-              <div className="flex items-center gap-2 mb-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse"></span>
-                <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#BFCA16] uppercase">
+              <motion.div
+                initial={{ opacity: 0, x: -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.55 }}
+                className="inline-flex items-center gap-2 bg-black border border-[#BFCA16]/30 rounded-full px-4 py-1.5"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
+                <span className="text-[11px] font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
                   {HERO_CONTENT[index].tagline}
                 </span>
-              </div>
-
-              <h1 className="text-4xl md:text-6xl lg:text-6xl leading-[1.1] font-bold tracking-tighter text-black">
-                {HERO_CONTENT[index].title} <br />
-                <span className="text-(--highlight)">
-                  {HERO_CONTENT[index].highlight}
+              </motion.div>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[1.1]">
+                {HERO_CONTENT[index].highlight}
+                <span className="block mt-2 hero-subtext">
+                  {HERO_CONTENT[index].subtext}
                 </span>
               </h1>
-
-              <p className="text-gray-700 text-lg md:text-xl max-w-xl leading-relaxed font-light">
-                {HERO_CONTENT[index].description}
-              </p>
-
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-[#BFCA16] text-white px-8 py-4 rounded-full font-bold uppercase text-xs tracking-widest shadow-xl transition-colors hover:bg-black hover:text-white w-fit"
-              >
-                Get Started
-              </motion.button>
+              {HERO_CONTENT[index].desc && (
+                <p className="mt-4 text-neutral-400 text-sm sm:text-base max-w-xl leading-relaxed">
+                  {HERO_CONTENT[index].desc}
+                </p>
+              )}
             </motion.div>
           </AnimatePresence>
-
-          {/* Services Navigation Grid */}
-          <div className="mt-10 w-full max-w-2xl">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {SERVICES.map((service) => {
-                const IconComponent = service.icon;
-                const isActive = index === service.targetIndex;
-                return (
-                  <button
-                    key={service.id}
-                    onClick={() => setIndex(service.targetIndex)}
-                    className={`group relative flex flex-col items-start p-3.5 rounded-2xl border text-left transition-all duration-300 cursor-pointer ${
-                      isActive
-                        ? "bg-[#BFCA16]/10 border-[#BFCA16]/30 shadow-[0_8px_30px_rgba(46,119,99,0.08)]"
-                        : "bg-[#F8F9FA]/40 hover:bg-[#F8F9FA]/80 border-gray-100 hover:border-gray-200/80 shadow-sm"
-                    }`}
-                  >
-                    {isActive && (
-                      <span className="absolute top-3 right-3 flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#BFCA16] opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-[#BFCA16]"></span>
-                      </span>
-                    )}
-
-                    <div
-                      className={`p-2 rounded-xl mb-2.5 transition-all duration-300 ${
-                        isActive
-                          ? "bg-[#BFCA16] text-white shadow-md shadow-[#BFCA16]/20"
-                          : "bg-white text-gray-500 group-hover:text-[#BFCA16] group-hover:bg-[#BFCA16]/5 group-hover:scale-105"
-                      }`}
-                    >
-                      <IconComponent size={18} className="stroke-[1.8]" />
-                    </div>
-
-                    <span
-                      className={`text-xs md:text-sm font-semibold tracking-tight transition-colors duration-200 ${
-                        isActive
-                          ? "text-black"
-                          : "text-gray-700 group-hover:text-black"
-                      }`}
-                    >
-                      {service.label}
-                    </span>
-                    <span className="text-[10px] text-gray-400 mt-0.5 line-clamp-1 font-light">
-                      {service.description}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
         </motion.div>
 
-        {/* Right Column: Image component */}
+        {/* Call to Action Buttons */}
         <motion.div
-          style={{ y: textY }}
-          className="relative w-full h-[40vh] lg:h-[80vh] flex items-center justify-center lg:justify-end"
+          className="flex flex-wrap gap-4 items-center"
+          variants={itemVariants}
         >
-          <div className="w-full h-full">
-            <Image
-              src="/Img/hero.png"
-              alt="Studio Creative Illustration"
-              fill
-              priority
-              className="object-contain"
-            />
-          </div>
+          <button className="px-8 py-4 bg-[#e5e5e5] text-black font-medium rounded-full text-lg hover:bg-white transition-colors duration-200 shadow-lg active:scale-98 flex items-center gap-2 group">
+            Get Started
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </button>
+
+          <button className="px-8 py-4 bg-[#141414] text-white font-medium rounded-full text-lg border border-neutral-800 hover:bg-[#1f1f1f] hover:border-neutral-700 transition-all duration-200 active:scale-98">
+            Learn more
+          </button>
         </motion.div>
-      </div>
-    </section>
+      </motion.div>
+
+      {/* Bottom Infinite Marquee Section */}
+      <motion.div
+        className="mt-16 border-t border-neutral-900 pt-8 w-full relative overflow-hidden"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.5 }}
+      >
+        {/* Left & Right Blending Edge Fades */}
+        <div className="absolute left-0 top-8 bottom-0 w-16 bg-linear-to-r from-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-8 bottom-0 w-16 bg-linear-to-l from-black to-transparent z-10 pointer-events-none" />
+
+        {/* Marquee Track */}
+        <div className="flex overflow-hidden w-full gap-6">
+          <motion.div
+            className="flex flex-nowrap gap-6 shrink-0 pr-6"
+            animate={{ x: "-50%" }}
+            transition={{
+              ease: "linear",
+              duration: 25,
+              repeat: Infinity,
+            }}
+          >
+            {/* Double mapping guarantees a completely seamless loop without gaps */}
+            {[...SERVICES, ...SERVICES, ...SERVICES, ...SERVICES].map(
+              (service, idx) => (
+                <div
+                  key={idx}
+                  className="group px-6 py-3 bg-[#141414] text-neutral-300 font-medium rounded-full text-md border border-neutral-800 flex items-center gap-2 whitespace-nowrap cursor-default hover:text-white hover:border-neutral-300 transition-colors duration-200"
+                >
+                  {service.label}
+                  <ArrowRight className="w-4 h-4 opacity-60 text-neutral-400 group-hover:opacity-100 transition-transform duration-200 group-hover:-rotate-45" />
+                </div>
+              ),
+            )}
+          </motion.div>
+        </div>
+      </motion.div>
+    </main>
   );
 }

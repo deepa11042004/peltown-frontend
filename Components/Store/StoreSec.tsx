@@ -139,12 +139,17 @@ export default function StoreSec() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center border-b border-zinc-100 pb-16">
           {/* Hero Content Column */}
           <div className="lg:col-span-7 space-y-8 text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#BFCA16]/10 border border-[#BFCA16]/20">
-              <span className="h-2 w-2 rounded-full bg-[#BFCA16] animate-pulse" />
-              <span className="text-xs font-bold tracking-[0.15em] text-[#BFCA16] uppercase">
+            <motion.div
+              initial={{ opacity: 0, x: -12 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.55 }}
+              className="inline-flex items-center gap-2 bg-black border border-[#BFCA16]/30 rounded-full px-4 py-1.5"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
+              <span className="text-[11px] font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
                 3, 2, Live
               </span>
-            </div>
+            </motion.div>
 
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-950 leading-tight">
