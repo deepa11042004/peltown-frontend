@@ -97,77 +97,83 @@ export default function Home() {
       {/* Background Subtle Glow */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.03),transparent_45%)] pointer-events-none" />
 
-      {/* Absolute Hero Image on Right */}
-      <div className="absolute right-6 md:right-12 lg:right-40 top-1/2 -translate-y-1/2 w-[40%] max-w-125 h-[50%] pointer-events-none hidden lg:block select-none z-0">
-        <Image
-          src="/Img/about_peltown.webp"
-          alt="Hero Illustration"
-          fill
-          priority
-          className="object-contain object-right"
-        />
-      </div>
-
       {/* Main Hero Content Area */}
       <motion.div
-        className="flex-1 flex flex-col justify-end max-w-6xl w-full relative z-10"
+        className="flex-1 flex flex-col lg:flex-row lg:items-center lg:justify-between w-full relative z-10"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {/* Dynamic Blur Headline Container */}
-        <motion.div
-          variants={itemVariants}
-          className="mb-12 min-h-48 sm:min-h-64 md:min-h-80 lg:min-h-96 flex flex-col justify-end"
-        >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={index}
-              variants={blurVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              className="flex flex-col gap-4 items-start"
-            >
+        {/* Left Content Column */}
+        <div className="flex-1 flex flex-col justify-end w-full">
+          {/* Dynamic Blur Headline Container */}
+          <motion.div
+            variants={itemVariants}
+            className="mb-12 min-h-48 sm:min-h-64 md:min-h-80 lg:min-h-96 flex flex-col justify-end"
+          >
+            <AnimatePresence mode="wait">
               <motion.div
-                initial={{ opacity: 0, x: -12 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.55 }}
-                className="inline-flex items-center gap-2 bg-black border border-[#BFCA16]/30 rounded-full px-4 py-1.5"
+                key={index}
+                variants={blurVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                className="flex flex-col gap-4 items-start"
               >
-                <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
-                <span className="text-[11px] font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
-                  {HERO_CONTENT[index].tagline}
-                </span>
+                <motion.div
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.55 }}
+                  className="inline-flex items-center gap-2 bg-black border border-[#BFCA16]/30 rounded-full px-4 py-1.5"
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
+                  <span className="text-[11px] font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
+                    {HERO_CONTENT[index].tagline}
+                  </span>
+                </motion.div>
+                <h1 className="text-4xl md:text-5xl lg:text-8xl font-semibold tracking-tight leading-[1.1]">
+                  {HERO_CONTENT[index].highlight}
+                  <span className="block mt-2 hero-subtext">
+                    {HERO_CONTENT[index].subtext}
+                  </span>
+                </h1>
+                {HERO_CONTENT[index].desc && (
+                  <p className="mt-4 text-neutral-400 text-sm sm:text-base max-w-xl leading-relaxed">
+                    {HERO_CONTENT[index].desc}
+                  </p>
+                )}
               </motion.div>
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[1.1]">
-                {HERO_CONTENT[index].highlight}
-                <span className="block mt-2 hero-subtext">
-                  {HERO_CONTENT[index].subtext}
-                </span>
-              </h1>
-              {HERO_CONTENT[index].desc && (
-                <p className="mt-4 text-neutral-400 text-sm sm:text-base max-w-xl leading-relaxed">
-                  {HERO_CONTENT[index].desc}
-                </p>
-              )}
-            </motion.div>
-          </AnimatePresence>
-        </motion.div>
+            </AnimatePresence>
+          </motion.div>
 
-        {/* Call to Action Buttons */}
+          {/* Call to Action Buttons */}
+          <motion.div
+            className="flex flex-wrap gap-4 items-center"
+            variants={itemVariants}
+          >
+            <button className="px-8 py-4 bg-[#e5e5e5] text-black font-medium rounded-full text-lg hover:bg-white transition-colors duration-200 shadow-lg active:scale-98 flex items-center gap-2 group">
+              Get Started
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+
+            <button className="px-8 py-4 bg-[#141414] text-white font-medium rounded-full text-lg border border-neutral-800 hover:bg-[#1f1f1f] hover:border-neutral-700 transition-all duration-200 active:scale-98">
+              Learn more
+            </button>
+          </motion.div>
+        </div>
+
+        {/* Hero Image on Right Side */}
         <motion.div
-          className="flex flex-wrap gap-4 items-center"
+          className="relative w-full lg:w-[45%] aspect-square max-w-125 pointer-events-none hidden lg:block select-none z-0"
           variants={itemVariants}
         >
-          <button className="px-8 py-4 bg-[#e5e5e5] text-black font-medium rounded-full text-lg hover:bg-white transition-colors duration-200 shadow-lg active:scale-98 flex items-center gap-2 group">
-            Get Started
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-
-          <button className="px-8 py-4 bg-[#141414] text-white font-medium rounded-full text-lg border border-neutral-800 hover:bg-[#1f1f1f] hover:border-neutral-700 transition-all duration-200 active:scale-98">
-            Learn more
-          </button>
+          <Image
+            src="/Img/about_peltown.webp"
+            alt="Hero Illustration"
+            fill
+            priority
+            className="object-contain object-right"
+          />
         </motion.div>
       </motion.div>
 

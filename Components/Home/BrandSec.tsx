@@ -40,24 +40,19 @@ export default function EffortlessManagement() {
     <section className="bg-white text-black py-24 px-6 md:px-12 flex flex-col items-center justify-center">
       <div className="max-w-6xl mx-auto text-center space-y-12 w-full">
         {/* Top Tag */}
-        <motion.div
-          initial={{ opacity: 0, x: -12 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.55 }}
-          className="inline-flex items-center gap-2 bg-black border border-[#BFCA16]/30 rounded-full px-4 py-1.5 mb-2"
-        >
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-400 shadow-xs mx-auto">
           <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
-          <span className="text-[11px] font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
+          <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-black uppercase">
             Hassle-Free Operations
           </span>
-        </motion.div>
+        </div>
 
         {/* Main Heading */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-5xl font-bold tracking-tight text-black"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900"
         >
           Effortless Account Management
         </motion.h2>
@@ -67,7 +62,7 @@ export default function EffortlessManagement() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-black text-md max-w-3xl mx-auto leading-relaxed font-medium"
+          className="text-zinc-900 text-md max-w-3xl mx-auto leading-relaxed font-medium"
         >
           Managing your hosting and domain accounts can be complex and
           time-consuming. At PELTOWN, we simplify this for you. We handle

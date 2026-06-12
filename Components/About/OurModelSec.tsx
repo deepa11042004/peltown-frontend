@@ -1,65 +1,55 @@
 "use client";
+
+import React from "react";
 import { motion, Variants } from "framer-motion";
 import {
-  BrainCircuit,
-  Palette,
-  Code2,
-  Terminal,
-  Search,
-  Megaphone,
+  Monitor,
+  Smartphone,
+  Database,
+  SearchCode,
+  Server,
   ArrowUpRight,
 } from "lucide-react";
 
-const steps = [
+const services = [
   {
-    icon: BrainCircuit,
-    title: "Brainstorming",
-    subtitle: "Ideas",
-    desc: "Mapping out specifications and technical architectures.",
+    icon: Monitor,
+    title: "Website Design",
+    desc: "Sleek, SEO-friendly, and business-driven websites tailored to your goals.",
   },
   {
-    icon: Palette,
-    title: "Product",
-    subtitle: "Design",
-    desc: "Crafting intuitive, pixel-perfect user interfaces.",
+    icon: Smartphone,
+    title: "Mobile App Development",
+    desc: "Transform your ideas into fully functional, high-performing mobile applications.",
   },
   {
-    icon: Code2,
-    title: "Front-End",
-    subtitle: "Development",
-    desc: "Building highly responsive, animated user interfaces.",
+    icon: Database,
+    title: "CRM Solutions",
+    desc: "Enhance customer experiences and streamline management with custom CRMs.",
   },
   {
-    icon: Terminal,
-    title: "Back-End",
-    subtitle: "Development",
-    desc: "Engineering scalable APIs and robust infrastructure.",
+    icon: SearchCode,
+    title: "SEO & Marketing",
+    desc: "Increase online visibility and drive organic traffic with proven strategies.",
   },
   {
-    icon: Search,
-    title: "SEO",
-    subtitle: "Optimization",
-    desc: "Maximizing visibility and performance auditing.",
-  },
-  {
-    icon: Megaphone,
-    title: "Digital",
-    subtitle: "Marketing",
-    desc: "Deploying growth campaigns for maximum ROI.",
+    icon: Server,
+    title: "Hosting & Server",
+    desc: "Reliable hosting solutions from basic breeze to turbo titan performance.",
   },
 ];
 
-export default function OurModelSec() {
+export default function ServiceSec() {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.12 },
+      transition: { staggerChildren: 0.08 },
     },
   };
 
   const cardVariants: Variants = {
-    hidden: { y: 25, opacity: 0 },
+    hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
@@ -68,11 +58,11 @@ export default function OurModelSec() {
   };
 
   return (
-    <section className="relative bg-white text-black py-24 px-6 md:px-12 lg:px-20 overflow-hidden flex items-center justify-center min-h-screen">
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-start relative z-10">
-        {/* Left Column */}
-        <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
-          <div className="space-y-2">
+    <section className="bg-white text-black py-24 px-6 md:px-12 lg:px-16 w-full flex flex-col items-center justify-center overflow-hidden">
+      <div className="max-w-7xl mx-auto w-full space-y-16">
+        {/* Top Header Split Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-end w-full">
+          <div className="lg:col-span-6 space-y-2">
             <motion.div
               initial={{ opacity: 0, x: -12 }}
               animate={{ opacity: 1, x: 0 }}
@@ -81,67 +71,58 @@ export default function OurModelSec() {
             >
               <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
               <span className="text-[11px] font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
-                Our Model
+                What We Offer
               </span>
             </motion.div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900">
-              How We Do
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 leading-tight">
+              Comprehensive IT Services
             </h2>
           </div>
-
-          <p className="text-zinc-600 text-base md:text-lg leading-relaxed font-light">
-            PELTOWN drives business growth through cutting-edge website
-            development, intuitive mobile apps, and strategic digital marketing.
-          </p>
-
-          <p className="text-zinc-500 text-sm md:text-base leading-relaxed font-light">
-            We don&apos;t just build software; we engineer scalable digital
-            experiences tailored for maximum ROI. From startups to enterprises,
-            we provide the technical expertise to secure your future.
-          </p>
-
-          <motion.button
-            whileHover={{ scale: 1.03, y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            className="group flex items-center gap-2 bg-[#BFCA16] hover:bg-black text-white font-bold px-6 py-3 rounded-full transition-colors duration-300 shadow-md shadow-[#BFCA16]/10"
-          >
-            <span>Learn More</span>
-            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </motion.button>
+          <div className="lg:col-span-6">
+            <p className="text-zinc-500 text-base md:text-md font-medium leading-relaxed max-w-xl lg:ml-auto">
+              From infrastructure management to custom software development, we
+              provide the expertise to propel your business forward.
+            </p>
+          </div>
         </div>
 
-        {/* Right Column */}
+        {/* Clean, Uniform Horizontal Cards Layout */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6 relative"
+          viewport={{ once: true, margin: "-60px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 w-full"
         >
-          {steps.map((step, index) => {
-            const Icon = step.icon;
+          {services.map((service, index) => {
+            const Icon = service.icon;
             return (
               <motion.div
                 key={index}
                 variants={cardVariants}
-                className="relative border border-zinc-200 flex flex-col justify-between rounded-3xl overflow-hidden p-6 h-48 group cursor-pointer"
+                className="relative flex flex-col justify-between rounded-3xl overflow-hidden p-6 md:p-8 min-h-72.5 group cursor-pointer"
+                style={{
+                  background: "#f9f9fb",
+                  border: "1px solid rgba(0,0,0,0.05)",
+                }}
                 whileHover="hover"
               >
-                {/* Dynamic Slide-in from left hover accent panel */}
+                {/* Dynamic Slide-up hover accent panel */}
                 <motion.div
                   className="absolute inset-0 z-0"
-                  style={{ background: "#BFCA16", originX: 0 }}
-                  variants={{ hover: { scaleX: 1 }, initial: { scaleX: 0 } }}
-                  initial={{ scaleX: 0 }}
+                  style={{ background: "#BFCA16", originY: 1 }}
+                  variants={{ hover: { scaleY: 1 }, initial: { scaleY: 0 } }}
+                  initial={{ scaleY: 0 }}
                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 />
 
-                <div className="relative z-10 flex items-start justify-between">
+                {/* Content Block */}
+                <div className="relative z-10 space-y-6">
                   {/* Icon Sphere */}
                   <motion.div
                     className="w-12 h-12 rounded-xl flex items-center justify-center transition-colors border"
                     style={{
-                      backgroundColor: "#ffffff",
+                      background: "#ffffff",
                       borderColor: "rgba(0,0,0,0.06)",
                     }}
                     variants={{
@@ -156,48 +137,41 @@ export default function OurModelSec() {
                     <Icon className="w-5 h-5 text-[#BFCA16] group-hover:text-white transition-colors duration-300" />
                   </motion.div>
 
-                  {/* Number Step Counter */}
-                  <motion.span
-                    className="text-xs font-mono font-bold"
-                    style={{ color: "#18181b" }}
-                    variants={{ hover: { color: "rgba(255,255,255,0.85)" } }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    0{index + 1}
-                  </motion.span>
-                </div>
-
-                {/* Typography Container */}
-                <div className="relative z-10 space-y-1">
-                  <div className="flex items-baseline gap-1.5">
+                  {/* Text Information */}
+                  <div className="space-y-2">
                     <motion.h3
-                      className="text-md font-bold"
+                      className="text-lg font-bold tracking-tight leading-[1.2]"
                       style={{ color: "#18181b" }}
                       variants={{ hover: { color: "#ffffff" } }}
                       transition={{ duration: 0.25 }}
                     >
-                      {step.title}
+                      {service.title}
                     </motion.h3>
-                    <motion.span
-                      className="text-xs font-bold"
-                      style={{ color: "#18181b" }}
-                      variants={{ hover: { color: "#fff" } }}
+                    <motion.p
+                      className="text-sm font-normal leading-relaxed"
+                      style={{ color: "#71717a" }}
+                      variants={{ hover: { color: "rgba(255,255,255,0.85)" } }}
                       transition={{ duration: 0.25 }}
                     >
-                      {step.subtitle}
-                    </motion.span>
+                      {service.desc}
+                    </motion.p>
                   </div>
-                  <motion.p
-                    className="text-sm font-normal leading-relaxed line-clamp-2"
-                    style={{ color: "#71717a" }}
-                    variants={{ hover: { color: "#fff" } }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    {step.desc}
-                  </motion.p>
                 </div>
 
-               
+                {/* Subtle Interactive Link Arrow */}
+                <motion.div
+                  className="relative z-10 flex justify-end pt-4"
+                  variants={{
+                    hover: { opacity: 1, y: 0 },
+                    initial: { opacity: 0, y: 4 },
+                  }}
+                  initial={{ opacity: 0, y: 4 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <span className="text-sm font-bold flex items-center gap-0.5 text-[#BFCA16] group-hover:text-white transition-colors duration-300">
+                    Explore <ArrowUpRight className="w-3.5 h-3.5" />
+                  </span>
+                </motion.div>
               </motion.div>
             );
           })}
