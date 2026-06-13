@@ -52,16 +52,13 @@ export default function Heading({
       {/* Dynamic Tagline with Pulsing Indicator */}
       <motion.div
         variants={itemVariants}
-        className="inline-flex items-center gap-2 bg-black border rounded-full px-4 py-1.5 mb-4"
-        style={{ borderColor: `${highlightColor}4d` }}
+        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-400 shadow-xs mx-auto mb-4"
       >
         <span
-          style={{ backgroundColor: highlightColor }}
-          className="h-1.5 w-1.5 rounded-full animate-pulse"
+          className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse"
         />
         <span
-          style={{ color: highlightColor }}
-          className="text-[11px] font-bold tracking-[0.25em] uppercase"
+          className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-black uppercase"
         >
           {tagline}
         </span>
@@ -71,7 +68,7 @@ export default function Heading({
       <motion.h2
         variants={itemVariants}
         className={`text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight max-w-4xl leading-[1.1] ${
-          isBlack ? "text-white" : "text-zinc-900"
+          isBlack ? "text-white" : "text-headingColor"
         }`}
       >
         {title}
@@ -82,7 +79,7 @@ export default function Heading({
         <motion.p
           variants={itemVariants}
           className={`mt-6 text-base md:text-lg lg:text-xl max-w-2xl font-light leading-relaxed ${
-            isBlack ? "text-zinc-400" : "text-zinc-500"
+            isBlack ? "text-zinc-400" : "text-descriptionColor"
           }`}
         >
           {description}

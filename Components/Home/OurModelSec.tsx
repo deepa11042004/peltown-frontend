@@ -64,7 +64,7 @@ export default function OurModelSec() {
               Our Model
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-headingColor">
             How We Do It.
           </h2>
         </div>
@@ -88,7 +88,7 @@ export default function OurModelSec() {
             {STEPS.map((step, index) => (
               <div
                 key={index}
-                className={`w-75 sm:w-87.5 md:w-95 aspect-[4/4.2] shrink-0 bg-[#F9F9FB] border border-zinc-300 hover:border-(--highlight) rounded-3xl p-8 md:p-10 shadow-xl shadow-zinc-400/20 flex flex-col justify-between transform ${step.rotation} transition-transform duration-300 hover:rotate-0 hover:scale-[1.02] group text-left`}
+                className={`w-75 sm:w-87.5 md:w-95 aspect-[4/4.2] shrink-0 bg-cardBgColor border border-cardBorderColor hover:border-(--highlight) rounded-3xl p-8 md:p-10 shadow-xl shadow-zinc-400/20 flex flex-col justify-between transform ${step.rotation} transition-transform duration-300 hover:rotate-0 hover:scale-[1.02] group text-left`}
               >
                 {/* Large Counter Step ID Metric */}
                 <div className="text-6xl md:text-7xl font-light tracking-tighter text-zinc-900 select-none font-sans">
@@ -100,7 +100,7 @@ export default function OurModelSec() {
                   <h3 className="text-xl md:text-2xl font-bold tracking-tight text-zinc-950 group-hover:text-(--highlight) transition-colors">
                     {step.title}
                   </h3>
-                  <p className="text-zinc-500 text-xs md:text-sm font-medium leading-relaxed">
+                  <p className="text-descriptionColor text-xs md:text-sm font-medium leading-relaxed">
                     {step.desc}
                   </p>
                 </div>

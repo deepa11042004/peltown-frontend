@@ -546,7 +546,7 @@ export default function WebSec({
       {showDefinition && (
         <section className="pt-30 pb-24 px-6 md:px-12 lg:px-20 bg-white">
           <div className="max-w-5xl mx-auto text-center space-y-8">
-            <h2 className="text-2xl md:text-5xl font-bold tracking-tight text-zinc-900">
+            <h2 className="text-2xl md:text-5xl font-bold tracking-tight text-headingColor">
               {definition.title} <br />
               {definition.subtitle && (
                 <span className="text-zinc-400 font-normal inline-block mt-5">
@@ -555,7 +555,7 @@ export default function WebSec({
               )}
             </h2>
             <div className="max-w-4xl mx-auto">
-              <div className="text-zinc-600 text-base md:text-lg font-medium leading-relaxed text-justify md:text-center">
+              <div className="text-descriptionColor text-base md:text-lg font-medium leading-relaxed text-justify md:text-center">
                 {definition.desc}
               </div>
             </div>
@@ -568,11 +568,11 @@ export default function WebSec({
         <section className="py-24 px-6 md:px-12 lg:px-20">
           <div className="max-w-7xl mx-auto space-y-16">
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-900">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-headingColor">
                 {audience.title}
               </h2>
               {audience.desc && (
-                <p className="text-zinc-600 font-medium text-sm md:text-base">
+                <p className="text-descriptionColor font-medium text-sm md:text-base">
                   {audience.desc}
                 </p>
               )}
@@ -584,7 +584,7 @@ export default function WebSec({
                 return (
                   <div
                     key={idx}
-                    className="bg-zinc-50 border border-zinc-200/60 p-6 md:p-10 rounded-2xl hover:border-[#BFCA16] hover:bg-white hover:shadow-xl hover:shadow-zinc-100 transition-all duration-300 group flex flex-col justify-between space-y-4 text-left h-full"
+                    className="bg-cardBgColor border border-cardBorderColor p-6 md:p-10 rounded-2xl hover:border-[#BFCA16] hover:bg-white hover:shadow-xl hover:shadow-zinc-100 transition-all duration-300 group flex flex-col justify-between space-y-4 text-left h-full"
                   >
                     <div className="space-y-4">
                       {/* Icon Container */}
@@ -593,12 +593,12 @@ export default function WebSec({
                       </div>
 
                       {/* Title */}
-                      <h3 className="font-bold text-lg md:text-xl text-zinc-950 tracking-tight leading-snug">
+                      <h3 className="font-bold text-lg md:text-xl text-headingColor tracking-tight leading-snug">
                         {feat.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-sm md:text-base text-zinc-600 font-medium leading-relaxed">
+                      <p className="text-sm md:text-base text-descriptionColor font-medium leading-relaxed">
                         {feat.desc}
                       </p>
                     </div>
@@ -641,11 +641,11 @@ export default function WebSec({
         <section className="py-24 px-6 md:px-12 lg:px-20">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center space-y-6 max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-950">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-headingColor">
                 {techStack.title}
               </h2>
               {techStack.desc && (
-                <p className="text-zinc-500 font-medium text-md">
+                <p className="text-descriptionColor font-medium text-md">
                   {techStack.desc}
                 </p>
               )}
@@ -657,7 +657,7 @@ export default function WebSec({
                 return (
                   <div
                     key={idx}
-                    className="bg-zinc-50 border border-zinc-200/60 p-6 md:p-10 rounded-2xl hover:border-[#BFCA16] hover:bg-white hover:shadow-xl hover:shadow-zinc-100 transition-all duration-300 group flex flex-col justify-between space-y-4 text-left h-full"
+                    className="bg-cardBgColor border border-cardBorderColor p-6 md:p-10 rounded-2xl hover:border-[#BFCA16] hover:bg-white hover:shadow-xl hover:shadow-zinc-100 transition-all duration-300 group flex flex-col justify-between space-y-4 text-left h-full"
                   >
                     <div className="space-y-4">
                       {/* Icon Container */}
@@ -666,12 +666,12 @@ export default function WebSec({
                       </div>
 
                       {/* Title */}
-                      <h3 className="font-bold text-lg md:text-xl text-zinc-950 tracking-tight leading-snug">
+                      <h3 className="font-bold text-lg md:text-xl text-headingColor tracking-tight leading-snug">
                         {feat.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-sm md:text-base text-zinc-600 font-medium leading-relaxed">
+                      <p className="text-sm md:text-base text-descriptionColor font-medium leading-relaxed">
                         {feat.desc}
                       </p>
                     </div>
@@ -689,7 +689,7 @@ export default function WebSec({
           <div className="max-w-4xl mx-auto space-y-10">
             {deepDive.title && (
               <div className="flex items-center gap-3 pb-3 justify-center text-center w-full">
-                <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-950">
+                <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-headingColor">
                   {deepDive.title}
                 </h3>
               </div>
@@ -719,7 +719,7 @@ export default function WebSec({
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 10 }}
-                        className="text-xs md:text-lg text-zinc-600 font-medium leading-relaxed"
+                        className="text-xs md:text-lg text-descriptionColor font-medium leading-relaxed"
                       >
                         {deepDive.tabs[safeActiveTab]?.content}
                       </motion.div>
@@ -751,12 +751,12 @@ export default function WebSec({
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start border-b border-zinc-100 pb-12">
               <div className="lg:col-span-11 space-y-6 text-left">
                 <div className="space-y-2">
-                  <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 leading-tight">
+                  <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-headingColor leading-tight">
                     {localDominance.title}
                   </h2>
                 </div>
 
-                <div className="text-zinc-500 text-base md:text-lg font-medium leading-relaxed max-w-4xl">
+                <div className="text-descriptionColor text-base md:text-lg font-medium leading-relaxed max-w-4xl">
                   {localDominance.desc}
                 </div>
               </div>
@@ -770,17 +770,17 @@ export default function WebSec({
                   <motion.div
                     key={idx}
                     whileHover={{ y: -5 }}
-                    className="group p-8 rounded-3xl bg-zinc-50/50 border border-zinc-200 hover:border-[#BFCA16] hover:bg-white hover:shadow-xl hover:shadow-zinc-200/40 transition-all duration-300"
+                    className="group p-8 rounded-3xl bg-cardBgColor border border-cardBorderColor hover:border-[#BFCA16] hover:bg-white hover:shadow-xl hover:shadow-zinc-200/40 transition-all duration-300"
                   >
                     <div className="flex flex-col gap-6 text-left">
                       <div className="w-12 h-12 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-zinc-400 group-hover:text-[#BFCA16] group-hover:border-[#BFCA16] transition-all">
                         <CardIcon className="w-5 h-5" />
                       </div>
                       <div className="space-y-3">
-                        <h3 className="text-xl font-bold tracking-tight text-zinc-900 flex items-center gap-2">
+                        <h3 className="text-xl font-bold tracking-tight text-headingColor flex items-center gap-2">
                           {card.title}
                         </h3>
-                        <div className="text-sm text-zinc-500 font-medium leading-relaxed">
+                        <div className="text-sm text-descriptionColor font-medium leading-relaxed">
                           {card.desc}
                         </div>
                       </div>
@@ -798,11 +798,11 @@ export default function WebSec({
         <section className="py-24 px-6 md:px-12 lg:px-20 bg-white border-b border-zinc-100">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-950">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-headingColor">
                 {costTable.title}
               </h2>
               {costTable.desc && (
-                <p className="text-zinc-500 font-medium text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
+                <p className="text-descriptionColor font-medium text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
                   {costTable.desc}
                 </p>
               )}
@@ -902,11 +902,11 @@ export default function WebSec({
         <section className="py-24 px-6 md:px-12 lg:px-20 bg-zinc-50/50 border-b border-zinc-100">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-950">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-headingColor">
                 {comparisonTable.title}
               </h2>
               {comparisonTable.desc && (
-                <p className="text-zinc-500 font-medium text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
+                <p className="text-descriptionColor font-medium text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
                   {comparisonTable.desc}
                 </p>
               )}
@@ -963,7 +963,7 @@ export default function WebSec({
                               return (
                                 <div
                                   key={idx}
-                                  className="font-bold text-zinc-900"
+                                  className="font-bold text-headingColor"
                                 >
                                   {cell}
                                 </div>

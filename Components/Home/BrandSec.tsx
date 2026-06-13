@@ -52,7 +52,7 @@ export default function EffortlessManagement() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-headingColor"
         >
           Effortless Account Management
         </motion.h2>
@@ -62,7 +62,7 @@ export default function EffortlessManagement() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-zinc-900 text-md max-w-3xl mx-auto leading-relaxed font-medium"
+          className="text-descriptionColor text-md max-w-3xl mx-auto leading-relaxed font-medium"
         >
           Managing your hosting and domain accounts can be complex and
           time-consuming. At PELTOWN, we simplify this for you. We handle
@@ -76,7 +76,7 @@ export default function EffortlessManagement() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="w-full h-px bg-linear-to-r from-transparent via-zinc-200 to-transparent"
+          className="w-full h-px bg-linear-to-r from-transparent via-zinc-300 to-transparent"
         />
 
         {/* Logo Layout Container */}

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Building2, GraduationCap, Utensils, Sparkles } from "lucide-react";
+import { Building2, GraduationCap, Utensils } from "lucide-react";
 
 // --- Types ---
 interface IndustryCard {
@@ -60,7 +60,7 @@ export default function IndustrySec({
   title = (
     <>
       Industry Deep-Dives:{" "}
-      <span className="text-transparent bg-clip-text bg-linear-to-r from-zinc-900 to-zinc-600">
+      <span className="text-transparent bg-clip-text bg-linear-to-r from-headingColor to-descriptionColor">
         Tailored Digital Portals
       </span>
     </>
@@ -78,17 +78,19 @@ export default function IndustrySec({
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 border border-zinc-200 text-zinc-600 text-sm font-medium"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-400 shadow-xs mx-auto"
           >
-            <Sparkles className="w-4 h-4" />
-            <span>{subtitle}</span>
+            <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
+            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-black uppercase">
+              {subtitle}
+            </span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-900 max-w-4xl"
+            className="text-3xl md:text-5xl font-bold tracking-tight text-headingColor max-w-4xl"
           >
             {title}
           </motion.h2>
@@ -97,7 +99,7 @@ export default function IndustrySec({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-zinc-500 text-lg max-w-2xl font-medium"
+            className="text-descriptionColor text-lg max-w-2xl font-medium"
           >
             {desc}
           </motion.p>
@@ -117,7 +119,7 @@ export default function IndustrySec({
                 transition={{ delay: index * 0.1 + 0.3 }}
                 className="relative group"
               >
-                <div className="bg-zinc-50 border border-zinc-200/60 p-6 md:p-10 rounded-2xl hover:border-[#BFCA16] hover:bg-white hover:shadow-xl hover:shadow-zinc-100 transition-all duration-300 group flex flex-col justify-between space-y-4 text-left h-full">
+                <div className="bg-cardBgColor border border-cardBorderColor p-6 md:p-10 rounded-2xl hover:border-[#BFCA16] hover:bg-white hover:shadow-xl hover:shadow-zinc-100 transition-all duration-300 group flex flex-col justify-between space-y-4 text-left h-full">
                   <div className="space-y-4">
                     {/* Icon Container */}
                     <div className="w-12 h-12 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-zinc-600 group-hover:text-[#BFCA16] group-hover:border-[#BFCA16] transition-all duration-300">
@@ -130,7 +132,7 @@ export default function IndustrySec({
                     </h3>
 
                     {/* Description */}
-                    <p className="text-sm md:text-base text-zinc-600 font-medium leading-relaxed">
+                    <p className="text-sm md:text-base text-descriptionColor font-medium leading-relaxed">
                       {card.desc}
                     </p>
 

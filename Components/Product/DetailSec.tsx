@@ -43,10 +43,10 @@ export default function DetailSec({ detail }: DetailSecProps) {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55 }}
-            className="inline-flex items-center gap-2 bg-black border border-[#BFCA16]/30 rounded-full px-4 py-1.5 mb-2"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-400 shadow-xs mx-auto mb-2"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
-            <span className="text-[11px] font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
+            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-black uppercase">
               {detail.tagline}
             </span>
           </motion.div>

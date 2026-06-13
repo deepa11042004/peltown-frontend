@@ -28,10 +28,10 @@ function ProductHero({ hero }: ProductHeroProps) {
             initial={{ opacity: 0, x: -12 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.55 }}
-            className="inline-flex items-center gap-2 bg-black border border-[#BFCA16]/30 rounded-full px-4 py-1.5"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-400 shadow-xs text-left"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
-            <span className="text-[11px] font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
+            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-black uppercase">
               {hero.tagline}
             </span>
           </motion.div>

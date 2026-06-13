@@ -90,19 +90,20 @@ export default function BannerDetail({
         {/* ================= LEFT NARRATIVE COLUMN (5/12 Width) ================= */}
         <div className="lg:col-span-5 space-y-6 text-left">
           {tag && (
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#BFCA16]/10 border border-[#BFCA16]/20">
-              <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-[#BFCA16] uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-400 shadow-xs text-left">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
+              <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-black uppercase">
                 {tag}
               </span>
             </div>
           )}
 
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-zinc-950 leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-headingColor leading-[1.1]">
             {title}
           </h2>
 
           {desc && (
-            <p className="text-zinc-500 text-base md:text-lg font-medium leading-relaxed max-w-md">
+            <p className="text-descriptionColor text-base md:text-lg font-medium leading-relaxed max-w-md">
               {desc}
             </p>
           )}
@@ -146,10 +147,10 @@ export default function BannerDetail({
 
                 {/* Content Area Mapping */}
                 <div className="space-y-1.5 mt-4">
-                  <h3 className="font-bold text-base md:text-lg text-zinc-900 group-hover:text-black transition-colors">
+                  <h3 className="font-bold text-base md:text-lg text-headingColor group-hover:text-black transition-colors">
                     {step.title}
                   </h3>
-                  <p className="text-xs md:text-sm text-zinc-500 font-light leading-relaxed">
+                  <p className="text-xs md:text-sm text-descriptionColor font-light leading-relaxed">
                     {step.desc}
                   </p>
                 </div>

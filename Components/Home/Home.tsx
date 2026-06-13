@@ -124,10 +124,10 @@ export default function Home() {
                   initial={{ opacity: 0, x: -12 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.55 }}
-                  className="inline-flex items-center gap-2 bg-black border border-[#BFCA16]/30 rounded-full px-4 py-1.5"
+                  className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-400 shadow-xs text-left"
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
-                  <span className="text-[11px] font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
+                  <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-black uppercase">
                     {HERO_CONTENT[index].tagline}
                   </span>
                 </motion.div>
@@ -138,7 +138,7 @@ export default function Home() {
                   </span>
                 </h1>
                 {HERO_CONTENT[index].desc && (
-                  <p className="mt-4 text-neutral-400 text-sm sm:text-base max-w-xl leading-relaxed">
+                  <p className="mt-4 text-neutral-300 text-sm sm:text-base max-w-xl leading-relaxed">
                     {HERO_CONTENT[index].desc}
                   </p>
                 )}
@@ -151,12 +151,12 @@ export default function Home() {
             className="flex flex-wrap gap-4 items-center"
             variants={itemVariants}
           >
-            <button className="px-8 py-4 bg-[#e5e5e5] text-black font-medium rounded-full text-lg hover:bg-white transition-colors duration-200 shadow-lg active:scale-98 flex items-center gap-2 group">
+            <button className="px-8 py-4 bg-neutral-300 text-black font-medium rounded-full text-lg hover:bg-white transition-colors duration-200 shadow-lg active:scale-98 flex items-center gap-2 group">
               Get Started
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
 
-            <button className="px-8 py-4 bg-[#141414] text-white font-medium rounded-full text-lg border border-neutral-800 hover:bg-[#1f1f1f] hover:border-neutral-700 transition-all duration-200 active:scale-98">
+            <button className="px-8 py-4 bg-zinc-900 text-neutral-300 font-medium rounded-full text-lg border border-neutral-800 hover:bg-[#1f1f1f] hover:border-neutral-700 transition-all duration-200 active:scale-98">
               Learn more
             </button>
           </motion.div>
@@ -204,7 +204,7 @@ export default function Home() {
               (service, idx) => (
                 <div
                   key={idx}
-                  className="group px-6 py-3 bg-[#141414] text-neutral-300 font-medium rounded-full text-md border border-neutral-800 flex items-center gap-2 whitespace-nowrap cursor-default hover:text-white hover:border-neutral-300 transition-colors duration-200"
+                  className="group px-6 py-3 bg-zinc-900 text-neutral-300 font-medium rounded-full text-md border border-neutral-800 flex items-center gap-2 whitespace-nowrap cursor-default hover:text-white hover:border-neutral-300 transition-colors duration-200"
                 >
                   {service.label}
                   <ArrowRight className="w-4 h-4 opacity-60 text-neutral-400 group-hover:opacity-100 transition-transform duration-200 group-hover:-rotate-45" />

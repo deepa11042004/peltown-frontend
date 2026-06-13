@@ -61,19 +61,19 @@ export default function ServiceSec() {
                 initial={{ opacity: 0, x: -12 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.55 }}
-                className="inline-flex items-center gap-2 border border-zinc-400 rounded-full px-4 py-1.5 mb-2"
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-400 shadow-xs text-left mb-2"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
-                <span className="text-[11px] font-bold tracking-[0.25em] text-black uppercase">
+                <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-black uppercase">
                   What We Offer
                 </span>
               </motion.div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 leading-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-headingColor leading-tight">
                 Comprehensive <br /> IT Services
               </h2>
             </div>
             <div className="lg:col-span-6">
-              <p className="text-zinc-500 text-base md:text-md font-medium leading-relaxed max-w-xl lg:ml-auto">
+              <p className="text-descriptionColor text-base md:text-md font-medium leading-relaxed max-w-xl lg:ml-auto">
                 From infrastructure management to custom software development,
                 we provide the expertise to propel your business forward.
               </p>
@@ -88,7 +88,7 @@ export default function ServiceSec() {
                 return (
                   <div
                     key={index}
-                    className="w-75 md:w-90 aspect-[1/1.1] shrink-0 bg-[#f4f4f5] rounded-4xl p-8 flex flex-col justify-between text-left relative overflow-hidden transition-all duration-300 group cursor-pointer hover:bg-[#BFCA16]"
+                    className="w-75 md:w-90 aspect-[1/1.1] shrink-0 bg-cardBgColor border border-cardBorderColor rounded-4xl p-8 flex flex-col justify-between text-left relative overflow-hidden transition-all duration-300 group cursor-pointer hover:bg-[#BFCA16]"
                   >
                     {/* ICON VECTOR OBJECT CONTAINER */}
                     <div className="flex items-center justify-between w-full relative z-10">
@@ -102,7 +102,7 @@ export default function ServiceSec() {
                       <h3 className="text-xl font-bold tracking-tight text-zinc-950 group-hover:text-white transition-colors duration-200">
                         {feat.title}
                       </h3>
-                      <p className="text-xs md:text-sm text-zinc-500 group-hover:text-white/80 font-medium leading-relaxed transition-colors duration-200">
+                      <p className="text-xs md:text-sm text-descriptionColor group-hover:text-white/80 font-medium leading-relaxed transition-colors duration-200">
                         {feat.desc}
                       </p>
                     </div>

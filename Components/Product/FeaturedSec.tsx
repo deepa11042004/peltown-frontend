@@ -20,11 +20,11 @@ function FeaturedSec({ featured }: FeaturedSecProps) {
     <section className="py-24 px-6 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto space-y-16">
         <div className="max-w-3xl mx-auto text-center space-y-6">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-900">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-headingColor">
             {featured.title}
           </h2>
           {featured.desc && (
-            <p className="text-zinc-600 font-medium text-sm md:text-base">
+            <p className="text-descriptionColor font-medium text-sm md:text-base">
               {featured.desc}
             </p>
           )}
@@ -36,7 +36,7 @@ function FeaturedSec({ featured }: FeaturedSecProps) {
             return (
               <div
                 key={idx}
-                className="bg-zinc-50 border border-zinc-200/60 p-6 md:p-10 rounded-2xl hover:border-[#BFCA16]/30 hover:bg-white hover:shadow-xl hover:shadow-zinc-100 transition-all duration-300 group flex flex-col justify-between space-y-4 text-left h-full"
+                className="bg-cardBgColor border border-cardBorderColor p-6 md:p-10 rounded-2xl hover:border-[#BFCA16]/30 hover:bg-white hover:shadow-xl hover:shadow-zinc-100 transition-all duration-300 group flex flex-col justify-between space-y-4 text-left h-full"
               >
                 <div className="space-y-4">
                   {/* Icon Container */}
@@ -50,7 +50,7 @@ function FeaturedSec({ featured }: FeaturedSecProps) {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm md:text-base text-zinc-600 font-medium leading-relaxed">
+                  <p className="text-sm md:text-base text-descriptionColor font-medium leading-relaxed">
                     {feat.desc}
                   </p>
                 </div>

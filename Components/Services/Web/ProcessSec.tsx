@@ -82,10 +82,10 @@ export default function ProcessSec({
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Header */}
         <div className="text-center space-y-6">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-950">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-headingColor">
             {title}
           </h2>
-          <p className="text-zinc-500 font-medium text-md max-w-2xl mx-auto">
+          <p className="text-descriptionColor font-medium text-md max-w-2xl mx-auto">
             {desc}
           </p>
         </div>
@@ -152,7 +152,7 @@ export default function ProcessSec({
                           <h4 className="font-bold text-base md:text-lg text-zinc-950 tracking-tight leading-snug">
                             {step.title}
                           </h4>
-                          <p className="text-xs md:text-sm text-zinc-500 font-medium leading-relaxed">
+                          <p className="text-xs md:text-sm text-descriptionColor font-medium leading-relaxed">
                             {step.desc}
                           </p>
                         </div>
