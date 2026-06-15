@@ -168,7 +168,7 @@ export default function Home() {
           variants={itemVariants}
         >
           <Image
-            src="/Img/Home.png"
+            src="/Img/home.png"
             alt="Hero Illustration"
             fill
             priority
