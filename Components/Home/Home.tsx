@@ -164,7 +164,7 @@ export default function Home() {
 
         {/* Hero Image on Right Side */}
         <motion.div
-          className="relative w-full lg:w-[45%] aspect-square max-w-125 pointer-events-none hidden lg:block select-none z-0"
+          className="relative w-full lg:w-[30%] aspect-square max-w-125 pointer-events-none hidden lg:block select-none z-0"
           variants={itemVariants}
         >
           <Image

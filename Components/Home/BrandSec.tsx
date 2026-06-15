@@ -131,7 +131,7 @@ export default function BrandSec() {
           transition={{ delay: 0.7 }}
           className="space-y-4"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-headingColor">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-headingColor">
             Effortless <br /> Account Management
           </h1>
           {/* Paragraph Description */}
