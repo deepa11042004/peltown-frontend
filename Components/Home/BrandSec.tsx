@@ -13,7 +13,7 @@ const floatingApps = [
     delay: 0,
   },
   {
-    src: "/Img/Bluehost.png",
+    src: "/Img/BlueHost.png",
     alt: "Bluehost",
     className: "left-[14%] top-[28%]",
     size: "w-20 h-20 md:w-28 md:h-28",
