@@ -1,135 +1,191 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
-const logos = [
-  { name: "GoDaddy", src: "/Img/godaddy.webp" },
-  { name: "Bluehost", src: "/Img/bluehost.webp" },
-  { name: "BigRock", src: "/Img/bigrock.webp" },
-  { name: "Hostinger", src: "/Img/hostinger.webp" },
-  { name: "Namecheap", src: "/Img/namecheap.webp" },
-  { name: "DigitalOcean", src: "/Img/digitalocean.webp" },
-  { name: "HostGator", src: "/Img/hostgator.webp" },
-  { name: "AWS", src: "/Img/aws.webp" },
+const floatingApps = [
+  // Left side logos
+  {
+    src: "/Img/Godaddy.png",
+    alt: "GoDaddy",
+    className: "left-[4%] top-[8%]",
+    size: "w-20 h-20 md:w-28 md:h-28",
+    delay: 0,
+  },
+  {
+    src: "/Img/Bluehost.png",
+    alt: "Bluehost",
+    className: "left-[14%] top-[28%]",
+    size: "w-20 h-20 md:w-28 md:h-28",
+    delay: 0.3,
+  },
+  {
+    src: "/Img/Bigrock.png",
+    alt: "BigRock",
+    className: "left-[3%] top-[52%]",
+    size: "w-20 h-20 md:w-28 md:h-28",
+    delay: 0.6,
+  },
+  {
+    src: "/Img/Hostinger.png",
+    alt: "Hostinger",
+    className: "left-[12%] bottom-[10%]",
+    size: "w-20 h-20 md:w-28 md:h-28",
+    delay: 0.9,
+  },
+
+  // Right side logos
+  {
+    src: "/Img/Namecheap.png",
+    alt: "Namecheap",
+    className: "right-[4%] top-[8%]",
+    size: "w-20 h-20 md:w-28 md:h-28",
+    delay: 0.2,
+  },
+  {
+    src: "/Img/Digitalocean.png",
+    alt: "DigitalOcean",
+    className: "right-[14%] top-[28%]",
+    size: "w-20 h-20 md:w-28 md:h-28",
+    delay: 0.5,
+  },
+  {
+    src: "/Img/Hostgator.png",
+    alt: "HostGator",
+    className: "right-[3%] top-[52%]",
+    size: "w-20 h-20 md:w-28 md:h-28",
+    delay: 0.8,
+  },
+  {
+    src: "/Img/Aws.png",
+    alt: "AWS",
+    className: "right-[12%] bottom-[10%]",
+    size: "w-20 h-20 md:w-28 md:h-28",
+    delay: 1.1,
+  },
 ];
 
-export default function EffortlessManagement() {
-  const firstRow = logos.slice(0, 4);
-  const secondRow = logos.slice(4, 8);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.08 },
-    },
-  };
-
-  const itemVariants: Variants = {
-    hidden: { y: 15, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
+export default function BrandSec() {
   return (
-    <section className="bg-white text-black py-24 px-6 md:px-12 flex flex-col items-center justify-center">
-      <div className="max-w-6xl mx-auto text-center space-y-12 w-full">
-        {/* Top Tag */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-400 shadow-xs mx-auto">
+    <section className="relative overflow-hidden bg-white min-h-screen flex flex-col items-center justify-center px-6 py-16 lg:py-0">
+      {/* Floating logos (Desktop only) */}
+      {floatingApps.map((app, index) => (
+        <motion.div
+          key={index}
+          className={`absolute ${app.className} ${app.size} hidden lg:block`}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: [0, -10, 0],
+          }}
+          transition={{
+            opacity: { duration: 0.6, delay: app.delay },
+            scale: { duration: 0.6, delay: app.delay },
+            y: {
+              duration: 5,
+              repeat: Infinity,
+              repeatType: "mirror",
+              ease: "easeInOut",
+              delay: app.delay,
+            },
+          }}
+        >
+          <div className="relative w-full h-full rounded-2xl md:rounded-3xl bg-[#f9f9fb] border border-[#d4d4d8] p-3 md:p-4 flex items-center justify-center">
+            <Image
+              src={app.src}
+              alt={app.alt}
+              fill
+              className="object-contain p-3 md:p-4"
+              sizes="(max-width: 768px) 80px, 112px"
+            />
+          </div>
+        </motion.div>
+      ))}
+
+      {/* Hero text */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.2,
+        }}
+        className="relative z-10 text-center max-w-5xl flex flex-col items-center"
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-400 shadow-xs mx-auto mb-6"
+        >
           <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
           <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-black uppercase">
             Hassle-Free Operations
           </span>
-        </div>
+        </motion.div>
 
-        {/* Main Heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-headingColor"
-        >
-          Effortless Account Management
-        </motion.h2>
-
-        {/* Paragraph Description */}
-        <motion.p
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-descriptionColor text-md max-w-3xl mx-auto leading-relaxed font-medium"
+          transition={{ delay: 0.7 }}
+          className="space-y-4"
         >
-          Managing your hosting and domain accounts can be complex and
-          time-consuming. At PELTOWN, we simplify this for you. We handle
-          account management, renewals, billing optimization, and performance
-          monitoring for top platforms. Let us reduce your technical overheads
-          and ensure maximum uptime while you focus on scaling your business.
-        </motion.p>
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-headingColor">
+            Effortless <br /> Account Management
+          </h1>
+          {/* Paragraph Description */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-descriptionColor text-sm sm:text-base max-w-3xl mx-auto leading-relaxed font-medium"
+          >
+            Managing your hosting and domain accounts can be complex and
+            time-consuming. At PELTOWN, we simplify this for you. We handle
+            account management, renewals, billing optimization, and performance
+            monitoring for top platforms. Let us reduce your technical overheads
+            and ensure maximum uptime while you focus on scaling your business.
+          </motion.p>
+        </motion.div>
 
-        {/* Separator Line */}
+        {/* Brand logos for Mobile/Tablet */}
         <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="w-full h-px bg-linear-to-r from-transparent via-zinc-300 to-transparent"
-        />
-
-        {/* Logo Layout Container */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="space-y-12 md:space-y-16 max-w-5xl mx-auto px-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9, duration: 0.6 }}
+          className="mt-12 lg:hidden w-full"
         >
-          {/* Row 1: 4 Logos */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 items-center justify-items-center">
-            {firstRow.map((logo, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ scale: 1.2 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="relative w-full max-w-40 h-12 flex items-center justify-center"
-              >
-                <Image
-                  src={logo.src}
-                  alt={`${logo.name} logo`}
-                  fill
-                  sizes="(max-w-768px) 50vw, 25vw"
-                  className="object-contain cursor-pointer"
-                  priority={index < 4}
-                />
-              </motion.div>
-            ))}
+          <div className="text-center mb-6">
+            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-neutral-400 uppercase">
+              Supported Platforms
+            </span>
           </div>
-
-          {/* Row 2: 4 Logos (Staggered Layout) */}
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 md:gap-x-12">
-            {secondRow.map((logo, index) => (
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto">
+            {floatingApps.map((app, index) => (
               <motion.div
                 key={index}
-                variants={itemVariants}
-                whileHover={{ scale: 1.2 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="relative w-36 md:w-44 h-12 flex items-center justify-center"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.9 + index * 0.05, duration: 0.4 }}
+                whileHover={{ y: -4, boxShadow: "0 10px 15px -3px rgba(0,0,0,0.05)" }}
+                whileTap={{ scale: 0.98 }}
+                className="relative h-16 sm:h-20 rounded-xl bg-[#f9f9fb] border border-[#d4d4d8]/70 p-3 flex items-center justify-center transition-all duration-300 cursor-default"
               >
-                <Image
-                  src={logo.src}
-                  alt={`${logo.name} logo`}
-                  fill
-                  sizes="(max-w-768px) 50vw, 25vw"
-                  className="object-contain cursor-pointer"
-                />
+                <div className="relative w-full h-full">
+                  <Image
+                    src={app.src}
+                    alt={app.alt}
+                    fill
+                    className="object-contain p-1"
+                    sizes="120px"
+                  />
+                </div>
               </motion.div>
             ))}
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
