@@ -131,7 +131,7 @@ export default function Home() {
                     {HERO_CONTENT[index].tagline}
                   </span>
                 </motion.div>
-                <h1 className="text-4xl md:text-5xl lg:text-8xl font-semibold tracking-tight leading-[1.1]">
+                <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tight leading-[1.1]">
                   {HERO_CONTENT[index].highlight}
                   <span className="block mt-2 hero-subtext">
                     {HERO_CONTENT[index].subtext}
@@ -168,7 +168,7 @@ export default function Home() {
           variants={itemVariants}
         >
           <Image
-            src="/Img/about_peltown.webp"
+            src="/Img/Home.png"
             alt="Hero Illustration"
             fill
             priority
