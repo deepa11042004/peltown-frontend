@@ -480,6 +480,19 @@ const DEFAULT_COMPARISON_TABLE: ComparisonTableConfig = {
   ],
 };
 
+function getFeatureIcon(name: string) {
+  const normalized = name.toLowerCase();
+  if (normalized.includes("speed") || normalized.includes("load") || normalized.includes("launch") || normalized.includes("time")) return Gauge;
+  if (normalized.includes("custom") || normalized.includes("design") || normalized.includes("flex")) return Sparkles;
+  if (normalized.includes("price") || normalized.includes("pricing") || normalized.includes("cost") || normalized.includes("invest")) return Target;
+  if (normalized.includes("scale") || normalized.includes("growth")) return Layers;
+  if (normalized.includes("seo") || normalized.includes("search") || normalized.includes("google")) return Search;
+  if (normalized.includes("security") || normalized.includes("safe") || normalized.includes("spam") || normalized.includes("deliver")) return ShieldCheck;
+  if (normalized.includes("support") || normalized.includes("team") || normalized.includes("agent")) return Users;
+  if (normalized.includes("integration") || normalized.includes("api") || normalized.includes("tech") || normalized.includes("crm") || normalized.includes("software")) return Cpu;
+  return Sparkles; // default icon
+}
+
 export default function WebSec({
   showHero = true,
   showDefinition = true,
@@ -899,7 +912,7 @@ export default function WebSec({
 
       {/* 12. CUSTOM DEVELOPMENT VS DIY PLATFORMS */}
       {showComparisonTable && comparisonTable.rows && (
-        <section className="py-24 px-6 md:px-12 lg:px-20 bg-zinc-50/50 border-b border-zinc-100">
+        <section className="py-24 px-6 md:px-12 lg:px-20 bg-white border-b border-zinc-100">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center space-y-4">
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-headingColor">
@@ -913,7 +926,7 @@ export default function WebSec({
             </div>
 
             {/* Overhauled SaaS Comparison Table Grid */}
-            <div className="border border-zinc-200 rounded-md bg-white overflow-hidden shadow-sm">
+            <div className="border border-zinc-200 rounded-2xl bg-white overflow-hidden shadow-md">
               {(() => {
                 const gridColsMap: Record<number, string> = {
                   1: "grid-cols-1",
@@ -931,22 +944,28 @@ export default function WebSec({
                     {/* Table Header Row */}
                     {comparisonTable.headers && (
                       <div
-                        className={`grid ${compCols} bg-black text-white text-xs md:text-sm font-bold tracking-wide uppercase py-4 px-6 border-b border-zinc-800`}
+                        className={`grid ${compCols} text-xs md:text-sm font-bold tracking-wide uppercase border-b border-zinc-200 items-stretch text-left`}
                       >
-                        {comparisonTable.headers.map((header, idx) => (
-                          <div
-                            key={idx}
-                            className={
-                              idx === 1
-                                ? "text-[#BFCA16]"
-                                : idx === 2
-                                  ? "text-red-600"
-                                  : ""
-                            }
-                          >
-                            {header}
-                          </div>
-                        ))}
+                        {comparisonTable.headers.map((header, idx) => {
+                          if (idx === 1) {
+                            return (
+                              <div 
+                                key={idx} 
+                                className="bg-[#BFCA16] text-black font-extrabold py-5 px-6 flex items-center justify-center text-center shadow-[inset_0_-1px_0_rgba(0,0,0,0.1)]"
+                              >
+                                {header}
+                              </div>
+                            );
+                          }
+                          return (
+                            <div 
+                              key={idx} 
+                              className={`py-5 px-6 flex items-center ${idx === 0 ? "text-zinc-500 bg-zinc-50/50" : "text-zinc-800 bg-zinc-50/50 justify-center text-center"}`}
+                            >
+                              {header}
+                            </div>
+                          );
+                        })}
                       </div>
                     )}
 
@@ -956,45 +975,49 @@ export default function WebSec({
                       return (
                         <div
                           key={i}
-                          className={`grid ${compCols} py-4.5 px-6 items-center text-xs md:text-sm border-b border-zinc-100 last:border-0 text-left ${i % 2 === 0 ? "bg-white" : "bg-zinc-50/50"}`}
+                          className={`grid ${compCols} items-stretch text-xs md:text-sm border-b border-zinc-150 last:border-0 text-left`}
                         >
                           {cells.map((cell, idx) => {
                             if (idx === 0) {
+                              const FeatureIcon = getFeatureIcon(cell || "");
                               return (
                                 <div
                                   key={idx}
-                                  className="font-bold text-headingColor"
+                                  className="font-bold text-headingColor py-5 px-6 bg-white flex items-center gap-3 border-r border-zinc-100"
                                 >
-                                  {cell}
+                                  <div className="w-8 h-8 rounded-lg bg-zinc-100 flex items-center justify-center text-zinc-600 shrink-0">
+                                    <FeatureIcon className="w-4.5 h-4.5" />
+                                  </div>
+                                  <span className="text-zinc-900 font-bold tracking-tight">{cell}</span>
                                 </div>
                               );
                             } else if (idx === 1) {
                               return (
                                 <div
                                   key={idx}
-                                  className="flex items-center gap-2 text-zinc-700 font-medium"
+                                  className="bg-[#BFCA16] text-zinc-950 font-semibold py-5 px-6 flex items-center gap-2.5 shadow-[inset_0_-1px_0_rgba(0,0,0,0.05)]"
                                 >
-                                  <CheckCircle2 className="w-4 h-4 text-[#BFCA16] shrink-0" />
-                                  <span>{cell}</span>
+                                  <CheckCircle2 className="w-5 h-5 text-zinc-950 shrink-0" />
+                                  <span className="leading-snug">{cell}</span>
                                 </div>
                               );
                             } else if (idx === 2) {
                               return (
                                 <div
                                   key={idx}
-                                  className="flex items-center gap-2 text-zinc-500"
+                                  className="text-zinc-600 py-5 px-6 bg-white flex items-center gap-2.5 border-l border-zinc-100"
                                 >
-                                  <XCircle className="w-4 h-4 text-red-400 shrink-0" />
-                                  <span>{cell}</span>
+                                  <XCircle className="w-5 h-5 text-zinc-400 shrink-0" />
+                                  <span className="leading-snug">{cell}</span>
                                 </div>
                               );
                             } else {
                               return (
                                 <div
                                   key={idx}
-                                  className="flex items-center gap-2 text-zinc-600 font-medium"
+                                  className="text-zinc-600 py-5 px-6 bg-white flex items-center gap-2 border-l border-zinc-100"
                                 >
-                                  <span>{cell}</span>
+                                  <span className="leading-snug">{cell}</span>
                                 </div>
                               );
                             }

@@ -57,16 +57,24 @@ export const FAQ_CONTENT: Record<string, FAQItemType[]> = {
 
   "email-solutions": [
     {
-      question: "Why do we need a custom domain email instead of using generic Gmail or Yahoo?",
-      answer: "Custom domain emails (like name@yourbrand.com) instantly build professional credibility. They assure clients that you are a legitimate business, improve response rates, and prevent your emails from landing in spam folders.",
+      question: "Why do I need a professional business email?",
+      answer: "A professional email address builds trust, improves brand image, and creates a more credible business presence.",
     },
     {
-      question: "Can you help migrate our existing email data to Google Workspace or Office 365?",
-      answer: "Yes, we handle the entire migration process. We migrate your existing mailboxes, folders, and contact history securely to Google Workspace or Microsoft 365 with zero downtime.",
+      question: "Which is better: Google Workspace or Microsoft 365?",
+      answer: "Both are excellent platforms. The right choice depends on your business workflow, collaboration needs, and existing software ecosystem.",
     },
     {
-      question: "How do you protect our emails from phishing and spam?",
-      answer: "We implement robust email authentication protocols including SPF, DKIM, and DMARC. We also set up advanced spam filters and security rules to block incoming phishing attempts.",
+      question: "Can you migrate our existing emails?",
+      answer: "Yes. We can safely migrate emails, contacts, calendars, and folders from most email providers.",
+    },
+    {
+      question: "Do you provide email security setup?",
+      answer: "Yes. We configure SPF, DKIM, DMARC, anti-spam protection, and security policies to improve protection and deliverability.",
+    },
+    {
+      question: "Can you integrate email with our CRM?",
+      answer: "Yes. We can connect your email system with CRM software, websites, mobile applications, and business tools.",
     },
   ],
 
