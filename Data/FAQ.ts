@@ -139,16 +139,24 @@ export const FAQ_CONTENT: Record<string, FAQItemType[]> = {
 
   "service-branding": [
     {
-      question: "What deliverables are included in a complete branding package?",
-      answer: "Our branding packages include logo designs (vector files), color palettes, typography styling, custom brand guidelines, business cards, letterheads, and social media layout templates.",
+      question: "Why is branding important for my business?",
+      answer: "Strong branding helps customers recognize, trust, and remember your business, increasing credibility and customer loyalty.",
     },
     {
-      question: "Can you design custom product packaging and labels?",
-      answer: "Yes, we design custom product packaging, boxes, and product labels with print-ready vector files (dielines), ensuring they align with your brand identity and look stunning on store shelves.",
+      question: "Can you redesign our existing brand?",
+      answer: "Yes. We offer complete rebranding services for businesses looking to modernize their identity.",
     },
     {
-      question: "How long does the branding design process take?",
-      answer: "A typical brand identity design project takes between 3 to 6 weeks, which includes discovery, concept brainstorming, styling iterations, and final handoff.",
+      question: "Do you provide logo-only services?",
+      answer: "Yes, but we recommend a complete branding package for long-term consistency and growth.",
+    },
+    {
+      question: "Will I receive source files?",
+      answer: "Yes. All final branding packages include editable source files and high-resolution formats.",
+    },
+    {
+      question: "Can branding be integrated into our website and marketing?",
+      answer: "Yes. Since Peltown Studio also provides website development, app development, SEO, and digital marketing services, we ensure brand consistency across all platforms.",
     },
   ],
 
@@ -169,16 +177,20 @@ export const FAQ_CONTENT: Record<string, FAQItemType[]> = {
 
   "service-photoshoot": [
     {
-      question: "Do you offer photoshoots on-location or in your studio?",
-      answer: "We offer both! We have a fully equipped photography studio in Delhi NCR, and our team is also available to shoot on-location at your office, factory, cafe, or preferred outdoor location.",
+      question: "Do you provide photoshoots outside Delhi?",
+      answer: "Yes. We serve clients across Delhi NCR including Noida, Gurgaon, Faridabad, and Ghaziabad.",
     },
     {
-      question: "What types of commercial photography do you specialize in?",
-      answer: "We specialize in high-end product photography, e-commerce catalog shoots (Amazon/Flipkart), corporate headshots, fashion and model lookbooks, food photography, and corporate event coverage.",
+      question: "Do you provide models for fashion shoots?",
+      answer: "Yes. Models, makeup artists, stylists, and creative direction can be arranged based on project requirements.",
     },
     {
-      question: "How long does it take to receive the edited images?",
-      answer: "We typically deliver raw images for selection within 48 hours of the shoot, and the final professionally edited, color-corrected, and optimized high-resolution images within 7 to 10 working days.",
+      question: "How long does delivery take?",
+      answer: "Most projects are delivered within 3–10 business days depending on scope.",
+    },
+    {
+      question: "Can you shoot at our office or location?",
+      answer: "Yes. We offer both studio and on-site photography services.",
     },
   ],
 
