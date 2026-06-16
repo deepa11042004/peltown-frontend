@@ -259,7 +259,7 @@ const DEFAULT_FEATURES: FeaturesConfig = {
 const DEFAULT_AI_ADVANTAGE: AIAdvantageConfig = {
   tagline: "AI ADVANTAGE MODULE",
   title: "The AI Advantage: Generative AI for Ecommerce",
-  desc: "Generative AI is completely revolutionizing the digital storefront. At PELTOWN, we don&apos;t just build ecommerce websites; we build intelligent retail ecosystems. By leveraging advanced AI models, we automate dynamic product descriptions tailored to individual user personas, ensuring higher conversion rates. Generative AI powers hyper-personalized shopping assistants that guide users through your catalog, answering complex queries, suggesting complementary products, and providing real-time styling or technical advice. This dramatically enhances customer interactions, reduces support overhead, and creates a highly engaging shopping journey that traditional websites simply cannot match.",
+  desc: "Generative AI is completely revolutionizing the digital storefront. At PELTOWN, we don't just build ecommerce websites; we build intelligent retail ecosystems. By leveraging advanced AI models, we automate dynamic product descriptions tailored to individual user personas, ensuring higher conversion rates. Generative AI powers hyper-personalized shopping assistants that guide users through your catalog, answering complex queries, suggesting complementary products, and providing real-time styling or technical advice. This dramatically enhances customer interactions, reduces support overhead, and creates a highly engaging shopping journey that traditional websites simply cannot match.",
 };
 
 const DEFAULT_TECH_STACK: TechStackConfig = {

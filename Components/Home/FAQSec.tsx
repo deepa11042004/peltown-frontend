@@ -2,9 +2,22 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
+import { FAQ_CONTENT } from "@/Data/FAQ";
 
 // Dummy data for the right side
-const FAQS = [
+export interface FAQItemType {
+  question: string;
+  answer: string;
+}
+
+export interface FAQSecProps {
+  faqs?: FAQItemType[];
+  tag?: string;
+  title?: React.ReactNode;
+}
+
+export const DEFAULT_FAQS: FAQItemType[] = [
   {
     question: "What are your charges for website designing services?",
     answer:
@@ -96,7 +109,41 @@ const FAQItem = ({
   );
 };
 
-export default function FAQSec() {
+export default function FAQSec({
+  faqs,
+  tag,
+  title,
+}: FAQSecProps) {
+  const pathname = usePathname();
+
+  // Automatically resolve FAQ content based on the current page route if not explicitly passed
+  let resolvedFaqs = faqs;
+  if (!resolvedFaqs) {
+    let pageKey = "home";
+    if (pathname) {
+      if (pathname === "/") {
+        pageKey = "home";
+      } else {
+        const normalized = pathname.replace(/^\/+|\/+$/g, "");
+        if (normalized.startsWith("services/")) {
+          pageKey = normalized.substring("services/".length);
+        } else if (normalized.startsWith("about/")) {
+          pageKey = normalized === "about/faqs" ? "about-faqs" : normalized;
+        } else {
+          pageKey = normalized;
+        }
+      }
+    }
+    resolvedFaqs = FAQ_CONTENT[pageKey] || DEFAULT_FAQS;
+  }
+
+  const resolvedTag = tag || "Common Questions";
+  const resolvedTitle = title || (
+    <>
+      Frequently Asked <span className="text-[#BFCA16]">questions</span>
+    </>
+  );
+
   return (
     <section className="w-full bg-black text-white py-24 md:py-32 flex flex-col items-center justify-center">
       <div className="max-w-4xl mx-auto px-6 md:px-12 w-full flex flex-col items-center">
@@ -110,18 +157,18 @@ export default function FAQSec() {
           >
             <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
             <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-black uppercase">
-              Common Questions
+              {resolvedTag}
             </span>
           </motion.div>
 
           <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white">
-            Frequently Asked <span className="text-[#BFCA16]">questions</span>
+            {resolvedTitle}
           </h2>
         </div>
 
         {/* FAQ List */}
         <div className="w-full max-w-3xl flex flex-col border-t border-white/10 border-solid">
-          {FAQS.map((faq, index) => (
+          {resolvedFaqs.map((faq, index) => (
             <FAQItem key={index} question={faq.question} answer={faq.answer} />
           ))}
         </div>

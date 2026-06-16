@@ -72,7 +72,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
     hero: {
       tagline: "Intelligent Automation",
       title: "ERP Development",
-      description: "Centralize your operations with future-proof, AI-driven software built for your workflows.",
+      description:
+        "Centralize your operations with future-proof, AI-driven software built for your workflows.",
       ctaText: "Get a Free Quote",
     },
     definition: {
@@ -256,7 +257,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
     hero: {
       tagline: "Expert Mobile Solutions",
       title: "Mobile App Development",
-      description: "Build high-performing, secure iOS and Android apps tailored to your business needs.",
+      description:
+        "Build high-performing, secure iOS and Android apps tailored to your business needs.",
       ctaText: "Start Your App Project",
     },
     definition: {
@@ -449,7 +451,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
     hero: {
       tagline: "Bespoke Solutions",
       title: "Custom CRM Development",
-      description: "Build contact management software tailored to your workflows with zero recurring licensing fees.",
+      description:
+        "Build contact management software tailored to your workflows with zero recurring licensing fees.",
       ctaText: "Get Your CRM Quote",
     },
     definition: {
@@ -634,7 +637,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
     hero: {
       tagline: "Dominate Search Results",
       title: "SEO Optimization",
-      description: "Boost your organic visibility and drive high-intent traffic with data-driven search strategies.",
+      description:
+        "Boost your organic visibility and drive high-intent traffic with data-driven search strategies.",
       ctaText: "Get a Free Audit",
     },
     definition: {
@@ -861,7 +865,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
     hero: {
       tagline: "Viral Growth",
       title: "Social Media Marketing",
-      description: "Grow your social presence and build brand loyalty with platform-specific content.",
+      description:
+        "Grow your social presence and build brand loyalty with platform-specific content.",
       ctaText: "Start Growing",
     },
     definition: {
@@ -1088,7 +1093,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
     hero: {
       tagline: "360° Solutions",
       title: "Digital Marketing",
-      description: "Grow your online presence with integrated SEO, PPC, and content strategies focused on ROI.",
+      description:
+        "Grow your online presence with integrated SEO, PPC, and content strategies focused on ROI.",
       ctaText: "Get a Strategy",
     },
     definition: {
@@ -1272,7 +1278,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
     hero: {
       tagline: "Local SEO",
       title: "Google My Business",
-      description: "Optimize your Google Business Profile to rank higher in local map and search results.",
+      description:
+        "Optimize your Google Business Profile to rank higher in local map and search results.",
       ctaText: "Claim Your Local Rankings",
     },
     definition: {
@@ -1441,7 +1448,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
     hero: {
       tagline: "Visual Excellence",
       title: "Product Photoshoot",
-      description: "Capture attention and build buyer trust with high-quality studio and lifestyle photography.",
+      description:
+        "Capture attention and build buyer trust with high-quality studio and lifestyle photography.",
       ctaText: "Book a Session",
     },
     definition: {
@@ -1615,7 +1623,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
     hero: {
       tagline: "Identity & Design",
       title: "Branding & Packaging",
-      description: "Create memorable unboxing experiences and brand identities with cohesive packaging design.",
+      description:
+        "Create memorable unboxing experiences and brand identities with cohesive packaging design.",
       ctaText: "Start Branding",
     },
     definition: {
@@ -1788,7 +1797,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
     hero: {
       tagline: "Grow Your Reach",
       title: "Bulk Email",
-      description: "Send high-volume newsletters and transactional emails directly to customer primary inboxes.",
+      description:
+        "Send high-volume newsletters and transactional emails directly to customer primary inboxes.",
       ctaText: "Get Started",
     },
     definition: {
@@ -1973,7 +1983,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
     hero: {
       tagline: "Instant Messaging",
       title: "WhatsApp API",
-      description: "Connect with buyers on WhatsApp using automated notifications, support chats, and broadcasts.",
+      description:
+        "Connect with buyers on WhatsApp using automated notifications, support chats, and broadcasts.",
       ctaText: "Get API Access",
     },
     definition: {
@@ -2142,7 +2153,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
     hero: {
       tagline: "Professional Identity",
       title: "Business Email",
-      description: "Build credibility and communicate securely with custom professional domain emails.",
+      description:
+        "Build credibility and communicate securely with custom professional domain emails.",
       ctaText: "Get Started",
     },
     definition: {

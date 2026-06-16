@@ -2,7 +2,7 @@
 
 import WebSec from "@/Components/Services/Web/WebSec";
 import FAQSec from "@/Components/Home/FAQSec";
-import { SERVICES_CONTENT } from "../service";
+import { SERVICES_CONTENT } from "@/Data/service";
 
 function ErpSystemPage() {
   return (
