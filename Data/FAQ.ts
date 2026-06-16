@@ -4,16 +4,24 @@ export const FAQ_CONTENT: Record<string, FAQItemType[]> = {
   // Service Pages
   "whatsapp-api": [
     {
-      question: "What is the difference between standard WhatsApp Business and WhatsApp Business API?",
-      answer: "The WhatsApp Business API is designed for larger businesses needing automated workflows, custom integrations, multi-agent support, and high-volume broadcasting. Unlike the standard app, it allows for custom chatbot logic, database synchronization, and multi-agent chat consoles.",
+      question: "Is WhatsApp API different from WhatsApp Business App?",
+      answer: "Yes. The API is designed for businesses that need automation, integrations, team access, and large-scale messaging capabilities.",
     },
     {
-      question: "Can we send promotional messages or broadcasts through the WhatsApp API?",
-      answer: "Yes. Official Meta guidelines allow sending utility, authentication, and marketing broadcasts to users who have opted in. We help set up approved templates to keep your account safe from spam reports.",
+      question: "Can you integrate WhatsApp with our website?",
+      answer: "Yes. We can connect WhatsApp with websites, CRMs, ERPs, e-commerce stores, and custom software.",
     },
     {
-      question: "How does the pricing work for the WhatsApp Business API?",
-      answer: "Pricing consists of PELTOWN's one-time integration fee and Meta's conversation-based charges. Conversations are billed in 24-hour sessions with different rates depending on category (utility, marketing, authentication, or service).",
+      question: "Can multiple employees use one WhatsApp number?",
+      answer: "Yes. Shared inbox functionality allows multiple team members to manage conversations from the same business number.",
+    },
+    {
+      question: "Can WhatsApp send automated notifications?",
+      answer: "Yes. Businesses can send approved template messages for orders, appointments, payments, OTPs, and other notifications.",
+    },
+    {
+      question: "Is WhatsApp API free?",
+      answer: "No. Meta charges based on messaging categories and usage. Additional setup and management costs may apply depending on requirements.",
     },
   ],
 
@@ -109,16 +117,24 @@ export const FAQ_CONTENT: Record<string, FAQItemType[]> = {
 
   "bulk-email": [
     {
-      question: "How do you ensure bulk emails land in the primary inbox instead of the spam folder?",
-      answer: "We configure dedicated SMTP servers, optimize DNS authentication records (SPF, DKIM, DMARC), implement list verification to remove bounce risks, and utilize automated IP warm-up schedules.",
+      question: "How many emails can you send?",
+      answer: "The volume depends on your email platform, infrastructure, and subscriber list size. We can support campaigns ranging from hundreds to hundreds of thousands of emails.",
     },
     {
-      question: "What is the limit on the number of emails we can send daily?",
-      answer: "During the initial IP and domain warm-up phase, we limit volume to build reputation. Once warmed up, your dedicated server can scale to send hundreds of thousands of emails per day.",
+      question: "Do you provide email lists?",
+      answer: "No. We only work with permission-based subscriber lists to maintain compliance and protect deliverability.",
     },
     {
-      question: "Do we have to pay monthly fees based on database size?",
-      answer: "Unlike platforms like Mailchimp, our custom SMTP setup has no per-contact monthly fees. You only pay a one-time setup fee and low hosting/sending costs, resulting in huge savings.",
+      question: "Will my emails go to spam?",
+      answer: "We implement proper authentication, deliverability best practices, and list management techniques to maximize inbox placement.",
+    },
+    {
+      question: "Can you integrate with our CRM?",
+      answer: "Yes. We can integrate email campaigns with CRM systems, websites, mobile apps, and business software.",
+    },
+    {
+      question: "Do you create email content?",
+      answer: "Yes. We provide complete email copywriting, design, and campaign management services.",
     },
   ],
 

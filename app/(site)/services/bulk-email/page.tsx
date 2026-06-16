@@ -10,17 +10,17 @@ function BulkEmailPage() {
       <WebSec
         config={SERVICES_CONTENT["bulk-email"]}
         showHero={true}
-        showDefinition={false}
+        showDefinition={true}
         showAudience={true}
         showIndustryDeepDives={false}
-        showFeatures={false}
+        showFeatures={true}
         showAiAdvantage={false}
         showTechStackAccordion={false}
-        showDeepDiveTabs={false}
-        showProcess={false}
+        showDeepDiveTabs={true}
+        showProcess={true}
         showLocalDominance={false}
-        showCostTable={false}
-        showComparisonTable={false}
+        showCostTable={true}
+        showComparisonTable={true}
       />
       <FAQSec />
     </>
