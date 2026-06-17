@@ -289,4 +289,165 @@ export const FAQ_CONTENT: Record<string, FAQItemType[]> = {
       answer: "Yes! Feel free to reach out directly through our contact page or via the quick WhatsApp chat button for instant support.",
     },
   ],
+
+  "products/ecommerce-suite": [
+    {
+      question: "Can you build a platform similar to Shopify?",
+      answer: "Yes. We can develop custom SaaS commerce platforms and multi-tenant e-commerce solutions tailored specifically to your business workflows.",
+    },
+    {
+      question: "Do I own the source code?",
+      answer: "Yes. Unlike subscription-based platforms, you own the platform source code, database, and infrastructure with zero monthly lock-ins.",
+    },
+    {
+      question: "Can you integrate ERP and CRM systems?",
+      answer: "Yes. We provide custom integrations for ERP, CRM, inventory management, accounting, and custom business automation tools.",
+    },
+    {
+      question: "Is the platform SEO-friendly?",
+      answer: "Yes. Every PELTOWN platform is developed following SEO best practices (fast load times, clean code structure, schema markups, and responsive indexing).",
+    },
+    {
+      question: "Can the platform support multiple vendors?",
+      answer: "Yes. Multi-vendor marketplace configurations are supported out of the box, allowing multiple sellers to sell on your storefront.",
+    },
+  ],
+
+  "products/omnichannel-crm": [
+    {
+      question: "What is an Omnichannel CRM?",
+      answer: "An Omnichannel CRM combines customer interactions from multiple communication channels into a single platform, helping businesses maintain complete customer context and deliver consistent experiences."
+    },
+    {
+      question: "How is Omnichannel CRM different from traditional CRM?",
+      answer: "Traditional CRMs mainly focus on customer records and sales activities. Omnichannel CRM connects customer interactions from email, WhatsApp, social media, phone calls, and other channels into one customer journey."
+    },
+    {
+      question: "Can it integrate with WhatsApp Business API?",
+      answer: "Yes. Peltown CRM can integrate with WhatsApp Business API, email systems, websites, and other communication channels."
+    },
+    {
+      question: "Can the CRM automate follow-ups?",
+      answer: "Yes. Automated reminders, email sequences, WhatsApp workflows, and lead nurturing campaigns can be configured."
+    },
+    {
+      question: "Do you provide custom CRM development?",
+      answer: "Yes. We build fully customized CRM platforms tailored to specific industries and workflows."
+    }
+  ],
+
+  "products/quick-commerce": [
+    {
+      question: "Can you build a platform similar to Blinkit or Zepto?",
+      answer: "Yes. We develop complete quick commerce ecosystems including customer apps, dark store management, inventory systems, delivery tracking, and analytics.",
+    },
+    {
+      question: "Can the platform support multiple cities?",
+      answer: "Yes. The system is designed for multi-city and multi-store operations.",
+    },
+    {
+      question: "Do I own the source code?",
+      answer: "Yes. You retain ownership of the platform, infrastructure, and customer data.",
+    },
+    {
+      question: "Can you integrate ERP and CRM systems?",
+      answer: "Yes. We provide custom integrations for ERP, CRM, accounting, and operational systems.",
+    },
+    {
+      question: "Can the platform support 10–30 minute delivery models?",
+      answer: "Yes. The architecture is designed around dark stores, optimized inventory management, and real-time delivery operations.",
+    },
+  ],
+
+  "products/cloud-pos": [
+    {
+      question: "Can the system manage multiple stores?",
+      answer: "Yes. You can manage multiple outlets, warehouses, and inventory locations from a centralized dashboard."
+    },
+    {
+      question: "Does it support GST billing?",
+      answer: "Yes. GST invoices, tax reports, and compliance-ready billing are included."
+    },
+    {
+      question: "Can I use it on mobile devices?",
+      answer: "Yes. The platform works on mobile phones, tablets, desktops, and laptops."
+    },
+    {
+      question: "Does it work without internet?",
+      answer: "Yes. Offline functionality can be implemented with automatic synchronization once connectivity is restored."
+    },
+    {
+      question: "Can it integrate with my website?",
+      answer: "Yes. Peltown Cloud POS can integrate with e-commerce stores, marketplaces, CRM systems, WhatsApp, and accounting software."
+    }
+  ],
+
+  "products/fleet-delivery": [
+    {
+      question: "Can the platform track vehicles in real time?",
+      answer: "Yes. The suite provides live GPS fleet tracking with geofencing, route history playback, speed alerts, and route deviation indicators."
+    },
+    {
+      question: "Does it support route optimization?",
+      answer: "Yes. Our intelligent routing algorithms optimize multi-stop delivery routes dynamically to reduce fuel consumption and travel times."
+    },
+    {
+      question: "What is Electronic Proof of Delivery (ePOD)?",
+      answer: "ePOD enables delivery drivers to capture customer digital signatures, photos of drop-offs, and QR/GPS confirmation stamps to avoid disputes."
+    },
+    {
+      question: "Can it integrate with existing ERP and accounting systems?",
+      answer: "Yes. We offer custom integrations with corporate ERPs, CRM networks, accounting platforms, WhatsApp templates, and SMS alert gateways."
+    },
+    {
+      question: "Is there a mobile application for drivers?",
+      answer: "Yes, a dedicated Driver Mobile App (Android/iOS) is included for dynamic route navigation, delivery status logs, and electronic proof captures."
+    }
+  ],
+
+  "products/hrms-payroll": [
+    {
+      question: "Can the software integrate with biometric machines?",
+      answer: "Yes. We support biometric devices, fingerprint systems, face recognition systems, and attendance machines."
+    },
+    {
+      question: "Can employees mark attendance through mobile phones?",
+      answer: "Yes. GPS-based attendance and mobile check-in functionality are available."
+    },
+    {
+      question: "Does the system support payroll processing?",
+      answer: "Yes. Payroll processing, salary structures, payslips, deductions, and compliance calculations are included."
+    },
+    {
+      question: "Can it manage multiple branches?",
+      answer: "Yes. Multi-branch workforce management is fully supported."
+    },
+    {
+      question: "Is the software suitable for remote teams?",
+      answer: "Yes. The platform supports hybrid, remote, and field workforce management."
+    }
+  ],
+
+  "products/invoicing-billing": [
+    {
+      question: "Can the software generate GST invoices?",
+      answer: "Yes. GST-compliant invoices with CGST, SGST, and IGST support are included."
+    },
+    {
+      question: "Can customers pay directly from invoices?",
+      answer: "Yes. Payment gateway integrations allow customers to make payments through invoice links."
+    },
+    {
+      question: "Can it automate recurring billing?",
+      answer: "Yes. Monthly, quarterly, annual, and subscription billing can be automated."
+    },
+    {
+      question: "Does it support multiple branches?",
+      answer: "Yes. Multi-branch billing and centralized reporting are supported."
+    },
+    {
+      question: "Can it integrate with ERP and CRM systems?",
+      answer: "Yes. We provide integration with ERP, CRM, HRMS, e-commerce platforms, and payment gateways."
+    }
+  ]
 };

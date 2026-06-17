@@ -3,7 +3,6 @@ import {
   MapPin,
   Camera,
   Layers,
-  ShieldAlert,
   Globe,
   Settings,
   Users,
@@ -60,8 +59,6 @@ import {
   ShoppingCart,
   Eye,
   Heart,
-  Layout,
-  Monitor,
   Palette,
   ShieldCheck,
   AtSign,
@@ -1452,12 +1449,13 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
       tagline: "Visual Excellence",
       title: "Photoshoot Services",
       description:
-        "High-quality photography that helps your business stand out online. From product photography and corporate shoots to social media content and brand campaigns, Peltown Studio creates visuals that capture attention and build trust.",
+        "High-quality photography that helps your brand stand out and connect with customers.",
       ctaText: "Book a Photoshoot",
     },
     definition: {
       title: "Photography That Helps Your Business Grow",
-      subtitle: "Serving Businesses Across Delhi, Noida, Gurgaon, Faridabad & Ghaziabad",
+      subtitle:
+        "Serving Businesses Across Delhi, Noida, Gurgaon, Faridabad & Ghaziabad",
       desc: "A great product or service deserves great visuals. Whether you're launching a new brand, selling products online, updating your company profile, or creating content for social media, professional photography helps create a stronger first impression. At Peltown Studio, we provide end-to-end photoshoot solutions including planning, styling, shooting, editing, and delivery of optimized images for websites, social media, advertisements, marketplaces, and marketing campaigns.",
     },
     audience: {
@@ -1542,17 +1540,17 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
     costTable: {
       title: "Photoshoot Packages (2026 Pricing)",
       desc: "Final pricing depends on location, duration, number of products, models, equipment requirements, editing, and production complexity.",
-      headers: [
-        "Package",
-        "Price Range",
-      ],
+      headers: ["Package", "Price Range"],
       rows: [
         {
           values: ["Basic Product Photoshoot", "₹8,000 – ₹15,000"],
           color: "text-black",
         },
         {
-          values: ["Ecommerce Product Shoot (50 Products)", "₹15,000 – ₹35,000"],
+          values: [
+            "Ecommerce Product Shoot (50 Products)",
+            "₹15,000 – ₹35,000",
+          ],
           color: "text-[#BFCA16]",
         },
         {
@@ -1636,7 +1634,7 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
           num: "06",
           title: "Post-Shoot Support",
           desc: "Access to our team for any questions regarding image usage, file formats, or future shoot planning.",
-        }
+        },
       ],
     },
   },
@@ -1644,14 +1642,15 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
   "service-branding": {
     hero: {
       tagline: "Identity & Design",
-      title: "Branding Services in Delhi NCR That Build Trust & Recognition",
+      title: "Branding Services",
       description:
-        "Your brand is more than a logo. It's how customers see, remember, and trust your business. Peltown Studio helps startups, local businesses, and growing companies create powerful brand identities that stand out in competitive markets.",
+        "Build a memorable brand identity that earns trust and stands out in competitive markets.",
       ctaText: "Build My Brand",
     },
     definition: {
       title: "Create a Brand Customers Remember",
-      subtitle: "A professional brand identity builds credibility, creates trust, and helps your business stand out.",
+      subtitle:
+        "A professional brand identity builds credibility, creates trust, and helps your business stand out.",
       desc: "In today's digital world, customers form an opinion about your business within seconds. Whether you're launching a startup, rebranding an existing business, or expanding into new markets, Peltown Studio creates branding solutions that align with strategy, creativity, and market research to ensure your brand looks professional across websites, social media, packaging, and marketing materials.",
     },
     audience: {
@@ -1850,14 +1849,15 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
   "bulk-email": {
     hero: {
       tagline: "Grow Your Reach",
-      title: "Bulk Email Marketing Services in Delhi NCR",
+      title: "Bulk Email Services",
       description:
-        "Reach thousands of customers instantly with professional bulk email campaigns that drive engagement, generate leads, and increase sales. Peltown Studio helps businesses across Delhi, Noida, Gurgaon, Faridabad, and Ghaziabad create, manage, and optimize bulk email marketing campaigns that deliver measurable results.",
+        "Reach more customers with data-driven email campaigns that boost engagement, leads, and sales.",
       ctaText: "Start Email Campaign",
     },
     definition: {
       title: "Turn Emails Into Customers",
-      subtitle: "Email marketing remains one of the most cost-effective digital marketing channels for businesses of all sizes.",
+      subtitle:
+        "Email marketing remains one of the most cost-effective digital marketing channels for businesses of all sizes.",
       desc: "A well-planned email campaign helps you stay connected with existing customers, nurture leads, promote products, and increase repeat business. At Peltown Studio, we provide complete bulk email solutions including strategy, email design, content creation, list management, campaign setup, automation, and performance tracking to help your business generate more leads and sales.",
     },
     audience: {
@@ -2061,14 +2061,15 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
   "whatsapp-api": {
     hero: {
       tagline: "Instant Messaging",
-      title: "Official WhatsApp API Solutions for Businesses in Delhi NCR",
+      title: "WhatsApp API Solutions",
       description:
-        "Automate customer communication, generate leads, send notifications, and provide instant support with the Official WhatsApp Business API. Peltown Studio helps businesses across Delhi, Noida, Gurgaon, Faridabad, and Ghaziabad implement WhatsApp API solutions that improve customer engagement, increase sales, and streamline operations.",
+        "Automate customer communication with WhatsApp API solutions that boost engagement and sales.",
       ctaText: "Get WhatsApp API Setup",
     },
     definition: {
       title: "Turn WhatsApp Into a Sales & Support Channel",
-      subtitle: "Connect with customers on the platform they prefer every single day.",
+      subtitle:
+        "Connect with customers on the platform they prefer every single day.",
       desc: "Your customers already use WhatsApp every day. Instead of asking them to fill forms or send emails, connect with them directly. The Official WhatsApp Business API enables businesses to automate conversations, send order updates, generate and nurture leads, run marketing campaigns, provide customer support, and integrate WhatsApp with CRM and business software.",
     },
     audience: {
@@ -2270,14 +2271,15 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
   "email-solutions": {
     hero: {
       tagline: "Professional Identity",
-      title: "Professional Business Email Solutions in Delhi NCR",
+      title: "Business Email Solutions",
       description:
-        "Build trust, improve communication, and secure your business with professional email solutions designed for modern organizations. Peltown Studio helps businesses across Delhi, Noida, Gurgaon, Faridabad, and Ghaziabad set up, manage, secure, and optimize business email systems for seamless communication and productivity.",
+        "Professional business email solutions that improve communication, security, and productivity.",
       ctaText: "Setup Business Email",
     },
     definition: {
       title: "Make Your Business Look Professional",
-      subtitle: "Using a Gmail or Yahoo email address for business can reduce credibility.",
+      subtitle:
+        "Using a Gmail or Yahoo email address for business can reduce credibility.",
       desc: "A professional email address like info@yourcompany.com instantly creates a more professional image and builds customer trust. At Peltown Studio, we help businesses establish secure, scalable, and reliable email systems that improve communication and support business growth.",
     },
     audience: {

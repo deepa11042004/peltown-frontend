@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -25,6 +25,7 @@ interface DetailSecProps {
 
 export default function DetailSec({ detail }: DetailSecProps) {
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   // Toggle function for mobile/tablet clicks
   const handleItemClick = (idx: number) => {
@@ -33,6 +34,20 @@ export default function DetailSec({ detail }: DetailSecProps) {
 
   // Active item
   const activeItem = detail.list[activeIndex] || detail.list[0];
+
+  // Mouse tracking with spring physics for smooth follow
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 25, stiffness: 250, mass: 0.5 };
+  const cursorX = useSpring(mouseX, springConfig);
+  const cursorY = useSpring(mouseY, springConfig);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    // Offset coordinates to center the 200x200 floating preview relative to the cursor
+    mouseX.set(e.clientX - 100);
+    mouseY.set(e.clientY - 100);
+  };
 
   return (
     <section className="relative bg-black min-h-screen py-20 md:py-32 px-6 md:px-12 lg:px-16 overflow-hidden">
@@ -58,16 +73,21 @@ export default function DetailSec({ detail }: DetailSecProps) {
           </p>
         </div>
 
-        {/* MAIN CONTENT: Split Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-          {/* LEFT: List Items */}
-          <div className="lg:col-span-7 flex flex-col border-t border-white/10">
+        {/* MAIN CONTENT: Centered List Layout */}
+        <div className="max-w-5xl mx-auto">
+          {/* List Items */}
+          <div 
+            className="flex flex-col border-t border-white/10"
+            onMouseMove={handleMouseMove}
+          >
             {detail.list.map((item, idx) => {
               const isActive = activeIndex === idx;
               return (
                 <div
                   key={item.id}
                   onClick={() => handleItemClick(idx)}
+                  onMouseEnter={() => setHoveredIndex(idx)}
+                  onMouseLeave={() => setHoveredIndex(null)}
                   className="group relative border-b border-white/10 py-8 md:py-12 cursor-pointer z-10"
                 >
                   <div className="flex items-center justify-between gap-4">
@@ -175,49 +195,52 @@ export default function DetailSec({ detail }: DetailSecProps) {
               );
             })}
           </div>
-
-          {/* RIGHT: Sticky Image Preview */}
-          {activeItem && (
-            <div className="lg:col-span-5 hidden lg:block">
-              <div className="sticky top-24 h-[calc(100vh-12rem)] flex items-center justify-center">
-                <div className="relative w-full aspect-4/5 max-h-150 rounded-2xl overflow-hidden bg-white/5 border border-white/10">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activeItem.id}
-                      initial={{ opacity: 0, scale: 1.05 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.98 }}
-                      transition={{ duration: 0.5, ease: [0.33, 1, 0.68, 1] }}
-                      className="absolute inset-0"
-                    >
-                      <Image
-                        src={activeItem.image}
-                        alt={activeItem.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 1024px) 0px, 40vw"
-                      />
-                      {/* Overlay gradient */}
-                      <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
-                      {/* Step label */}
-                      <div className="absolute bottom-6 left-6 right-6">
-                        <div className="flex items-center gap-3 mb-2">
-                          <span className="text-[#BFCA16] font-mono text-sm font-medium">
-                            STEP {activeItem.id}
-                          </span>
-                          <div className="h-px flex-1 bg-white/20" />
-                        </div>
-                        <h4 className="text-white text-xl md:text-2xl font-medium tracking-tight">
-                          {activeItem.title}
-                        </h4>
-                      </div>
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
+
+        {/* MOUSE-FOLLOWING FLOATING IMAGE PREVIEW (Desktop Only) */}
+        <motion.div
+          style={{
+            left: cursorX,
+            top: cursorY,
+          }}
+          className="fixed pointer-events-none z-50 hidden lg:block w-50 h-50 rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{
+            opacity: hoveredIndex !== null ? 1 : 0,
+            scale: hoveredIndex !== null ? 1 : 0.8,
+          }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+        >
+          {detail.list.map((item, idx) => (
+            <motion.div
+              key={item.id}
+              className="absolute inset-0"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: hoveredIndex === idx ? 1 : 0 }}
+              transition={{ duration: 0.15 }}
+            >
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover"
+                sizes="200px"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-3 left-3 right-3">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-[#BFCA16] font-mono text-[10px] font-medium">
+                    STEP {item.id}
+                  </span>
+                  <div className="h-px flex-1 bg-white/10" />
+                </div>
+                <h4 className="text-white text-sm font-medium tracking-tight truncate">
+                  {item.title}
+                </h4>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
 
         {/* MOBILE: Inline Image Preview (appears below active item) */}
         {activeItem && (
