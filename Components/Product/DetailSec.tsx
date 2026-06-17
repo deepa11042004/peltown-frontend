@@ -1,7 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useMotionValue,
+  useSpring,
+} from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -76,7 +81,7 @@ export default function DetailSec({ detail }: DetailSecProps) {
         {/* MAIN CONTENT: Centered List Layout */}
         <div className="max-w-5xl mx-auto">
           {/* List Items */}
-          <div 
+          <div
             className="flex flex-col border-t border-white/10"
             onMouseMove={handleMouseMove}
           >
@@ -226,18 +231,6 @@ export default function DetailSec({ detail }: DetailSecProps) {
                 className="object-cover"
                 sizes="200px"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-3 left-3 right-3">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-[#BFCA16] font-mono text-[10px] font-medium">
-                    STEP {item.id}
-                  </span>
-                  <div className="h-px flex-1 bg-white/10" />
-                </div>
-                <h4 className="text-white text-sm font-medium tracking-tight truncate">
-                  {item.title}
-                </h4>
-              </div>
             </motion.div>
           ))}
         </motion.div>

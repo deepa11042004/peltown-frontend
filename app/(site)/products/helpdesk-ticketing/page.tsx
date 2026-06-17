@@ -3,7 +3,6 @@
 import React from "react";
 import ProductHero from "@/Components/Product/ProductHero";
 import ProductIntro from "@/Components/Product/ProductIntro";
-import FeaturedSec from "@/Components/Product/FeaturedSec";
 import DetailSec from "@/Components/Product/DetailSec";
 import FAQSec from "@/Components/Home/FAQSec";
 import WhyChooseUs from "@/Components/Product/WhyChooseUs";
@@ -12,7 +11,6 @@ import PricingSec from "@/Components/Product/PricingSec";
 import DevProcess from "@/Components/Product/DevProcess";
 import { 
   PRODUCTS_HERO_CONTENT, 
-  PRODUCTS_FEATURED_CONTENT, 
   PRODUCTS_DETAIL_CONTENT,
   PRODUCTS_WHY_CHOOSE_US_CONTENT,
   PRODUCTS_INDUSTRIES_SERVE_CONTENT,
@@ -44,10 +42,6 @@ function ProductPage() {
 
       {/* Detail Section */}
       <DetailSec detail={PRODUCTS_DETAIL_CONTENT["helpdesk-ticketing"]} />
-
-      {/* Featured Section */}
-      <FeaturedSec featured={PRODUCTS_FEATURED_CONTENT["helpdesk-ticketing"]} />
-
       {/* Why Choose Us Section */}
       {whyChooseUsData && (
         <WhyChooseUs

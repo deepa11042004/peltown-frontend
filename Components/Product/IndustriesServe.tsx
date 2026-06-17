@@ -35,7 +35,7 @@ export default function IndustriesServe({
   items = INDUSTRIES,
 }: IndustriesServeProps) {
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-20 bg-zinc-950 text-white">
+    <section className="py-24 px-6 md:px-12 lg:px-20 bg-black text-white">
       <div className="max-w-7xl mx-auto space-y-16">
         <div className="max-w-3xl mx-auto text-center space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20">
@@ -60,7 +60,7 @@ export default function IndustriesServe({
               className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col justify-between h-36 hover:border-[#BFCA16]/40 transition-all duration-300 relative overflow-hidden group"
             >
               <div className={`absolute -right-8 -top-8 w-24 h-24 rounded-full bg-linear-to-br ${industry.color} blur-xl group-hover:scale-150 transition-transform duration-500`} />
-              <span className="text-white/20 font-mono text-xs">{(idx + 1).toString().padStart(2, "0")}</span>
+              <span className="text-white font-mono text-xs">{(idx + 1).toString().padStart(2, "0")}</span>
               <h3 className="font-bold text-base md:text-lg text-white leading-snug tracking-tight z-10">
                 {industry.name}
               </h3>

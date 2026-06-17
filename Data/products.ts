@@ -111,7 +111,7 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
   },
   "quick-commerce": {
     tagline: "Ultra-Fast Delivery",
-    title: "10-Min Quick Commerce Engine",
+    title: "Peltown Quick Commerce Suite",
     description: "Supercharge your local dispatch. Our system integrates dark store inventory, rapid rider allocation, and real-time mapping for sub-10 minute deliveries.",
     ctaText: "Request Demo",
     imageSrc: "/Img/store2.webp",
@@ -119,7 +119,7 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
   },
   "cloud-pos": {
     tagline: "Point of Sale",
-    title: "Next-Gen Cloud POS System",
+    title: "Peltown Cloud POS",
     description: "Sync your physical storefront with your online inventory instantly. Accept all payment methods, track register shifts, and generate reports on the fly.",
     ctaText: "See in Action",
     imageSrc: "/Img/store3.webp",
@@ -127,7 +127,7 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
   },
   "fleet-delivery": {
     tagline: "Logistics Optimization",
-    title: "Smart Fleet & Delivery Management",
+    title: "Peltown Fleet Delivery Suite",
     description: "Automate driver dispatching, optimize delivery routes, and provide end-to-end live tracking for your customers with dedicated rider and admin apps.",
     ctaText: "Schedule Demo",
     imageSrc: "/Img/store4.webp",
@@ -135,7 +135,7 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
   },
   "cloud-erp": {
     tagline: "Enterprise Operations",
-    title: "Centralized Cloud ERP System",
+    title: "Peltown Cloud ERP",
     description: "Unify your accounting, supply chain, inventory, and human resource modules under a single, highly-secure cloud dashboard.",
     ctaText: "Consult Our Experts",
     imageSrc: "/Img/store5.webp",
