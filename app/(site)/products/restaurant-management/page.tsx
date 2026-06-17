@@ -9,18 +9,20 @@ import WhyChooseUs from "@/Components/Product/WhyChooseUs";
 import IndustriesServe from "@/Components/Product/IndustriesServe";
 import PricingSec from "@/Components/Product/PricingSec";
 import DevProcess from "@/Components/Product/DevProcess";
-import { 
-  PRODUCTS_HERO_CONTENT, 
+import {
+  PRODUCTS_HERO_CONTENT,
   PRODUCTS_DETAIL_CONTENT,
   PRODUCTS_WHY_CHOOSE_US_CONTENT,
   PRODUCTS_INDUSTRIES_SERVE_CONTENT,
   PRODUCTS_PRICING_CONTENT,
-  PRODUCTS_INTRO_CONTENT
+  PRODUCTS_INTRO_CONTENT,
 } from "@/Data/products";
 
 function ProductPage() {
-  const whyChooseUsData = PRODUCTS_WHY_CHOOSE_US_CONTENT["restaurant-management"];
-  const industriesData = PRODUCTS_INDUSTRIES_SERVE_CONTENT["restaurant-management"];
+  const whyChooseUsData =
+    PRODUCTS_WHY_CHOOSE_US_CONTENT["restaurant-management"];
+  const industriesData =
+    PRODUCTS_INDUSTRIES_SERVE_CONTENT["restaurant-management"];
   const pricingData = PRODUCTS_PRICING_CONTENT["restaurant-management"];
   const introData = PRODUCTS_INTRO_CONTENT["restaurant-management"];
 
