@@ -449,5 +449,166 @@ export const FAQ_CONTENT: Record<string, FAQItemType[]> = {
       question: "Can it integrate with ERP and CRM systems?",
       answer: "Yes. We provide integration with ERP, CRM, HRMS, e-commerce platforms, and payment gateways."
     }
+  ],
+
+  "products/travel-agency": [
+    {
+      question: "Can the software manage domestic and international tours?",
+      answer: "Yes. You can manage domestic, international, group, corporate, and custom tours."
+    },
+    {
+      question: "Can I create travel itineraries automatically?",
+      answer: "Yes. The platform includes a professional itinerary builder."
+    },
+    {
+      question: "Can customers track bookings online?",
+      answer: "Yes. Customer portal access is available."
+    },
+    {
+      question: "Can it integrate with WhatsApp?",
+      answer: "Yes. WhatsApp Business API integration is supported."
+    },
+    {
+      question: "Can multiple branches use the software?",
+      answer: "Yes. Multi-branch and multi-user access are fully supported."
+    }
+  ],
+
+  "products/real-estate": [
+    {
+      question: "Can the platform manage multiple projects?",
+      answer: "Yes. You can manage multiple residential and commercial projects from one dashboard."
+    },
+    {
+      question: "Can customers track payments and bookings?",
+      answer: "Yes. A dedicated customer portal is available."
+    },
+    {
+      question: "Does it support broker and channel partner management?",
+      answer: "Yes. Complete partner management and commission tracking are included."
+    },
+    {
+      question: "Can it integrate with WhatsApp?",
+      answer: "Yes. WhatsApp Business API integration is supported."
+    },
+    {
+      question: "Can it automate follow-ups?",
+      answer: "Yes. Automated lead nurturing and sales workflows are available."
+    }
+  ],
+
+  "products/learning-management": [
+    {
+      question: "Can students learn through mobile apps?",
+      answer: "Yes. Android and iOS applications can be provided with offline learning capabilities."
+    },
+    {
+      question: "Can I sell online courses?",
+      answer: "Yes. The platform supports course sales, subscriptions, memberships, and payment gateway integrations."
+    },
+    {
+      question: "Can I conduct live classes?",
+      answer: "Yes. Zoom, Google Meet, and webinar integrations are available."
+    },
+    {
+      question: "Can certificates be generated automatically?",
+      answer: "Yes. Certificates can be issued automatically after course completion."
+    },
+    {
+      question: "Can the LMS support multiple instructors?",
+      answer: "Yes. Multi-instructor and multi-role management are fully supported."
+    }
+  ],
+
+  "products/bulk-whatsapp": [
+    {
+      question: "Can you integrate the official WhatsApp Business API?",
+      answer: "Yes. We provide complete WhatsApp Business API integration and custom workflow development."
+    },
+    {
+      question: "Can multiple employees use one WhatsApp number?",
+      answer: "Yes. Multi-agent access and shared team inbox functionality are supported."
+    },
+    {
+      question: "Can WhatsApp campaigns be automated?",
+      answer: "Yes. Campaign scheduling, automation workflows, and customer segmentation are available."
+    },
+    {
+      question: "Can the platform integrate with CRM systems?",
+      answer: "Yes. CRM, ERP, HRMS, e-commerce, and third-party integrations are supported."
+    },
+    {
+      question: "Do you build custom WhatsApp solutions?",
+      answer: "Yes. We develop fully customized WhatsApp platforms tailored to specific business requirements."
+    }
+  ],
+
+  "products/email-automation": [
+    {
+      question: "Can the platform integrate with our CRM?",
+      answer: "Yes. We support CRM, ERP, HRMS, e-commerce, and third-party integrations."
+    },
+    {
+      question: "Can emails be personalized?",
+      answer: "Yes. Dynamic personalization and customer segmentation are supported."
+    },
+    {
+      question: "Can we automate onboarding sequences?",
+      answer: "Yes. Customer onboarding workflows can be fully automated."
+    },
+    {
+      question: "Can the platform handle large subscriber lists?",
+      answer: "Yes. The platform is scalable from small businesses to enterprise-level deployments."
+    },
+    {
+      question: "Do you build custom email automation platforms?",
+      answer: "Yes. We develop fully customized email automation solutions tailored to business requirements."
+    }
+  ],
+
+  "products/helpdesk-ticketing": [
+    {
+      question: "Can the platform support multiple communication channels?",
+      answer: "Yes. Email, WhatsApp, live chat, forms, and social media channels can be managed from one platform."
+    },
+    {
+      question: "Can tickets be assigned automatically?",
+      answer: "Yes. Workflow automation can assign tickets based on department, priority, agent workload, or predefined rules."
+    },
+    {
+      question: "Does it include a customer portal?",
+      answer: "Yes. Customers can submit tickets, track status, and access support resources."
+    },
+    {
+      question: "Can it integrate with CRM systems?",
+      answer: "Yes. CRM, ERP, HRMS, e-commerce, and third-party integrations are supported."
+    },
+    {
+      question: "Can it be used as an internal IT helpdesk?",
+      answer: "Yes. The platform supports both customer-facing support and internal employee helpdesk operations."
+    }
+  ],
+
+  "products/appointment-booking": [
+    {
+      question: "Can customers book appointments online?",
+      answer: "Yes. Customers can schedule appointments directly through your website, app, or customer portal."
+    },
+    {
+      question: "Can reminders be sent automatically?",
+      answer: "Yes. Email, SMS, and WhatsApp reminders can be automated."
+    },
+    {
+      question: "Can staff manage their schedules?",
+      answer: "Yes. Employees can access and manage schedules through dedicated dashboards or mobile apps."
+    },
+    {
+      question: "Can payments be collected online?",
+      answer: "Yes. Payment gateways can be integrated for advance booking and appointment payments."
+    },
+    {
+      question: "Can multiple locations be managed?",
+      answer: "Yes. Multi-branch and franchise management are fully supported."
+    }
   ]
 };

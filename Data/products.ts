@@ -21,7 +21,6 @@ import {
   FolderGit2,
   RefreshCw,
   Globe,
-  ShieldAlert,
   Route,
   Plane,
   FileText,
@@ -52,6 +51,7 @@ import {
   TrendingUp,
   Search,
   Cpu,
+  Cloud,
   LucideIcon
 } from "lucide-react";
 
@@ -167,19 +167,19 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
   },
   "travel-agency": {
     tagline: "Travel Technology",
-    title: "Global Travel Agency Platform",
+    title: "Peltown Travel Agency Suite",
     description: "Create flight & hotel itineraries, manage direct bookings, handle visa processes, and generate invoice statements for holiday operators.",
     ctaText: "Modernize Booking",
     imageSrc: "/Img/how3.webp",
-    imageAlt: "Travel Agency Platform",
+    imageAlt: "Travel Agency Suite",
   },
   "real-estate": {
     tagline: "Property Tech",
-    title: "Interactive Real Estate Portal",
+    title: "Peltown Real Estate Suite",
     description: "Present high-definition property listings, engage hot leads, integrate virtual tours, and manage agents with robust CRM workflows.",
     ctaText: "Explore Platform",
     imageSrc: "/Img/how4.webp",
-    imageAlt: "Real Estate Portal",
+    imageAlt: "Real Estate Suite",
   },
   "restaurant-management": {
     tagline: "Food & Beverage",
@@ -191,40 +191,40 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
   },
   "learning-management": {
     tagline: "EdTech & Training",
-    title: "Interactive Learning Management (LMS)",
+    title: "Peltown Learning Management System (LMS)",
     description: "Deploy white-labeled digital training hubs, host video lessons, design quizzes, track progress, and award certificates to students.",
     ctaText: "Create Academy",
     imageSrc: "/Img/store2.webp",
-    imageAlt: "Learning Management System",
+    imageAlt: "Learning Management System (LMS)",
   },
   "bulk-whatsapp": {
     tagline: "Marketing & API",
-    title: "Bulk WhatsApp Business API",
-    description: "Broadcast promotional campaigns, schedule transactional alert templates, and build interactive chat automation hubs at scale.",
-    ctaText: "Connect API",
+    title: "Peltown WhatsApp Business Platform",
+    description: "Automate sales, marketing, and customer support with the official WhatsApp Business ecosystem. Respond instantly, nurture leads, and scale conversations.",
+    ctaText: "Request Live Demo",
     imageSrc: "/Img/partners_hero.webp",
-    imageAlt: "Bulk WhatsApp Business API",
+    imageAlt: "WhatsApp Business Platform",
   },
   "email-automation": {
     tagline: "Marketing Automation",
-    title: "Smart Email Automation Hub",
-    description: "Build robust drip campaigns, manage customer lists, run newsletter sequences, and get high-deliverability inbox placement.",
+    title: "Peltown Email Automation Platform",
+    description: "Create automated customer journeys that generate leads, increase conversions, and improve customer retention automatically.",
     ctaText: "Automate Campaigns",
     imageSrc: "/Img/store3.webp",
-    imageAlt: "Email Automation Hub",
+    imageAlt: "Email Automation Platform",
   },
   "helpdesk-ticketing": {
     tagline: "Support & Ticketing",
-    title: "Omni-channel Helpdesk System",
-    description: "Track customer issues, establish SLA alert triggers, assign automated support queues, and resolve tickets across all modern communications.",
+    title: "Peltown Helpdesk & Ticketing System",
+    description: "Peltown Helpdesk & Ticketing System ensures every customer request is tracked, assigned, prioritized, and resolved efficiently. Turn customer support into a growth driver instead of a bottleneck.",
     ctaText: "Optimize Support",
     imageSrc: "/Img/store4.webp",
     imageAlt: "Helpdesk Ticketing System",
   },
   "appointment-booking": {
     tagline: "Scheduling Engine",
-    title: "Automated Appointment Booking",
-    description: "Empower customers to book meetings, sync multi-staff calendars, trigger SMS/Email reminders, and process deposits upfront.",
+    title: "Peltown Appointment Booking Platform",
+    description: "Peltown Appointment Booking Platform automates scheduling and customer communication so your team can focus on serving customers instead of managing calendars.",
     ctaText: "Set Up Calendar",
     imageSrc: "/Img/store5.webp",
     imageAlt: "Appointment Booking Engine",
@@ -1146,120 +1146,172 @@ export const PRODUCTS_DETAIL_CONTENT: Record<string, DetailSectionData> = {
     ]
   },
   "travel-agency": {
-    tagline: "Booking Engine",
-    title: "Central Holiday Operator Platform",
-    description: "Create visual client itineraries, sync flight catalogs, and process guest payments.",
+    tagline: "Complete Operating System",
+    title: "Complete Travel Business Operating System",
+    description: "One Platform To Manage Everything",
     list: [
       {
         id: "01",
-        title: "Visual Itinerary Builder",
-        tagline: "Add day-by-day sightseeing programs, hotels layouts, and transport guides inside client PDFs.",
+        title: "Travel CRM",
+        tagline: "Convert More Travel Inquiries Into Bookings",
         bullets: [
-          "Drag-and-drop itinerary template builders",
-          "Pre-populated hotel description databases",
-          "Integrated Google Maps visual route displays",
-          "Interactive customer-facing quote consoles"
+          "Lead Management & Inquiry Tracking",
+          "Follow-Up Automation & Customer Profiles",
+          "Lead Source Tracking & Sales Pipeline",
+          "Customer Communication History & Conversion Reports"
         ],
         image: "/Img/how3.webp",
-        href: "/services/web-development"
-      },
-      {
-        id: "02",
-        title: "GDS Flights & Hotel APIs",
-        tagline: "Retrieve live ticket pricing lists and confirm hotel reservations dynamically from booking wholesalers.",
-        bullets: [
-          "Universal Amadeus / Sabre API interfaces",
-          "Live ticket reservation hold scripts",
-          "Direct XML hotel inventory feeds sync",
-          "Dynamic agency commission margin markups"
-        ],
-        image: "/Img/partners_hero.webp",
-        href: "/services/erp-system"
-      },
-      {
-        id: "03",
-        title: "Travel Visa & Passport CRM",
-        tagline: "Store traveler identification details securely and follow visa application updates on progress steps.",
-        bullets: [
-          "Secure personal ID file uploads archives",
-          "Automated visa requirement checking scripts",
-          "Teammate visa submission reminders",
-          "Buyer embassy document request notifications"
-        ],
-        image: "/Img/how1.webp",
         href: "/services/custom-crm"
       },
       {
-        id: "04",
-        title: "Marketing & Lead Capture",
-        tagline: "Convert web visitors into travel inquiries with custom holiday search widgets and packages.",
+        id: "02",
+        title: "Tour Package & Itinerary Builder",
+        tagline: "Build & Sell Holiday Packages & Professional Itineraries Instantly",
         bullets: [
-          "Dynamic destination landing page templates",
-          "Custom lead capture travel widgets",
-          "Seasonal promotional package banner sets",
-          "Automated inquiry follow-up email scripts"
+          "Domestic, International, Group & Corporate Tours",
+          "Day-Wise Itinerary Planning & Day-by-Day Scheduling",
+          "Hotel & Transport Details Integration",
+          "PDF Itinerary Generation & Custom Branding"
+        ],
+        image: "/Img/partners_hero.webp",
+        href: "/services/web-development"
+      },
+      {
+        id: "03",
+        title: "Booking & Supplier Operations",
+        tagline: "Centralized Booking Operations and Travel Supply Chain Control",
+        bullets: [
+          "Package, Hotel, Transport & Activity Reservations",
+          "Supplier & Vendor Contracts Management",
+          "Local Tour Operator & Airline Partners Coordination",
+          "Booking Status/History Tracking & Vendor Payments"
+        ],
+        image: "/Img/how1.webp",
+        href: "/services/erp-system"
+      },
+      {
+        id: "04",
+        title: "Hotel & Visa Management Modules",
+        tagline: "Manage Hotel Inventory & Simplify Visa Processing",
+        bullets: [
+          "Hotel Database, Room Inventory & Availability Tracking",
+          "Hotel Pricing, Seasonal Pricing & Booking Reports",
+          "Visa Applications, Document Management & Status Tracking",
+          "Appointment Scheduling & Customer Status Notifications"
         ],
         image: "/Img/store4.webp",
-        href: "/services/digital-marketing"
+        href: "/services/custom-crm"
+      },
+      {
+        id: "05",
+        title: "Payment, Invoice & Customer Portal",
+        tagline: "Get Paid Faster and Deliver A Better Customer Experience",
+        bullets: [
+          "GST Invoices, Advance Payments & Installments Tracking",
+          "Customer Ledgers & Agency Financial Reports",
+          "Customer Portal for Booking, Itineraries & Visa Status",
+          "Travel Documents Download & Support Request portal"
+        ],
+        image: "/Img/how2.webp",
+        href: "/services/web-development"
+      },
+      {
+        id: "06",
+        title: "Automation, B2B Agent Portal & Mobile Apps",
+        tagline: "Automate Customer Communication & Manage Operations Anywhere",
+        bullets: [
+          "WhatsApp & Email Automation (Inquiries, Confirmations, Reminders)",
+          "B2B Travel Agent Portal for Sub-Agents & Partner Networks",
+          "B2B Agent Pricing, Commission tracking & Wallet System",
+          "Admin & Customer Mobile Apps (iOS & Android)"
+        ],
+        image: "/Img/store3.webp",
+        href: "/services/mobile-app"
       }
     ]
   },
   "real-estate": {
     tagline: "Property Tech",
-    title: "Dynamic Broker & Agency Portal",
-    description: "Showcase residential property listings, track client applications, and organize virtual tours.",
+    title: "Complete Real Estate Business Platform",
+    description: "Everything Needed To Sell More Properties",
     list: [
       {
         id: "01",
-        title: "Modern Listings Directory",
-        tagline: "Upload high-definition listing photos, tag specific property features, and list structural details.",
+        title: "Real Estate CRM",
+        tagline: "Convert More Inquiries Into Sales",
         bullets: [
-          "Detailed property profile editing forms",
-          "Advanced filter query panels (Price, Beds, Type)",
-          "Bulk photo upload and compression tools",
-          "Exportable PDF property flyer templates"
+          "Lead Capture Forms & Lead Scoring",
+          "Automated Lead Assignment & Routing",
+          "Follow-Ups & Call Tracking Automation",
+          "Lead Source Tracking & Communication History"
         ],
         image: "/Img/how4.webp",
-        href: "/services/web-development"
+        href: "/services/custom-crm"
       },
       {
         id: "02",
-        title: "3D Panoramic Virtual Tours",
-        tagline: "Allow buyers to explore properties from home by embedding panoramic visual assets inside listing profiles.",
+        title: "Property & Listing Portal",
+        tagline: "Showcase Projects & Manage Inventory Professionally",
         bullets: [
-          "Universal Matterport iframe compatibility",
-          "Full-screen 360 viewer layouts",
-          "Custom interactive floor plan layouts",
-          "Mobile-optimized visual VR console views"
+          "Tower, Unit & Availability Management",
+          "Smart Filters & Property Discovery Map",
+          "360° Virtual Tours & Floor Plans",
+          "Property Gallery & Walkthrough Videos"
         ],
         image: "/Img/store2.webp",
-        href: "/services/service-photoshoot"
+        href: "/services/web-development"
       },
       {
         id: "03",
-        title: "Lead Routing & Agent CRM",
-        tagline: "Forward property lead inquiries to specific real estate brokers based on local zip codes rules.",
+        title: "Site Visit Management",
+        tagline: "Improve Sales Team Productivity",
         bullets: [
-          "Automated zip code matching rules",
-          "Lead status trackers (Contacted, Offer, Closed)",
-          "Individual broker task dashboards",
-          "Automated buyer text reminder scripts"
+          "Dynamic Visit Scheduling & Reminders",
+          "Automated Agent Assignment",
+          "Customer Feedback Collection & Reports",
+          "GPS Tracking for On-Field Sales Teams"
         ],
         image: "/Img/how1.webp",
         href: "/services/custom-crm"
       },
       {
         id: "04",
-        title: "SEO & Local Landing Pages",
-        tagline: "Rank higher on local search terms with automated neighborhood property catalogs pages.",
+        title: "Booking & Payments System",
+        tagline: "Simplify Bookings & Track Payments Easily",
         bullets: [
-          "Automated local landing pages creation",
-          "Structured schema markers for real estate listings",
-          "Dynamic neighborhood price charts widgets",
-          "Local schools data integration interfaces"
+          "Unit Reservations & Inventory Blocking",
+          "Booking Confirmations & Documents Tracking",
+          "Installments & Outstanding Dues Management",
+          "GST Invoicing & Customer Financial Ledgers"
         ],
         image: "/Img/store3.webp",
-        href: "/services/seo-optimization"
+        href: "/services/erp-system"
+      },
+      {
+        id: "05",
+        title: "Portals & Partner Networks",
+        tagline: "Deliver Better Customer & Broker Experiences",
+        bullets: [
+          "Broker Registration & Dashboard Access",
+          "Partner Commission Management & Reports",
+          "Customer Portal for Booking & Payments Status",
+          "Construction Updates & Support Requests Tracking"
+        ],
+        image: "/Img/how2.webp",
+        href: "/services/custom-crm"
+      },
+      {
+        id: "06",
+        title: "Marketing & Mobile Apps",
+        tagline: "Automate Campaigns & Manage Operations Anywhere",
+        bullets: [
+          "WhatsApp, Email, & SMS Marketing Automation",
+          "Lead Nurturing & Event Promotions",
+          "Sales Team App for Visits & Follow-Ups",
+          "Customer App for Listings & Support"
+        ],
+        image: "/Img/store4.webp",
+        href: "/services/mobile-app"
       }
     ]
   },
@@ -1323,294 +1375,460 @@ export const PRODUCTS_DETAIL_CONTENT: Record<string, DetailSectionData> = {
     ]
   },
   "learning-management": {
-    tagline: "EdTech",
-    title: "White-label Learning Platform",
-    description: "Coordinate interactive training classes, draft quizzes, and auto-award course certificates.",
+    tagline: "Complete Learning Ecosystem",
+    title: "Complete Learning Ecosystem",
+    description: "Everything Needed To Launch & Manage Online Learning",
     list: [
       {
         id: "01",
-        title: "Visual Course Builder",
-        tagline: "Create structured learning curriculum maps with custom modules, lessons, and video streams.",
+        title: "Course Creation & Management",
+        tagline: "Build Professional Online Courses",
         bullets: [
-          "Drag-and-drop course curriculum builders",
-          "Secure video streaming hosting modules",
-          "Student downloadable files upload storage",
-          "Live virtual classroom scheduler links"
+          "Video Courses & Recorded Lectures",
+          "Structured Learning Paths & Categories",
+          "Interactive Lessons & Prerequisites",
+          "PDFs, Documents & Multimedia Uploads"
         ],
         image: "/Img/store2.webp",
         href: "/services/web-development"
       },
       {
         id: "02",
-        title: "Examinations & Quizzes",
-        tagline: "Evaluate student progress with custom quizzes, timers, and automatic score cards.",
+        title: "Student & Batch Management",
+        tagline: "Manage Thousands of Learners Efficiently",
         bullets: [
-          "Multi-question types builders (Boolean, Multiple Choice)",
-          "Randomized question pooling rules configuration",
-          "Time-limited quiz verification scripts",
-          "Manual assignment grading review dashboards"
+          "Student Profiles & Batch Assignments",
+          "Real-Time Progress & Learning History tracking",
+          "Bulk Enrollment & Access Control Management",
+          "Integrated Student Notifications & Communication"
         ],
-        image: "/Img/how3.webp",
+        image: "/Img/partners_hero.webp",
         href: "/services/custom-crm"
       },
       {
         id: "03",
-        title: "Automated Certificates Engine",
-        tagline: "Issue course completion credentials containing unique verification IDs directly to student profiles.",
+        title: "Live Classes & Virtual Learning",
+        tagline: "Conduct Interactive Online Sessions",
         bullets: [
-          "Visual certificate template canvas designers",
-          "Dynamic recipient name print fields",
-          "Immutable booking serial number indicators",
-          "One-click LinkedIn credential share buttons"
+          "Live Video Classes & Webinars integration",
+          "Zoom & Google Meet API Sync",
+          "Class Scheduling & Attendance tracking",
+          "Interactive Discussions & Session Recordings"
         ],
-        image: "/Img/how4.webp",
-        href: "/services/service-branding"
+        image: "/Img/how1.webp",
+        href: "/services/web-development"
       },
       {
         id: "04",
-        title: "Marketing & Course Sales",
-        tagline: "Sell courses to global students with custom checkout pages, discount codes, and affiliates.",
+        title: "Assessments & Certificate Management",
+        tagline: "Measure Outcomes & Automate Course Certifications",
         bullets: [
-          "SEO-optimized course catalog landing pages",
-          "Direct course purchase checkout forms",
-          "Student referral and affiliate tracking tools",
-          "Corporate volume discount code managers"
+          "Online Quizzes, MCQ & Descriptive Exams",
+          "Mock Tests & Automated Evaluations",
+          "Branded PDF Completion Certificates",
+          "QR Code Verification & Validation portals"
         ],
-        image: "/Img/store1.webp",
-        href: "/services/digital-marketing"
+        image: "/Img/store4.webp",
+        href: "/services/custom-crm"
+      },
+      {
+        id: "05",
+        title: "Engagement, Gamification & Mobile Apps",
+        tagline: "Increase Course Completion & Learn Anywhere",
+        bullets: [
+          "Points, Badges & Leaderboards system",
+          "Learning Streaks & Achievement Tracking",
+          "Android & iOS Apps with Offline Learning",
+          "Mobile Assessments & Push Notifications"
+        ],
+        image: "/Img/how2.webp",
+        href: "/services/mobile-app"
+      },
+      {
+        id: "06",
+        title: "Sectors, E-Commerce & Analytics",
+        tagline: "Corporate, Coaching, Schools and Monetization",
+        bullets: [
+          "Corporate Training & Employee Onboarding modules",
+          "School/College Portals & Coaching Batch management",
+          "Course Selling Marketplace & Subscriptions/Coupons",
+          "Course Completion, Performance & Revenue Reports"
+        ],
+        image: "/Img/store3.webp",
+        href: "/services/erp-system"
       }
     ]
   },
   "bulk-whatsapp": {
-    tagline: "Communications",
-    title: "Enterprise WhatsApp Broadcast Engine",
-    description: "Launch targeted marketing campaigns and handle customer support on WhatsApp.",
+    tagline: "Complete WhatsApp Business Platform",
+    title: "Complete WhatsApp Business Platform",
+    description: "Everything Needed To Grow Through WhatsApp",
     list: [
       {
         id: "01",
-        title: "Template Broadcast Campaigns",
-        tagline: "Send personalized notifications, payment reminders, and shipping updates via official APIs.",
+        title: "Official API & Bulk Messaging",
+        tagline: "Build On The Official WhatsApp Infrastructure & Send Messages At Scale",
         bullets: [
-          "Official Meta WhatsApp API integrations",
-          "Custom text variable matching algorithms",
-          "Scheduled campaign calendar planners",
-          "Broadcast queue delivery status reports"
+          "Verified Business Messaging & Green Tick",
+          "High Message Deliverability & Broadcaster",
+          "Campaign Scheduling & Mass Broadcasts",
+          "Universal Meta Infrastructure API Integration"
         ],
         image: "/Img/partners_hero.webp",
         href: "/services/whatsapp-api"
       },
       {
         id: "02",
-        title: "Verified Business Green Tick",
-        tagline: "Coordinate profile audits and apply for verified green badge ticks from WhatsApp/Meta teams.",
+        title: "WhatsApp CRM & Sales Pipeline",
+        tagline: "Convert More Leads Into Customers & Track Interactions",
         bullets: [
-          "Meta Business verification document guide forms",
-          "Official profile API configuration setups",
-          "Brand name compliance validation checks",
-          "WhatsApp display name update workflows"
+          "Comprehensive Customer Profiles & History",
+          "Lead Tracking & Pipeline Management",
+          "Interactive Dashboard & Sales Follow-Ups",
+          "Audience Segmentation & Behavior tracking"
+        ],
+        image: "/Img/how1.webp",
+        href: "/services/custom-crm"
+      },
+      {
+        id: "03",
+        title: "Chatbots & Conversational AI",
+        tagline: "AI-Powered Customer Conversations 24/7",
+        bullets: [
+          "Lead Capture & Customer Support Bots",
+          "Appointment Booking Chatbots",
+          "Product Recommendation AI Engines",
+          "Automated FAQ & Dynamic reply workflows"
+        ],
+        image: "/Img/store1.webp",
+        href: "/services/whatsapp-api"
+      },
+      {
+        id: "04",
+        title: "Shared Team Inbox & Collaboration",
+        tagline: "Manage Customer Conversations Together on One Number",
+        bullets: [
+          "Multi-Agent Access & Team Routing rules",
+          "Internal Chat Notes & Mentions for agents",
+          "Complete Conversation History & Logs",
+          "Granular User Permissions & Activity Logs"
+        ],
+        image: "/Img/how3.webp",
+        href: "/services/custom-crm"
+      },
+      {
+        id: "05",
+        title: "Automations, Notifications & Alerts",
+        tagline: "Automate Repetitive Conversations & Deliver Real-Time Updates",
+        bullets: [
+          "Automated Greetings & Out-of-Office triggers",
+          "Order, Shipping & Delivery updates",
+          "Appointment & Payment Reminders",
+          "Dynamic Booking Confirmations & Event Alerts"
+        ],
+        image: "/Img/store3.webp",
+        href: "/services/whatsapp-api"
+      },
+      {
+        id: "06",
+        title: "E-Commerce, Web & Mobile Apps",
+        tagline: "Increase Online Sales & Manage Conversations Anywhere",
+        bullets: [
+          "E-Commerce Product Catalogs & Cart Recovery",
+          "WhatsApp Payment Links & Checkout Sync",
+          "Web Dashboard, Android, & iOS Applications",
+          "Message Delivery, Response Rate & Agent Performance reports"
+        ],
+        image: "/Img/store4.webp",
+        href: "/services/mobile-app"
+      }
+    ]
+  },
+  "email-automation": {
+    tagline: "Complete Email Automation Ecosystem",
+    title: "Complete Email Automation Ecosystem",
+    description: "Everything Needed To Grow Through Email",
+    list: [
+      {
+        id: "01",
+        title: "Email Marketing Automation",
+        tagline: "Send Smarter Campaigns That Drive Engagement",
+        bullets: [
+          "Visual Campaign Builder & Email Scheduling",
+          "Audience Segmentation & Dynamic Content",
+          "A/B Testing & Personalization tags",
+          "Pre-designed Responsive Campaign Templates"
+        ],
+        image: "/Img/store3.webp",
+        href: "/services/email-solutions"
+      },
+      {
+        id: "02",
+        title: "Lead Nurturing & Workflows",
+        tagline: "Convert More Leads Into Customers Automatically",
+        bullets: [
+          "Lead Capture Integration & Prospect Tracking",
+          "Automated Drip Campaigns & Follow-Ups",
+          "Lead Scoring & Automated Sales Alerts",
+          "Personalized Customer Journey Automation"
+        ],
+        image: "/Img/how3.webp",
+        href: "/services/custom-crm"
+      },
+      {
+        id: "03",
+        title: "Sales & Onboarding Automation",
+        tagline: "Close Deals Faster & Deliver Better First Impressions",
+        bullets: [
+          "Automated Outreach & Follow-Up Sequences",
+          "Meeting Scheduling & Pipeline Automation",
+          "New Customer Welcome Series & Education",
+          "Training Content Delivery & Milestone Tracking"
         ],
         image: "/Img/how1.webp",
         href: "/services/email-solutions"
       },
       {
-        id: "03",
-        title: "AI Automated Chatbots",
-        tagline: "Deploy customer reply scenarios to answer basic questions without agent actions.",
+        id: "04",
+        title: "E-Commerce & Retention Automation",
+        tagline: "Increase Online Store Revenue & Lifetime Value",
         bullets: [
-          "Visual chatbot path builder grids",
-          "Keyword-triggered auto-reply scripts",
-          "Direct agent handover escalation conditions",
-          "Interactive chat button selector panels"
+          "Cart Abandonment Emails & Loyalty Campaigns",
+          "Personalized Product Recommendations",
+          "Order Confirmations & Shipping Notifications",
+          "Renewal Reminders, Birthday & Anniversary Campaigns"
         ],
-        image: "/Img/how3.webp",
+        image: "/Img/store1.webp",
+        href: "/services/erp-system"
+      },
+      {
+        id: "05",
+        title: "CRM Integration & AI Engine",
+        tagline: "Connect Customer Data & Deliver Smarter Communication",
+        bullets: [
+          "CRM Customer Profiles Sync & Segmentation",
+          "Behavioral Tracking & Journey Monitoring",
+          "AI Content Suggestions & Send-Time Optimization",
+          "AI Predictive Analytics & Recommendations"
+        ],
+        image: "/Img/how2.webp",
         href: "/services/custom-crm"
       },
       {
-        id: "04",
-        title: "Shared Team Inbox",
-        tagline: "Enable multiple support agents to respond to incoming chats from a single business number.",
+        id: "06",
+        title: "Infrastructure & Deliverability",
+        tagline: "Ensure Emails Reach The Inbox Safely",
         bullets: [
-          "Multi-agent chat allocation pipelines",
-          "Agent internal thread notes pinpoints",
-          "Average message response times scoreboards",
-          "Customer chat resolution status labels"
+          "SMTP Integration & Dedicated Sending Domains",
+          "SPF, DKIM, and DMARC Security Setup",
+          "Automated Bounce & Reputation Management",
+          "Analytics: Open, Click, and Conversion tracking"
         ],
         image: "/Img/store4.webp",
-        href: "/services/digital-marketing"
-      }
-    ]
-  },
-  "email-automation": {
-    tagline: "Marketing Automation",
-    title: "Smart Campaign & Email Engine",
-    description: "Build visual automation pathways, design responsive emails, and audit delivery logs.",
-    list: [
-      {
-        id: "01",
-        title: "Drag & Drop Email Creator",
-        tagline: "Compose eye-catching HTML newsletters using predefined block layouts without coding.",
-        bullets: [
-          "Mobile-responsive newsletter design canvases",
-          "Predefined block components lists",
-          "Custom template HTML importer panels",
-          "Automatic email size and image optimization"
-        ],
-        image: "/Img/store3.webp",
-        href: "/services/web-development"
-      },
-      {
-        id: "02",
-        title: "Visual Drip Campaigns",
-        tagline: "Configure workflow maps that execute steps dynamically when users sign up.",
-        bullets: [
-          "Trigger-action email flow builders",
-          "Dynamic delay timers adjustments (Days, Hours)",
-          "Customer engagement branching branches",
-          "Automated tag assignment scripts"
-        ],
-        image: "/Img/how2.webp",
-        href: "/services/bulk-email"
-      },
-      {
-        id: "03",
-        title: "List Management & Signup Forms",
-        tagline: "Create high-converting email subscription popups and segments to keep lists organized.",
-        bullets: [
-          "Custom website signup forms widgets",
-          "Double opt-in verification scripts",
-          "Dynamic list segment filters matrices",
-          "Bulk contact CSV file import panels"
-        ],
-        image: "/Img/how4.webp",
-        href: "/services/seo-optimization"
-      },
-      {
-        id: "04",
-        title: "Analytics & Delivery Reports",
-        tagline: "Audit bounce tallies, spam complaint alerts, and click histories on unified visual charts.",
-        bullets: [
-          "Detailed inbox deliverability percentage indicators",
-          "A/B campaign subject tests comparisons",
-          "Individual recipient activity logs",
-          "Automated campaign performance emails"
-        ],
-        image: "/Img/store4.webp",
-        href: "/services/digital-marketing"
+        href: "/services/email-solutions"
       }
     ]
   },
   "helpdesk-ticketing": {
-    tagline: "Customer Service",
-    title: "SLA-Driven Support Ticketing",
-    description: "Manage incoming customer complaints, resolve tickets, and track SLA violations.",
+    tagline: "Complete Customer Support Platform",
+    title: "Everything Needed To Deliver Exceptional Support",
+    description: "Peltown Helpdesk & Ticketing System ensures every customer request is tracked, assigned, prioritized, and resolved efficiently.",
     list: [
       {
         id: "01",
-        title: "Multi-channel Ticketing Feed",
-        tagline: "Forward issues from email, social networks, and chat to a central support dashboard.",
+        title: "Smart Ticket Management",
+        tagline: "Never lose track of customer issues again.",
         bullets: [
-          "Unified ticketing feed listings",
-          "Automated email thread grouping algorithms",
-          "Universal query search tags labels",
-          "Support request urgency scoring indicators"
+          "Ticket Creation & Status Tracking",
+          "Automatic & Manual Ticket Assignment",
+          "Ticket Prioritization & Routing",
+          "Escalation Rules & Custom Workflows",
+          "Internal Notes & Collaboration Comments",
+          "Complete Ticket Interaction History",
+          "Customer Relationship History Dashboard",
+          "Customer Profiles & Communication Logs"
         ],
         image: "/Img/store4.webp",
-        href: "/services/web-development"
-      },
-      {
-        id: "02",
-        title: "Automated Agent Queues",
-        tagline: "Forward tickets to available support agents automatically based on skills rules.",
-        bullets: [
-          "Round-robin ticket assignment scripts",
-          "Agent skills classification dashboards",
-          "Out-of-office ticket reassignment rules",
-          "Incoming ticket load balancer charts"
-        ],
-        image: "/Img/how3.webp",
         href: "/services/custom-crm"
       },
       {
-        id: "03",
-        title: "SLA Deadline Monitoring",
-        tagline: "Establish reply timers for different issues and track ticket violations on charts.",
+        id: "02",
+        title: "Omnichannel Support Center",
+        tagline: "Manage all customer conversations in one place.",
         bullets: [
-          "Custom SLA target time configurations",
-          "Live ticket countdown timer badges",
-          "Auto-escalation warning alert emails",
-          "Department SLA compliance rate indicators"
+          "Centralized Multi-Channel Support Feed",
+          "Official WhatsApp Business API integration",
+          "Unified Shared Team Email Inbox",
+          "Website Forms & Contact Page Queries",
+          "Live Chat & Real-Time Website Widgets",
+          "Phone Support Logs & Contact Center Sync",
+          "Facebook & Instagram DM Integrations",
+          "Mobile App Push Notifications"
+        ],
+        image: "/Img/how1.webp",
+        href: "/services/whatsapp-api"
+      },
+      {
+        id: "03",
+        title: "SLA & Escalation Management",
+        tagline: "Meet service commitments consistently.",
+        bullets: [
+          "Customizable SLA Policies per Tier",
+          "First Response Time Target Tracking",
+          "Ticket Resolution Time Tracking",
+          "Automated Manager Escalation Rules",
+          "Breach Warnings & Status Alerts",
+          "Priority Management Indicators",
+          "Supervisor Override Controls",
+          "Department Accountability Reports"
         ],
         image: "/Img/how2.webp",
         href: "/services/erp-system"
       },
       {
         id: "04",
-        title: "Knowledge Base & FAQs",
-        tagline: "Reduce support ticket loads by publishing customer help center articles pages.",
+        title: "Customer Self-Service Portal",
+        tagline: "Reduce support workload with independent answers.",
         bullets: [
-          "Article composer with SEO markers",
-          "Hierarchical help category consoles",
-          "Customer article feedback thumbs scores",
-          "In-app ticketing widget FAQ links"
+          "Dedicated Customer Ticket Submission Portal",
+          "Real-time Ticket Status Tracking",
+          "Searchable Knowledge Base Articles",
+          "Interactive FAQ Center & Guides",
+          "Service Requests & Help Center Access",
+          "Direct Portal Customer Communication",
+          "Reduce Repetitive Support Requests",
+          "Seamless White-Labeled Domain Setup"
         ],
         image: "/Img/store1.webp",
         href: "/services/seo-optimization"
+      },
+      {
+        id: "05",
+        title: "Live Chat & AI Chatbots",
+        tagline: "Resolve issues in real time and automate queries.",
+        bullets: [
+          "Real-time Website Live Chat Widget",
+          "Seamless Live Agent Transfers & Queues",
+          "Complete Conversation Chat History",
+          "Visitor Geolocation & Analytics Tracking",
+          "AI Chatbot FAQ & Automation Flows",
+          "Automated Greeting & Routing Bot",
+          "Instant Ticket Creation Chatbots",
+          "24/7 Intelligent Customer Guidance"
+        ],
+        image: "/Img/store3.webp",
+        href: "/services/web-development"
+      },
+      {
+        id: "06",
+        title: "Team Collaboration & Support Analytics",
+        tagline: "Resolve complex issues faster and measure support performance.",
+        bullets: [
+          "Internal Agent Notes & Mentions (@name)",
+          "Shared Multi-Agent Team Collaboration",
+          "Automated Workflow Rules & Assigns",
+          "Role-Based Access Control & Logs",
+          "Support Ticket Volume Reports",
+          "Agent Performance & Response Times",
+          "SLA Compliance & Breach Reports",
+          "Customer Satisfaction (CSAT) Surveys"
+        ],
+        image: "/Img/how3.webp",
+        href: "/services/custom-crm"
       }
     ]
   },
   "appointment-booking": {
-    tagline: "Scheduling Tech",
-    title: "Unified Staff Scheduling Engine",
-    description: "Empower clients to book slot appointments and sync meeting invites across calendars.",
+    tagline: "Complete Scheduling & Booking Ecosystem",
+    title: "Everything Needed To Manage Appointments Efficiently",
+    description: "Peltown Appointment Booking Platform automates scheduling and customer communication so your team can focus on serving customers instead of managing calendars.",
     list: [
       {
         id: "01",
-        title: "Real-time Availability Calendars",
-        tagline: "Draft visual booking layouts showing open staff availability slots automatically.",
+        title: "Online Appointment Booking System",
+        tagline: "Let Customers Book Appointments 24/7",
         bullets: [
-          "Dynamic staff shift scheduling slots",
-          "Buffer time interval gap settings",
-          "Multi-timezone scheduling conversion maps",
-          "Dine-in or service select checklist panels"
+          "Online Booking Portal & Portal Rescheduling",
+          "Real-Time Slot Availability & Confirmations",
+          "Service & Staff Selection Checklists",
+          "Multi-Location Booking Capabilities",
+          "Appointment Cancellation Workflows",
+          "Convert Visitors to Confirmed Bookings"
         ],
         image: "/Img/store5.webp",
         href: "/services/web-development"
       },
       {
         id: "02",
-        title: "Calendar Sync Integrations",
-        tagline: "Sync confirm bookings to staff personal schedules automatically to prevent double-bookings.",
+        title: "Smart Calendar Management",
+        tagline: "Keep Every Schedule Organized",
         bullets: [
-          "Bi-directional Google Calendar API sync",
-          "Direct Microsoft Outlook calendar connectors",
-          "Exportable universal iCal invite attachments",
-          "Real-time schedule conflict validation scripts"
+          "Centralized Booking Calendar Dashboard",
+          "Daily, Weekly, and Monthly Views",
+          "Drag & Drop Scheduling Actions",
+          "Availability & Shift Management",
+          "Resource & Equipment Allocation",
+          "Bi-Directional Calendar Synchronization"
         ],
         image: "/Img/how4.webp",
         href: "/services/erp-system"
       },
       {
         id: "03",
-        title: "Automated Booking Notifications",
-        tagline: "Forward booking confirmation files and SMS/Email reminders to clients before meeting times.",
+        title: "Staff & Resource Management",
+        tagline: "Optimize Team Productivity",
         bullets: [
-          "Personalized SMS text dispatch workflows",
-          "Dynamic email booking confirmation sheets",
-          "Customer booking reschedule request consoles",
-          "Automated follow-up survey email scripts"
+          "Employee Availability & Calendars",
+          "Shift Scheduling & Hours Tracking",
+          "Resource & Facility Allocations",
+          "Leave Management & Out-Of-Office",
+          "Service Assignments by Skills",
+          "Capacity Planning & Load Balancing"
+        ],
+        image: "/Img/how3.webp",
+        href: "/services/erp-system"
+      },
+      {
+        id: "04",
+        title: "Automated Reminders & Notifications",
+        tagline: "Reduce No-Shows Automatically",
+        bullets: [
+          "Automated Email Booking Reminders",
+          "WhatsApp Business API Notifications",
+          "SMS Appointment Alerts",
+          "Booking Confirmation Dispatches",
+          "Reschedule & Cancel Alerts",
+          "Follow-Up & Feedback Messages"
         ],
         image: "/Img/how2.webp",
         href: "/services/whatsapp-api"
       },
       {
-        id: "04",
-        title: "Upfront Checkout Payments",
-        tagline: "Process security deposits or full booking payments during appointment bookings slots.",
+        id: "05",
+        title: "Customer Portal & Relationship Management",
+        tagline: "Build Long-Term Customer Relationships",
         bullets: [
-          "Integrated Stripe / PayPal card widgets",
-          "Refund and cancellation transaction policies",
-          "Tax invoice prints receipt creators",
-          "Sales audit balance reconciliation sheets"
+          "Detailed Customer Profiles & History",
+          "Appointment & Service Record Ledgers",
+          "Client Preferences & Interaction Notes",
+          "Independent Customer Self-Service Portal",
+          "Portal Booking, Rescheduling & Cancelling",
+          "Mobile Booking Apps (Customer & Staff)"
+        ],
+        image: "/Img/store1.webp",
+        href: "/services/custom-crm"
+      },
+      {
+        id: "06",
+        title: "Online Payments & Performance Analytics",
+        tagline: "Get Paid Faster & Make Better Decisions",
+        bullets: [
+          "Accept Online Payments & Deposits",
+          "Partial Payments & Booking Reservations",
+          "Automated GST Invoices & Receipts",
+          "Multi-Location Branch Billing Dashboard",
+          "Appointment & Revenue Reports",
+          "Cancellation & No-Show Trend Analysis"
         ],
         image: "/Img/store3.webp",
         href: "/services/digital-marketing"
@@ -1731,29 +1949,29 @@ export const PRODUCTS_WHY_CHOOSE_US_CONTENT: Record<string, {
     ]
   },
   "travel-agency": {
-    title: "Why Choose Peltown Travel Platform?",
-    subtitle: "Why Travel?",
-    desc: "A booking operator engine with itinerary composition and global integrations.",
+    title: "Why Choose Peltown Travel Agency Suite?",
+    subtitle: "Designed Specifically For Travel Businesses",
+    desc: "Unlike generic CRM or ERP systems, this platform is built around travel industry workflows.",
     items: [
-      { icon: Route, title: "Itinerary Composer", desc: "Drag and drop hotels, flights, and sightseeing details into downloadable itineraries." },
-      { icon: Plane, title: "GDS Flights & Hotel Sync", desc: "Find live ticket availability and confirm bookings via API links with travel consolidators." },
-      { icon: Receipt, title: "Split Invoices Builder", desc: "Configure agent commissions, custom markups, and split invoice billings for corporate groups." },
-      { icon: UserCheck, title: "Traveler Profiles CRM", desc: "Store passport details, travel preferences, and visa status information for repeat clients." },
-      { icon: Users, title: "Group Booking Boards", desc: "Manage bulk room allotments, bus charters, and group tours from a visual calendar dashboard." },
-      { icon: FileText, title: "Auto Travel Vouchers", desc: "Generate PDF flight vouchers, hotel confirmation receipts, and visa itineraries automatically." }
+      { icon: Route, title: "Travel Workflows", desc: "Built specifically around travel agency CRM, booking, and itinerary management workflows." },
+      { icon: CheckCircle2, title: "Complete Automation", desc: "From inquiry generation to completed trip, manage every customer journey in one place." },
+      { icon: Globe, title: "Cloud-Based Access", desc: "Manage your travel business from anywhere, on any device, with cloud-based platform access." },
+      { icon: Layers, title: "Multi-Branch Support", desc: "Scale your travel operations seamlessly with full support for growing travel networks." },
+      { icon: Settings, title: "Fully Customizable", desc: "We customize booking workflows, package management, supplier processes, and pricing models." },
+      { icon: Key, title: "Integration Ready", desc: "Connect with WhatsApp API, Payment Gateways, ERP/CRM systems, and Hotel/Flight APIs." }
     ]
   },
   "real-estate": {
-    title: "Why Choose Peltown Real Estate Portal?",
-    subtitle: "Why Real Estate?",
-    desc: "A listing search platform with map polygon triggers and agent routing.",
+    title: "Why Choose Peltown Real Estate Suite?",
+    subtitle: "Designed For Indian Real Estate Businesses",
+    desc: "Supports local sales processes, payment structures, and project workflows.",
     items: [
-      { icon: Map, title: "Polygon Map Searches", desc: "Empower buyers to draw shape boundaries on a digital map to find nearby property matches." },
-      { icon: Eye, title: "3D Virtual Tours Viewer", desc: "Embed interactive panoramic tours directly inside property listings to build client trust." },
-      { icon: Bell, title: "Agent Lead Alerts Routing", desc: "Ping local property agents instantly when buyers submit contact requests on listings." },
-      { icon: Search, title: "Advanced Catalog Filters", desc: "Sort real estate catalog by property type, square footage, amenities, and pricing brackets." },
-      { icon: Database, title: "Property Inventory Registry", desc: "Central database for brokers to manage residential, commercial, and land plot availability." },
-      { icon: MessageCircle, title: "Broker-Buyer Chats", desc: "Direct instant messaging interface between home searchers and listing agents." }
+      { icon: IndianRupee, title: "Indian Real Estate Focused", desc: "Supports local sales processes, payment structures, and Indian project workflows." },
+      { icon: Eye, title: "Complete Business Visibility", desc: "Track leads, inventory, bookings, and revenue from a single unified dashboard." },
+      { icon: Cloud, title: "Cloud-Based Platform", desc: "Access property data, payment collections, and lead statuses securely from anywhere." },
+      { icon: Layers, title: "Multi-Project Support", desc: "Manage multiple residential and commercial projects simultaneously without conflicts." },
+      { icon: Settings, title: "Highly Customizable", desc: "Customize property booking workflows, site visit processes, and sales pipelines." },
+      { icon: Key, title: "Integration Ready", desc: "Seamlessly connect with WhatsApp API, payment gateways, ERPs, accounting software, and SMS gateways." }
     ]
   },
   "restaurant-management": {
@@ -1771,67 +1989,67 @@ export const PRODUCTS_WHY_CHOOSE_US_CONTENT: Record<string, {
   },
   "learning-management": {
     title: "Why Choose Peltown LMS?",
-    subtitle: "Why LMS?",
-    desc: "E-learning academy engine with chapter plans, testing, and certificates.",
+    subtitle: "Built For Modern Education & Training",
+    desc: "Supports schools, universities, coaching institutes, corporate training, and EdTech startups.",
     items: [
-      { icon: PlayCircle, title: "Chapters Course Builder", desc: "Compose training chapters with video lessons, pdf attachments, and rich text notes." },
-      { icon: Award, title: "Certificates Generator", desc: "Design custom course completion certificates and automatically email them to students." },
-      { icon: Shield, title: "Secure Online Testing", desc: "Establish timed exams, randomize question pools, and auto-evaluate student results." },
-      { icon: Activity, title: "Live Progress Tracking", desc: "Monitor student dashboard activity, lesson completion rates, and average quiz scores." },
-      { icon: MessageCircle, title: "Student Forums Console", desc: "Facilitate direct discussion channels between students and course instructors." },
-      { icon: DollarSign, title: "Subscriptions & Sales", desc: "Charge client enrollments via one-time payments or monthly membership checkouts." }
+      { icon: Award, title: "Modern Education Built", desc: "Supports schools, universities, coaching institutes, corporate training, and EdTech startups." },
+      { icon: Cloud, title: "Cloud-Based Platform", desc: "Access learning content, live virtual classes, and student profiles securely from anywhere." },
+      { icon: Shield, title: "White Label Solution", desc: "Launch your own branded learning platform with a custom domain, branding, and mobile apps." },
+      { icon: TrendingUp, title: "Scalable Infrastructure", desc: "Built on a robust cloud network to support hundreds or millions of learners without latency." },
+      { icon: Settings, title: "Fully Customizable", desc: "Customize learning journeys, assessments, certificates, user roles, and monetization models." },
+      { icon: Key, title: "Integration Ready", desc: "Connect with Zoom, Google Meet, WhatsApp API, payment gateways, and CRM/ERP systems." }
     ]
   },
   "bulk-whatsapp": {
-    title: "Why Choose Peltown WhatsApp API?",
-    subtitle: "Why WhatsApp?",
-    desc: "Connect official bulk campaigns and AI chatbot replies at scale.",
+    title: "Why Choose Peltown WhatsApp Business Platform?",
+    subtitle: "Built For Growth-Focused Businesses",
+    desc: "Work with scalable, official Meta WhatsApp API infrastructure for maximum reliability.",
     items: [
-      { icon: CheckCircle2, title: "Official Green Tick API", desc: "Verify your business profile with Meta to raise customer trust and brand credibility." },
-      { icon: Send, title: "Mass Campaign Broadcasts", desc: "Dispatch template-based promotional bulk alerts to target customer segments simultaneously." },
-      { icon: Bot, title: "AI Chatbot Auto-Replies", desc: "Incorporate conversational reply templates to answer FAQ details without developer efforts." },
-      { icon: Users, title: "Shared Multi-Agent Inbox", desc: "Enable multiple customer support representatives to chat from a single business phone number." },
-      { icon: Bell, title: "Automated Triggers", desc: "Configure order updates, appointment reminders, and OTP checks to send automatically." },
-      { icon: BarChart3, title: "Broadcast Delivery Reports", desc: "Detailed stats tracking message delivery rates, read marks, and link clicks." }
+      { icon: CheckCircle2, title: "Built for Business Growth", desc: "Designed to support lead generation, support, marketing, sales automation, and customer retention." },
+      { icon: Bot, title: "Official API Integration", desc: "Build directly on Meta's official WhatsApp Business API infrastructure for maximum reliability." },
+      { icon: Cloud, title: "Cloud-Based Platform", desc: "Access your campaign dashboards, shared inboxes, and chatbot stats securely from anywhere." },
+      { icon: Settings, title: "Highly Customizable", desc: "Tailor chatbot logic, message templates, auto-replies, and assignment rules to your workflows." },
+      { icon: Shield, title: "Enterprise-Ready Security", desc: "Ensure complete protection of customer communication histories and sensitive personal data." },
+      { icon: Key, title: "Integration Ready", desc: "Connect with CRM, ERP, e-commerce storefronts, billing software, and custom payment gateways." }
     ]
   },
   "email-automation": {
-    title: "Why Choose Peltown Email Suite?",
-    subtitle: "Why Email?",
-    desc: "Reach inboxes directly with automated drips and responsive layouts.",
+    title: "Why Choose Peltown Email Automation Platform?",
+    subtitle: "Built For Growth-Focused Businesses",
+    desc: "Create automated customer journeys that generate leads, increase conversions, and improve customer retention.",
     items: [
-      { icon: Brush, title: "Newsletter Layout Editor", desc: "Draft marketing layouts using responsive block layout editing grids." },
-      { icon: GitFork, title: "Email Drip Automation Maps", desc: "Create visual email automation maps triggered when clients perform signup actions." },
-      { icon: Activity, title: "SMTP Deliverability Optimizer", desc: "Configure DKIM, SPF, and DMARC settings to improve primary folder placement." },
-      { icon: ShieldAlert, title: "Spam & Bounce Monitors", desc: "Automatically scrub inactive contacts and failed email addresses to protect domain scores." },
-      { icon: BarChart3, title: "Campaign Click Reports", desc: "Observe tracking metrics including opens, links clicked, bounce lists, and spam reports." },
-      { icon: Users, title: "Segmented Contact Lists", desc: "Filter subscriber database records by tags, purchase behaviors, and geographic locations." }
+      { icon: Award, title: "Built for Business Growth", desc: "Designed to support lead generation, sales, customer retention, and business scalability." },
+      { icon: Cloud, title: "Cloud-Based Platform", desc: "Access and manage your email marketing automation workflows securely from anywhere." },
+      { icon: Shield, title: "Enterprise-Grade Security", desc: "Ensure complete protection for your customer list databases, email contents, and communications." },
+      { icon: Settings, title: "Fully Customizable", desc: "Customize customer journeys, sales processes, marketing funnels, and automation rules." },
+      { icon: Key, title: "Integration Ready", desc: "Connect with CRM, ERP, e-commerce storefronts, payment gateways, and WhatsApp/SMS APIs." },
+      { icon: TrendingUp, title: "Timely Lead Touchpoints", desc: "Engage every prospect automatically with multiple touchpoints to prevent leads from going cold." }
     ]
   },
   "helpdesk-ticketing": {
-    title: "Why Choose Peltown Helpdesk?",
-    subtitle: "Why Helpdesk?",
-    desc: "Resolve customer issues faster with ticket dispatch rules and SLAs.",
+    title: "Why Choose Peltown Helpdesk & Ticketing System?",
+    subtitle: "Built For Modern Customer Support Teams",
+    desc: "Designed for businesses that prioritize customer experience.",
     items: [
-      { icon: Inbox, title: "Auto Ticket Dispatching", desc: "Forward customer support emails to the right department queue based on text keywords." },
-      { icon: AlertCircle, title: "SLA Warning Timers", desc: "Escalate delayed customer response tickets to senior supervisors before deadlines expire." },
-      { icon: StickyNote, title: "Internal Team Comments", desc: "Collaborate on customer requests by pinning internal comments visible only to support staff." },
-      { icon: Star, title: "CSAT Feedback Scorecard", desc: "Email customers automated feedback links to grade agent helpfulness upon ticket resolutions." },
-      { icon: Layers, title: "Multi-Channel Integration", desc: "Unify support tickets from email, chat widgets, WhatsApp, and social media in one log." },
-      { icon: Activity, title: "SLA Compliance Dashboard", desc: "Audit logs tracking average ticket response timelines and agent resolution scores." }
+      { icon: MessageCircle, title: "Omnichannel Communication", desc: "Handle every support channel from one platform including email, WhatsApp, live chat, and social media." },
+      { icon: Cloud, title: "Cloud-Based Infrastructure", desc: "Access support operations and manage customer queries securely from anywhere, on any device." },
+      { icon: Shield, title: "Enterprise-Grade Security", desc: "Protect sensitive customer information, profiles, and historical communication log databases." },
+      { icon: Settings, title: "Fully Customizable", desc: "Customize ticket workflows, SLA policies, support processes, agent permissions, and customer portals." },
+      { icon: Key, title: "Integration Ready", desc: "Connect seamlessly with CRM systems, ERP software, WhatsApp API, email platforms, and HRMS." },
+      { icon: CheckCircle2, title: "Customer Experience Focused", desc: "Unify tracking, assignment, and prioritization to resolve issues faster and boost CSAT scores." }
     ]
   },
   "appointment-booking": {
-    title: "Why Choose Peltown Booking Engine?",
-    subtitle: "Why Booking?",
-    desc: "Self-scheduling calendars with calendar sync and payment gateways.",
+    title: "Why Choose Peltown Appointment Booking Platform?",
+    subtitle: "Designed For Service-Based Businesses",
+    desc: "Supports Healthcare, Beauty & Wellness, Education, Professional Services, Home Services, and Fitness Businesses.",
     items: [
-      { icon: Calendar, title: "Calendar Sync Integration", desc: "Sync client meeting bookings to Google Calendar, Outlook, and Apple iCal dynamically." },
-      { icon: BellRing, title: "SMS & WhatsApp Reminders", desc: "Reduce client booking no-shows by configuring automated alerts before meeting times." },
-      { icon: DollarSign, title: "Booking Deposits Checkouts", desc: "Charge security deposits or full session payments upfront during scheduling flows." },
-      { icon: Clock, title: "Staff Shift Schedulers", desc: "Present clients with correct open meeting slots calculated from staff work calendar states." },
-      { icon: FileText, title: "Intake Form Fields", desc: "Collect crucial client details and documents during the appointment booking process." },
-      { icon: Globe, title: "Auto Timezone Conversion", desc: "Convert scheduling slots automatically to match customer and staff local times." }
+      { icon: Cloud, title: "Cloud-Based Platform", desc: "Access schedules, calendars, and customer data securely from anywhere, on any device." },
+      { icon: Settings, title: "Fully Customizable", desc: "Customize booking workflows, approval processes, notifications, customer journeys, and payment models." },
+      { icon: Shield, title: "Enterprise-Ready Security", desc: "Ensure complete protection of customer information and business data." },
+      { icon: TrendingUp, title: "Scalable Infrastructure", desc: "Built on a high-availability cloud network suitable for startups, growing brands, and enterprise organizations." },
+      { icon: Key, title: "Integration Ready", desc: "Connect seamlessly with Google Calendar, Outlook Calendar, WhatsApp API, payment gateways, CRM, ERP, and HRMS." },
+      { icon: CheckCircle2, title: "Built for Service Success", desc: "Reduce no-shows, increase confirmed bookings, automate communication, and collect payments faster." }
     ]
   }
 };
@@ -1965,33 +2183,33 @@ export const PRODUCTS_INDUSTRIES_SERVE_CONTENT: Record<string, {
     ]
   },
   "travel-agency": {
-    title: "Travel Sectors We Modernize",
-    subtitle: "Travel Tech",
-    desc: "Itinerary composition templates and flight GDS booking portals.",
+    title: "Industries We Serve",
+    subtitle: "Travel Sectors",
+    desc: "We deliver tailored software solutions across diverse sectors of the travel and tourism industry.",
     items: [
-      { name: "Holiday Tour Guides", color: "from-sky-500/20 to-indigo-500/20" },
-      { name: "Corporate Booking Desks", color: "from-zinc-500/20 to-neutral-500/20" },
-      { name: "Flight Ticket Brokers", color: "from-blue-500/20 to-indigo-500/20" },
-      { name: "Hotel Aggregators", color: "from-amber-500/20 to-orange-500/20" },
-      { name: "Adventure Outings", color: "from-green-500/20 to-emerald-500/20" },
-      { name: "Rent-a-Car Operators", color: "from-yellow-500/20 to-amber-500/20" },
-      { name: "Visa Consultancies", color: "from-purple-500/20 to-violet-500/20" },
-      { name: "Cruise Line Operators", color: "from-teal-500/20 to-cyan-500/20" }
+      { name: "Travel Agencies", color: "from-sky-500/20 to-indigo-500/20" },
+      { name: "Tour Operators", color: "from-blue-500/20 to-indigo-500/20" },
+      { name: "Destination Management Companies (DMC)", color: "from-teal-500/20 to-cyan-500/20" },
+      { name: "Visa Consultants", color: "from-purple-500/20 to-violet-500/20" },
+      { name: "Hotel Booking Platforms", color: "from-amber-500/20 to-orange-500/20" },
+      { name: "Corporate Travel Companies", color: "from-zinc-500/20 to-neutral-500/20" },
+      { name: "Religious Tourism Operators", color: "from-yellow-500/20 to-amber-500/20" },
+      { name: "Adventure Tour Companies", color: "from-green-500/20 to-emerald-500/20" }
     ]
   },
   "real-estate": {
-    title: "Real Estate Portals We Build",
-    subtitle: "PropTech Hubs",
-    desc: "Empowering brokers with dynamic boundary filters map listing catalogs.",
+    title: "Industries We Serve",
+    subtitle: "Real Estate Sectors",
+    desc: "We deliver tailored software solutions across residential, commercial, and agency segments.",
     items: [
-      { name: "Listing Brokerages", color: "from-amber-500/20 to-orange-500/20" },
-      { name: "Builders & Developers", color: "from-zinc-500/20 to-neutral-500/20" },
-      { name: "Vacation Homestays", color: "from-sky-500/20 to-blue-500/20" },
-      { name: "Commercial Leasing", color: "from-purple-500/20 to-violet-500/20" },
-      { name: "Co-working Sites", color: "from-pink-500/20 to-rose-500/20" },
-      { name: "Agriculture Land Deals", color: "from-green-500/20 to-emerald-500/20" },
-      { name: "Student Accommodations", color: "from-teal-500/20 to-cyan-500/20" },
-      { name: "Property Managers", color: "from-blue-500/20 to-indigo-500/20" }
+      { name: "Real Estate Developers", color: "from-sky-500/20 to-indigo-500/20" },
+      { name: "Builders", color: "from-zinc-500/20 to-neutral-500/20" },
+      { name: "Property Brokers", color: "from-blue-500/20 to-indigo-500/20" },
+      { name: "Commercial Real Estate Companies", color: "from-purple-500/20 to-violet-500/20" },
+      { name: "Channel Partner Networks", color: "from-pink-500/20 to-rose-500/20" },
+      { name: "Property Consultants", color: "from-green-500/20 to-emerald-500/20" },
+      { name: "Co-Living & Rental Businesses", color: "from-teal-500/20 to-cyan-500/20" },
+      { name: "Property Marketplaces", color: "from-amber-500/20 to-orange-500/20" }
     ]
   },
   "restaurant-management": {
@@ -2010,78 +2228,78 @@ export const PRODUCTS_INDUSTRIES_SERVE_CONTENT: Record<string, {
     ]
   },
   "learning-management": {
-    title: "LMS Academies We Deploy",
-    subtitle: "EdTech Portals",
-    desc: "Providing class chapters builders and certificates auto generation pipelines.",
+    title: "Industries We Serve",
+    subtitle: "LMS Sectors",
+    desc: "We deploy tailored software solutions across diverse sectors of the education and training industry.",
     items: [
-      { name: "Corporate Staff Training", color: "from-zinc-500/20 to-neutral-500/20" },
-      { name: "EdTech Video Portals", color: "from-blue-500/20 to-indigo-500/20" },
-      { name: "Test Prep Academies", color: "from-purple-500/20 to-violet-500/20" },
-      { name: "Foreign Languages Hubs", color: "from-sky-500/20 to-indigo-500/20" },
-      { name: "Fitness Instructors", color: "from-pink-500/20 to-rose-500/20" },
-      { name: "Art Skill Workshops", color: "from-green-500/20 to-emerald-500/20" },
-      { name: "Schools & Colleges", color: "from-teal-500/20 to-cyan-500/20" },
-      { name: "Premium Course Sellers", color: "from-amber-500/20 to-orange-500/20" }
+      { name: "Schools & Colleges", color: "from-sky-500/20 to-indigo-500/20" },
+      { name: "Universities", color: "from-blue-500/20 to-indigo-500/20" },
+      { name: "Coaching Institutes", color: "from-teal-500/20 to-cyan-500/20" },
+      { name: "Corporate Training Companies", color: "from-purple-500/20 to-violet-500/20" },
+      { name: "EdTech Startups", color: "from-pink-500/20 to-rose-500/20" },
+      { name: "Certification Providers", color: "from-green-500/20 to-emerald-500/20" },
+      { name: "Professional Training Centers", color: "from-teal-500/20 to-cyan-500/20" },
+      { name: "Government Training Organizations", color: "from-amber-500/20 to-orange-500/20" }
     ]
   },
   "bulk-whatsapp": {
-    title: "WhatsApp API Channels We Connect",
-    subtitle: "WhatsApp Hubs",
-    desc: "Automating mass campaign alerts with official green tick accounts validations.",
+    title: "Industries We Serve",
+    subtitle: "Industry Solutions",
+    desc: "We deliver tailored WhatsApp automation systems across diverse industry segments.",
     items: [
-      { name: "E-commerce Retailers", color: "from-pink-500/20 to-rose-500/20" },
-      { name: "Large Retail Store Chains", color: "from-amber-500/20 to-orange-500/20" },
-      { name: "Courier Logistics Groups", color: "from-blue-500/20 to-indigo-500/20" },
-      { name: "Coaching Classes", color: "from-sky-500/20 to-indigo-500/20" },
-      { name: "Holiday Organizers", color: "from-teal-500/20 to-cyan-500/20" },
-      { name: "Finance Advisory Firms", color: "from-green-500/20 to-emerald-500/20" },
-      { name: "Healthcare Centers", color: "from-purple-500/20 to-violet-500/20" },
-      { name: "SaaS Platforms", color: "from-zinc-500/20 to-neutral-500/20" }
+      { name: "E-Commerce", color: "from-sky-500/20 to-indigo-500/20" },
+      { name: "Real Estate", color: "from-blue-500/20 to-indigo-500/20" },
+      { name: "Travel Agencies", color: "from-teal-500/20 to-cyan-500/20" },
+      { name: "Educational Institutions", color: "from-purple-500/20 to-violet-500/20" },
+      { name: "Healthcare Providers", color: "from-pink-500/20 to-rose-500/20" },
+      { name: "Financial Services", color: "from-green-500/20 to-emerald-500/20" },
+      { name: "Restaurants & QSR", color: "from-teal-500/20 to-cyan-500/20" },
+      { name: "Service Businesses", color: "from-amber-500/20 to-orange-500/20" }
     ]
   },
   "email-automation": {
-    title: "Email Marketing Layouts We Host",
-    subtitle: "Email Reach",
-    desc: "SMTP deliverability optimizations to keep customer retention high.",
+    title: "Industries We Serve",
+    subtitle: "Email Solutions",
+    desc: "We deploy high-deliverability email marketing and automation workflows across diverse business sectors.",
     items: [
-      { name: "Tech SaaS Startups", color: "from-blue-500/20 to-indigo-500/20" },
-      { name: "E-commerce Shops", color: "from-pink-500/20 to-rose-500/20" },
-      { name: "Daily Newsletters", color: "from-purple-500/20 to-fuchsia-500/20" },
-      { name: "Marketing Operators", color: "from-amber-500/20 to-orange-500/20" },
-      { name: "B2B Lead Brokers", color: "from-zinc-500/20 to-neutral-500/20" },
-      { name: "Real Estate Portals", color: "from-green-500/20 to-emerald-500/20" },
-      { name: "Online Instructors", color: "from-sky-500/20 to-indigo-500/20" },
-      { name: "Travel Promoters", color: "from-teal-500/20 to-cyan-500/20" }
+      { name: "SaaS Companies", color: "from-sky-500/20 to-indigo-500/20" },
+      { name: "E-Commerce Brands", color: "from-blue-500/20 to-indigo-500/20" },
+      { name: "Real Estate Companies", color: "from-teal-500/20 to-cyan-500/20" },
+      { name: "Educational Institutions", color: "from-purple-500/20 to-violet-500/20" },
+      { name: "Healthcare Providers", color: "from-pink-500/20 to-rose-500/20" },
+      { name: "Financial Services", color: "from-green-500/20 to-emerald-500/20" },
+      { name: "Travel Companies", color: "from-teal-500/20 to-cyan-500/20" },
+      { name: "Service Businesses", color: "from-amber-500/20 to-orange-500/20" }
     ]
   },
   "helpdesk-ticketing": {
-    title: "Helpdesk Environments We Configure",
-    subtitle: "Customer Desk",
-    desc: "Unifying email-to-ticket triggers with strict SLA escalation warnings.",
+    title: "Industry Solutions",
+    subtitle: "Industry Solutions",
+    desc: "We configure tailored helpdesk workflows and ticket assignment systems across various industry segments.",
     items: [
-      { name: "SaaS Product Desks", color: "from-blue-500/20 to-indigo-500/20" },
-      { name: "E-commerce Stores Support", color: "from-pink-500/20 to-rose-500/20" },
-      { name: "Logistics Tracking Desks", color: "from-teal-500/20 to-cyan-500/20" },
-      { name: "Broadband Service ISPs", color: "from-sky-500/20 to-blue-500/20" },
-      { name: "Medical Consultations", color: "from-purple-500/20 to-violet-500/20" },
-      { name: "Banking & Loan Queries", color: "from-green-500/20 to-emerald-500/20" },
-      { name: "Device Repairs Centres", color: "from-zinc-500/20 to-neutral-500/20" },
-      { name: "LMS Portal Academies", color: "from-amber-500/20 to-orange-500/20" }
+      { name: "SaaS & Software Companies", color: "from-sky-500/20 to-indigo-500/20" },
+      { name: "E-Commerce Businesses", color: "from-blue-500/20 to-indigo-500/20" },
+      { name: "Healthcare Providers", color: "from-pink-500/20 to-rose-500/20" },
+      { name: "Educational Institutions", color: "from-purple-500/20 to-violet-500/20" },
+      { name: "Financial Services", color: "from-green-500/20 to-emerald-500/20" },
+      { name: "IT Service Companies", color: "from-teal-500/20 to-cyan-500/20" },
+      { name: "Real Estate Companies", color: "from-teal-500/20 to-cyan-500/20" },
+      { name: "Manufacturing Businesses", color: "from-amber-500/20 to-orange-500/20" }
     ]
   },
   "appointment-booking": {
-    title: "Scheduling Portals We Setup",
-    subtitle: "Calendar Booking",
-    desc: "SMS alerts scheduling systems and calendars API integration channels.",
+    title: "Industry Solutions",
+    subtitle: "Industry Solutions",
+    desc: "Our appointment booking platform is tailored to the specific scheduling and operational workflows of various service businesses.",
     items: [
-      { name: "Doctor & Clinic Visits", color: "from-teal-500/20 to-cyan-500/20" },
-      { name: "Legal Consulting Desks", color: "from-zinc-500/20 to-neutral-500/20" },
-      { name: "Beauty Salons & Spas", color: "from-pink-500/20 to-rose-500/20" },
-      { name: "Academic Mentors", color: "from-sky-500/20 to-indigo-500/20" },
-      { name: "Gym & Fitness Personal", color: "from-purple-500/20 to-violet-500/20" },
-      { name: "Car Maintenance Garages", color: "from-red-500/20 to-orange-500/20" },
-      { name: "Local Handyman Repair", color: "from-amber-500/20 to-orange-500/20" },
-      { name: "HR Interview Hiring", color: "from-blue-500/20 to-indigo-500/20" }
+      { name: "Healthcare Clinics", color: "from-teal-500/20 to-cyan-500/20" },
+      { name: "Hospitals", color: "from-blue-500/20 to-indigo-500/20" },
+      { name: "Salons & Spas", color: "from-pink-500/20 to-rose-500/20" },
+      { name: "Fitness Centers & Gyms", color: "from-purple-500/20 to-violet-500/20" },
+      { name: "Coaching Institutes", color: "from-sky-500/20 to-indigo-500/20" },
+      { name: "Legal Consultants", color: "from-zinc-500/20 to-neutral-500/20" },
+      { name: "Financial Advisors", color: "from-green-500/20 to-emerald-500/20" },
+      { name: "Repair & Service Businesses", color: "from-amber-500/20 to-orange-500/20" }
     ]
   }
 };
@@ -2397,66 +2615,117 @@ export const PRODUCTS_PRICING_CONTENT: Record<string, {
     ]
   },
   "travel-agency": {
-    title: "Travel Pricing Tiers",
-    subtitle: "Travel Cost",
-    desc: "Build travel operator platforms with itinerary builders.",
+    title: "Pricing",
+    subtitle: "Choose Your Plan",
+    desc: "Scale your travel business with plans built for operations of all sizes.",
     plans: [
       {
-        title: "Agency Storefront",
-        price: "₹60,000 – ₹1,20,000",
-        desc: "Online booking storefront showing holiday package options.",
-        features: ["Holiday Packages list catalog", "Itinerary PDF auto compiler", "Admin booking leads console", "Basic SEO Pages structures", "Email Helpdesk support"]
+        title: "Startup Travel Software",
+        price: "₹2,50,000 – ₹5,00,000",
+        desc: "Ideal for new travel agencies.",
+        features: [
+          "Website",
+          "Lead Management",
+          "Package Management",
+          "Booking System",
+          "Basic CRM"
+        ]
       },
       {
-        title: "Travel Operator Engine",
-        price: "₹1,80,000 – ₹3,50,000",
-        desc: "GDS integration connectors to find live flight ticket status.",
-        features: ["Flight & Hotel GDS API link", "Split Invoices builder ledger", "Traveler passport metadata CRM", "WhatsApp booking voucher templates", "Credit lines for agent networks"],
+        title: "Growth Travel Platform",
+        price: "₹5,00,000 – ₹12,00,000",
+        desc: "Ideal for established travel businesses.",
+        features: [
+          "CRM & Lead Capture",
+          "Dynamic Itinerary Builder",
+          "Supplier Management",
+          "Payment Tracking",
+          "Customer Portal"
+        ],
         popular: true
       },
       {
-        title: "Enterprise Travel Portal",
-        price: "₹5,00,000 – ₹15,00,000+",
-        desc: "Multi-branch travel networks running localized billing routes.",
-        features: ["Multi-Agency branch logins", "Custom tour modules creation", "AWS isolated server hosting", "SSO Login configurations", "24/7 Dedicated Account Manager"]
+        title: "Enterprise Travel Suite",
+        price: "₹12,00,000 – ₹50,00,000+",
+        desc: "Ideal for large travel companies and DMCs.",
+        features: [
+          "B2B Portal & Agent Networks",
+          "Multi-Branch Operations",
+          "API Integrations (Hotel/Flight)",
+          "Mobile Apps (Admin/Customer)",
+          "Advanced Analytics",
+          "Workflow Automation"
+        ]
       },
       {
-        title: "Travel SaaS Engine",
+        title: "Travel SaaS Platform",
         price: "Custom Quote",
-        desc: "White-label reservation software reseller for agency networks.",
-        features: ["White-Label Portal creator", "Reseller agent billing lines", "Custom payment split gateway", "Global GDS connection tokens"]
+        desc: "Perfect for Travel Tech Startups, OTA Platforms, and Networks.",
+        features: [
+          "Travel Tech Startups",
+          "OTA Platforms",
+          "Travel Marketplaces",
+          "White Label Travel Software",
+          "B2B Travel Networks"
+        ]
       }
     ]
   },
   "real-estate": {
-    title: "Real Estate Pricing",
-    subtitle: "Portal Cost",
-    desc: "Property listing catalog sites with map boundary search engines.",
+    title: "Pricing",
+    subtitle: "Choose Your Plan",
+    desc: "Scale your real estate operations with plans designed for builders, brokers, and enterprise developers.",
     plans: [
       {
-        title: "Listing Portal",
-        price: "₹50,000 – ₹1,20,000",
-        desc: "Search listing database with agent contact cards fields.",
-        features: ["Dynamic Property listings catalog", "Location search bar filters", "Agent contact lead forms", "SEO-Friendly listing schema", "Email Helpdesk support"]
+        title: "Starter Real Estate CRM",
+        price: "₹2,50,000 – ₹5,00,000",
+        desc: "Ideal for brokers and small agencies.",
+        features: [
+          "Property Website",
+          "Lead Management",
+          "CRM Dashboard",
+          "Property Listings",
+          "Basic Reports"
+        ]
       },
       {
-        title: "Advanced Agency CRM",
-        price: "₹1,50,000 – ₹3,50,000",
-        desc: "Embed virtual tours and polygon maps on home listing grids.",
-        features: ["Map Polygon boundary search", "3D Virtual Tour player link", "Agent matching assignment rules", "Automated WhatsApp lead alerts", "Broker logins accounts manager"],
+        title: "Growth Real Estate Platform",
+        price: "₹5,00,000 – ₹15,00,000",
+        desc: "Ideal for developers and growing firms.",
+        features: [
+          "Real Estate CRM",
+          "Site Visit Management",
+          "Booking System",
+          "Payment & Installment Tracking",
+          "Marketing Automation",
+          "Customer Portal"
+        ],
         popular: true
       },
       {
-        title: "Developer Launch Engine",
-        price: "₹4,00,000 – ₹10,00,000+",
-        desc: "Fulfill downpayment transactions for new housing launches.",
-        features: ["Interactive master plan maps", "Booking checkout downpayment", "Custom buyer payment scheduling", "Full database isolated cloud", "Priority Developer Account manager"]
+        title: "Enterprise Real Estate Suite",
+        price: "₹15,00,000 – ₹75,00,000+",
+        desc: "Ideal for large developers and enterprises.",
+        features: [
+          "Multi-Project Management",
+          "Channel Partner Portal",
+          "Sales & Customer Mobile Apps",
+          "ERP & Accounting Integration",
+          "Advanced Analytics & Dashboards",
+          "Workflow & Commission Automation"
+        ]
       },
       {
-        title: "Real Estate SaaS",
+        title: "Real Estate SaaS Platform",
         price: "Custom Quote",
-        desc: "Launch your own multi-broker housing listings SaaS company.",
-        features: ["White-Label Brokerage creator", "Client Subscription Billings", "AWS Multi-Region isolated DBs", "Developer API integrations kits"]
+        desc: "Perfect for PropTech Startups, Property Portals, and Broker Networks.",
+        features: [
+          "PropTech Startups",
+          "Property Portals",
+          "Real Estate Marketplaces",
+          "Broker Networks",
+          "White Label Real Estate Platforms"
+        ]
       }
     ]
   },
@@ -2493,162 +2762,280 @@ export const PRODUCTS_PRICING_CONTENT: Record<string, {
     ]
   },
   "learning-management": {
-    title: "LMS Pricing Options",
-    subtitle: "LMS Cost",
-    desc: "Create e-learning portals with chapter composers and certs.",
+    title: "Pricing",
+    subtitle: "Choose Your Plan",
+    desc: "Create e-learning portals with custom workflows, plans, and white-labeled designs.",
     plans: [
       {
-        title: "Digital Academy Base",
-        price: "₹50,000 – ₹1,00,000",
-        desc: "Video hosting chapters with basic quiz checks lists.",
-        features: ["Video Chapters organizer UI", "PDF Study Vouchers hosting", "Basic student quizzes templates", "Standard Certificate creator", "Email Helpdesk support"]
+        title: "Starter LMS",
+        price: "₹1,50,000 – ₹3,50,000",
+        desc: "Ideal for coaching institutes and small training companies.",
+        features: [
+          "Course Management",
+          "Student Portal",
+          "Online Classes",
+          "Basic Assessments"
+        ]
       },
       {
-        title: "Interactive LMS Portal",
-        price: "₹1,50,000 – ₹3,00,000",
-        desc: "Charge subscriptions packages and run online exam templates.",
-        features: ["Recurring fee subscriptions", "Timed exam generator logs", "Student discussion forums site", "Auto-grading quizzes scripts", "Custom Certificate templates builder"],
+        title: "Business LMS Platform",
+        price: "₹3,50,000 – ₹10,00,000",
+        desc: "Ideal for educational businesses and training organizations.",
+        features: [
+          "Mobile Apps",
+          "Assessments & Exams",
+          "Certificates Engine",
+          "Detailed Analytics",
+          "Payment Gateway Integration"
+        ],
         popular: true
       },
       {
-        title: "Enterprise EdTech Platform",
-        price: "₹4,00,000 – ₹10,00,000+",
-        desc: "Multi-instructor academies requiring Zoom webinars APIs.",
-        features: ["Multi-Instructor backend accounts", "Zoom Webinar API integration", "Isolated database cloud server", "SSO Login configurations", "Priority Account manager support"]
+        title: "Enterprise LMS",
+        price: "₹10,00,000 – ₹50,00,000+",
+        desc: "Ideal for universities, large enterprises, and edtech startups.",
+        features: [
+          "White Label Platform",
+          "Multi-Tenant Architecture",
+          "Advanced Analytics dashboard",
+          "AI Recommendations",
+          "Enterprise CRM/ERP Integrations"
+        ]
       },
       {
-        title: "LMS SaaS Engine",
+        title: "LMS SaaS Platform",
         price: "Custom Quote",
-        desc: "White-label academy reseller portals creator framework.",
-        features: ["White-Labeled Customer Academy", "Instructor Subscription billing", "AWS Multi-Region host setups", "Reseller Billing Account Dashboard"]
+        desc: "Perfect for EdTech Startups, Online Academies, and marketplaces.",
+        features: [
+          "EdTech Startups portal",
+          "Online Academies creator",
+          "Coaching Networks management",
+          "Corporate Training Providers",
+          "Learning Marketplaces"
+        ]
       }
     ]
   },
   "bulk-whatsapp": {
-    title: "WhatsApp API Pricing",
-    subtitle: "WhatsApp Cost",
-    desc: "Send mass promotional blasts via official green tick APIs.",
+    title: "Pricing",
+    subtitle: "Choose Your Plan",
+    desc: "Scale your customer conversations with pricing tiers made for operations of all sizes.",
     plans: [
       {
-        title: "Broadcast Base",
-        price: "₹25,000 – ₹50,000",
-        desc: "Official API integration with simple campaign scheduling.",
-        features: ["Official Meta API link setup", "Broadcast campaigns scheduler", "Custom contact tags upload", "Opt-out list safeguards", "Email support assistance"]
+        title: "Starter WhatsApp Solution",
+        price: "₹50,000 – ₹1,50,000",
+        desc: "Ideal for small businesses.",
+        features: [
+          "WhatsApp API Integration",
+          "Shared Inbox for agents",
+          "Basic Automation",
+          "Reporting Dashboard"
+        ]
       },
       {
-        title: "Automated CRM API",
-        price: "₹70,000 – ₹1,50,000",
-        desc: "WhatsApp team shared inbox with automated template triggers.",
-        features: ["Multi-Agent Shared Inbox panel", "Auto Template Trigger APIs", "Chat Tagging classification logs", "WhatsApp API validation scripts", "Historical SLA Compliance Reports"],
+        title: "Business WhatsApp Platform",
+        price: "₹1,50,000 – ₹5,00,000",
+        desc: "Ideal for growing companies.",
+        features: [
+          "Marketing Campaigns broadcast",
+          "CRM & Database Integration",
+          "Chatbot Development & flows",
+          "Multi-Agent Support inbox",
+          "Advanced Analytics dashboard"
+        ],
         popular: true
       },
       {
-        title: "Enterprise Chatbot Suite",
-        price: "₹2,00,000 – ₹5,00,000+",
-        desc: "Intelligent chatbot replies maps linked to company database.",
-        features: ["AI Chatbot replies designer", "Direct ERP/CRM API databases", "Isolated Secure Server deployment", "Custom Analytics telemetry", "24/7 Dedicated support manager"]
+        title: "Enterprise WhatsApp Platform",
+        price: "₹5,00,000 – ₹25,00,000+",
+        desc: "Ideal for enterprises and large organizations.",
+        features: [
+          "AI Chatbots Integration",
+          "Workflow Automation",
+          "Omnichannel Integration",
+          "Enterprise Security",
+          "Custom API integrations",
+          "Dedicated Infrastructure hosting"
+        ]
       },
       {
-        title: "WhatsApp SaaS Reseller",
+        title: "WhatsApp SaaS Platform",
         price: "Custom Quote",
-        desc: "Resell WhatsApp template broadcast software under your name.",
-        features: ["White-Labeled Customer Portal", "Client subscription credits billing", "AWS isolated SQL structures", "Developer API Webhook builders"]
+        desc: "Perfect for SaaS Startups, Marketing Platforms, and CRM Providers.",
+        features: [
+          "SaaS Startups portal",
+          "Marketing Platforms API",
+          "CRM Providers integration",
+          "Customer Engagement Platform",
+          "White Label Solutions"
+        ]
       }
     ]
   },
   "email-automation": {
-    title: "Email Suite Pricing",
-    subtitle: "Email Cost",
-    desc: "Configure marketing automation drip maps with isolated SMTPs.",
+    title: "Pricing",
+    subtitle: "Choose Your Plan",
+    desc: "Scale your customer email reach with plans designed for companies of all sizes.",
     plans: [
       {
-        title: "Campaign Manager",
-        price: "₹25,000 – ₹50,000",
-        desc: "Newsletter composer with dynamic layout blocks controls.",
-        features: ["Drag-and-Drop Editor tool", "Newsletter subscriber list upload", "Standard campaign click stats", "Unsubscribe compliance links", "Email ticketing support"]
+        title: "Starter Email Automation",
+        price: "₹75,000 – ₹1,50,000",
+        desc: "Ideal for startups and small businesses.",
+        features: [
+          "Campaign Management",
+          "Basic Automation",
+          "Email Templates",
+          "Analytics Dashboard"
+        ]
       },
       {
-        title: "Marketing Drip Suite",
-        price: "₹60,000 – ₹1,20,000",
-        desc: "Establish client registration drip triggers maps sequences.",
-        features: ["Visual Drip Automation Maps", "Subscriber behavioral tags logs", "Clean DKIM/SPF domain setup", "Auto-Scrub spam bounce rules", "Custom SMTP mail server sync"],
+        title: "Business Automation Platform",
+        price: "₹1,50,000 – ₹5,00,000",
+        desc: "Ideal for growing businesses.",
+        features: [
+          "Advanced Automation flows",
+          "CRM Integration & Sync",
+          "Lead Scoring & Analytics",
+          "Behavioral tracking tags",
+          "Visual Workflow Builder"
+        ],
         popular: true
       },
       {
-        title: "Enterprise Mail Server",
-        price: "₹2,00,000 – ₹6,00,000+",
-        desc: "Dedicated IP addresses with high volume delivery routers.",
-        features: ["Dedicated Clean IP server host", "Full Corporate CRM sync API", "AWS isolated DB environments", "SSO Login configurations", "Priority Account Executive support"]
+        title: "Enterprise Email Platform",
+        price: "₹5,00,000 – ₹25,00,000+",
+        desc: "Ideal for enterprises and SaaS companies.",
+        features: [
+          "AI Email Automation tools",
+          "Multi-Brand Management",
+          "Advanced Reports & Attribution",
+          "Custom CRM/ERP Integrations",
+          "Dedicated Infrastructure SMTP"
+        ]
       },
       {
-        title: "Email SaaS Platform",
+        title: "SaaS Email Automation Platform",
         price: "Custom Quote",
-        desc: "Resell bulk email blast pipelines under custom branding logos.",
-        features: ["White-Label Customer Campaign portal", "Merchant credit subscription logs", "Custom SMTP setup wizards", "Developer API webhook builders"]
+        desc: "Perfect for SaaS Startups, Marketing Platforms, and CRM Providers.",
+        features: [
+          "SaaS Startups setups",
+          "Marketing Platforms API",
+          "CRM Providers portals",
+          "Customer Engagement Platforms",
+          "White Label Solutions"
+        ]
       }
     ]
   },
   "helpdesk-ticketing": {
-    title: "Helpdesk Pricing Plans",
-    subtitle: "Helpdesk Cost",
-    desc: "Automate email-to-ticket dispatches and SLA timers.",
+    title: "Pricing Plans",
+    subtitle: "Pricing",
+    desc: "Unlocking modern ticketing, workflow automations, and SLA policies tailored for your customer desk.",
     plans: [
       {
-        title: "Support Desk Base",
-        price: "₹30,000 – ₹60,000",
-        desc: "Core software matching incoming emails to support logs.",
-        features: ["Email-to-Ticket routing dispatch", "Help center articles composition", "Daily ticket load ledger dashboard", "Standard Agent login accounts", "Email ticketing support"]
+        title: "Starter Helpdesk",
+        price: "₹75,000 – ₹2,00,000",
+        desc: "Ideal for startups and small businesses.",
+        features: [
+          "Ticket Management",
+          "Email Support Integration",
+          "Basic Support Reports",
+          "Customer Self-Service Portal"
+        ]
       },
       {
-        title: "Omnichannel SLA Desk",
-        price: "₹80,000 – ₹1,80,000",
-        desc: "Configure ticket deadlines alerts and supervisors escalation rules.",
-        features: ["Strict SLA deadline timers", "Automated ticket route dispatches", "Internal Agent notes collaboration", "CSAT Customer Feedback links", "Multi-Channel integration queues"],
+        title: "Business Support Platform",
+        price: "₹2,00,000 – ₹7,50,000",
+        desc: "Ideal for growing organizations.",
+        features: [
+          "Omnichannel Support Center",
+          "SLA & Escalation Management",
+          "Knowledge Base Management",
+          "Workflow Automation Rules",
+          "Real-Time Analytics Dashboard"
+        ],
         popular: true
       },
       {
-        title: "Enterprise Helpdesk Suite",
-        price: "₹2,50,000 – ₹6,00,000+",
-        desc: "High volume customer dashboards synchronized with active CRM.",
-        features: ["Unlimited Agent profiles setups", "SSO Login configurations", "Direct CRM Databases Sync", "AWS isolated SQL server hosting", "24/7 Phone Support Manager"]
+        title: "Enterprise Service Desk",
+        price: "₹7,50,000 – ₹30,00,000+",
+        desc: "Ideal for enterprises and large organizations.",
+        features: [
+          "AI Chatbots Integration",
+          "Advanced Workflow Automation",
+          "Multi-Department Support",
+          "Enterprise CRM/ERP Integrations",
+          "Fully Custom Workflows",
+          "Dedicated Cloud Infrastructure"
+        ]
       },
       {
-        title: "Helpdesk SaaS Reseller",
+        title: "SaaS Helpdesk Platform",
         price: "Custom Quote",
-        desc: "White-label support ticketing portals for reseller networks.",
-        features: ["White-Labeled Customer Desk", "Client billing subscription maps", "Custom API Webhook integrations", "Developer code templates kits"]
+        desc: "Perfect for SaaS startups and white-labeled service desk solutions.",
+        features: [
+          "SaaS Support Platforms",
+          "Customer Desk white-labeling",
+          "IT Service Providers integration",
+          "Enterprise Service Desk products",
+          "Dedicated Infrastructure & APIs"
+        ]
       }
     ]
   },
   "appointment-booking": {
-    title: "Booking Pricing Plans",
-    subtitle: "Booking Cost",
-    desc: "Google calendar sync schedulers and SMS alerts setup.",
+    title: "Pricing Plans",
+    subtitle: "Pricing",
+    desc: "No hidden transaction fees. Invest in a scheduling platform that you own completely.",
     plans: [
       {
-        title: "Scheduling Base",
-        price: "₹25,000 – ₹50,000",
-        desc: "Simple booking calendar layout matching open work shifts.",
-        features: ["Booking calendar form checkout", "Manual appointment scheduling admin", "Basic shift calendar planner", "Auto email confirmations alerts", "Email ticketing support"]
+        title: "Starter Booking System",
+        price: "₹75,000 – ₹2,00,000",
+        desc: "Ideal for small businesses.",
+        features: [
+          "Online Booking Portal",
+          "Calendar Management",
+          "Email Notifications & Alerts",
+          "Basic Performance Reporting"
+        ]
       },
       {
-        title: "Omnichannel Booking Suite",
-        price: "₹60,000 – ₹1,20,000",
-        desc: "Sync Google Calendar and process payments upfront.",
-        features: ["Bi-directional Google Calendar sync", "Stripe / PayPal upfront payment", "Automated SMS/WhatsApp reminders", "Intake questionnaire form checks", "Auto local timezone converters"],
+        title: "Business Scheduling Platform",
+        price: "₹2,00,000 – ₹7,50,000",
+        desc: "Ideal for growing service businesses.",
+        features: [
+          "Staff & Shift Management",
+          "WhatsApp Notifications & SMS",
+          "Upfront Payment Integration",
+          "Customer Self-Service Portal",
+          "Analytics & Reporting Dashboard"
+        ],
         popular: true
       },
       {
-        title: "Enterprise Scheduling Engine",
-        price: "₹2,00,000 – ₹5,00,000+",
-        desc: "Multi-branch staff calendar coordination networks.",
-        features: ["Multi-Branch staff portals logins", "Custom booking workflow scripts", "AWS isolated SQL databases", "SSO Login configurations", "Priority Account Manager support"]
+        title: "Enterprise Booking Platform",
+        price: "₹7,50,000 – ₹30,00,000+",
+        desc: "Ideal for large organizations and franchises.",
+        features: [
+          "Multi-Location & Branch Dashboard",
+          "Mobile Applications (Staff & Client)",
+          "Advanced Scheduling Automation",
+          "Enterprise CRM & ERP Integrations",
+          "Custom Approval Workflows",
+          "Enterprise-Ready Cloud Security"
+        ]
       },
       {
-        title: "Scheduling SaaS Engine",
+        title: "SaaS Booking Platform",
         price: "Custom Quote",
-        desc: "Resell calendar checkouts systems under custom branding.",
-        features: ["White-Label Customer Booking", "Client Subscription Billings", "AWS Multi-Region host setups", "Developer API integrations kits"]
+        desc: "Perfect for startups and white-labeled booking solutions.",
+        features: [
+          "Healthcare & Medical Startups",
+          "Salon Booking Platforms",
+          "Fitness & Trainer Apps",
+          "Service Marketplaces portals",
+          "White Label Booking Solutions"
+        ]
       }
     ]
   }
@@ -2761,30 +3148,34 @@ export const PRODUCTS_INTRO_CONTENT: Record<string, ProductIntroData> = {
     finalText: "Peltown Invoicing & Billing automates your billing lifecycle from quotation to payment collection, helping you spend less time chasing payments and more time growing your business."
   },
   "travel-agency": {
-    title: "Manage bookings, itineraries, and operations dynamically",
+    title: "Stop Managing Your Travel Business Through Excel, WhatsApp & Emails",
     subtitle: "Travel Technology",
-    description: "Travel agents must coordinate flights, hotels, visa documentation, customized itineraries, and group tour bookings without losing track of details.",
+    description: "Most travel companies struggle with:",
     bullets: [
-      "Drafting customized visual travel itineraries manually is slow.",
-      "Tracking travel booking deposits and supplier payout due dates is complex.",
-      "Managing visa documents, passport copies, and client communications is messy.",
-      "Connecting hotel APIs and local vehicle vendors requires custom code.",
-      "Lack of real-time travel alerts updates for customers."
+      "Lost inquiries",
+      "Delayed follow-ups",
+      "Manual itinerary creation",
+      "Supplier coordination issues",
+      "Payment tracking problems",
+      "Booking management chaos",
+      "Customer communication gaps"
     ],
-    finalText: "Our Travel Agency Platform automates itinerary creation, handles agent commission splits, tracks bookings, and integrates with major global travel APIs."
+    finalText: "Peltown Travel Agency Suite centralizes your entire business into one powerful platform. From inquiry to completed trip, every customer journey is managed in one place."
   },
   "real-estate": {
-    title: "Maximize Property Sales with Smarter Listings",
+    title: "Stop Managing Properties Through Excel Sheets & WhatsApp",
     subtitle: "Property Technology",
-    description: "Real estate agencies need to present high-quality listings, verify property documents, track buyer preferences, and coordinate agent site visits efficiently.",
+    description: "Most real estate businesses face challenges like:",
     bullets: [
-      "Uploading listing data across third-party directories manually is tedious.",
-      "Inquiries for properties fail to map to agent schedules for prompt site visits.",
-      "Struggling to share catalog PDF flyers and virtual tours with prospective buyers.",
-      "No structured checklist to verify clean property titles or legal permits.",
-      "Difficulty tracking agent commissions across closed transactions."
+      "Lost leads",
+      "Poor follow-ups",
+      "Unorganized property data",
+      "Missed site visits",
+      "Delayed bookings",
+      "Payment tracking issues",
+      "Channel partner management problems"
     ],
-    finalText: "Peltown Real Estate Portal provides a centralized property directory, manages site visits, and optimizes property matching through structured lead tracking workflows."
+    finalText: "Peltown Real Estate Suite centralizes your entire sales and operations process into a single platform. Track every lead from inquiry to property possession."
   },
   "restaurant-management": {
     title: "Streamline Restaurant Tables, Kitchens, and Orders",
@@ -2800,69 +3191,76 @@ export const PRODUCTS_INTRO_CONTENT: Record<string, ProductIntroData> = {
     finalText: "Our F&B Management System connects table checkouts, updates kitchen display screens instantly, and coordinates raw material inventory in real time."
   },
   "learning-management": {
-    title: "Deliver Premium Digital Training at Scale",
-    subtitle: "EdTech & Training",
-    description: "Creating course curriculums, handling secure video playback, managing student enrollments, and checking student progress requires a stable learning ecosystem.",
+    title: "Transform Learning Into A Scalable Digital Business",
+    subtitle: "LMS Technology",
+    description: "Many educational organizations struggle with:",
     bullets: [
-      "Unsecured course video links get shared and downloaded illegally.",
-      "Student enrollment payments do not automatically trigger course access codes.",
-      "Grading student test quiz answers and tracking attendance is a manual chore.",
-      "No platform support to issue verified certificate files automatically.",
-      "Struggling to provide student discussion boards alongside video lessons."
+      "Manual student management",
+      "Unorganized course content",
+      "Lack of progress tracking",
+      "Poor learner engagement",
+      "Limited scalability",
+      "Assessment management issues",
+      "Certificate generation challenges",
+      "Inconsistent learning experiences"
     ],
-    finalText: "Peltown LMS offers white-labeled course hubs, processes payments, protects lesson videos, and automates course completion certificates."
+    finalText: "Peltown LMS centralizes your entire learning ecosystem into one platform, allowing you to deliver professional online education at scale."
   },
   "bulk-whatsapp": {
-    title: "Engage Thousands of Customers via WhatsApp API",
-    subtitle: "Marketing & API Hub",
-    description: "Reaching out to customer databases with personalized updates, marketing messages, and alerts via traditional channels results in low read rates.",
+    title: "Your Customers Are Already On WhatsApp",
+    subtitle: "WhatsApp Platform",
+    description: "Most businesses spend heavily on email marketing, SMS campaigns, paid ads, and cold calling—yet customers respond faster on WhatsApp. Managing it manually leads to:",
     bullets: [
-      "Standard number broadcasts get banned or flagged as spam quickly.",
-      "Unable to track message delivery logs, read states, or click metrics.",
-      "Sending personalized confirmation messages manually is slow.",
-      "Unable to build automated interactive chat responses for simple FAQs.",
-      "Integrating WhatsApp with existing CRMs or ERP databases is complex."
+      "Missed inquiries",
+      "Slow response times",
+      "Lost leads",
+      "Unorganized conversations",
+      "Poor customer experiences"
     ],
-    finalText: "Our Bulk WhatsApp Business API setup provides official Meta business line integration, automates trigger messages, and schedules campaign broadcasts."
+    finalText: "Peltown WhatsApp Business Platform centralizes customer communication, automation, marketing, and support into one scalable solution."
   },
   "email-automation": {
-    title: "Scale Your Customer Reach with Smart Email Campaigns",
-    subtitle: "Marketing Automation",
-    description: "Building list segments, scheduling drip emails, tracking click-through rates, and ensuring emails reach inboxes instead of spam folders is hard without a robust engine.",
+    title: "Stop Sending Emails Manually",
+    subtitle: "Email Platform",
+    description: "Most businesses lose customers because:",
     bullets: [
-      "Campaign emails get flagged as promotional spam due to bad server IPs.",
-      "Unable to group customer lists dynamically based on purchase behavior.",
-      "Creating custom HTML template emails without design code is difficult.",
-      "Struggling to automate follow-up emails based on user links click status.",
-      "Reconciling campaign metrics with sales databases requires CSV exports."
+      "Leads are never followed up",
+      "Prospects forget about your business",
+      "Customers abandon purchases",
+      "Communication is inconsistent",
+      "Sales teams waste time on repetitive tasks"
     ],
-    finalText: "Peltown Email Automation provides dedicated SMTP configurations, dynamic user list segment managers, and flow-based sequence builders to boost sales."
+    finalText: "Email automation delivers the right message at the right time automatically. Peltown Email Automation Platform helps you create automated customer journeys that generate leads, increase conversions, and improve customer retention."
   },
   "helpdesk-ticketing": {
-    title: "Resolve Customer Support Issues Faster",
+    title: "Great Customer Support Is A Competitive Advantage",
     subtitle: "Support & Ticketing",
-    description: "Handling client support requests via email, chat, and phone calls without ticket numbers and assigned queues results in long resolution times.",
+    description: "Most businesses struggle with:",
     bullets: [
-      "Multiple agents reply to the same customer email, causing confusion.",
-      "Important support tickets are forgotten because they sit in standard emails.",
-      "No mechanism to track SLA deadlines or warn about delayed responses.",
-      "Support agents struggle to locate client contact histories or order details.",
-      "No automated survey tools to collect customer satisfaction (CSAT) scores."
+      "Missed support requests",
+      "Slow response times",
+      "Unorganized customer communication",
+      "Lack of accountability",
+      "Poor customer satisfaction",
+      "Difficulty tracking issues",
+      "No visibility into support performance"
     ],
-    finalText: "Our Helpdesk System organizes client tickets, sets up automatic queue routing, alerts managers when SLAs are missed, and integrates with your core database."
+    finalText: "Peltown Helpdesk & Ticketing System ensures every customer request is tracked, assigned, prioritized, and resolved efficiently. Turn customer support into a growth driver instead of a bottleneck."
   },
   "appointment-booking": {
-    title: "Automate Shift Bookings and Calendar Coordination",
+    title: "Stop Managing Appointments Through Calls, WhatsApp & Excel Sheets",
     subtitle: "Scheduling Platform",
-    description: "Scheduling phone meetings, field consultations, or group classes requires constant back-and-forth emails, leading to double-bookings and high cancellation rates.",
+    description: "Many businesses lose revenue because of:",
     bullets: [
-      "Spending hours emailing back and forth trying to find a matching calendar time.",
-      "Clients fail to show up because they do not receive automated follow-ups.",
-      "Staff calendars are not coordinated, leading to over-bookings.",
-      "Difficult to charge upfront deposits or secure booking reservations.",
-      "Client timezone differences cause missed meeting slots."
+      "Missed appointments",
+      "Double bookings",
+      "No-shows",
+      "Manual scheduling errors",
+      "Poor customer communication",
+      "Unorganized calendars",
+      "Inefficient staff allocation"
     ],
-    finalText: "Peltown Appointment Booking syncs directly with staff calendars, processes booking payments, and triggers automated email and WhatsApp alerts."
+    finalText: "Peltown Appointment Booking Platform automates scheduling and customer communication so your team can focus on serving customers instead of managing calendars."
   }
 };
 

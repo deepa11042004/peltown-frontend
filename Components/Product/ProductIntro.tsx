@@ -119,9 +119,9 @@ export default function ProductIntro({
                   min-h-45
                   shrink-0
                   rounded-[28px]
-                  bg-white
+                  bg-(--cardBgColor)
                   border
-                  border-neutral-200
+                  border-(--cardBorderColor)
                   p-8
                   shadow-[0_10px_40px_rgba(0,0,0,0.04)]
                   flex

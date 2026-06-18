@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 const INDUSTRIES = [
   { name: "Fashion & Apparel" },
@@ -41,6 +42,12 @@ export default function IndustriesServe({
 
   items = INDUSTRIES,
 }: IndustriesServeProps) {
+  const row1 = items.filter((_, i) => i % 2 === 0);
+  const row2 = items.filter((_, i) => i % 2 !== 0);
+
+  const doubledRow1 = [...row1, ...row1, ...row1, ...row1, ...row1, ...row1];
+  const doubledRow2 = [...row2, ...row2, ...row2, ...row2, ...row2, ...row2];
+
   return (
     <section className="relative overflow-hidden py-24 px-6 md:px-12 lg:px-20 bg-black text-white">
       <div className="relative max-w-7xl mx-auto space-y-16">
@@ -63,99 +70,48 @@ export default function IndustriesServe({
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
-          {items.map((industry) => {
-            return (
-              <motion.div
-                key={industry.name}
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                  amount: 0.3,
-                }}
-                whileHover={{
-                  y: -8,
-                  scale: 1.03,
-                  opacity: 1,
-                }}
-                transition={{
-                  duration: 0.35,
-                  ease: "easeOut",
-                }}
-                className={`
-                  relative
-                  aspect-[1]
-                  rounded-2xl
-                  border
-                  border-[#242424]
-                  bg-white/1
-                  overflow-hidden
-                  flex
-                  items-center
-                  justify-center
-                  group
-                `}
-              >
-                {/* Dot */}
+        {/* Dual Infinite Loop Marquee Container */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="space-y-6"
+        >
+          {/* Track 1: Moving Left */}
+          <div className="relative w-screen left-1/2 right-1/2 mx-[-50vw] overflow-hidden py-2 mask-[linear-gradient(to_right,transparent,white_15%,white_85%,transparent)]">
+            <div className="flex gap-6 w-max animate-marquee hover:[animation-play-state:paused]">
+              {doubledRow1.map((industry, index) => {
+                return (
+                  <div
+                    key={`row1-${industry.name}-${index}`}
+                    className="group px-6 py-3 bg-zinc-900 text-neutral-300 font-medium rounded-full text-md border border-neutral-800 flex items-center gap-2 whitespace-nowrap cursor-default hover:text-white hover:border-[#BFCA16] transition-colors duration-200"
+                  >
+                    {industry.name}
+                    <ArrowRight className="w-4 h-4 opacity-60 text-neutral-400 group-hover:opacity-100 transition-transform duration-200 group-hover:-rotate-45 group-hover:text-[#BFCA16]" />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
 
-                <span
-                  className="
-                    absolute
-                    top-5
-                    left-5
-                    h-2
-                    w-2
-                    rounded-full
-                    bg-[#BFCA16]
-                    transition-all
-                    duration-300
-                    group-hover:scale-150
-                  "
-                />
-
-                {/* Hover Glow */}
-
-                <div
-                  className="
-                    absolute
-                    inset-0
-                    opacity-0
-                    group-hover:opacity-100
-                    transition-opacity
-                    duration-500
-                    bg-[radial-gradient(circle_at_center,#000,transparent_70%)]
-                  "
-                />
-
-                {/* Text */}
-
-                <h3
-                  className="
-                    px-6
-                    text-center
-                    text-base
-                    md:text-xl
-                    font-semibold
-                    leading-snug
-                    tracking-tight
-                    text-white
-                    z-10
-                  "
-                >
-                  {industry.name}
-                </h3>
-              </motion.div>
-            );
-          })}
-        </div>
+          {/* Track 2: Moving Right */}
+          <div className="relative w-screen left-1/2 right-1/2 mx-[-50vw] overflow-hidden py-2 mask-[linear-gradient(to_right,transparent,white_15%,white_85%,transparent)]">
+            <div className="flex gap-6 w-max animate-marquee-reverse hover:[animation-play-state:paused]">
+              {doubledRow2.map((industry, index) => {
+                return (
+                  <div
+                    key={`row2-${industry.name}-${index}`}
+                    className="group px-6 py-3 bg-zinc-900 text-neutral-300 font-medium rounded-full text-md border border-neutral-800 flex items-center gap-2 whitespace-nowrap cursor-default hover:text-white hover:border-[#BFCA16] transition-colors duration-200"
+                  >
+                    {industry.name}
+                    <ArrowRight className="w-4 h-4 opacity-60 text-neutral-400 group-hover:opacity-100 transition-transform duration-200 group-hover:-rotate-45 group-hover:text-[#BFCA16]" />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

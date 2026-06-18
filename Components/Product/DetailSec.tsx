@@ -29,16 +29,16 @@ interface DetailSecProps {
 }
 
 export default function DetailSec({ detail }: DetailSecProps) {
-  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   // Toggle function for mobile/tablet clicks
   const handleItemClick = (idx: number) => {
-    setActiveIndex(activeIndex === idx ? 0 : idx);
+    setActiveIndex(activeIndex === idx ? null : idx);
   };
 
   // Active item
-  const activeItem = detail.list[activeIndex] || detail.list[0];
+  const activeItem = activeIndex !== null ? detail.list[activeIndex] : null;
 
   // Mouse tracking with spring physics for smooth follow
   const mouseX = useMotionValue(0);
