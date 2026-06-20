@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 // --- DATA ---
@@ -50,7 +50,40 @@ export default function OurModelSec() {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["10%", "-70%"]);
+  const [xRange, setXRange] = useState<[string, string]>(["10%", "-70%"]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      let cardWidth = 380; // md:w-95 (23.75rem = 380px)
+      if (width < 640) {
+        cardWidth = 300; // w-75 (18.75rem = 300px)
+      } else if (width < 768) {
+        cardWidth = 350; // sm:w-87.5 (21.875rem = 350px)
+      }
+
+      const gap = 32; // gap-8 (2rem = 32px)
+      const numCards = 6;
+      // padding is px-[5vw] on both sides, which totals 10vw of window width
+      const padding = width * 0.1;
+      const totalTrackWidth = cardWidth * numCards + gap * (numCards - 1) + padding;
+
+      // target translation puts the right edge of track at the right edge of viewport
+      const targetTranslationPx = width - totalTrackWidth;
+      const endPercent = (targetTranslationPx / totalTrackWidth) * 100;
+
+      // Start with 5% offset on mobile for more space, 10% otherwise
+      const startPercent = width < 640 ? 5 : 10;
+
+      setXRange([`${startPercent}%`, `${endPercent}%`]);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const x = useTransform(scrollYProgress, [0, 1], xRange);
 
   return (
     <div ref={targetRef} className="relative h-[350vh] bg-white">

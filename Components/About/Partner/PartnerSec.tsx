@@ -50,7 +50,7 @@ export default function PartnerSec() {
         {/* ================= LEFT CONTENT COLUMN ================= */}
         <div className="lg:col-span-7 space-y-8 text-left">
           {/* Heading */}
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
             Why Partner with <span className="text-[#BFCA16]">PELTOWN?</span>
           </h2>
 

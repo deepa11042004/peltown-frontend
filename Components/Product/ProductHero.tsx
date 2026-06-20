@@ -145,7 +145,7 @@ function ProductHero({ hero }: ProductHeroProps) {
               duration: 0.8,
               delay: 0.2,
             }}
-            className="w-full max-w-6xl"
+            className="hidden md:block w-full max-w-6xl"
           >
             <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.5fr_0.8fr] gap-4 h-auto md:h-130">
               {/* LEFT */}

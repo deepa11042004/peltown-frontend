@@ -822,7 +822,8 @@ export default function WebSec({
             </div>
 
             {/* Clean Bento-Style Pricing Table Container */}
-            <div className="border border-zinc-200 rounded-md bg-white overflow-hidden shadow-sm">
+            {/* Desktop Table View */}
+            <div className="hidden md:block border border-zinc-200 rounded-md bg-white overflow-hidden shadow-sm">
               {(() => {
                 const gridColsMap: Record<number, string> = {
                   1: "grid-cols-1",
@@ -906,6 +907,50 @@ export default function WebSec({
                 );
               })()}
             </div>
+
+            {/* Mobile Card-Based Pricing View */}
+            <div className="block md:hidden space-y-6">
+              {costTable.rows.map((tier, index) => {
+                const cells = tier.values || [
+                  tier.pkg,
+                  tier.for,
+                  tier.cost,
+                  tier.del,
+                ];
+                return (
+                  <div
+                    key={index}
+                    className="border border-zinc-200 rounded-xl bg-white p-6 shadow-sm space-y-4 text-left"
+                  >
+                    <div className="flex justify-between items-start border-b border-zinc-100 pb-3">
+                      <div>
+                        <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block mb-0.5">Package</span>
+                        <h4 className={`font-bold text-base ${tier.color || "text-black"}`}>
+                          {cells[0]}
+                        </h4>
+                      </div>
+                      <div className="text-right">
+                        <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block mb-0.5">Investment</span>
+                        <div className="font-bold text-zinc-950 text-base tracking-tight">
+                          {cells[2]}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-4">
+                      <div>
+                        <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block mb-1">Ideal For</span>
+                        <p className="text-zinc-700 font-medium text-xs sm:text-sm leading-relaxed">{cells[1]}</p>
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block mb-1">Deliverables</span>
+                        <p className="text-zinc-500 font-medium text-xs sm:text-sm leading-relaxed">{cells[3]}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
       )}
@@ -926,7 +971,8 @@ export default function WebSec({
             </div>
 
             {/* Overhauled SaaS Comparison Table Grid */}
-            <div className="border border-zinc-200 rounded-2xl bg-white overflow-hidden shadow-md">
+            {/* Desktop Table View */}
+            <div className="hidden md:block border border-zinc-200 rounded-2xl bg-white overflow-hidden shadow-md">
               {(() => {
                 const gridColsMap: Record<number, string> = {
                   1: "grid-cols-1",
@@ -1028,6 +1074,53 @@ export default function WebSec({
                   </>
                 );
               })()}
+            </div>
+
+            {/* Mobile Card-Based Comparison View */}
+            <div className="block md:hidden space-y-6">
+              {comparisonTable.rows.map((row, i) => {
+                const cells = row.values || [row.f, row.c, row.d];
+                const FeatureIcon = getFeatureIcon(cells[0] || "");
+                return (
+                  <div
+                    key={i}
+                    className="border border-zinc-200 rounded-2xl bg-white p-5 shadow-sm space-y-4 text-left"
+                  >
+                    {/* Feature Title Row */}
+                    <div className="flex items-center gap-3 pb-2 border-b border-zinc-100">
+                      <div className="w-8 h-8 rounded-lg bg-zinc-100 flex items-center justify-center text-zinc-600 shrink-0">
+                        <FeatureIcon className="w-4.5 h-4.5" />
+                      </div>
+                      <span className="text-zinc-900 font-extrabold text-sm uppercase tracking-wider">{cells[0]}</span>
+                    </div>
+
+                    {/* Comparison Stack */}
+                    <div className="space-y-2.5">
+                      {/* PELTOWN custom build */}
+                      {cells[1] && (
+                        <div className="bg-[#BFCA16]/10 border border-[#BFCA16]/20 rounded-xl p-3.5 flex items-start gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-zinc-950 shrink-0 mt-0.5" />
+                          <div>
+                            <span className="text-[10px] font-bold text-zinc-950/70 uppercase block mb-0.5">PELTOWN Custom Build</span>
+                            <span className="text-zinc-950 font-medium text-xs sm:text-sm leading-snug">{cells[1]}</span>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* DIY Builders */}
+                      {cells[2] && (
+                        <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-3.5 flex items-start gap-3">
+                          <XCircle className="w-5 h-5 text-zinc-400 shrink-0 mt-0.5" />
+                          <div>
+                            <span className="text-[10px] font-bold text-zinc-500 uppercase block mb-0.5">DIY Builders</span>
+                            <span className="text-zinc-600 font-medium text-xs sm:text-sm leading-snug">{cells[2]}</span>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

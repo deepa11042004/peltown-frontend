@@ -148,15 +148,15 @@ export default function Home() {
 
           {/* Call to Action Buttons */}
           <motion.div
-            className="flex flex-wrap gap-4 items-center"
+            className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center"
             variants={itemVariants}
           >
-            <button className="px-8 py-4 bg-neutral-300 text-black font-medium rounded-full text-lg hover:bg-white transition-colors duration-200 shadow-lg active:scale-98 flex items-center gap-2 group">
+            <button className="px-6 py-3 sm:px-8 sm:py-4 bg-neutral-300 text-black font-medium rounded-full text-base sm:text-lg hover:bg-white transition-colors duration-200 shadow-lg active:scale-98 flex items-center justify-center gap-2 group w-full sm:w-auto">
               Get Started
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
 
-            <button className="px-8 py-4 bg-zinc-900 text-neutral-300 font-medium rounded-full text-lg border border-neutral-800 hover:bg-[#1f1f1f] hover:border-neutral-700 transition-all duration-200 active:scale-98">
+            <button className="px-6 py-3 sm:px-8 sm:py-4 bg-zinc-900 text-neutral-300 font-medium rounded-full text-base sm:text-lg border border-neutral-800 hover:bg-[#1f1f1f] hover:border-neutral-700 transition-all duration-200 active:scale-98 w-full sm:w-auto text-center">
               Learn more
             </button>
           </motion.div>

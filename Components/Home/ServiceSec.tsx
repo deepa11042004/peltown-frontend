@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   ArrowUpRight,
@@ -46,8 +46,52 @@ export default function ServiceSec() {
     target: targetRef,
   });
 
+  const [xRange, setXRange] = useState<[string, string]>(["0%", "-51%"]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      
+      // Determine card width based on screen size
+      let cardWidth = 360; // md:w-90 = 22.5rem = 360px
+      if (width < 768) {
+        cardWidth = 300; // w-75 = 18.75rem = 300px
+      }
+      
+      const gap = 24; // gap-6 = 1.5rem = 24px
+      const numCards = 5;
+      
+      // The parent of the slider track has left/right padding:
+      // px-6 (24px) on mobile, md:px-16 (64px) on tablet, lg:px-24 (96px) on desktop.
+      // And it's constrained by max-w-7xl (1280px) centered.
+      let leftOffset = 24;
+      if (width >= 1024) {
+        leftOffset = Math.max(96, (width - 1280) / 2 + 96);
+      } else if (width >= 768) {
+        leftOffset = 64;
+      }
+      
+      const rightOffset = leftOffset;
+      const contentWidth = cardWidth * numCards + gap * (numCards - 1);
+      
+      // Target translation moves the track to line up the last card's right edge with the screen's right edge
+      const targetTranslationPx = width - leftOffset - rightOffset - contentWidth;
+      
+      // The motion.div has padding-right: pr-[20vw]
+      const elementWidth = contentWidth + (width * 0.2);
+      const endPercent = (targetTranslationPx / elementWidth) * 100;
+      const finalEndPercent = Math.min(0, endPercent);
+      
+      setXRange(["0%", `${finalEndPercent}%`]);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   // Track translation adjustment for the horizontal bento timeline slide
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-51%"]);
+  const x = useTransform(scrollYProgress, [0, 1], xRange);
 
   return (
     <div ref={targetRef} className="relative h-[280vh] bg-white">
