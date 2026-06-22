@@ -98,7 +98,7 @@ export default function BannerDetail({
             </div>
           )}
 
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-headingColor leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-headingColor leading-[1.1]">
             {title}
           </h2>
 
@@ -140,7 +140,7 @@ export default function BannerDetail({
                   <div className="w-10 h-10 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-zinc-400 group-hover:text-[#BFCA16] group-hover:border-[#BFCA16] transition-all duration-300 shadow-xs">
                     <IconComponent className="w-4 h-4 stroke-2" />
                   </div>
-                  <span className="text-xl font-mono font-black text-black group-hover:text-[#BFCA16] transition-colors duration-300">
+                  <span className="text-xl font-mono font-bold text-black group-hover:text-[#BFCA16] transition-colors duration-300">
                     {step.num}
                   </span>
                 </div>

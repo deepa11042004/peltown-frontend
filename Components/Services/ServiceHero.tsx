@@ -12,6 +12,8 @@ export interface ServicesHeroProps {
   title?: React.ReactNode;
   description?: React.ReactNode;
   ctaText?: string;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 const ROUTE_CONFIGS: Record<
@@ -23,6 +25,8 @@ const ROUTE_CONFIGS: Record<
     dot: string;
     badgeBorder: string;
     badgeBg: string;
+    image: string;
+    imageAlt: string;
   }
 > = {
   "web-development": {
@@ -32,6 +36,8 @@ const ROUTE_CONFIGS: Record<
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
+    image: "/Img/web.png",
+    imageAlt: "Website development presentation",
   },
   "erp-system": {
     bg: "#000000",
@@ -40,6 +46,8 @@ const ROUTE_CONFIGS: Record<
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
+    image: "/Img/CRM.png",
+    imageAlt: "ERP software system presentation",
   },
   "mobile-app": {
     bg: "#BFCA16",
@@ -48,6 +56,8 @@ const ROUTE_CONFIGS: Record<
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
+    image: "/Img/app.png",
+    imageAlt: "Mobile app showcase",
   },
   "custom-crm": {
     bg: "#000000",
@@ -56,6 +66,8 @@ const ROUTE_CONFIGS: Record<
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
+    image: "/Img/CRM.png",
+    imageAlt: "CRM platform presentation",
   },
   "seo-optimization": {
     bg: "#BFCA16",
@@ -64,6 +76,8 @@ const ROUTE_CONFIGS: Record<
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
+    image: "/Img/web.png",
+    imageAlt: "SEO optimization mockup",
   },
   "social-media": {
     bg: "#000000",
@@ -72,6 +86,8 @@ const ROUTE_CONFIGS: Record<
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
+    image: "/Img/iphone.png",
+    imageAlt: "Social media application showcase",
   },
   "digital-marketing": {
     bg: "#BFCA16",
@@ -80,6 +96,8 @@ const ROUTE_CONFIGS: Record<
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
+    image: "/Img/web.png",
+    imageAlt: "Digital marketing presentation",
   },
   "gmb-services": {
     bg: "#000000",
@@ -88,6 +106,8 @@ const ROUTE_CONFIGS: Record<
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
+    image: "/Img/iphone.png",
+    imageAlt: "Google My Business profile mockup",
   },
   "service-photoshoot": {
     bg: "#BFCA16",
@@ -96,6 +116,8 @@ const ROUTE_CONFIGS: Record<
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
+    image: "/Img/web.png",
+    imageAlt: "Service photoshoot portfolio",
   },
   "service-branding": {
     bg: "#000000",
@@ -104,6 +126,8 @@ const ROUTE_CONFIGS: Record<
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
+    image: "/Img/mac.png",
+    imageAlt: "Service branding and design mockup",
   },
   "bulk-email": {
     bg: "#BFCA16",
@@ -112,6 +136,8 @@ const ROUTE_CONFIGS: Record<
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
+    image: "/Img/web.png",
+    imageAlt: "Bulk email software presentation",
   },
   "whatsapp-api": {
     bg: "#000000",
@@ -120,6 +146,8 @@ const ROUTE_CONFIGS: Record<
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
+    image: "/Img/iphone.png",
+    imageAlt: "WhatsApp API messaging showcase",
   },
   "email-solutions": {
     bg: "#BFCA16",
@@ -128,6 +156,8 @@ const ROUTE_CONFIGS: Record<
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
+    image: "/Img/web.png",
+    imageAlt: "Email solutions mockup",
   },
 };
 
@@ -138,6 +168,8 @@ const DEFAULT_CONFIG = {
   dot: "bg-black",
   badgeBorder: "border-black/20",
   badgeBg: "bg-black/10",
+  image: "/Img/web.png",
+  imageAlt: "Phone mockup presentation",
 };
 
 export default function ServicesHero({
@@ -145,12 +177,17 @@ export default function ServicesHero({
   title,
   description,
   ctaText,
+  imageSrc,
+  imageAlt,
 }: ServicesHeroProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
   const slug = pathname ? pathname.split("/").pop() : "";
   const configColor = (slug && ROUTE_CONFIGS[slug]) || DEFAULT_CONFIG;
+
+  const displayImage = imageSrc || configColor.image;
+  const displayAlt = imageAlt || configColor.imageAlt;
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -292,8 +329,8 @@ export default function ServicesHero({
               className="relative w-full aspect-square max-h-110 md:max-h-130 rounded-2xl overflow-hidden"
             >
               <Image
-                src="/Img/mac.png"
-                alt="Phone mockup presentation"
+                src={displayImage}
+                alt={displayAlt}
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 700px"

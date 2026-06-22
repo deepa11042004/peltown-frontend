@@ -296,14 +296,14 @@ export default function VerificationSec() {
         {/* HEADER BAR */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-zinc-800 pb-6 text-left">
           <div className="space-y-1">
-            <h1 className="text-2xl md:text-3xl font-black text-white tracking-tight">
+            <h1 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
               Verification Form
             </h1>
           </div>
           <div className="text-right shrink-0">
             <span className="text-sm font-bold text-zinc-400">
               Progress:{" "}
-              <span className="text-white font-black">
+              <span className="text-white font-bold">
                 Step {currentStep}/{STEPS.length}
               </span>
             </span>
@@ -359,7 +359,7 @@ export default function VerificationSec() {
               className="text-left space-y-8 w-full"
             >
               <div>
-                <h2 className="text-xl md:text-2xl font-black text-white tracking-tight">
+                <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">
                   Step {currentStep}: {STEPS[currentStep - 1].short}
                 </h2>
                 <div className="w-12 h-1 bg-[#BFCA16] rounded-full mt-2" />
@@ -828,14 +828,14 @@ export default function VerificationSec() {
               {currentStep < STEPS.length ? (
                 <button
                   onClick={handleNext}
-                  className="inline-flex items-center gap-1.5 px-6 py-3 bg-white text-zinc-950 hover:bg-[#BFCA16] hover:text-zinc-950 rounded-full text-sm font-black transition-colors shadow-sm"
+                  className="inline-flex items-center gap-1.5 px-6 py-3 bg-white text-zinc-950 hover:bg-[#BFCA16] hover:text-zinc-950 rounded-full text-sm font-bold transition-colors shadow-sm"
                 >
                   <span>Next</span> <ChevronRight className="w-4 h-4" />
                 </button>
               ) : (
                 <button
                   onClick={handleFinalSubmit}
-                  className="inline-flex items-center gap-1.5 px-6 py-3 bg-[#BFCA16] text-white rounded-xl text-sm font-black shadow-sm"
+                  className="inline-flex items-center gap-1.5 px-6 py-3 bg-[#BFCA16] text-white rounded-xl text-sm font-bold shadow-sm"
                 >
                   <span>Submit Application</span>
                 </button>

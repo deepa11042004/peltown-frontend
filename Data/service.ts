@@ -74,7 +74,7 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
       title: "ERP Development",
       description:
         "Centralize your operations with future-proof, AI-driven software built for your workflows.",
-      ctaText: "Get a Free Quote",
+      ctaText: "Get a Quote",
     },
     definition: {
       title: "What is a Custom ERP System?",
@@ -259,7 +259,7 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
       title: "Mobile App Development",
       description:
         "Build high-performing, secure iOS and Android apps tailored to your business needs.",
-      ctaText: "Start Your App Project",
+      ctaText: "Start a Project",
     },
     definition: {
       title: "What is Professional Mobile App Development?",
@@ -453,7 +453,7 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
       title: "Custom CRM Development",
       description:
         "Build contact management software tailored to your workflows with zero recurring licensing fees.",
-      ctaText: "Get Your CRM Quote",
+      ctaText: "Get a Quote",
     },
     definition: {
       title: "What is Custom CRM Development?",
@@ -639,7 +639,7 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
       title: "SEO Optimization",
       description:
         "Boost your organic visibility and drive high-intent traffic with data-driven search strategies.",
-      ctaText: "Get a Free Audit",
+      ctaText: "Get a Audit",
     },
     definition: {
       title: "SEO for Professional Service Business",
@@ -1280,7 +1280,7 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
       title: "Google My Business",
       description:
         "Optimize your Google Business Profile to rank higher in local map and search results.",
-      ctaText: "Claim Your Local Rankings",
+      ctaText: "Claim Your Rankings",
     },
     definition: {
       title: "Local Map Optimization",

@@ -16,7 +16,6 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
   return (
     <div className="flex h-screen w-screen overflow-hidden bg-zinc-50 font-sans">
-      
       {/* Desktop Sidebar */}
       <div className="hidden md:block h-full">
         <Sidebar
@@ -29,7 +28,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
       {/* Mobile Menu Trigger Header */}
       <div className="md:hidden fixed top-0 left-0 right-0 h-14 bg-white border-b border-zinc-200 flex items-center justify-between px-4 z-30">
-        <span className="text-xl font-black tracking-wider text-black select-none">
+        <span className="text-xl font-bold tracking-wider text-black select-none">
           WI<span className="text-zinc-400">N</span>K
         </span>
         <button
@@ -67,7 +66,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
               >
                 <X className="w-4 h-4 text-zinc-600" />
               </button>
-              
+
               <Sidebar
                 isCollapsed={false}
                 setIsCollapsed={() => {}}
@@ -88,7 +87,6 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             Here we will pass children which is our DashboardContent component */}
         {children}
       </div>
-
     </div>
   );
 }

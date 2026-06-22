@@ -170,8 +170,6 @@ const DEFAULT_HERO: HeroConfig = {
   description:
     "We build high-performance, responsive websites integrated with native AI features engineered for scale.",
   ctaText: "Get a Quote",
-  imageSrc: "/Img/mac.png",
-  imageAlt: "Website development presentation",
 };
 
 const DEFAULT_DEFINITION: DefinitionConfig = {
@@ -482,14 +480,55 @@ const DEFAULT_COMPARISON_TABLE: ComparisonTableConfig = {
 
 function getFeatureIcon(name: string) {
   const normalized = name.toLowerCase();
-  if (normalized.includes("speed") || normalized.includes("load") || normalized.includes("launch") || normalized.includes("time")) return Gauge;
-  if (normalized.includes("custom") || normalized.includes("design") || normalized.includes("flex")) return Sparkles;
-  if (normalized.includes("price") || normalized.includes("pricing") || normalized.includes("cost") || normalized.includes("invest")) return Target;
-  if (normalized.includes("scale") || normalized.includes("growth")) return Layers;
-  if (normalized.includes("seo") || normalized.includes("search") || normalized.includes("google")) return Search;
-  if (normalized.includes("security") || normalized.includes("safe") || normalized.includes("spam") || normalized.includes("deliver")) return ShieldCheck;
-  if (normalized.includes("support") || normalized.includes("team") || normalized.includes("agent")) return Users;
-  if (normalized.includes("integration") || normalized.includes("api") || normalized.includes("tech") || normalized.includes("crm") || normalized.includes("software")) return Cpu;
+  if (
+    normalized.includes("speed") ||
+    normalized.includes("load") ||
+    normalized.includes("launch") ||
+    normalized.includes("time")
+  )
+    return Gauge;
+  if (
+    normalized.includes("custom") ||
+    normalized.includes("design") ||
+    normalized.includes("flex")
+  )
+    return Sparkles;
+  if (
+    normalized.includes("price") ||
+    normalized.includes("pricing") ||
+    normalized.includes("cost") ||
+    normalized.includes("invest")
+  )
+    return Target;
+  if (normalized.includes("scale") || normalized.includes("growth"))
+    return Layers;
+  if (
+    normalized.includes("seo") ||
+    normalized.includes("search") ||
+    normalized.includes("google")
+  )
+    return Search;
+  if (
+    normalized.includes("security") ||
+    normalized.includes("safe") ||
+    normalized.includes("spam") ||
+    normalized.includes("deliver")
+  )
+    return ShieldCheck;
+  if (
+    normalized.includes("support") ||
+    normalized.includes("team") ||
+    normalized.includes("agent")
+  )
+    return Users;
+  if (
+    normalized.includes("integration") ||
+    normalized.includes("api") ||
+    normalized.includes("tech") ||
+    normalized.includes("crm") ||
+    normalized.includes("software")
+  )
+    return Cpu;
   return Sparkles; // default icon
 }
 
@@ -541,6 +580,8 @@ export default function WebSec({
           title={hero.title}
           description={hero.description}
           ctaText={hero.ctaText}
+          imageSrc={hero.imageSrc}
+          imageAlt={hero.imageAlt}
         />
       )}
 
@@ -625,8 +666,6 @@ export default function WebSec({
 
       {/* 4. INDUSTRY DEEP-DIVES COMPONENT */}
       {showIndustryDeepDives && <IndustrySec {...config.industryDeepDives} />}
-
-
 
       {/* 6. GEN-AI SPECIAL HOVER BLOCK */}
       {showAiAdvantage && (
@@ -924,13 +963,19 @@ export default function WebSec({
                   >
                     <div className="flex justify-between items-start border-b border-zinc-100 pb-3">
                       <div>
-                        <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block mb-0.5">Package</span>
-                        <h4 className={`font-bold text-base ${tier.color || "text-black"}`}>
+                        <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block mb-0.5">
+                          Package
+                        </span>
+                        <h4
+                          className={`font-bold text-base ${tier.color || "text-black"}`}
+                        >
                           {cells[0]}
                         </h4>
                       </div>
                       <div className="text-right">
-                        <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block mb-0.5">Investment</span>
+                        <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block mb-0.5">
+                          Investment
+                        </span>
                         <div className="font-bold text-zinc-950 text-base tracking-tight">
                           {cells[2]}
                         </div>
@@ -939,12 +984,20 @@ export default function WebSec({
 
                     <div className="grid grid-cols-1 gap-4">
                       <div>
-                        <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block mb-1">Ideal For</span>
-                        <p className="text-zinc-700 font-medium text-xs sm:text-sm leading-relaxed">{cells[1]}</p>
+                        <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block mb-1">
+                          Ideal For
+                        </span>
+                        <p className="text-zinc-700 font-medium text-xs sm:text-sm leading-relaxed">
+                          {cells[1]}
+                        </p>
                       </div>
                       <div>
-                        <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block mb-1">Deliverables</span>
-                        <p className="text-zinc-500 font-medium text-xs sm:text-sm leading-relaxed">{cells[3]}</p>
+                        <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block mb-1">
+                          Deliverables
+                        </span>
+                        <p className="text-zinc-500 font-medium text-xs sm:text-sm leading-relaxed">
+                          {cells[3]}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -995,8 +1048,8 @@ export default function WebSec({
                         {comparisonTable.headers.map((header, idx) => {
                           if (idx === 1) {
                             return (
-                              <div 
-                                key={idx} 
+                              <div
+                                key={idx}
                                 className="bg-[#BFCA16] text-black font-extrabold py-5 px-6 flex items-center justify-center text-center shadow-[inset_0_-1px_0_rgba(0,0,0,0.1)]"
                               >
                                 {header}
@@ -1004,8 +1057,8 @@ export default function WebSec({
                             );
                           }
                           return (
-                            <div 
-                              key={idx} 
+                            <div
+                              key={idx}
                               className={`py-5 px-6 flex items-center ${idx === 0 ? "text-zinc-500 bg-zinc-50/50" : "text-zinc-800 bg-zinc-50/50 justify-center text-center"}`}
                             >
                               {header}
@@ -1034,7 +1087,9 @@ export default function WebSec({
                                   <div className="w-8 h-8 rounded-lg bg-zinc-100 flex items-center justify-center text-zinc-600 shrink-0">
                                     <FeatureIcon className="w-4.5 h-4.5" />
                                   </div>
-                                  <span className="text-zinc-900 font-bold tracking-tight">{cell}</span>
+                                  <span className="text-zinc-900 font-bold tracking-tight">
+                                    {cell}
+                                  </span>
                                 </div>
                               );
                             } else if (idx === 1) {
@@ -1091,7 +1146,9 @@ export default function WebSec({
                       <div className="w-8 h-8 rounded-lg bg-zinc-100 flex items-center justify-center text-zinc-600 shrink-0">
                         <FeatureIcon className="w-4.5 h-4.5" />
                       </div>
-                      <span className="text-zinc-900 font-extrabold text-sm uppercase tracking-wider">{cells[0]}</span>
+                      <span className="text-zinc-900 font-extrabold text-sm uppercase tracking-wider">
+                        {cells[0]}
+                      </span>
                     </div>
 
                     {/* Comparison Stack */}
@@ -1101,8 +1158,12 @@ export default function WebSec({
                         <div className="bg-[#BFCA16]/10 border border-[#BFCA16]/20 rounded-xl p-3.5 flex items-start gap-3">
                           <CheckCircle2 className="w-5 h-5 text-zinc-950 shrink-0 mt-0.5" />
                           <div>
-                            <span className="text-[10px] font-bold text-zinc-950/70 uppercase block mb-0.5">PELTOWN Custom Build</span>
-                            <span className="text-zinc-950 font-medium text-xs sm:text-sm leading-snug">{cells[1]}</span>
+                            <span className="text-[10px] font-bold text-zinc-950/70 uppercase block mb-0.5">
+                              PELTOWN Custom Build
+                            </span>
+                            <span className="text-zinc-950 font-medium text-xs sm:text-sm leading-snug">
+                              {cells[1]}
+                            </span>
                           </div>
                         </div>
                       )}
@@ -1112,8 +1173,12 @@ export default function WebSec({
                         <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-3.5 flex items-start gap-3">
                           <XCircle className="w-5 h-5 text-zinc-400 shrink-0 mt-0.5" />
                           <div>
-                            <span className="text-[10px] font-bold text-zinc-500 uppercase block mb-0.5">DIY Builders</span>
-                            <span className="text-zinc-600 font-medium text-xs sm:text-sm leading-snug">{cells[2]}</span>
+                            <span className="text-[10px] font-bold text-zinc-500 uppercase block mb-0.5">
+                              DIY Builders
+                            </span>
+                            <span className="text-zinc-600 font-medium text-xs sm:text-sm leading-snug">
+                              {cells[2]}
+                            </span>
                           </div>
                         </div>
                       )}

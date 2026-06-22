@@ -440,7 +440,7 @@ export default function CostSec() {
                 {/* 1. LAYOUT LAYER FOR WEBSITE */}
                 {activeTab === "web" && (
                   <>
-                    <h3 className="text-2xl font-black text-white tracking-tight">
+                    <h3 className="text-2xl font-bold text-white tracking-tight">
                       Website Requirements
                     </h3>
 
@@ -520,7 +520,7 @@ export default function CostSec() {
                 {/* 2. LAYOUT LAYER FOR E-COMMERCE */}
                 {activeTab === "ecommerce" && (
                   <>
-                    <h3 className="text-2xl font-black text-white tracking-tight">
+                    <h3 className="text-2xl font-bold text-white tracking-tight">
                       E-Commerce Solution
                     </h3>
 
@@ -610,7 +610,7 @@ export default function CostSec() {
                 {/* 3. LAYOUT LAYER FOR TRAVEL */}
                 {activeTab === "travel" && (
                   <>
-                    <h3 className="text-2xl font-black text-white tracking-tight">
+                    <h3 className="text-2xl font-bold text-white tracking-tight">
                       Travel Agency Portal
                     </h3>
 
@@ -669,7 +669,7 @@ export default function CostSec() {
                 {/* 4. LAYOUT LAYER FOR MOBILE APP */}
                 {activeTab === "mobile" && (
                   <>
-                    <h3 className="text-2xl font-black text-white tracking-tight">
+                    <h3 className="text-2xl font-bold text-white tracking-tight">
                       Custom App (Utility/Social)
                     </h3>
 
@@ -729,7 +729,7 @@ export default function CostSec() {
                 {/* 5. LAYOUT LAYER FOR BULK EMAIL */}
                 {activeTab === "bulkemail" && (
                   <>
-                    <h3 className="text-2xl font-black text-white tracking-tight">
+                    <h3 className="text-2xl font-bold text-white tracking-tight">
                       Bulk Email Requirements
                     </h3>
 
@@ -767,7 +767,7 @@ export default function CostSec() {
                 {/* 6. LAYOUT LAYER FOR BIZ EMAIL */}
                 {activeTab === "bizemail" && (
                   <>
-                    <h3 className="text-2xl font-black text-white tracking-tight">
+                    <h3 className="text-2xl font-bold text-white tracking-tight">
                       Business Email Setup
                     </h3>
 
@@ -813,7 +813,7 @@ export default function CostSec() {
                 {/* 7. LAYOUT LAYER FOR SOCIAL MEDIA */}
                 {activeTab === "social" && (
                   <>
-                    <h3 className="text-2xl font-black text-white tracking-tight">
+                    <h3 className="text-2xl font-bold text-white tracking-tight">
                       Social Media Retainer
                     </h3>
 
@@ -845,7 +845,7 @@ export default function CostSec() {
                 {/* 8. LAYOUT LAYER FOR CRM / ERP */}
                 {activeTab === "crm" && (
                   <>
-                    <h3 className="text-2xl font-black text-white tracking-tight">
+                    <h3 className="text-2xl font-bold text-white tracking-tight">
                       Custom ERP/CRM Builder
                     </h3>
 
@@ -957,7 +957,7 @@ export default function CostSec() {
                 <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">
                   Total Estimate
                 </span>
-                <span className="text-3xl md:text-4xl font-black text-white tracking-tight transition-all duration-300">
+                <span className="text-3xl md:text-4xl font-bold text-white tracking-tight transition-all duration-300">
                   ₹{calculationSummary.total.toLocaleString("en-IN")}
                 </span>
 

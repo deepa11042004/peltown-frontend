@@ -167,7 +167,7 @@ export default function ContactSec() {
           {/* FORM CONTAINER CARD (7/12 Width) */}
           <div className="lg:col-span-7 bg-zinc-900/50 border border-zinc-800 rounded-3xl p-6 md:p-10 lg:p-12 shadow-sm text-left flex flex-col justify-between">
             <div className="space-y-2 mb-8">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
                 Send a <span className="text-[#BFCA16]">Message</span>
               </h2>
             </div>

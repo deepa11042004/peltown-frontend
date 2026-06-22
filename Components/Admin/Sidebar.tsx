@@ -61,9 +61,24 @@ export default function Sidebar({
       hasSubmenu: true,
       submenuItems: ["Pending Checks", "Completed Checks", "Disputes"],
     },
-    { id: "calculator", label: "Cost Calculator", icon: Calculator, hasSubmenu: false },
-    { id: "partners", label: "Partner Applications", icon: Handshake, hasSubmenu: false },
-    { id: "testimonials", label: "Testimonials", icon: MessageSquare, hasSubmenu: false },
+    {
+      id: "calculator",
+      label: "Cost Calculator",
+      icon: Calculator,
+      hasSubmenu: false,
+    },
+    {
+      id: "partners",
+      label: "Partner Applications",
+      icon: Handshake,
+      hasSubmenu: false,
+    },
+    {
+      id: "testimonials",
+      label: "Testimonials",
+      icon: MessageSquare,
+      hasSubmenu: false,
+    },
     { id: "faqs", label: "FAQs", icon: HelpCircle, hasSubmenu: false },
   ];
 
@@ -78,13 +93,13 @@ export default function Sidebar({
         <div className="flex items-center justify-between px-4 py-5 border-b border-[#e4e4e7] mb-4">
           {!isCollapsed && (
             <div className="flex items-center gap-1.5 pl-1.5">
-              <span className="text-2xl font-black tracking-wider text-zinc-900 select-none flex items-center">
+              <span className="text-2xl font-bold tracking-wider text-zinc-900 select-none flex items-center">
                 PELTOWN
               </span>
             </div>
           )}
           {isCollapsed && (
-            <div className="mx-auto text-xl font-black text-zinc-900 select-none">
+            <div className="mx-auto text-xl font-bold text-zinc-900 select-none">
               P
             </div>
           )}
@@ -151,7 +166,9 @@ export default function Sidebar({
                       {item.submenuItems?.map((subItem) => (
                         <button
                           key={subItem}
-                          onClick={() => setActiveTab(`${item.id}_${subItem.toLowerCase()}`)}
+                          onClick={() =>
+                            setActiveTab(`${item.id}_${subItem.toLowerCase()}`)
+                          }
                           className="w-full text-left py-1.5 text-xs font-semibold text-zinc-500 hover:text-black cursor-pointer block"
                         >
                           {subItem}
