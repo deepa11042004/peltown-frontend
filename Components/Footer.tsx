@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   Mail,
@@ -61,8 +62,13 @@ const footerLinks = {
 };
 
 export default function Footer() {
+  const pathname = usePathname();
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
+
+  if (pathname === "/login" || pathname === "/signup") {
+    return null;
+  }
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -85,7 +91,7 @@ export default function Footer() {
               Let&apos;s get started on <br className="hidden md:block" />
               something <span className="text-[#BFCA16]">great</span>
             </h2>
-            <p className="text-zinc-500 text-sm md:text-base font-light max-w-xl">
+            <p className="text-neutral-400 text-sm md:text-base font-medium max-w-xl">
               We provide the expertise and support to propel your business
               forward. Get industry-leading solutions tailored for scale.
             </p>
@@ -103,7 +109,7 @@ export default function Footer() {
                   placeholder="For subscribe newsletter"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-zinc-950/60 border border-zinc-800/80 rounded-full py-4 pl-6 pr-36 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-[#BFCA16] focus:ring-1 focus:ring-[#BFCA16]/30 transition-all duration-300"
+                  className="w-full bg-zinc-950/60 border border-zinc-800/80 rounded-full py-4 pl-6 pr-36 text-sm text-neutral-400 placeholder-neutral-400 focus:outline-none focus:border-[#BFCA16] focus:ring-1 focus:ring-[#BFCA16]/30 transition-all duration-300"
                 />
                 <button
                   type="submit"
@@ -126,7 +132,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
           {Object.entries(footerLinks).map(([key, group]) => (
             <div key={key} className="space-y-5 text-left">
-              <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white/90">
+              <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white">
                 {group.title}
               </h3>
               <ul className="space-y-3.5">
@@ -134,7 +140,7 @@ export default function Footer() {
                   <li key={idx}>
                     <Link
                       href={link.href}
-                      className="text-sm text-zinc-500 hover:text-[#BFCA16] transition-colors duration-250 flex items-center group/link"
+                      className="text-sm text-neutral-400 hover:text-[#BFCA16] transition-colors duration-250 flex items-center group/link"
                     >
                       <ArrowRight className="w-0 h-3 opacity-0 text-[#BFCA16] group-hover/link:w-3 group-hover/link:opacity-100 group-hover/link:mr-1.5 transition-all duration-200" />
                       {link.name}
@@ -174,7 +180,7 @@ export default function Footer() {
                 STUDIO
               </span>
             </Link>
-            <p className="text-xs md:text-sm text-zinc-500 font-light leading-relaxed max-w-lg">
+            <p className="text-xs md:text-sm text-neutral-400 font-medium leading-relaxed max-w-lg">
               PELTOWN is a leading IT solutions provider specializing in
               cutting-edge web development, mobile applications, customized CRM
               & ERP systems, and results-driven digital marketing. Our mission
@@ -200,10 +206,10 @@ export default function Footer() {
                     <Phone className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                    <p className="text-[10px] font-bold text-white uppercase tracking-widest">
                       Phone
                     </p>
-                    <p className="text-sm font-semibold text-zinc-200 group-hover/contact:text-white transition-colors">
+                    <p className="text-sm font-semibold text-neutral-400 group-hover/contact:text-white transition-colors">
                       +91 981 838 1669
                     </p>
                   </div>
@@ -220,10 +226,10 @@ export default function Footer() {
                     <Mail className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                    <p className="text-[10px] font-bold text-white uppercase tracking-widest">
                       Mail
                     </p>
-                    <p className="text-sm font-semibold text-zinc-200 group-hover/contact:text-white transition-colors">
+                    <p className="text-sm font-semibold text-neutral-400 group-hover/contact:text-white transition-colors">
                       info@peltown.com
                     </p>
                   </div>
@@ -237,10 +243,10 @@ export default function Footer() {
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                    <p className="text-[10px] font-bold text-white uppercase tracking-widest">
                       Corporate Address
                     </p>
-                    <p className="text-xs text-zinc-400 font-light leading-relaxed max-w-sm">
+                    <p className="text-xs text-neutral-400 font-bold leading-relaxed max-w-sm">
                       C-32, Block C, Sector 14, Kaushambi, Ghaziabad, Uttar
                       Pradesh 201010
                     </p>
@@ -302,7 +308,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright Tag */}
-          <span className="text-[11px] text-zinc-600 font-bold tracking-wide">
+          <span className="text-[11px] text-neutral-400 font-bold tracking-wide">
             &copy; {new Date().getFullYear()} PELTOWN. All rights reserved.
           </span>
         </div>

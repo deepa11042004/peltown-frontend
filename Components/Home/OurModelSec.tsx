@@ -1,208 +1,147 @@
 "use client";
-import { motion, Variants } from "framer-motion";
-import {
-  BrainCircuit,
-  Palette,
-  Code2,
-  Terminal,
-  Search,
-  Megaphone,
-  ArrowUpRight,
-} from "lucide-react";
 
-const steps = [
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+
+// --- DATA ---
+const STEPS = [
   {
-    icon: BrainCircuit,
-    title: "Brainstorming",
-    subtitle: "Ideas",
-    desc: "Mapping out specifications and technical architectures.",
+    num: "1",
+    title: "Brainstorming Ideas",
+    desc: "Generate innovative ideas and concepts to set a solid foundation for your project.",
+    rotation: "-rotate-3",
   },
   {
-    icon: Palette,
-    title: "Product",
-    subtitle: "Design",
-    desc: "Crafting intuitive, pixel-perfect user interfaces.",
+    num: "2",
+    title: "Product Design",
+    desc: "Craft modern, intuitive UI/UX layouts tailored to your business needs.",
+    rotation: "rotate-2",
   },
   {
-    icon: Code2,
-    title: "Front-End",
-    subtitle: "Development",
-    desc: "Building highly responsive, animated user interfaces.",
+    num: "3",
+    title: "Front-End Development",
+    desc: "Transform designs into responsive, pixel-perfect, and ultra-fast client-side interfaces.",
+    rotation: "-rotate-1",
   },
   {
-    icon: Terminal,
-    title: "Back-End",
-    subtitle: "Development",
-    desc: "Engineering scalable APIs and robust infrastructure.",
+    num: "4",
+    title: "Digital Marketing",
+    desc: "Deploy data-driven marketing campaigns to reach the target audience and boost business growth.",
+    rotation: "rotate-3",
   },
   {
-    icon: Search,
-    title: "SEO",
-    subtitle: "Optimization",
-    desc: "Maximizing visibility and performance auditing.",
+    num: "5",
+    title: "SEO Optimization",
+    desc: "Implement search engine best practices to enhance visibility and drive organic traffic.",
+    rotation: "-rotate-2",
   },
   {
-    icon: Megaphone,
-    title: "Digital",
-    subtitle: "Marketing",
-    desc: "Deploying growth campaigns for maximum ROI.",
+    num: "6",
+    title: "Back-End Development",
+    desc: "Engineer secure, scalable databases and robust backend logic to power the platform.",
+    rotation: "rotate-1",
   },
 ];
 
 export default function OurModelSec() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.12 },
-    },
-  };
+  const targetRef = useRef<HTMLDivElement>(null);
 
-  const cardVariants: Variants = {
-    hidden: { y: 25, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
-    },
-  };
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  const [xRange, setXRange] = useState<[string, string]>(["10%", "-70%"]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      let cardWidth = 380; // md:w-95 (23.75rem = 380px)
+      if (width < 640) {
+        cardWidth = 300; // w-75 (18.75rem = 300px)
+      } else if (width < 768) {
+        cardWidth = 350; // sm:w-87.5 (21.875rem = 350px)
+      }
+
+      const gap = 32; // gap-8 (2rem = 32px)
+      const numCards = 6;
+      // padding is px-[5vw] on both sides, which totals 10vw of window width
+      const padding = width * 0.1;
+      const totalTrackWidth = cardWidth * numCards + gap * (numCards - 1) + padding;
+
+      // target translation puts the right edge of track at the right edge of viewport
+      const targetTranslationPx = width - totalTrackWidth;
+      const endPercent = (targetTranslationPx / totalTrackWidth) * 100;
+
+      // Start with 5% offset on mobile for more space, 10% otherwise
+      const startPercent = width < 640 ? 5 : 10;
+
+      setXRange([`${startPercent}%`, `${endPercent}%`]);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const x = useTransform(scrollYProgress, [0, 1], xRange);
 
   return (
-    <section className="relative bg-white text-black py-24 px-6 md:px-12 lg:px-20 overflow-hidden flex items-center justify-center min-h-screen">
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-start relative z-10">
-        {/* Left Column */}
-        <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
-          <div className="space-y-2">
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="flex items-center gap-2 mb-2"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse"></span>
-              <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#BFCA16] uppercase">
-                Our Model
-              </span>
-            </motion.div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900">
-              How We Do
-            </h2>
+    <div ref={targetRef} className="relative h-[350vh] bg-white">
+      {/* Sticky viewport frame locks into view during scroll */}
+      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center py-20">
+        {/* HEADER HUB */}
+        <div className="text-center space-y-4 mb-12 px-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-400 shadow-xs mx-auto">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
+            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-black uppercase">
+              Our Model
+            </span>
           </div>
-
-          <p className="text-zinc-600 text-base md:text-lg leading-relaxed font-light">
-            PELTOWN drives business growth through cutting-edge website
-            development, intuitive mobile apps, and strategic digital marketing.
-          </p>
-
-          <p className="text-zinc-500 text-sm md:text-base leading-relaxed font-light">
-            We don&apos;t just build software; we engineer scalable digital
-            experiences tailored for maximum ROI. From startups to enterprises,
-            we provide the technical expertise to secure your future.
-          </p>
-
-          <motion.button
-            whileHover={{ scale: 1.03, y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            className="group flex items-center gap-2 bg-[#BFCA16] hover:bg-black text-white font-bold px-6 py-3 rounded-full transition-colors duration-300 shadow-md shadow-[#BFCA16]/10"
-          >
-            <span>Learn More</span>
-            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </motion.button>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-headingColor">
+            How We Do It.
+          </h2>
         </div>
 
-        {/* Right Column */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6 relative"
-        >
-          {steps.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <motion.div
+        {/* HORIZONTAL MOVING TRACK */}
+        <div className="relative flex items-center w-full">
+          {/* SVG Connector Line Layout Overlay behind cards */}
+          <div className="absolute left-0 right-0 top-1/3 h-1 pointer-events-none z-0 hidden md:block">
+            <svg
+              className="w-full h-20 fill-none stroke-[#BFCA16] stroke-4 stroke-dasharray-[6,6]"
+              viewBox="0 0 1440 80"
+            >
+              <path d="M0,40 Q360,80 720,40 T1440,40" />
+            </svg>
+          </div>
+
+          <motion.div
+            style={{ x }}
+            className="flex gap-8 px-[5vw] relative z-10"
+          >
+            {STEPS.map((step, index) => (
+              <div
                 key={index}
-                variants={cardVariants}
-                className="relative border border-zinc-200 flex flex-col justify-between rounded-3xl overflow-hidden p-6 h-48 group cursor-pointer"
-                whileHover="hover"
+                className={`w-75 sm:w-87.5 md:w-95 aspect-[4/4.2] shrink-0 bg-cardBgColor border border-cardBorderColor hover:border-(--highlight) rounded-3xl p-8 md:p-10 shadow-xl shadow-zinc-400/20 flex flex-col justify-between transform ${step.rotation} transition-transform duration-300 hover:rotate-0 hover:scale-[1.02] group text-left`}
               >
-                {/* Dynamic Slide-in from left hover accent panel */}
-                <motion.div
-                  className="absolute inset-0 z-0"
-                  style={{ background: "#BFCA16", originX: 0 }}
-                  variants={{ hover: { scaleX: 1 }, initial: { scaleX: 0 } }}
-                  initial={{ scaleX: 0 }}
-                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                />
-
-                <div className="relative z-10 flex items-start justify-between">
-                  {/* Icon Sphere */}
-                  <motion.div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center transition-colors border"
-                    style={{
-                      backgroundColor: "#ffffff",
-                      borderColor: "rgba(0,0,0,0.06)",
-                    }}
-                    variants={{
-                      hover: {
-                        scale: 1.05,
-                        backgroundColor: "rgba(255,255,255,0.15)",
-                        borderColor: "rgba(255,255,255,0.2)",
-                      },
-                    }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Icon className="w-5 h-5 text-[#BFCA16] group-hover:text-white transition-colors duration-300" />
-                  </motion.div>
-
-                  {/* Number Step Counter */}
-                  <motion.span
-                    className="text-xs font-mono font-bold"
-                    style={{ color: "#18181b" }}
-                    variants={{ hover: { color: "rgba(255,255,255,0.85)" } }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    0{index + 1}
-                  </motion.span>
+                {/* Large Counter Step ID Metric */}
+                <div className="text-6xl md:text-7xl font-light tracking-tighter text-zinc-900 select-none font-sans">
+                  {step.num}
                 </div>
 
-                {/* Typography Container */}
-                <div className="relative z-10 space-y-1">
-                  <div className="flex items-baseline gap-1.5">
-                    <motion.h3
-                      className="text-md font-bold"
-                      style={{ color: "#18181b" }}
-                      variants={{ hover: { color: "#ffffff" } }}
-                      transition={{ duration: 0.25 }}
-                    >
-                      {step.title}
-                    </motion.h3>
-                    <motion.span
-                      className="text-xs font-bold"
-                      style={{ color: "#18181b" }}
-                      variants={{ hover: { color: "#fff" } }}
-                      transition={{ duration: 0.25 }}
-                    >
-                      {step.subtitle}
-                    </motion.span>
-                  </div>
-                  <motion.p
-                    className="text-sm font-normal leading-relaxed line-clamp-2"
-                    style={{ color: "#71717a" }}
-                    variants={{ hover: { color: "#fff" } }}
-                    transition={{ duration: 0.25 }}
-                  >
+                {/* Info Text Stack Mapped cleanly */}
+                <div className="space-y-3">
+                  <h3 className="text-xl md:text-2xl font-bold tracking-tight text-zinc-950 group-hover:text-(--highlight) transition-colors">
+                    {step.title}
+                  </h3>
+                  <p className="text-descriptionColor text-xs md:text-sm font-medium leading-relaxed">
                     {step.desc}
-                  </motion.p>
+                  </p>
                 </div>
-
-               
-              </motion.div>
-            );
-          })}
-        </motion.div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

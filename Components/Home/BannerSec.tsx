@@ -34,24 +34,24 @@ export default function BannerSec() {
   };
 
   return (
-    <section className="bg-white text-black py-24 px-6 md:px-12 lg:px-20 flex flex-col items-center justify-center min-h-screen overflow-hidden">
+    <section className="bg-white text-black py-24 px-6 md:px-12 lg:px-20 flex flex-col items-center justify-center overflow-hidden">
       <div className="max-w-6xl mx-auto w-full flex flex-col items-center text-center space-y-12">
         {/* --- HEADER BLOCK --- */}
-        <div className="flex flex-col items-center space-y-4 max-w-3xl">
+        <div className="flex flex-col items-center space-y-4 max-w-4xl">
           {/* Requested Highlight Tagline Implementation */}
-          <div className="flex items-center gap-2 mb-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse"></span>
-            <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#BFCA16] uppercase">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-400 shadow-xs mx-auto">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
+            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-black uppercase">
               Our Expertise, Your Advantage
             </span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 max-w-2xl leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-headingColor max-w-4xl leading-tight">
             Software Built for Your Success
           </h2>
 
-          <p className="text-zinc-500 text-base md:text-lg max-w-2xl font-light leading-relaxed">
-            At <span className="text-black font-semibold">PELTOWN</span>, we
+          <p className="text-descriptionColor text-base md:text-md max-w-2xl font-medium leading-relaxed">
+            At <span className="font-bold text-headingColor">PELTOWN</span>, we
             provide the best of both worlds. Whether you need a unique system
             designed specifically for you or a ready-made SaaS product to launch
             your business instantly, we have the perfect solutions to help you
@@ -71,7 +71,7 @@ export default function BannerSec() {
           <motion.div
             variants={cardVariants}
             whileHover={{ y: -4 }}
-            className="group relative bg-zinc-50/60 border border-zinc-200/80 rounded-3xl p-8 md:p-10 flex flex-col justify-between gap-8 text-left hover:bg-white hover:border-[#BFCA16] hover:shadow-2xl hover:shadow-zinc-200/60 transition-all duration-300"
+            className="group relative bg-cardBgColor border border-cardBorderColor rounded-3xl p-8 md:p-10 flex flex-col justify-between gap-8 text-left hover:bg-white hover:border-[#BFCA16] hover:shadow-2xl hover:shadow-zinc-200/60 transition-all duration-300"
           >
             <div className="space-y-6">
               {/* Icon Container */}
@@ -80,10 +80,10 @@ export default function BannerSec() {
               </div>
 
               <div className="space-y-2">
-                <h3 className="text-2xl font-bold tracking-tight text-zinc-900">
+                <h3 className="text-2xl font-bold tracking-tight text-headingColor">
                   Custom Software Development
                 </h3>
-                <p className="text-sm text-zinc-500 font-light leading-relaxed">
+                <p className="text-sm text-descriptionColor font-medium leading-relaxed">
                   Give us your biggest ideas, and we will turn them into
                   reality. We build powerful, custom-made software shaped
                   entirely around your brand, giving you complete ownership and
@@ -131,7 +131,7 @@ export default function BannerSec() {
                 <h3 className="text-2xl font-bold tracking-tight text-white">
                   Ready-to-Launch SaaS Products
                 </h3>
-                <p className="text-sm text-zinc-400 font-light leading-relaxed">
+                <p className="text-sm text-neutral-400 font-medium leading-relaxed">
                   Skip the long wait of standard development. Use our deeply
                   tested, pre-built platforms to launch your new business safely
                   in a matter of days.
@@ -156,7 +156,7 @@ export default function BannerSec() {
                     <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 shrink-0 group-hover:text-zinc-200 transition-colors">
                       <SubIcon className="w-4 h-4" />
                     </div>
-                    <span className="text-xs font-semibold text-zinc-300 leading-snug tracking-tight">
+                    <span className="text-xs font-semibold text-neutral-400 leading-snug tracking-tight">
                       {subProduct.label}
                     </span>
                   </div>

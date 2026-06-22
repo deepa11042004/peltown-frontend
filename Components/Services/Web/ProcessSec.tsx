@@ -59,7 +59,7 @@ export default function ProcessSec({
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const totalCards = steps.length;
-  const anglePerCard = 360 / totalCards; 
+  const anglePerCard = 360 / totalCards;
   const radius = 430; // Distance from center
 
   const handlePrev = () => {
@@ -78,14 +78,14 @@ export default function ProcessSec({
   const containerRotation = -currentIndex * anglePerCard;
 
   return (
-    <section className="py-24 px-4 md:px-12 lg:px-20 bg-white overflow-hidden">
+    <section className="py-24 px-4 md:px-12 lg:px-20 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Header */}
         <div className="text-center space-y-6">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-950">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
             {title}
           </h2>
-          <p className="text-zinc-500 font-medium text-md max-w-2xl mx-auto">
+          <p className="text-descriptionColor font-medium text-md max-w-2xl mx-auto">
             {desc}
           </p>
         </div>
@@ -140,25 +140,20 @@ export default function ProcessSec({
                     initial={false}
                   >
                     {/* Card Content */}
-                    <div className="relative p-6 md:p-7 bg-zinc-50 border border-zinc-200 rounded-2xl flex flex-col justify-between h-full w-full shadow-lg backdrop-blur-sm">
-                      {/* Subtle gradient overlay for depth */}
-                      <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-white/50 to-transparent pointer-events-none" />
-
-                      <div className="space-y-3 relative z-10">
-                        <span className="text-3xl font-mono font-bold text-zinc-200">
+                    <div className="relative p-6 md:p-7 bg-white rounded-2xl flex flex-col items-center h-full w-full">
+                      <div className="relative z-10">
+                        <span className="text-3xl font-mono font-bold text-black">
                           {step.num}
                         </span>
                         <div className="space-y-2">
-                          <h4 className="font-bold text-base md:text-lg text-zinc-950 tracking-tight leading-snug">
+                          <h4 className="font-bold text-base md:text-lg text-black tracking-tight mt-8">
                             {step.title}
                           </h4>
-                          <p className="text-xs md:text-sm text-zinc-500 font-medium leading-relaxed">
+                          <p className="text-xs md:text-sm text-descriptionColor font-medium leading-relaxed">
                             {step.desc}
                           </p>
                         </div>
                       </div>
-
-                      <div className="h-1.5 w-10 rounded-full bg-zinc-200 mt-3 relative z-10" />
                     </div>
                   </motion.div>
                 );

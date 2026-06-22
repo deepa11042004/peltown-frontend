@@ -1,329 +1,1012 @@
 "use client";
 
-import React, { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 import Image from "next/image";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import {
-  Eye,
+  motion,
+  useScroll,
+  useTransform,
+  useReducedMotion,
+} from "framer-motion";
+import {
+  Code2,
+  Globe,
+  Smartphone,
+  Cloud,
+  Workflow,
+  Bot,
+  Sparkles,
+  ShoppingCart,
+  Database,
+  Users,
+  Megaphone,
+  HeartPulse,
+  GraduationCap,
+  Building2,
+  Plane,
+  Factory,
+  Briefcase,
+  Search,
+  ListChecks,
+  PenTool,
+  Hammer,
+  ShieldCheck,
+  Rocket,
+  Headphones,
   Target,
-  Puzzle,
-  Lightbulb,
-  Handshake,
-  User,
-  Quote,
+  Cpu,
+  MessageSquare,
+  Layers,
+  Wrench,
+  HelpCircle,
+  LifeBuoy,
+  CheckCircle2,
+  ArrowUpRight,
+  ArrowRight,
+  CalendarClock,
+  MapPin,
+  type LucideIcon,
 } from "lucide-react";
 
-// --- CORE VALUES DATA ---
-const coreValues = [
+/* Content */
+
+type IconItem = { icon: LucideIcon; title: string; desc: string };
+
+const capabilities: IconItem[] = [
   {
-    title: "Synergy",
-    description:
-      "Like pixels forming an image, our diverse skills combine to create powerful digital solutions.",
-    icon: Puzzle,
+    icon: Code2,
+    title: "Custom Software Development",
+    desc: "Business applications designed around your workflows.",
   },
   {
-    title: "Innovation",
-    description:
-      "We continuously push the boundaries of technology to deliver modern, scalable ecosystems.",
-    icon: Lightbulb,
+    icon: Globe,
+    title: "Web Development",
+    desc: "High-performance websites and web applications.",
   },
   {
-    title: "Client Success",
-    description:
-      "Your growth is our ultimate metric. We partner with you for the long term.",
-    icon: Handshake,
+    icon: Smartphone,
+    title: "Mobile App Development",
+    desc: "Android and iOS applications for modern businesses.",
+  },
+  {
+    icon: Cloud,
+    title: "SaaS Product Development",
+    desc: "Scalable software products and platforms.",
+  },
+  {
+    icon: Database,
+    title: "ERP & CRM Solutions",
+    desc: "Business management and customer relationship systems.",
+  },
+  {
+    icon: Workflow,
+    title: "Business Automation",
+    desc: "Reducing manual work through intelligent automation.",
+  },
+  {
+    icon: Sparkles,
+    title: "AI & Emerging Technologies",
+    desc: "Helping businesses leverage modern technologies.",
   },
 ];
 
-export default function AboutSec() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.12 },
-    },
-  };
+const beliefs: string[] = [
+  "Generate more revenue",
+  "Reduce operational costs",
+  "Improve customer experiences",
+  "Increase productivity",
+  "Automate repetitive tasks",
+  "Scale efficiently",
+];
+
+const industries: IconItem[] = [
+  {
+    icon: Cloud,
+    title: "Technology & SaaS",
+    desc: "Scalable software products and platforms.",
+  },
+  {
+    icon: ShoppingCart,
+    title: "E-Commerce & Retail",
+    desc: "Online stores, marketplaces, POS, ERP and inventory.",
+  },
+  {
+    icon: HeartPulse,
+    title: "Healthcare",
+    desc: "Patient management, booking and healthcare software.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Education & EdTech",
+    desc: "Learning management systems and platforms.",
+  },
+  {
+    icon: Building2,
+    title: "Real Estate",
+    desc: "CRM, property management and real-estate technology.",
+  },
+  {
+    icon: Plane,
+    title: "Travel & Hospitality",
+    desc: "Booking systems, travel portals and engagement tools.",
+  },
+  {
+    icon: Factory,
+    title: "Manufacturing",
+    desc: "ERP systems and operational automation.",
+  },
+  {
+    icon: Briefcase,
+    title: "Professional Services",
+    desc: "Business management and workflow automation.",
+  },
+];
+
+const services: IconItem[] = [
+  {
+    icon: Globe,
+    title: "Website Development",
+    desc: "Professional websites that convert visitors into customers.",
+  },
+  {
+    icon: ShoppingCart,
+    title: "E-Commerce Development",
+    desc: "Online stores built for growth and scalability.",
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile App Development",
+    desc: "Custom Android and iOS applications.",
+  },
+  {
+    icon: Cloud,
+    title: "SaaS Development",
+    desc: "Cloud-based software products and subscription platforms.",
+  },
+  {
+    icon: Database,
+    title: "ERP Development",
+    desc: "Business management systems for growing organisations.",
+  },
+  {
+    icon: Users,
+    title: "CRM Development",
+    desc: "Customer relationship and sales management platforms.",
+  },
+  {
+    icon: Bot,
+    title: "AI Solutions",
+    desc: "Automation, AI assistants and intelligent systems.",
+  },
+  {
+    icon: Megaphone,
+    title: "Digital Marketing",
+    desc: "SEO, PPC, social media and lead generation.",
+  },
+];
+
+const whyChoose: IconItem[] = [
+  {
+    icon: Target,
+    title: "Business-Focused Development",
+    desc: "We build solutions that support business objectives.",
+  },
+  {
+    icon: Cpu,
+    title: "Modern Technology Stack",
+    desc: "Using scalable and future-ready technologies.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Transparent Communication",
+    desc: "Clear project planning and regular updates.",
+  },
+  {
+    icon: Layers,
+    title: "Scalable Architecture",
+    desc: "Built for future growth.",
+  },
+  {
+    icon: Headphones,
+    title: "Reliable Support",
+    desc: "Long-term maintenance and support services.",
+  },
+  {
+    icon: Wrench,
+    title: "Custom Development Expertise",
+    desc: "Solutions tailored to unique business requirements.",
+  },
+];
+
+const processSteps: {
+  icon: LucideIcon;
+  step: string;
+  title: string;
+  desc: string;
+}[] = [
+  {
+    icon: Search,
+    step: "01",
+    title: "Discovery",
+    desc: "Understanding your business goals and requirements.",
+  },
+  {
+    icon: ListChecks,
+    step: "02",
+    title: "Planning",
+    desc: "Creating a roadmap for successful execution.",
+  },
+  {
+    icon: PenTool,
+    step: "03",
+    title: "Design",
+    desc: "Crafting user-friendly experiences.",
+  },
+  {
+    icon: Hammer,
+    step: "04",
+    title: "Development",
+    desc: "Building scalable and secure solutions.",
+  },
+  {
+    icon: ShieldCheck,
+    step: "05",
+    title: "Testing",
+    desc: "Ensuring reliability and quality.",
+  },
+  {
+    icon: Rocket,
+    step: "06",
+    title: "Deployment",
+    desc: "Launching the solution successfully.",
+  },
+  {
+    icon: Headphones,
+    step: "07",
+    title: "Support",
+    desc: "Continuous improvements and maintenance.",
+  },
+];
+
+const locations: string[] = [
+  "Delhi",
+  "Noida",
+  "Greater Noida",
+  "Gurgaon",
+  "Gurugram",
+  "Faridabad",
+  "Ghaziabad",
+  "India",
+  "International Markets",
+];
+
+const stats: { value: string; label: string; desc: string }[] = [
+  {
+    value: "100%",
+    label: "Custom Development",
+    desc: "No one-size-fits-all solutions.",
+  },
+  {
+    value: "E2E",
+    label: "End-To-End Services",
+    desc: "From idea to deployment and support.",
+  },
+  {
+    value: "8+",
+    label: "Industries Served",
+    desc: "Solutions built for diverse business sectors.",
+  },
+  {
+    value: "∞",
+    label: "Scalable Architecture",
+    desc: "Designed for long-term growth.",
+  },
+];
+
+const questions = [
+  "What problem are we solving?",
+  "How will this improve operations?",
+  "How will this increase revenue?",
+  "How will this reduce costs?",
+  "How will this scale in the future?",
+];
+
+const support = [
+  "Technical support",
+  "System maintenance",
+  "Feature enhancements",
+  "Performance optimisation",
+  "Security updates",
+  "Scalability planning",
+];
+
+/* Shared bits */
+
+function Reveal({
+  children,
+  delay = 0,
+  className = "",
+  y = 22,
+}: {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+  y?: number;
+}) {
+  const reduce = useReducedMotion();
+  return (
+    <motion.div
+      className={className}
+      initial={reduce ? undefined : { opacity: 0, y }}
+      whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+function SectionTag({ label }: { label: string }) {
+  return (
+    <div className="flex items-center gap-3 mb-5 text-white/70">
+      <span className="h-px flex-1 max-w-12 bg-current/30" />
+      <span className="font-mono text-[11px] tracking-[0.25em] uppercase opacity-60">
+        {label}
+      </span>
+    </div>
+  );
+}
+
+/* Sections */
+
+function Hero() {
+  const reduce = useReducedMotion();
+  const headline = [
+    "Building Software",
+    "That Solves Real",
+    "Business Problems",
+  ];
 
   return (
-    <section className="bg-black text-white py-24 px-6 md:px-12 lg:px-20 w-full min-h-screen overflow-hidden relative font-sans">
-      <div className="max-w-7xl mx-auto space-y-32">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          {/* Left Column */}
+    <section className="relative overflow-hidden bg-black text-white pt-32 pb-20 px-6 md:px-12">
+      <div className="relative max-w-6xl mx-auto grid lg:grid-cols-[1.05fr_1fr] gap-16 items-center">
+        <div>
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="lg:col-span-5 flex justify-center relative"
+            initial={reduce ? undefined : { opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="font-mono inline-flex items-center gap-2 text-[11px] tracking-[0.25em] uppercase text-zinc-300 border border-zinc-800 px-3 py-1 rounded-full bg-zinc-900/50 mb-7 shadow-xs"
           >
-            <div className="relative w-full aspect-square max-w-125 rounded-3xl overflow-hidden shadow-2xl">
-              <Image
-                src="/Img/about_peltown.webp"
-                alt="Peltown Team"
-                fill
-                className="object-cover"
-              />
-            </div>
+            <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
+            Delhi NCR · Software Studio
           </motion.div>
 
-          {/* Right Column: Narrative Copy */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-            <div className="space-y-3">
-              <div className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
-                <span className="text-xs font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
-                  Our Genesis
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.05] mb-6 text-white">
+            {headline.map((line, i) => (
+              <span key={line} className="block overflow-hidden pb-0.5">
+                <motion.span
+                  className="block"
+                  initial={reduce ? undefined : { y: "110%" }}
+                  animate={{ y: "0%" }}
+                  transition={{
+                    duration: 0.7,
+                    delay: 0.1 + i * 0.12,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                >
+                  {line}
+                </motion.span>
+              </span>
+            ))}
+          </h1>
+
+          <motion.p
+            initial={reduce ? undefined : { opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.55 }}
+            className="text-base md:text-lg text-zinc-400 max-w-md mb-9 leading-relaxed"
+          >
+            We help startups, SMEs, and enterprises across Delhi NCR build
+            websites, apps, SaaS platforms, ERPs, CRMs, and automation systems
+            that create measurable business growth.
+          </motion.p>
+
+          <motion.div
+            initial={reduce ? undefined : { opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.68 }}
+            className="flex flex-wrap gap-4"
+          >
+            <a
+              href="#contact"
+              className="group inline-flex items-center gap-2 bg-[#BFCA16] text-zinc-950 font-bold px-6 py-3 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
+            >
+              Start Your Project
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 border border-zinc-800 text-zinc-300 px-6 py-3 rounded-full bg-zinc-900/40 hover:border-zinc-500 hover:text-white hover:bg-zinc-900/85 transition-colors duration-300 shadow-xs"
+            >
+              <CalendarClock className="w-4 h-4 text-[#BFCA16]" />
+              Schedule Consultation
+            </a>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={reduce ? undefined : { opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.25 }}
+        >
+          <Image
+            src="/Img/about_peltown.webp"
+            alt="About Peltown"
+            width={760}
+            height={400}
+            priority
+            className="w-full h-auto rounded-2xl object-cover"
+          />
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function Story() {
+  return (
+    <section className="bg-black text-white py-24 px-6 md:px-12">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-[0.85fr_1.15fr] gap-12">
+        <Reveal>
+          <SectionTag label="Our Story" />
+          <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-white">
+            Every business problem has a technology solution.
+          </h2>
+        </Reveal>
+        <Reveal delay={0.1} className="space-y-5 text-zinc-400 leading-relaxed">
+          <p>
+            Technology should simplify business, not complicate it. Too many
+            companies invest in software that&rsquo;s expensive, hard to use,
+            and disconnected from what they&rsquo;re actually trying to achieve.
+          </p>
+          <p>
+            Peltown Studio exists to close that gap between business
+            requirements and practical technology. We work with businesses
+            across Delhi, Noida, Gurgaon, Faridabad, and Ghaziabad, and
+            throughout India, building digital systems that improve operations,
+            increase efficiency, and open new growth opportunities.
+          </p>
+          <p className="font-medium text-white">
+            From a startup&rsquo;s first product to an established company
+            digitising its operations, the mission stays the same: build
+            technology that creates measurable business value.
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Capabilities() {
+  const reduce = useReducedMotion();
+  return (
+    <section className="bg-black text-white py-24 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto">
+        <SectionTag label="Who We Are" />
+        <h2 className="text-3xl md:text-4xl font-semibold max-w-2xl mb-12 text-white">
+          A technology partner for growing businesses.
+        </h2>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.07 } },
+          }}
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          {capabilities.map(({ icon: Icon, title, desc }) => (
+            <motion.div
+              key={title}
+              variants={
+                reduce
+                  ? {}
+                  : {
+                      hidden: { opacity: 0, y: 16 },
+                      show: { opacity: 1, y: 0 },
+                    }
+              }
+              className="group relative bg-zinc-900/40 border border-zinc-800/80 hover:border-[#BFCA16] hover:shadow-lg transition-all duration-300 p-6 rounded-2xl"
+            >
+              <Icon className="w-6 h-6 text-[#BFCA16] mb-4" strokeWidth={1.5} />
+              <h3 className="font-semibold text-white mb-1.5 leading-snug">
+                {title}
+              </h3>
+              <p className="text-sm text-zinc-400 leading-relaxed">{desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function Beliefs() {
+  return (
+    <section className="bg-black text-white py-24 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto">
+        <SectionTag  label="What We Believe" />
+        <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
+          <Reveal>
+            <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-6 text-white">
+              Software should do more than look good.
+            </h2>
+            <p className="text-zinc-400 leading-relaxed">
+              Every solution we ship is judged against one question: does this
+              create real business value? If a technology investment
+              doesn&rsquo;t, it isn&rsquo;t the right solution.
+            </p>
+          </Reveal>
+          <Reveal delay={0.1} className="grid sm:grid-cols-2 gap-4">
+            {beliefs.map((b) => (
+              <div
+                key={b}
+                className="flex items-start gap-3 bg-zinc-950 border border-zinc-800/80 rounded-2xl p-4 shadow-2xs hover:border-[#BFCA16] transition-colors"
+              >
+                <CheckCircle2 className="w-5 h-5 text-[#BFCA16] shrink-0 mt-0.5" />
+                <span className="text-sm leading-relaxed text-zinc-300">
+                  {b}
                 </span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-                The City of Pixels
-              </h2>
-            </div>
-
-            <div className="space-y-4 text-zinc-400 text-sm md:text-lg font-light leading-relaxed">
-              <p>
-                We believe that a single service, much like a single pixel, is
-                just a fragment. Alone, it holds potential, but it cannot convey
-                the full story. But when multiple pixels come together, they
-                create a complete, breathtaking picture.
-              </p>
-
-              {/* Highlight Standout Quote Box */}
-              <div className="p-4 bg-zinc-950/60 border-l-2 border-[#BFCA16] rounded-r-xl">
-                <p className="font-semibold text-white text-sm">
-                  &ldquo;Pel&rdquo; stands for{" "}
-                  <span className="text-[#BFCA16]">Pixel</span>, and
-                  &ldquo;Town&rdquo; stands for{" "}
-                  <span className="text-[#BFCA16]">City</span>.
-                </p>
-              </div>
-
-              <p>
-                Peltown is a{" "}
-                <span className="text-white italic">City of Pixels</span>—a
-                place where individual services like development, design, and
-                marketing seamlessly collaborate like a well-oiled factory.
-                Here, we don&apos;t just offer standalone services; we combine
-                every digital pixel to build a flawless final product and a
-                complete business ecosystem for our clients.
-              </p>
-            </div>
-          </div>
+            ))}
+          </Reveal>
         </div>
 
-        {/*  2. VISION & MISSION  */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Card: Our Vision */}
-          <TiltCard className="bg-zinc-950/40 backdrop-blur-md border border-zinc-900 rounded-3xl p-8 md:p-10 flex flex-col gap-6 text-left hover:border-[#BFCA16]/30 transition-colors">
-            <div className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[#BFCA16]">
-                <Eye className="w-6 h-6" />
-              </div>
-              <h3 className="text-3xl font-bold tracking-tight text-white">
-                Our Vision
-              </h3>
-            </div>
-            <p className="text-lg text-zinc-400 font-light leading-relaxed">
-              To be the ultimate digital factory where ideas are transformed
-              into complete, scalable realities, empowering businesses globally
-              through cohesive technology and unparalleled digital
-              craftsmanship.
+        <div className="grid md:grid-cols-2 gap-6">
+          <Reveal className="bg-zinc-950 border border-zinc-800/80 rounded-2xl p-8 hover:border-[#BFCA16] transition-colors shadow-2xs">
+            <h3 className="font-mono text-[11px] tracking-[0.2em] uppercase text-[#BFCA16] mb-3">
+              Mission
+            </h3>
+            <p className="text-lg leading-relaxed text-white">
+              Empower businesses with scalable, reliable, and innovative
+              technology that improves efficiency, enhances customer experience,
+              and unlocks growth — built for long-term value, not short-term
+              projects.
             </p>
-          </TiltCard>
-
-          {/* Card: Our Mission */}
-          <TiltCard className="bg-zinc-950/40 backdrop-blur-md border border-zinc-900 rounded-3xl p-8 md:p-10 flex flex-col gap-6 text-left hover:border-[#BFCA16]/30 transition-colors">
-            <div className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[#BFCA16]">
-                <Target className="w-6 h-6" />
-              </div>
-              <h3 className="text-3xl font-bold tracking-tight text-white">
-                Our Mission
-              </h3>
-            </div>
-            <p className="text-lg text-zinc-400 font-light leading-relaxed">
-              To provide 360-degree, end-to-end IT solutions by combining
-              diverse expertise. We ensure that every digital
-              &ldquo;pixel&rdquo; we craft contributes meaningfully to our
-              clients&apos; ultimate success story.
-            </p>
-          </TiltCard>
-        </div>
-
-        {/* 3. LEADERSHIP */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="bg-zinc-950/30 border border-zinc-900 rounded-3xl p-8 md:p-12"
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Avatar Profile Grid Spacer */}
-            <div className="lg:col-span-5 flex justify-center">
-              <div className="relative w-70 h-70 rounded-2xl bg-zinc-950 border border-zinc-800 flex items-center justify-center group overflow-hidden">
-                {/* Placeholder */}
-                <User className="w-20 h-20 text-zinc-700 group-hover:text-[#BFCA16] transition-colors duration-500" />
-              </div>
-            </div>
-
-            {/* Profile Information Block */}
-            <div className="lg:col-span-7 space-y-6 text-left relative">
-              <Quote className="absolute right-0 top-0 w-20 h-20 text-zinc-900/40 pointer-events-none" />
-
-              <div className="space-y-4">
-                <h3 className="text-4xl font-bold tracking-tight text-white">
-                  Saqib Khan
-                </h3>
-                <p className="text-sm font-bold text-zinc-500 tracking-widest uppercase">
-                  Founder & Director
-                </p>
-              </div>
-
-              <p className="text-sm md:text-lg text-zinc-400 font-light leading-relaxed italic">
-                &ldquo;When a client comes to us with an idea, they aren&apos;t
-                just looking for software; they are looking for a partner to
-                help them scale. My goal has always been to build a team that
-                goes beyond development to handle the intricacies of the digital
-                ecosystem, so you can focus on what matters most—building your
-                business.&rdquo;
-              </p>
-
-              <div>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 bg-[#0077B5] hover:bg-[#006297] text-white font-bold text-xs tracking-wider px-5 py-3 rounded-full uppercase transition-all duration-300 shadow-lg shadow-[#0077B5]/10"
-                >
-                  <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                  </svg>
-                  <span>Connect on LinkedIn</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* 4. CORE VALUES */}
-        <div className="space-y-12">
-          {/* Header Block */}
-          <div className="space-y-3 text-center flex flex-col items-center">
-            <div className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
-              <span className="text-xs font-bold tracking-[0.25em] text-[#BFCA16] uppercase">
-                Our Principles
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
-              Core Values
-            </h2>
-          </div>
-
-          {/* Three-Column Values System */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          </Reveal>
+          <Reveal
+            delay={0.1}
+            className="bg-zinc-950 border border-zinc-800/80 rounded-2xl p-8 hover:border-[#BFCA16] transition-colors shadow-2xs"
           >
-            {coreValues.map((value, idx) => {
-              const ValIcon = value.icon;
-              return (
-                <TiltCard
-                  key={idx}
-                  className="group relative bg-[#0B0C10] border border-zinc-900 rounded-3xl p-8 flex flex-col justify-between h-70 hover:border-[#BFCA16]/40 transition-all duration-300 overflow-hidden cursor-pointer"
-                >
-                  {/* Dynamic Slide Background sweep panel */}
-                  <motion.div
-                    className="absolute inset-0 z-0 bg-[#BFCA16]"
-                    style={{ originY: 1 }}
-                    variants={{ hover: { scaleY: 1 }, initial: { scaleY: 0 } }}
-                    initial={{ scaleY: 0 }}
-                    transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                  />
-
-                  {/* Icon Frame */}
-                  <div className="relative z-10 w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[#BFCA16] group-hover:bg-white/10 group-hover:border-white/20 group-hover:text-white transition-colors duration-300">
-                    <ValIcon className="w-5 h-5" />
-                  </div>
-
-                  {/* Contents */}
-                  <div className="relative z-10 space-y-2 text-left">
-                    <h4 className="text-xl font-bold tracking-tight text-white">
-                      {value.title}
-                    </h4>
-                    <p className="text-sm text-zinc-500 leading-relaxed group-hover:text-white/85 transition-colors duration-300">
-                      {value.description}
-                    </p>
-                  </div>
-                </TiltCard>
-              );
-            })}
-          </motion.div>
+            <h3 className="font-mono text-[11px] tracking-[0.2em] uppercase text-[#BFCA16] mb-3">
+              Vision
+            </h3>
+            <p className="text-lg leading-relaxed text-white">
+              To be a software development company recognised for building
+              impactful digital products — solving real problems and
+              contributing to business success worldwide.
+            </p>
+          </Reveal>
         </div>
       </div>
     </section>
   );
 }
 
-// --- INTERACTIVE TILT-SPRING WRAPPER HELPER ---
-function TiltCard({
-  children,
-  className,
-  ...props
-}: {
-  children: React.ReactNode;
-  className: string;
-}) {
+function Differentiators() {
+  return (
+    <section className="bg-black text-white py-24 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto">
+        <SectionTag  label="What Makes Peltown Different" />
+        <h2 className="text-3xl md:text-4xl font-semibold max-w-2xl mb-14 text-white">
+          We think like business owners, not just developers.
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <Reveal className="bg-zinc-900/40 border border-zinc-800/80 rounded-2xl p-8 hover:border-[#BFCA16] transition-all duration-300 shadow-2xs">
+            <HelpCircle
+              className="w-6 h-6 text-[#BFCA16] mb-4"
+              strokeWidth={1.5}
+            />
+            <h3 className="font-semibold text-lg text-white mb-3">
+              Business-first, before code
+            </h3>
+            <p className="text-sm text-zinc-400 mb-4 leading-relaxed">
+              Many agencies focus on delivering code. We focus on solving
+              business problems — before a single line is written, we ask:
+            </p>
+            <ul className="font-mono space-y-2 text-[12.5px] text-zinc-300">
+              {questions.map((q) => (
+                <li key={q} className="border-l border-[#BFCA16]/40 pl-3">
+                  {q}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+          <Reveal
+            delay={0.12}
+            className="bg-zinc-900/40 border border-zinc-800/80 rounded-2xl p-8 hover:border-[#BFCA16] transition-all duration-300 shadow-2xs"
+          >
+            <Layers className="w-6 h-6 text-[#BFCA16] mb-4" strokeWidth={1.5} />
+            <h3 className="font-semibold text-lg text-white mb-3">
+              Custom solutions, not templates
+            </h3>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Every business is unique, so we build for your requirements
+              instead of forcing your business into generic software — whether
+              that&rsquo;s a startup MVP, an enterprise ERP, a CRM platform, a
+              booking system, an e-commerce store, or a SaaS product.
+            </p>
+          </Reveal>
+          <Reveal
+            delay={0.24}
+            className="bg-zinc-900/40 border border-zinc-800/80 rounded-2xl p-8 hover:border-[#BFCA16] transition-all duration-300 shadow-2xs"
+          >
+            <LifeBuoy
+              className="w-6 h-6 text-[#BFCA16] mb-4"
+              strokeWidth={1.5}
+            />
+            <h3 className="font-semibold text-lg text-white mb-3">
+              A long-term partnership
+            </h3>
+            <p className="text-sm text-zinc-400 mb-4 leading-relaxed">
+              We don&rsquo;t disappear after deployment. Our team stays on for:
+            </p>
+            <ul className="grid grid-cols-2 gap-2 text-sm text-zinc-300">
+              {support.map((s) => (
+                <li key={s} className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-[#BFCA16] rounded-full shrink-0" />
+                  {s}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Industries() {
+  const reduce = useReducedMotion();
+  return (
+    <section className="bg-black text-white py-24 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto">
+        <SectionTag  label="Industries We Serve" />
+        <h2 className="text-3xl md:text-4xl font-semibold max-w-2xl mb-12 text-white">
+          Built for the way your industry actually works.
+        </h2>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.06 } },
+          }}
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          {industries.map(({ icon: Icon, title, desc }) => (
+            <motion.div
+              key={title}
+              variants={
+                reduce
+                  ? {}
+                  : {
+                      hidden: { opacity: 0, y: 16 },
+                      show: { opacity: 1, y: 0 },
+                    }
+              }
+              className="group relative bg-zinc-950 border border-zinc-800/80 hover:border-[#BFCA16] rounded-2xl transition-all duration-300 p-6 hover:shadow-md"
+            >
+              <Icon className="w-5 h-5 text-[#BFCA16] mb-4" strokeWidth={1.5} />
+              <h3 className="font-semibold mb-1.5 leading-snug text-[15px] text-white">
+                {title}
+              </h3>
+              <p className="text-sm text-zinc-400 leading-relaxed">{desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function Services() {
+  const reduce = useReducedMotion();
+  return (
+    <section className="bg-black text-white py-24 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto">
+        <SectionTag label="Our Core Services" />
+        <h2 className="text-3xl md:text-4xl font-semibold max-w-2xl mb-12 text-white">
+          What we build, end to end.
+        </h2>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.05 } },
+          }}
+          className="border-t border-zinc-800"
+        >
+          {services.map(({ icon: Icon, title, desc }) => (
+            <motion.div
+              key={title}
+              variants={
+                reduce
+                  ? {}
+                  : {
+                      hidden: { opacity: 0, x: -12 },
+                      show: { opacity: 1, x: 0 },
+                    }
+              }
+              className="group flex items-center gap-5 py-5 border-b border-zinc-800 hover:bg-zinc-900/40 transition-colors px-4 rounded-xl -mx-4"
+            >
+              <Icon
+                className="w-5 h-5 text-[#BFCA16] shrink-0"
+                strokeWidth={1.5}
+              />
+              <div className="flex-1 grid sm:grid-cols-[220px_1fr] gap-2 sm:gap-6">
+                <h3 className="font-semibold text-white">{title}</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed">{desc}</p>
+              </div>
+              <ArrowUpRight className="w-4 h-4 text-zinc-600 group-hover:text-[#BFCA16] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function WhyChoose() {
+  const reduce = useReducedMotion();
+  return (
+    <section className="bg-black text-white py-24 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto">
+        <SectionTag  label="Why Businesses Choose Us" />
+        <h2 className="text-3xl md:text-4xl font-semibold max-w-2xl mb-12 text-white">
+          A readout of what you can expect.
+        </h2>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.06 } },
+          }}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {whyChoose.map(({ icon: Icon, title, desc }, i) => (
+            <motion.div
+              key={title}
+              variants={
+                reduce
+                  ? {}
+                  : {
+                      hidden: { opacity: 0, y: 16 },
+                      show: { opacity: 1, y: 0 },
+                    }
+              }
+              className="bg-zinc-950 border border-zinc-800/80 rounded-2xl p-6 hover:border-[#BFCA16] transition-all duration-300 shadow-2xs hover:shadow-md"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <Icon className="w-5 h-5 text-[#BFCA16]" strokeWidth={1.5} />
+                <span className="font-mono text-[10px] tracking-[0.2em] text-zinc-500">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <h3 className="font-semibold text-white mb-1.5">{title}</h3>
+              <p className="text-sm text-zinc-400 leading-relaxed">{desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}                                                             
+
+function Process() {
   const ref = useRef<HTMLDivElement>(null);
-
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const mouseXSpring = useSpring(mouseX, { stiffness: 150, damping: 20 });
-  const mouseYSpring = useSpring(mouseY, { stiffness: 150, damping: 20 });
-
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], [10, -10]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], [-10, 10]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
-    const rect = ref.current.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-
-    const relativeX = e.clientX - rect.left - width / 2;
-    const relativeY = e.clientY - rect.top - height / 2;
-
-    mouseX.set(relativeX / width);
-    mouseY.set(relativeY / height);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-  };
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 0.8", "end 0.6"],
+  });
+  const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <div style={{ perspective: 1200 }}>
-      <motion.div
-        ref={ref}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        className={className}
-        style={{
-          transformStyle: "preserve-3d",
-          rotateX,
-          rotateY,
-        }}
-        whileHover="hover"
-        {...props}
-      >
-        {children}
-      </motion.div>
-    </div>
+    <section className="bg-black text-white py-24 px-6 md:px-12">
+      <div className="max-w-4xl mx-auto">
+        <SectionTag  label="Our Process" />
+        <h2 className="text-3xl md:text-4xl font-semibold max-w-2xl mb-16 text-white">
+          From idea to successful launch.
+        </h2>
+        <div ref={ref} className="relative">
+          <div className="absolute left-4.75 top-2 bottom-2 w-px bg-zinc-800" />
+          <motion.div
+            className="absolute left-4.75 top-2 bottom-2 w-px bg-[#BFCA16] origin-top"
+            style={reduce ? undefined : { scaleY: lineScale }}
+          />
+          <div className="space-y-10">
+            {processSteps.map(({ icon: Icon, step, title, desc }, i) => (
+              <Reveal
+                key={step}
+                delay={i * 0.04}
+                className="relative flex gap-6 pl-0"
+              >
+                <div className="relative z-10 w-10 h-10 rounded-full bg-zinc-950 border-2 border-[#BFCA16] flex items-center justify-center shrink-0">
+                  <Icon className="w-4 h-4 text-[#BFCA16]" strokeWidth={1.75} />
+                </div>
+                <div className="pt-1">
+                  <div className="flex items-baseline gap-3 mb-1.5">
+                    <span className="font-mono text-[11px] text-[#BFCA16] tracking-[0.15em]">
+                      {step}
+                    </span>
+                    <h3 className="font-semibold text-lg text-white">
+                      {title}
+                    </h3>
+                  </div>
+                  <p className="text-sm text-zinc-400 leading-relaxed max-w-md">
+                    {desc}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Presence() {
+  const reduce = useReducedMotion();
+  return (
+    <section className="bg-black text-white py-24 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto">
+        <SectionTag  label="Local Presence" />
+        <h2 className="text-3xl md:text-4xl font-semibold max-w-2xl mb-6 text-white">
+          A software development company in Delhi NCR.
+        </h2>
+        <Reveal className="text-zinc-400 leading-relaxed max-w-2xl mb-10">
+          <p>
+            Whether you need a business website, mobile application, SaaS
+            platform, ERP solution, or CRM software, our team is ready to help
+            turn your ideas into successful digital products.
+          </p>
+        </Reveal>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.04 } },
+          }}
+          className="flex flex-wrap gap-3 mb-20"
+        >
+          {locations.map((loc) => (
+            <motion.span
+              key={loc}
+              variants={
+                reduce
+                  ? {}
+                  : { hidden: { opacity: 0, y: 8 }, show: { opacity: 1, y: 0 } }
+              }
+              className="inline-flex items-center gap-1.5 bg-zinc-950 border border-zinc-800/80 rounded-full px-4 py-2 text-sm text-zinc-300 shadow-3xs hover:border-[#BFCA16] transition-colors cursor-pointer"
+            >
+              <MapPin className="w-3.5 h-3.5 text-[#BFCA16]" />
+              {loc}
+            </motion.span>
+          ))}
+        </motion.div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map((s, i) => (
+            <Reveal
+              key={s.label}
+              delay={i * 0.08}
+              className="bg-zinc-950 border border-zinc-800/80 rounded-2xl p-7 hover:border-[#BFCA16] transition-all shadow-2xs"
+            >
+              <div className="text-4xl font-bold text-[#BFCA16] mb-2">
+                {s.value}
+              </div>
+              <div className="font-mono text-[11px] tracking-[0.15em] uppercase text-white mb-2">
+                {s.label}
+              </div>
+              <p className="text-sm text-zinc-400 leading-relaxed">{s.desc}</p>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FinalCTA() {
+  const reduce = useReducedMotion();
+  return (
+    <section
+      id="contact"
+      className="relative overflow-hidden bg-black text-white py-28 px-6 md:px-12"
+    >
+      <div className="relative max-w-3xl mx-auto text-center">
+        <motion.span
+          initial={reduce ? undefined : { opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="font-medium inline-block text-sm tracking-[0.25em] uppercase text-[#BFCA16] mb-6"
+        >
+          Let&rsquo;s Build
+        </motion.span>
+        <motion.h2
+          initial={reduce ? undefined : { opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.05 }}
+          className="text-3xl md:text-5xl font-semibold leading-tight mb-6 text-white"
+        >
+          Looking for a technology partner, not just a vendor?
+        </motion.h2>
+        <motion.p
+          initial={reduce ? undefined : { opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.12 }}
+          className="text-zinc-400 max-w-xl mx-auto mb-10 leading-relaxed"
+        >
+          Whether you&rsquo;re launching a startup, digitising operations,
+          building a SaaS product, or scaling an existing business — let&rsquo;s
+          build something that creates real business value.
+        </motion.p>
+        <motion.div
+          initial={reduce ? undefined : { opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.18 }}
+          className="flex flex-wrap justify-center gap-4"
+        >
+          <a
+            href="#"
+            className="group inline-flex items-center gap-2 bg-[#BFCA16] text-zinc-950 font-bold px-6 py-3 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
+          >
+            Discuss Your Project
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </a>
+          <a
+            href="#"
+            className="inline-flex items-center gap-2 border border-zinc-800 text-zinc-300 px-6 py-3 rounded-full bg-zinc-900/40 hover:border-zinc-500 hover:text-white hover:bg-zinc-900/85 transition-colors duration-300 shadow-xs"
+          >
+            <CalendarClock className="w-4 h-4 text-[#BFCA16]" />
+            Schedule Free Consultation
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* Page */
+
+export default function AboutPage() {
+  return (
+    <main className="bg-black text-white min-h-screen">
+      <Hero />
+      <Story />
+      <Capabilities />
+      <Beliefs />
+      <Differentiators />
+      <Industries />
+      <Services />
+      <WhyChoose />
+      <Process />
+      <Presence />
+      <FinalCTA />
+    </main>
   );
 }

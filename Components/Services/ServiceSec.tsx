@@ -210,7 +210,7 @@ export default function ServiceSec() {
           <div key={sectionIdx} className="space-y-10 text-left">
             {/* Category Section Header line */}
             <div className="relative inline-block pb-2">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-zinc-950">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-headingColor">
                 {section.category}
               </h2>
               <div className="absolute bottom-0 left-0 w-12 h-1 bg-[#BFCA16]" />
@@ -285,7 +285,7 @@ function ServiceCard({
         ref={ref}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="relative flex flex-col justify-between rounded-3xl overflow-hidden p-8 md:p-9 h-90 group cursor-pointer select-none bg-[#f9f9fb] border border-zinc-200/50"
+        className="relative flex flex-col justify-between rounded-3xl overflow-hidden p-8 md:p-9 h-90 group cursor-pointer select-none bg-cardBgColor border border-cardBorderColor"
         style={{
           transformStyle: "preserve-3d",
           rotateX,
@@ -338,7 +338,7 @@ function ServiceCard({
         >
           <div className="space-y-2">
             <motion.h3
-              className="text-lg md:text-xl font-bold tracking-tight text-zinc-900 leading-snug"
+              className="text-lg md:text-xl font-bold tracking-tight text-headingColor leading-snug"
               style={{
                 whiteSpace: service.multiline ? "pre-line" : "nowrap",
               }}
@@ -348,7 +348,7 @@ function ServiceCard({
               {service.title}
             </motion.h3>
 
-            <motion.p className="text-xs md:text-sm leading-relaxed font-normal text-zinc-500 group-hover:text-white/80 transition-colors duration-250 line-clamp-3">
+            <motion.p className="text-xs md:text-sm leading-relaxed font-normal text-descriptionColor group-hover:text-white/80 transition-colors duration-250 line-clamp-3">
               {service.description}
             </motion.p>
           </div>

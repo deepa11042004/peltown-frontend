@@ -28,7 +28,7 @@ const ROUTE_CONFIGS: Record<
   "web-development": {
     bg: "#BFCA16",
     text: "text-white",
-    subtext: "text-white/80",
+    subtext: "text-white",
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
@@ -36,7 +36,7 @@ const ROUTE_CONFIGS: Record<
   "erp-system": {
     bg: "#000000",
     text: "text-white",
-    subtext: "text-white/80",
+    subtext: "text-white",
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
@@ -44,7 +44,7 @@ const ROUTE_CONFIGS: Record<
   "mobile-app": {
     bg: "#BFCA16",
     text: "text-white",
-    subtext: "text-white/80",
+    subtext: "text-white",
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
@@ -52,7 +52,7 @@ const ROUTE_CONFIGS: Record<
   "custom-crm": {
     bg: "#000000",
     text: "text-white",
-    subtext: "text-white/80",
+    subtext: "text-white",
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
@@ -60,7 +60,7 @@ const ROUTE_CONFIGS: Record<
   "seo-optimization": {
     bg: "#BFCA16",
     text: "text-white",
-    subtext: "text-white/80",
+    subtext: "text-white",
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
@@ -68,7 +68,7 @@ const ROUTE_CONFIGS: Record<
   "social-media": {
     bg: "#000000",
     text: "text-white",
-    subtext: "text-white/80",
+    subtext: "text-white",
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
@@ -76,7 +76,7 @@ const ROUTE_CONFIGS: Record<
   "digital-marketing": {
     bg: "#BFCA16",
     text: "text-white",
-    subtext: "text-white/80",
+    subtext: "text-white",
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
@@ -84,7 +84,7 @@ const ROUTE_CONFIGS: Record<
   "gmb-services": {
     bg: "#000000",
     text: "text-white",
-    subtext: "text-white/80",
+    subtext: "text-white",
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
@@ -92,7 +92,7 @@ const ROUTE_CONFIGS: Record<
   "service-photoshoot": {
     bg: "#BFCA16",
     text: "text-white",
-    subtext: "text-white/80",
+    subtext: "text-white",
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
@@ -100,7 +100,7 @@ const ROUTE_CONFIGS: Record<
   "service-branding": {
     bg: "#000000",
     text: "text-white",
-    subtext: "text-white/80",
+    subtext: "text-white",
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
@@ -108,7 +108,7 @@ const ROUTE_CONFIGS: Record<
   "bulk-email": {
     bg: "#BFCA16",
     text: "text-white",
-    subtext: "text-white/80",
+    subtext: "text-white",
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
@@ -116,7 +116,7 @@ const ROUTE_CONFIGS: Record<
   "whatsapp-api": {
     bg: "#000000",
     text: "text-white",
-    subtext: "text-white/80",
+    subtext: "text-white",
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
@@ -124,7 +124,7 @@ const ROUTE_CONFIGS: Record<
   "email-solutions": {
     bg: "#BFCA16",
     text: "text-white",
-    subtext: "text-white/80",
+    subtext: "text-white",
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
@@ -220,7 +220,7 @@ export default function ServicesHero({
   return (
     <div
       ref={containerRef}
-      className="relative w-full bg-white h-[140vh] md:h-[120vh] flex flex-col items-center select-none"
+      className="relative w-full bg-white h-[140vh] md:min-h-[120vh] flex flex-col items-center select-none"
     >
       {/* Sticky wrapper - keeps content in viewport while scrolling */}
       <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center">
@@ -241,18 +241,17 @@ export default function ServicesHero({
           >
             {/* Tagline Badge */}
             {tagline && (
-              <div
-                className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full ${configColor.badgeBg} border ${configColor.badgeBorder} shadow-xs`}
+              <motion.div
+                initial={{ opacity: 0, x: -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.55 }}
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-400 shadow-xs text-left"
               >
-                <span
-                  className={`h-1.5 w-1.5 rounded-full ${configColor.dot} animate-pulse`}
-                />
-                <span
-                  className={`text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase ${configColor.text}`}
-                >
+                <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
+                <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-black uppercase">
                   {tagline}
                 </span>
-              </div>
+              </motion.div>
             )}
 
             {renderTitle(title)}

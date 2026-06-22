@@ -259,7 +259,7 @@ const DEFAULT_FEATURES: FeaturesConfig = {
 const DEFAULT_AI_ADVANTAGE: AIAdvantageConfig = {
   tagline: "AI ADVANTAGE MODULE",
   title: "The AI Advantage: Generative AI for Ecommerce",
-  desc: "Generative AI is completely revolutionizing the digital storefront. At PELTOWN, we don&apos;t just build ecommerce websites; we build intelligent retail ecosystems. By leveraging advanced AI models, we automate dynamic product descriptions tailored to individual user personas, ensuring higher conversion rates. Generative AI powers hyper-personalized shopping assistants that guide users through your catalog, answering complex queries, suggesting complementary products, and providing real-time styling or technical advice. This dramatically enhances customer interactions, reduces support overhead, and creates a highly engaging shopping journey that traditional websites simply cannot match.",
+  desc: "Generative AI is completely revolutionizing the digital storefront. At PELTOWN, we don't just build ecommerce websites; we build intelligent retail ecosystems. By leveraging advanced AI models, we automate dynamic product descriptions tailored to individual user personas, ensuring higher conversion rates. Generative AI powers hyper-personalized shopping assistants that guide users through your catalog, answering complex queries, suggesting complementary products, and providing real-time styling or technical advice. This dramatically enhances customer interactions, reduces support overhead, and creates a highly engaging shopping journey that traditional websites simply cannot match.",
 };
 
 const DEFAULT_TECH_STACK: TechStackConfig = {
@@ -480,6 +480,19 @@ const DEFAULT_COMPARISON_TABLE: ComparisonTableConfig = {
   ],
 };
 
+function getFeatureIcon(name: string) {
+  const normalized = name.toLowerCase();
+  if (normalized.includes("speed") || normalized.includes("load") || normalized.includes("launch") || normalized.includes("time")) return Gauge;
+  if (normalized.includes("custom") || normalized.includes("design") || normalized.includes("flex")) return Sparkles;
+  if (normalized.includes("price") || normalized.includes("pricing") || normalized.includes("cost") || normalized.includes("invest")) return Target;
+  if (normalized.includes("scale") || normalized.includes("growth")) return Layers;
+  if (normalized.includes("seo") || normalized.includes("search") || normalized.includes("google")) return Search;
+  if (normalized.includes("security") || normalized.includes("safe") || normalized.includes("spam") || normalized.includes("deliver")) return ShieldCheck;
+  if (normalized.includes("support") || normalized.includes("team") || normalized.includes("agent")) return Users;
+  if (normalized.includes("integration") || normalized.includes("api") || normalized.includes("tech") || normalized.includes("crm") || normalized.includes("software")) return Cpu;
+  return Sparkles; // default icon
+}
+
 export default function WebSec({
   showHero = true,
   showDefinition = true,
@@ -546,7 +559,7 @@ export default function WebSec({
       {showDefinition && (
         <section className="pt-30 pb-24 px-6 md:px-12 lg:px-20 bg-white">
           <div className="max-w-5xl mx-auto text-center space-y-8">
-            <h2 className="text-2xl md:text-5xl font-bold tracking-tight text-zinc-900">
+            <h2 className="text-2xl md:text-5xl font-bold tracking-tight text-headingColor">
               {definition.title} <br />
               {definition.subtitle && (
                 <span className="text-zinc-400 font-normal inline-block mt-5">
@@ -555,7 +568,7 @@ export default function WebSec({
               )}
             </h2>
             <div className="max-w-4xl mx-auto">
-              <div className="text-zinc-600 text-base md:text-lg font-medium leading-relaxed text-justify md:text-center">
+              <div className="text-descriptionColor text-base md:text-lg font-medium leading-relaxed text-justify md:text-center">
                 {definition.desc}
               </div>
             </div>
@@ -568,11 +581,11 @@ export default function WebSec({
         <section className="py-24 px-6 md:px-12 lg:px-20">
           <div className="max-w-7xl mx-auto space-y-16">
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-900">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-headingColor">
                 {audience.title}
               </h2>
               {audience.desc && (
-                <p className="text-zinc-600 font-medium text-sm md:text-base">
+                <p className="text-descriptionColor font-medium text-sm md:text-base">
                   {audience.desc}
                 </p>
               )}
@@ -584,7 +597,7 @@ export default function WebSec({
                 return (
                   <div
                     key={idx}
-                    className="bg-zinc-50 border border-zinc-200/60 p-6 md:p-10 rounded-2xl hover:border-[#BFCA16] hover:bg-white hover:shadow-xl hover:shadow-zinc-100 transition-all duration-300 group flex flex-col justify-between space-y-4 text-left h-full"
+                    className="bg-cardBgColor border border-cardBorderColor p-6 md:p-10 rounded-2xl hover:border-[#BFCA16] hover:bg-white hover:shadow-xl hover:shadow-zinc-100 transition-all duration-300 group flex flex-col justify-between space-y-4 text-left h-full"
                   >
                     <div className="space-y-4">
                       {/* Icon Container */}
@@ -593,12 +606,12 @@ export default function WebSec({
                       </div>
 
                       {/* Title */}
-                      <h3 className="font-bold text-lg md:text-xl text-zinc-950 tracking-tight leading-snug">
+                      <h3 className="font-bold text-lg md:text-xl text-headingColor tracking-tight leading-snug">
                         {feat.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-sm md:text-base text-zinc-600 font-medium leading-relaxed">
+                      <p className="text-sm md:text-base text-descriptionColor font-medium leading-relaxed">
                         {feat.desc}
                       </p>
                     </div>
@@ -641,11 +654,11 @@ export default function WebSec({
         <section className="py-24 px-6 md:px-12 lg:px-20">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center space-y-6 max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-950">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-headingColor">
                 {techStack.title}
               </h2>
               {techStack.desc && (
-                <p className="text-zinc-500 font-medium text-md">
+                <p className="text-descriptionColor font-medium text-md">
                   {techStack.desc}
                 </p>
               )}
@@ -657,7 +670,7 @@ export default function WebSec({
                 return (
                   <div
                     key={idx}
-                    className="bg-zinc-50 border border-zinc-200/60 p-6 md:p-10 rounded-2xl hover:border-[#BFCA16] hover:bg-white hover:shadow-xl hover:shadow-zinc-100 transition-all duration-300 group flex flex-col justify-between space-y-4 text-left h-full"
+                    className="bg-cardBgColor border border-cardBorderColor p-6 md:p-10 rounded-2xl hover:border-[#BFCA16] hover:bg-white hover:shadow-xl hover:shadow-zinc-100 transition-all duration-300 group flex flex-col justify-between space-y-4 text-left h-full"
                   >
                     <div className="space-y-4">
                       {/* Icon Container */}
@@ -666,12 +679,12 @@ export default function WebSec({
                       </div>
 
                       {/* Title */}
-                      <h3 className="font-bold text-lg md:text-xl text-zinc-950 tracking-tight leading-snug">
+                      <h3 className="font-bold text-lg md:text-xl text-headingColor tracking-tight leading-snug">
                         {feat.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-sm md:text-base text-zinc-600 font-medium leading-relaxed">
+                      <p className="text-sm md:text-base text-descriptionColor font-medium leading-relaxed">
                         {feat.desc}
                       </p>
                     </div>
@@ -689,7 +702,7 @@ export default function WebSec({
           <div className="max-w-4xl mx-auto space-y-10">
             {deepDive.title && (
               <div className="flex items-center gap-3 pb-3 justify-center text-center w-full">
-                <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-950">
+                <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-headingColor">
                   {deepDive.title}
                 </h3>
               </div>
@@ -719,7 +732,7 @@ export default function WebSec({
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 10 }}
-                        className="text-xs md:text-lg text-zinc-600 font-medium leading-relaxed"
+                        className="text-xs md:text-lg text-descriptionColor font-medium leading-relaxed"
                       >
                         {deepDive.tabs[safeActiveTab]?.content}
                       </motion.div>
@@ -751,12 +764,12 @@ export default function WebSec({
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start border-b border-zinc-100 pb-12">
               <div className="lg:col-span-11 space-y-6 text-left">
                 <div className="space-y-2">
-                  <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 leading-tight">
+                  <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-headingColor leading-tight">
                     {localDominance.title}
                   </h2>
                 </div>
 
-                <div className="text-zinc-500 text-base md:text-lg font-medium leading-relaxed max-w-4xl">
+                <div className="text-descriptionColor text-base md:text-lg font-medium leading-relaxed max-w-4xl">
                   {localDominance.desc}
                 </div>
               </div>
@@ -770,17 +783,17 @@ export default function WebSec({
                   <motion.div
                     key={idx}
                     whileHover={{ y: -5 }}
-                    className="group p-8 rounded-3xl bg-zinc-50/50 border border-zinc-200 hover:border-[#BFCA16] hover:bg-white hover:shadow-xl hover:shadow-zinc-200/40 transition-all duration-300"
+                    className="group p-8 rounded-3xl bg-cardBgColor border border-cardBorderColor hover:border-[#BFCA16] hover:bg-white hover:shadow-xl hover:shadow-zinc-200/40 transition-all duration-300"
                   >
                     <div className="flex flex-col gap-6 text-left">
                       <div className="w-12 h-12 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-zinc-400 group-hover:text-[#BFCA16] group-hover:border-[#BFCA16] transition-all">
                         <CardIcon className="w-5 h-5" />
                       </div>
                       <div className="space-y-3">
-                        <h3 className="text-xl font-bold tracking-tight text-zinc-900 flex items-center gap-2">
+                        <h3 className="text-xl font-bold tracking-tight text-headingColor flex items-center gap-2">
                           {card.title}
                         </h3>
-                        <div className="text-sm text-zinc-500 font-medium leading-relaxed">
+                        <div className="text-sm text-descriptionColor font-medium leading-relaxed">
                           {card.desc}
                         </div>
                       </div>
@@ -798,18 +811,19 @@ export default function WebSec({
         <section className="py-24 px-6 md:px-12 lg:px-20 bg-white border-b border-zinc-100">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-950">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-headingColor">
                 {costTable.title}
               </h2>
               {costTable.desc && (
-                <p className="text-zinc-500 font-medium text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
+                <p className="text-descriptionColor font-medium text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
                   {costTable.desc}
                 </p>
               )}
             </div>
 
             {/* Clean Bento-Style Pricing Table Container */}
-            <div className="border border-zinc-200 rounded-md bg-white overflow-hidden shadow-sm">
+            {/* Desktop Table View */}
+            <div className="hidden md:block border border-zinc-200 rounded-md bg-white overflow-hidden shadow-sm">
               {(() => {
                 const gridColsMap: Record<number, string> = {
                   1: "grid-cols-1",
@@ -893,27 +907,72 @@ export default function WebSec({
                 );
               })()}
             </div>
+
+            {/* Mobile Card-Based Pricing View */}
+            <div className="block md:hidden space-y-6">
+              {costTable.rows.map((tier, index) => {
+                const cells = tier.values || [
+                  tier.pkg,
+                  tier.for,
+                  tier.cost,
+                  tier.del,
+                ];
+                return (
+                  <div
+                    key={index}
+                    className="border border-zinc-200 rounded-xl bg-white p-6 shadow-sm space-y-4 text-left"
+                  >
+                    <div className="flex justify-between items-start border-b border-zinc-100 pb-3">
+                      <div>
+                        <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block mb-0.5">Package</span>
+                        <h4 className={`font-bold text-base ${tier.color || "text-black"}`}>
+                          {cells[0]}
+                        </h4>
+                      </div>
+                      <div className="text-right">
+                        <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block mb-0.5">Investment</span>
+                        <div className="font-bold text-zinc-950 text-base tracking-tight">
+                          {cells[2]}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-4">
+                      <div>
+                        <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block mb-1">Ideal For</span>
+                        <p className="text-zinc-700 font-medium text-xs sm:text-sm leading-relaxed">{cells[1]}</p>
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block mb-1">Deliverables</span>
+                        <p className="text-zinc-500 font-medium text-xs sm:text-sm leading-relaxed">{cells[3]}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
       )}
 
       {/* 12. CUSTOM DEVELOPMENT VS DIY PLATFORMS */}
       {showComparisonTable && comparisonTable.rows && (
-        <section className="py-24 px-6 md:px-12 lg:px-20 bg-zinc-50/50 border-b border-zinc-100">
+        <section className="py-24 px-6 md:px-12 lg:px-20 bg-white border-b border-zinc-100">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-950">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-headingColor">
                 {comparisonTable.title}
               </h2>
               {comparisonTable.desc && (
-                <p className="text-zinc-500 font-medium text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
+                <p className="text-descriptionColor font-medium text-sm md:text-base max-w-3xl mx-auto leading-relaxed">
                   {comparisonTable.desc}
                 </p>
               )}
             </div>
 
             {/* Overhauled SaaS Comparison Table Grid */}
-            <div className="border border-zinc-200 rounded-md bg-white overflow-hidden shadow-sm">
+            {/* Desktop Table View */}
+            <div className="hidden md:block border border-zinc-200 rounded-2xl bg-white overflow-hidden shadow-md">
               {(() => {
                 const gridColsMap: Record<number, string> = {
                   1: "grid-cols-1",
@@ -931,22 +990,28 @@ export default function WebSec({
                     {/* Table Header Row */}
                     {comparisonTable.headers && (
                       <div
-                        className={`grid ${compCols} bg-black text-white text-xs md:text-sm font-bold tracking-wide uppercase py-4 px-6 border-b border-zinc-800`}
+                        className={`grid ${compCols} text-xs md:text-sm font-bold tracking-wide uppercase border-b border-zinc-200 items-stretch text-left`}
                       >
-                        {comparisonTable.headers.map((header, idx) => (
-                          <div
-                            key={idx}
-                            className={
-                              idx === 1
-                                ? "text-[#BFCA16]"
-                                : idx === 2
-                                  ? "text-red-600"
-                                  : ""
-                            }
-                          >
-                            {header}
-                          </div>
-                        ))}
+                        {comparisonTable.headers.map((header, idx) => {
+                          if (idx === 1) {
+                            return (
+                              <div 
+                                key={idx} 
+                                className="bg-[#BFCA16] text-black font-extrabold py-5 px-6 flex items-center justify-center text-center shadow-[inset_0_-1px_0_rgba(0,0,0,0.1)]"
+                              >
+                                {header}
+                              </div>
+                            );
+                          }
+                          return (
+                            <div 
+                              key={idx} 
+                              className={`py-5 px-6 flex items-center ${idx === 0 ? "text-zinc-500 bg-zinc-50/50" : "text-zinc-800 bg-zinc-50/50 justify-center text-center"}`}
+                            >
+                              {header}
+                            </div>
+                          );
+                        })}
                       </div>
                     )}
 
@@ -956,45 +1021,49 @@ export default function WebSec({
                       return (
                         <div
                           key={i}
-                          className={`grid ${compCols} py-4.5 px-6 items-center text-xs md:text-sm border-b border-zinc-100 last:border-0 text-left ${i % 2 === 0 ? "bg-white" : "bg-zinc-50/50"}`}
+                          className={`grid ${compCols} items-stretch text-xs md:text-sm border-b border-zinc-150 last:border-0 text-left`}
                         >
                           {cells.map((cell, idx) => {
                             if (idx === 0) {
+                              const FeatureIcon = getFeatureIcon(cell || "");
                               return (
                                 <div
                                   key={idx}
-                                  className="font-bold text-zinc-900"
+                                  className="font-bold text-headingColor py-5 px-6 bg-white flex items-center gap-3 border-r border-zinc-100"
                                 >
-                                  {cell}
+                                  <div className="w-8 h-8 rounded-lg bg-zinc-100 flex items-center justify-center text-zinc-600 shrink-0">
+                                    <FeatureIcon className="w-4.5 h-4.5" />
+                                  </div>
+                                  <span className="text-zinc-900 font-bold tracking-tight">{cell}</span>
                                 </div>
                               );
                             } else if (idx === 1) {
                               return (
                                 <div
                                   key={idx}
-                                  className="flex items-center gap-2 text-zinc-700 font-medium"
+                                  className="bg-[#BFCA16] text-zinc-950 font-semibold py-5 px-6 flex items-center gap-2.5 shadow-[inset_0_-1px_0_rgba(0,0,0,0.05)]"
                                 >
-                                  <CheckCircle2 className="w-4 h-4 text-[#BFCA16] shrink-0" />
-                                  <span>{cell}</span>
+                                  <CheckCircle2 className="w-5 h-5 text-zinc-950 shrink-0" />
+                                  <span className="leading-snug">{cell}</span>
                                 </div>
                               );
                             } else if (idx === 2) {
                               return (
                                 <div
                                   key={idx}
-                                  className="flex items-center gap-2 text-zinc-500"
+                                  className="text-zinc-600 py-5 px-6 bg-white flex items-center gap-2.5 border-l border-zinc-100"
                                 >
-                                  <XCircle className="w-4 h-4 text-red-400 shrink-0" />
-                                  <span>{cell}</span>
+                                  <XCircle className="w-5 h-5 text-zinc-400 shrink-0" />
+                                  <span className="leading-snug">{cell}</span>
                                 </div>
                               );
                             } else {
                               return (
                                 <div
                                   key={idx}
-                                  className="flex items-center gap-2 text-zinc-600 font-medium"
+                                  className="text-zinc-600 py-5 px-6 bg-white flex items-center gap-2 border-l border-zinc-100"
                                 >
-                                  <span>{cell}</span>
+                                  <span className="leading-snug">{cell}</span>
                                 </div>
                               );
                             }
@@ -1005,6 +1074,53 @@ export default function WebSec({
                   </>
                 );
               })()}
+            </div>
+
+            {/* Mobile Card-Based Comparison View */}
+            <div className="block md:hidden space-y-6">
+              {comparisonTable.rows.map((row, i) => {
+                const cells = row.values || [row.f, row.c, row.d];
+                const FeatureIcon = getFeatureIcon(cells[0] || "");
+                return (
+                  <div
+                    key={i}
+                    className="border border-zinc-200 rounded-2xl bg-white p-5 shadow-sm space-y-4 text-left"
+                  >
+                    {/* Feature Title Row */}
+                    <div className="flex items-center gap-3 pb-2 border-b border-zinc-100">
+                      <div className="w-8 h-8 rounded-lg bg-zinc-100 flex items-center justify-center text-zinc-600 shrink-0">
+                        <FeatureIcon className="w-4.5 h-4.5" />
+                      </div>
+                      <span className="text-zinc-900 font-extrabold text-sm uppercase tracking-wider">{cells[0]}</span>
+                    </div>
+
+                    {/* Comparison Stack */}
+                    <div className="space-y-2.5">
+                      {/* PELTOWN custom build */}
+                      {cells[1] && (
+                        <div className="bg-[#BFCA16]/10 border border-[#BFCA16]/20 rounded-xl p-3.5 flex items-start gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-zinc-950 shrink-0 mt-0.5" />
+                          <div>
+                            <span className="text-[10px] font-bold text-zinc-950/70 uppercase block mb-0.5">PELTOWN Custom Build</span>
+                            <span className="text-zinc-950 font-medium text-xs sm:text-sm leading-snug">{cells[1]}</span>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* DIY Builders */}
+                      {cells[2] && (
+                        <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-3.5 flex items-start gap-3">
+                          <XCircle className="w-5 h-5 text-zinc-400 shrink-0 mt-0.5" />
+                          <div>
+                            <span className="text-[10px] font-bold text-zinc-500 uppercase block mb-0.5">DIY Builders</span>
+                            <span className="text-zinc-600 font-medium text-xs sm:text-sm leading-snug">{cells[2]}</span>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
