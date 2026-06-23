@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --highlight: #BFCA16;
+  --highlight: #bfca16;
   --headingColor: #18181b;
   --descriptionColor: #52525b;
   --cardBgColor: #f9f9fb;
@@ -39,6 +39,22 @@
   }
 }
 
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-scroll 22s linear infinite;
+}
+
+.marquee-wrap:hover .marquee-track {
+  animation-play-state: paused;
+}
 
 /* --blackTextColor: text-neutral-400 */
 /* --blackThemeShade : zinc-900 */

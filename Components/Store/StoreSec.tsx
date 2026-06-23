@@ -198,7 +198,7 @@ export default function StoreSec() {
             <div className="relative group w-full max-w-lg aspect-square rounded-3xl overflow-hidden bg-zinc-50 border border-zinc-100 shadow-xl shadow-zinc-100/50">
               {/* Image mapping request */}
               <Image
-                src="/Img/hero.png"
+                src="/Img/about_peltown.webp"
                 alt="Premium ready-made product illustration ecosystem"
                 fill
                 priority

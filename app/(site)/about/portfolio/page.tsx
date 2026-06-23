@@ -1,13 +1,9 @@
-import Heading from "@/Components/Heading";
+import Portfolio from "@/Components/About/Portfolio/Portfolio";
 
 function PortfolioPage() {
   return (
     <>
-      <Heading
-        tagline="Portfolio"
-        title="Our Featured Work"
-        description="A curated selection of digital ecosystems, web applications, and mobile apps we've engineered."
-      />
+      <Portfolio />
     </>
   );
 }
