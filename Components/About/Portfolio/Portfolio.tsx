@@ -105,6 +105,7 @@ const projects: Project[] = [
     ],
     icon: GraduationCap,
     image: "/Img/bserc.webp",
+    link: "https://bserc.in/",
   },
   {
     code: "P03",
@@ -120,6 +121,7 @@ const projects: Project[] = [
     ],
     icon: HeartPulse,
     image: "/Img/callories.webp",
+    link: "https://callories.com/",
   },
   {
     code: "P04",
@@ -136,6 +138,7 @@ const projects: Project[] = [
     ],
     icon: ShoppingCart,
     image: "/Img/everce.webp",
+    link: "https://everce.com/",
   },
   {
     code: "P05",
@@ -151,6 +154,8 @@ const projects: Project[] = [
       "Responsive design",
     ],
     icon: Moon,
+    image: "/Img/islam.webp",
+    link: "https://islamicdukaan.com/",
   },
   {
     code: "P06",
@@ -167,6 +172,7 @@ const projects: Project[] = [
     ],
     icon: Home,
     image: "/Img/jvm.webp",
+    link: "https://jvmrealestate.com/",
   },
   {
     code: "P07",
@@ -182,6 +188,7 @@ const projects: Project[] = [
     ],
     icon: Plane,
     image: "/Img/mecure.webp",
+    link: "https://mercurevacationclub.com/",
   },
   {
     code: "P08",
@@ -197,6 +204,7 @@ const projects: Project[] = [
     ],
     icon: Code2,
     image: "/Img/mpis.webp",
+    link: "https://mpis-two.vercel.app/",
   },
   {
     code: "P09",
@@ -212,6 +220,7 @@ const projects: Project[] = [
     ],
     icon: Plane,
     image: "/Img/rose.webp",
+    link: "https://rosewood-flame.vercel.app/",
   },
   {
     code: "P10",
@@ -226,6 +235,7 @@ const projects: Project[] = [
       "Contact management",
     ],
     icon: Stethoscope,
+    link: "",
   },
   {
     code: "P11",
@@ -240,6 +250,8 @@ const projects: Project[] = [
       "User dashboard",
     ],
     icon: Trophy,
+    image: "/Img/smash.webp",
+    link: "https://smash2play.com/",
   },
   {
     code: "P12",
@@ -254,6 +266,7 @@ const projects: Project[] = [
       "Application tracking",
     ],
     icon: Briefcase,
+    link: "https://stack-solution-frontend.vercel.app/",
   },
   {
     code: "P13",
@@ -268,6 +281,7 @@ const projects: Project[] = [
       "Student resources",
     ],
     icon: GraduationCap,
+    link: "",
   },
   {
     code: "P14",
@@ -283,6 +297,7 @@ const projects: Project[] = [
     ],
     icon: Megaphone,
     image: "/Img/watnidea.webp",
+    link: "https://watnidea.com/",
   },
 ];
 
@@ -664,7 +679,7 @@ export default function Portfolio() {
                     {/* Image Section */}
                     <div className="relative aspect-4/3 w-full rounded-2xl overflow-hidden bg-zinc-800">
                       <Image
-                        src={project.image || "/Img/web.png"}
+                        src={project.image || "/Img/about_peltown.webp"}
                         alt={project.name}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -689,6 +704,8 @@ export default function Portfolio() {
                         {/* Live Link Button */}
                         <a
                           href={project.link || "#"}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="shrink-0 inline-flex items-center gap-1 text-[#BFCA16] font-bold text-sm transition-transform hover:scale-105"
                         >
                           Visit
@@ -703,9 +720,7 @@ export default function Portfolio() {
                             className="flex items-center gap-1.5 shrink-0"
                           >
                             <CheckCircle2 className="h-3.5 w-3.5 text-white/40 transition-colors group-hover:text-[#BFCA16]" />
-                            <span className="truncate max-w-30">
-                              {feature}
-                            </span>
+                            <span className="truncate max-w-30">{feature}</span>
                           </div>
                         ))}
                       </div>
