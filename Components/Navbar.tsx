@@ -224,7 +224,7 @@ const companyData = [
     category: "Support",
     icon: Headphones,
     items: [
-      { name: "Contact Us", icon: Headphones, href: "/about/contact" },
+      { name: "Contact Usss", icon: Headphones, href: "/about/contact" },
       { name: "Cost Calculator", icon: Calculator, href: "/about/cost-calculator" },
       { name: "Terms & Conditions", icon: FileText, href: "/about/terms" },
       { name: "Refund Policy", icon: Undo2, href: "/about/refund-policy" },
