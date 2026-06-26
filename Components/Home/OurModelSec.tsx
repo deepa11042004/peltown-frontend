@@ -98,7 +98,7 @@ export default function OurModelSec() {
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-headingColor">
-            How We Do It.
+            How We Do Ittt.
           </h2>
         </div>
 
