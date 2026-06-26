@@ -79,7 +79,7 @@ export default function PricingSec({
   plans = PRICING_PLANS,
 }: PricingSecProps) {
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-20 bg-zinc-50 border-t border-zinc-200">
+    <section className="py-24 px-6 md:px-12 lg:px-20 bg-white">
       <div className="max-w-7xl mx-auto space-y-16">
         <div className="max-w-3xl mx-auto text-center space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-300">

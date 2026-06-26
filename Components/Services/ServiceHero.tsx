@@ -86,7 +86,7 @@ const ROUTE_CONFIGS: Record<
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
-    image: "/Img/iphone.png",
+    image: "/Img/app.png",
     imageAlt: "Social media application showcase",
   },
   "digital-marketing": {
@@ -106,7 +106,7 @@ const ROUTE_CONFIGS: Record<
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
-    image: "/Img/iphone.png",
+    image: "/Img/app.png",
     imageAlt: "Google My Business profile mockup",
   },
   "service-photoshoot": {
@@ -126,7 +126,7 @@ const ROUTE_CONFIGS: Record<
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
-    image: "/Img/mac.png",
+    image: "/Img/web.png",
     imageAlt: "Service branding and design mockup",
   },
   "bulk-email": {
@@ -146,7 +146,7 @@ const ROUTE_CONFIGS: Record<
     dot: "bg-white",
     badgeBorder: "border-white/20",
     badgeBg: "bg-white/10",
-    image: "/Img/iphone.png",
+    image: "/Img/app.png",
     imageAlt: "WhatsApp API messaging showcase",
   },
   "email-solutions": {
@@ -223,11 +223,11 @@ export default function ServicesHero({
         const second = t.slice(index + 1).trim();
         return (
           <h1
-            className={`text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] mb-6 ${configColor.text}`}
+            className={`text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.08] ${configColor.text}`}
           >
             {first}
             <br />
-            <span className="text-xl md:text-2xl lg:text-3xl font-semibold opacity-90 block mt-2">
+            <span className="text-2xl md:text-3xl lg:text-5xl font-semibold opacity-90 block mt-2">
               {second}
             </span>
           </h1>
@@ -236,10 +236,10 @@ export default function ServicesHero({
       const sizeClass =
         t.length > 35
           ? "text-3xl md:text-4xl lg:text-5xl"
-          : "text-4xl md:text-5xl lg:text-6xl";
+          : "text-4xl md:text-5xl lg:text-7xl";
       return (
         <h1
-          className={`${sizeClass} font-bold tracking-tight leading-[1.15] mb-6 ${configColor.text}`}
+          className={`${sizeClass} font-bold leading-[1.08] ${configColor.text}`}
         >
           {t}
         </h1>
@@ -247,7 +247,7 @@ export default function ServicesHero({
     }
     return (
       <h1
-        className={`text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] mb-6 ${configColor.text}`}
+        className={`text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.08] ${configColor.text}`}
       >
         {t}
       </h1>
@@ -294,20 +294,20 @@ export default function ServicesHero({
             {renderTitle(title)}
 
             {description && (
-              <p
-                className={`text-base md:text-lg lg:text-xl font-medium max-w-2xl leading-relaxed flex flex-wrap items-center justify-center gap-x-2 ${configColor.subtext}`}
-              >
-                <span>{description}</span>
-                {ctaText && (
-                  <Link
-                    href="/about/contact"
-                    className={`underline underline-offset-8 font-bold inline-flex items-center gap-1 hover:opacity-80 transition-opacity ${configColor.text}`}
-                  >
-                    <span>{ctaText}</span>
-                    <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 inline-block" />
-                  </Link>
-                )}
+              <p className={`max-w-2xl text-[18px] leading-relaxed ${configColor.subtext}`}>
+                {description}
               </p>
+            )}
+
+            {ctaText && (
+              <Link
+                href="/about/contact"
+                className="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-4 text-sm font-medium transition-colors hover:bg-neutral-100"
+                style={{ color: configColor.bg }}
+              >
+                {ctaText}
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
             )}
           </motion.div>
 

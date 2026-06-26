@@ -449,8 +449,8 @@ export const SERVICES_CONTENT: Record<string, SectionConfig> = {
 
   "custom-crm": {
     hero: {
-      tagline: "Bespoke Solutions",
-      title: "Custom CRM Development",
+      tagline: "Be spoke Solutions",
+      title: "CRM Development",
       description:
         "Build contact management software tailored to your workflows with zero recurring licensing fees.",
       ctaText: "Get a Quote",

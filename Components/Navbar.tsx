@@ -214,7 +214,6 @@ const companyData = [
     category: "Resources",
     icon: FolderGit2,
     items: [
-      { name: "Portfolio", icon: FolderGit2, href: "/about/portfolio" },
       { name: "Careers", icon: Briefcase, href: "/about/careers" },
       { name: "Background Verification", icon: UserCheck, href: "/about/background-verification" },
       { name: "FAQs", icon: HelpCircle, href: "/about/faqs" },
@@ -236,6 +235,13 @@ const companyData = [
     items: [
       { name: "Partner With Us", icon: Users2, href: "/about/partner-with-us" },
       { name: "Locations", icon: MapPin, href: "/about/locations" },
+    ],
+  },
+  {
+    category: "Portfolio",
+    icon: FolderGit2,
+    items: [
+      { name: "Portfolio", icon: FolderGit2, href: "/about/portfolio" },
     ],
   },
 ];

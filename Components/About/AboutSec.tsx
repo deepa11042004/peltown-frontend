@@ -93,7 +93,7 @@ const capabilities: IconItem[] = [
 const beliefs: string[] = [
   "Generate more revenue",
   "Reduce operational costs",
-  "Improve customer experiences",
+  "Improve experiences",
   "Increase productivity",
   "Automate repetitive tasks",
   "Scale efficiently",
@@ -303,23 +303,6 @@ const stats: { value: string; label: string; desc: string }[] = [
   },
 ];
 
-const questions = [
-  "What problem are we solving?",
-  "How will this improve operations?",
-  "How will this increase revenue?",
-  "How will this reduce costs?",
-  "How will this scale in the future?",
-];
-
-const support = [
-  "Technical support",
-  "System maintenance",
-  "Feature enhancements",
-  "Performance optimisation",
-  "Security updates",
-  "Scalability planning",
-];
-
 /* Shared bits */
 
 function Reveal({
@@ -349,12 +332,17 @@ function Reveal({
 
 function SectionTag({ label }: { label: string }) {
   return (
-    <div className="flex items-center gap-3 mb-5 text-white/70">
-      <span className="h-px flex-1 max-w-12 bg-current/30" />
-      <span className="font-mono text-[11px] tracking-[0.25em] uppercase opacity-60">
+    <motion.div
+      initial={{ opacity: 0, x: -12 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.55 }}
+      className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-400 shadow-xs mb-5"
+    >
+      <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
+      <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-black uppercase">
         {label}
       </span>
-    </div>
+    </motion.div>
   );
 }
 
@@ -372,15 +360,7 @@ function Hero() {
     <section className="relative overflow-hidden bg-black text-white pt-32 pb-20 px-6 md:px-12">
       <div className="relative max-w-6xl mx-auto grid lg:grid-cols-[1.05fr_1fr] gap-16 items-center">
         <div>
-          <motion.div
-            initial={reduce ? undefined : { opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="font-mono inline-flex items-center gap-2 text-[11px] tracking-[0.25em] uppercase text-zinc-300 border border-zinc-800 px-3 py-1 rounded-full bg-zinc-900/50 mb-7 shadow-xs"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
-            Delhi NCR · Software Studio
-          </motion.div>
+          <SectionTag label="About Peltown" />
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.05] mb-6 text-white">
             {headline.map((line, i) => (
@@ -537,7 +517,7 @@ function Beliefs() {
   return (
     <section className="bg-black text-white py-24 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
-        <SectionTag  label="What We Believe" />
+        <SectionTag label="What We Believe" />
         <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
           <Reveal>
             <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-6 text-white">
@@ -599,7 +579,7 @@ function Differentiators() {
   return (
     <section className="bg-black text-white py-24 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
-        <SectionTag  label="What Makes Peltown Different" />
+        <SectionTag label="What Makes Peltown Different" />
         <h2 className="text-3xl md:text-4xl font-semibold max-w-2xl mb-14 text-white">
           We think like business owners, not just developers.
         </h2>
@@ -612,17 +592,10 @@ function Differentiators() {
             <h3 className="font-semibold text-lg text-white mb-3">
               Business-first, before code
             </h3>
-            <p className="text-sm text-zinc-400 mb-4 leading-relaxed">
+            <p className="text-sm text-zinc-400 leading-relaxed">
               Many agencies focus on delivering code. We focus on solving
-              business problems — before a single line is written, we ask:
+              business problems — before a single line is written, we ask what problem we are solving, how it will improve operations, increase revenue, reduce costs, and scale in the future.
             </p>
-            <ul className="font-mono space-y-2 text-[12.5px] text-zinc-300">
-              {questions.map((q) => (
-                <li key={q} className="border-l border-[#BFCA16]/40 pl-3">
-                  {q}
-                </li>
-              ))}
-            </ul>
           </Reveal>
           <Reveal
             delay={0.12}
@@ -650,17 +623,9 @@ function Differentiators() {
             <h3 className="font-semibold text-lg text-white mb-3">
               A long-term partnership
             </h3>
-            <p className="text-sm text-zinc-400 mb-4 leading-relaxed">
-              We don&rsquo;t disappear after deployment. Our team stays on for:
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              We don&rsquo;t disappear after deployment. Our team stays on for technical support, system maintenance, feature enhancements, performance optimisation, security updates, and scalability planning.
             </p>
-            <ul className="grid grid-cols-2 gap-2 text-sm text-zinc-300">
-              {support.map((s) => (
-                <li key={s} className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-[#BFCA16] rounded-full shrink-0" />
-                  {s}
-                </li>
-              ))}
-            </ul>
           </Reveal>
         </div>
       </div>
@@ -673,7 +638,7 @@ function Industries() {
   return (
     <section className="bg-black text-white py-24 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
-        <SectionTag  label="Industries We Serve" />
+        <SectionTag label="Industries We Serve" />
         <h2 className="text-3xl md:text-4xl font-semibold max-w-2xl mb-12 text-white">
           Built for the way your industry actually works.
         </h2>
@@ -767,7 +732,7 @@ function WhyChoose() {
   return (
     <section className="bg-black text-white py-24 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
-        <SectionTag  label="Why Businesses Choose Us" />
+        <SectionTag label="Why Businesses Choose Us" />
         <h2 className="text-3xl md:text-4xl font-semibold max-w-2xl mb-12 text-white">
           A readout of what you can expect.
         </h2>
@@ -808,7 +773,7 @@ function WhyChoose() {
       </div>
     </section>
   );
-}                                                             
+}
 
 function Process() {
   const ref = useRef<HTMLDivElement>(null);
@@ -822,7 +787,7 @@ function Process() {
   return (
     <section className="bg-black text-white py-24 px-6 md:px-12">
       <div className="max-w-4xl mx-auto">
-        <SectionTag  label="Our Process" />
+        <SectionTag label="Our Process" />
         <h2 className="text-3xl md:text-4xl font-semibold max-w-2xl mb-16 text-white">
           From idea to successful launch.
         </h2>
@@ -869,7 +834,7 @@ function Presence() {
   return (
     <section className="bg-black text-white py-24 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
-        <SectionTag  label="Local Presence" />
+        <SectionTag label="Local Presence" />
         <h2 className="text-3xl md:text-4xl font-semibold max-w-2xl mb-6 text-white">
           A software development company in Delhi NCR.
         </h2>
@@ -972,14 +937,14 @@ function FinalCTA() {
           className="flex flex-wrap justify-center gap-4"
         >
           <a
-            href="#"
+            href="/about/contact"
             className="group inline-flex items-center gap-2 bg-[#BFCA16] text-zinc-950 font-bold px-6 py-3 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
           >
             Discuss Your Project
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </a>
           <a
-            href="#"
+            href="/about/contact"
             className="inline-flex items-center gap-2 border border-zinc-800 text-zinc-300 px-6 py-3 rounded-full bg-zinc-900/40 hover:border-zinc-500 hover:text-white hover:bg-zinc-900/85 transition-colors duration-300 shadow-xs"
           >
             <CalendarClock className="w-4 h-4 text-[#BFCA16]" />
