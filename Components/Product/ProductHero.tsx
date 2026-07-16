@@ -14,23 +14,17 @@ interface ProductHeroProps {
     ctaText?: string;
     imageSrc: string;
     imageAlt: string;
+    additionalImages?: string[];
+    showGallery?: boolean;
   };
 }
 
-// Pool of additional images for the bottom thumbnails
-const THUMBNAIL_POOL = [
-  "/Img/ecc1.png",
-  "/Img/ecc2.png",
-  "/Img/ecc3.png",
-  "/Img/ecc4.png",
-  "/Img/ecc5.png",
-];
-
 export default function ProductHero({ hero }: ProductHeroProps) {
-  // Combine the main image with the pool to create the overall set
+  // Combine the main image with the specific additional images if provided
+  const additionalSrcs = hero.additionalImages || [];
   const allImages = [
     { src: hero.imageSrc, alt: hero.imageAlt || "Main view" },
-    ...THUMBNAIL_POOL.map((src, index) => ({
+    ...additionalSrcs.map((src, index) => ({
       src,
       alt: `Gallery image ${index + 1}`,
     })),
@@ -93,8 +87,9 @@ export default function ProductHero({ hero }: ProductHeroProps) {
         </motion.div>
 
         {/* --- Interactive Collage Section --- */}
-        <div className="w-full max-w-5xl flex flex-col gap-4">
-          {/* 1. Main Large Image */}
+        {hero.showGallery !== false && (
+          <div className="w-full max-w-5xl flex flex-col gap-4">
+            {/* 1. Main Large Image */}
           {hero.imageSrc && (
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -109,7 +104,7 @@ export default function ProductHero({ hero }: ProductHeroProps) {
                 fill
                 priority
                 sizes="(max-width: 1200px) 100vw, 1200px"
-                className="object-cover transition-transform duration-500 group-hover:scale-102"
+                className="object-cover object-top transition-transform duration-500 group-hover:scale-102"
               />
               {/* Hover overlay indicator */}
               <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -151,6 +146,7 @@ export default function ProductHero({ hero }: ProductHeroProps) {
             })}
           </motion.div>
         </div>
+        )}
       </div>
 
       {/* --- Lightbox / Focus Modal --- */}

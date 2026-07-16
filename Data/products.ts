@@ -62,6 +62,8 @@ export interface ProductHeroData {
   ctaText?: string;
   imageSrc: string;
   imageAlt: string;
+  additionalImages?: string[];
+  showGallery?: boolean;
 }
 
 export interface FeatureItem {
@@ -109,6 +111,13 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
     ctaText: "Get Started",
     imageSrc: "/Img/ecc1.png",
     imageAlt: "Enterprise E-commerce Suite",
+    additionalImages: [
+      "/Img/ecc2.png",
+      "/Img/ecc3.png",
+      "/Img/ecc4.png",
+      "/Img/ecc5.png",
+    ],
+    showGallery: true,
   },
   "quick-commerce": {
     tagline: "Ultra-Fast Delivery",
@@ -118,6 +127,13 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
     ctaText: "Request Demo",
     imageSrc: "/Img/ecc2.png",
     imageAlt: "Quick Commerce Engine",
+    additionalImages: [
+      "/Img/ecc1.png",
+      "/Img/ecc3.png",
+      "/Img/ecc4.png",
+      "/Img/ecc5.png",
+    ],
+    showGallery: true,
   },
   "cloud-pos": {
     tagline: "Point of Sale",
@@ -125,8 +141,10 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
     description:
       "Sync your physical storefront with your online inventory instantly. Accept all payment methods, track register shifts, and generate reports on the fly.",
     ctaText: "See in Action",
-    imageSrc: "/Img/ecc1.png",
+    imageSrc: "/Img/cloud2.png",
     imageAlt: "Cloud POS System",
+    additionalImages: ["/Img/cloud1.png", "/Img/cloud2.png", "/Img/cloud3.png"],
+    showGallery: true,
   },
   "fleet-delivery": {
     tagline: "Logistics Optimization",
@@ -136,6 +154,7 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
     ctaText: "Schedule Demo",
     imageSrc: "/Img/ecc1.png",
     imageAlt: "Fleet & Delivery Management",
+    showGallery: false,
   },
   "cloud-erp": {
     tagline: "Enterprise Operations",
@@ -143,8 +162,10 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
     description:
       "Unify your accounting, supply chain, inventory, and human resource modules under a single, highly-secure cloud dashboard.",
     ctaText: "Consult Our Experts",
-    imageSrc: "/Img/ecc1.png",
+    imageSrc: "/Img/cloud1.png",
     imageAlt: "Cloud ERP System",
+    additionalImages: ["/Img/cloud1.png", "/Img/cloud2.png", "/Img/cloud3.png"],
+    showGallery: true,
   },
   "hrms-payroll": {
     tagline: "Workforce Management",
@@ -152,8 +173,10 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
     description:
       "Manage employee shifts, automate employee management, attendance tracking, leave management, payroll processing, and handle employee lifecycles with absolute compliance.",
     ctaText: "Request Live Demo",
-    imageSrc: "/Img/about_peltown.webp",
+    imageSrc: "/Img/pay1.png",
     imageAlt: "HRMS & Payroll System",
+    additionalImages: ["/Img/cloud1.png", "/Img/cloud2.png", "/Img/cloud3.png"],
+    showGallery: true,
   },
   "omnichannel-crm": {
     tagline: "Sales & CRM",
@@ -161,8 +184,10 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
     description:
       "Centralize customer interactions into a unified platform. Unify WhatsApp, email, social, phone calls, and live chat to build long-term relationships.",
     ctaText: "Boost Sales Now",
-    imageSrc: "/Img/how1.webp",
+    imageSrc: "/Img/cloud3.png",
     imageAlt: "Omni-channel CRM",
+    additionalImages: ["/Img/cloud1.png", "/Img/cloud2.png", "/Img/cloud3.png"],
+    showGallery: true,
   },
   "invoicing-billing": {
     tagline: "Financial Tech",
@@ -170,8 +195,10 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
     description:
       "Automate your billing lifecycle from quotation to payment collection. GST invoicing, recurring billing, and online payment integrations built for your business.",
     ctaText: "Try Billing Suite",
-    imageSrc: "/Img/how2.webp",
+    imageSrc: "/Img/invoice1.png",
     imageAlt: "Invoicing & Billing Portal",
+    additionalImages: ["/Img/cloud1.png", "/Img/cloud2.png", "/Img/cloud3.png"],
+    showGallery: true,
   },
   "travel-agency": {
     tagline: "Travel Technology",
@@ -179,8 +206,10 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
     description:
       "Create flight & hotel itineraries, manage direct bookings, handle visa processes, and generate invoice statements for holiday operators.",
     ctaText: "Modernize Booking",
-    imageSrc: "/Img/how3.webp",
+    imageSrc: "/Img/travel1.png",
     imageAlt: "Travel Agency Suite",
+    additionalImages: ["/Img/cloud1.png", "/Img/cloud2.png", "/Img/cloud3.png"],
+    showGallery: true,
   },
   "real-estate": {
     tagline: "Property Tech",
@@ -188,8 +217,9 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
     description:
       "Present high-definition property listings, engage hot leads, integrate virtual tours, and manage agents with robust CRM workflows.",
     ctaText: "Explore Platform",
-    imageSrc: "/Img/how4.webp",
+    imageSrc: "/Img/real1.png",
     imageAlt: "Real Estate Suite",
+    showGallery: true,
   },
   "restaurant-management": {
     tagline: "Food & Beverage",
@@ -197,8 +227,9 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
     description:
       "Menu management, table reservations, and integrated kitchen display systems.",
     ctaText: "Deploy to Kitchen",
-    imageSrc: "/Img/store1.webp",
+    imageSrc: "/Img/restaurant1.webp",
     imageAlt: "Restaurant Management Platform",
+    showGallery: true,
   },
   "learning-management": {
     tagline: "EdTech & Training",
@@ -206,8 +237,9 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
     description:
       "Deploy white-labeled digital training hubs, host video lessons, design quizzes, track progress, and award certificates to students.",
     ctaText: "Create Academy",
-    imageSrc: "/Img/store2.webp",
+    imageSrc: "/Img/learn1.png",
     imageAlt: "Learning Management System (LMS)",
+    showGallery: true,
   },
   "bulk-whatsapp": {
     tagline: "Marketing & API",
@@ -217,6 +249,7 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
     ctaText: "Request Live Demo",
     imageSrc: "/Img/partners_hero.webp",
     imageAlt: "WhatsApp Business Platform",
+    showGallery: false,
   },
   "email-automation": {
     tagline: "Marketing Automation",
@@ -226,6 +259,7 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
     ctaText: "Automate Campaigns",
     imageSrc: "/Img/store3.webp",
     imageAlt: "Email Automation Platform",
+    showGallery: false,
   },
   "helpdesk-ticketing": {
     tagline: "Support & Ticketing",
@@ -235,6 +269,7 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
     ctaText: "Optimize Support",
     imageSrc: "/Img/store4.webp",
     imageAlt: "Helpdesk Ticketing System",
+    showGallery: false,
   },
   "appointment-booking": {
     tagline: "Scheduling Engine",
@@ -244,6 +279,7 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
     ctaText: "Set Up Calendar",
     imageSrc: "/Img/store5.webp",
     imageAlt: "Appointment Booking Engine",
+    showGallery: false,
   },
 };
 
