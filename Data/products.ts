@@ -208,7 +208,6 @@ export const PRODUCTS_HERO_CONTENT: Record<string, ProductHeroData> = {
     ctaText: "Modernize Booking",
     imageSrc: "/Img/travel1.png",
     imageAlt: "Travel Agency Suite",
-    additionalImages: ["/Img/cloud1.png", "/Img/cloud2.png", "/Img/cloud3.png"],
     showGallery: true,
   },
   "real-estate": {
