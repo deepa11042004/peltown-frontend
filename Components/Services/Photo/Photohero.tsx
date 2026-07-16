@@ -14,27 +14,27 @@ interface GalleryImage {
 
 const galleryImages: GalleryImage[] = [
   {
-    src: "https://picsum.photos/id/64/700/900",
+    src: "/Img/product1.webp",
     alt: "Portrait with flowing hair in golden light",
     width: 350,
   },
   {
-    src: "https://picsum.photos/id/1011/900/900",
+    src: "/Img/product2.webp",
     alt: "Couple at a candlelit dinner table",
     width: 350,
   },
   {
-    src: "https://picsum.photos/id/177/800/900",
+    src: "/Img/product3.webp",
     alt: "Beauty close-up with iridescent eyeshadow",
     width: 350,
   },
   {
-    src: "https://picsum.photos/id/91/800/900",
+    src: "/Img/product4.webp",
     alt: "Black and white studio portrait",
     width: 350,
   },
   {
-    src: "https://picsum.photos/id/225/800/900",
+    src: "/Img/product5.webp",
     alt: "Spa bottle product shot on green backdrop",
     width: 350,
   },
