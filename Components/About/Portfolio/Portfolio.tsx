@@ -1043,7 +1043,7 @@ export default function Portfolio() {
                 <motion.div
                   key={ind.name}
                   variants={fadeUp}
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-linear-to-br from-zinc-900/60 to-zinc-950/60 p-5 backdrop-blur-sm transition-all duration-300 hover:border-[#BFCA16]/40 hover:shadow-[0_0_30px_-8px_rgba(191,202,22,0.25)]"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-linear-to-br from-zinc-900/60 to-zinc-950/60 p-5 backdrop-blur-sm transition-all duration-300 hover:border-[#BFCA16]/40"
                 >
                   {/* Corner accents */}
                   <div className="absolute top-0 left-0 h-3 w-3 border-t border-l border-[#BFCA16]/0 rounded-tl-2xl transition-colors duration-300 group-hover:border-[#BFCA16]/50" />
