@@ -455,111 +455,265 @@ export default function Portfolio() {
     <div className="font-body bg-black text-white">
       {/* Hero */}
       <section className="relative overflow-hidden bg-black text-white">
-        <div className="blueprint-grid absolute inset-0 opacity-20" />
-        <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-40">
-          <div className="relative rounded-3xl border border-white/15 p-8 sm:p-12">
+        <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-32 sm:pt-40">
+          {/* Status Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-6 flex flex-wrap items-center justify-between gap-3 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-white/50"
+          >
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#BFCA16] opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#BFCA16]" />
+              </span>
+              <span className="text-white/70">Available for new projects</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <span>Est. 2020</span>
+              <span className="h-3 w-px bg-white/20" />
+              <span>Remote / Worldwide</span>
+            </div>
+          </motion.div>
+
+          {/* Main Card */}
+          <div className="relative rounded-3xl border border-white/15 bg-linear-to-br from-white/3 to-transparent p-8 backdrop-blur-sm">
+            {/* Corner accents */}
+            <div className="absolute top-0 left-0 h-6 w-6 border-t border-l border-[#BFCA16]/50 rounded-tl-3xl" />
+            <div className="absolute top-0 right-0 h-6 w-6 border-t border-r border-[#BFCA16]/50 rounded-tr-3xl" />
+            <div className="absolute bottom-0 left-0 h-6 w-6 border-b border-l border-[#BFCA16]/50 rounded-bl-3xl" />
+            <div className="absolute bottom-0 right-0 h-6 w-6 border-b border-r border-[#BFCA16]/50 rounded-br-3xl" />
+
             <FigureLabel>Studio Overview</FigureLabel>
 
+            {/* Headline */}
             <motion.h1
               initial="hidden"
               animate="show"
               variants={stagger}
-              className="font-display mt-5 max-w-4xl text-5xl font-bold leading-[1.08] tracking-tight sm:text-7xl"
+              className="font-display mt-5 max-w-4xl text-5xl font-bold leading-[1.05] tracking-tight sm:text-7xl"
             >
               {[
-                "Building",
-                "digital",
-                "experiences",
-                "that",
-                "drive",
-                "business",
-                "growth.",
-              ].map((word, i) => (
+                { word: "Building", accent: false },
+                { word: "digital", accent: false },
+                { word: "experiences", accent: false },
+                { word: "that", accent: false },
+                { word: "drive", accent: false },
+                { word: "business", accent: false },
+                { word: "growth.", accent: true },
+              ].map((item, i) => (
                 <motion.span
                   key={i}
                   variants={heroWord}
-                  className="mr-3 inline-block"
+                  className={`mr-3 inline-block ${
+                    item.accent ? "text-[#BFCA16] italic" : "text-white"
+                  }`}
                 >
-                  {word}
+                  {item.word}
                 </motion.span>
               ))}
             </motion.h1>
 
+            {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="mt-6 max-w-4xl text-lg font-medium text-white/70 sm:text-xl"
+              className="mt-6 max-w-3xl text-lg font-medium leading-relaxed text-white/70 sm:text-xl"
             >
               We design and build websites, mobile apps, CRMs, e-commerce
               platforms, and custom business systems for organizations that want
               to streamline operations, engage customers, and scale.
             </motion.p>
 
+            {/* Stats */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.65, duration: 0.6 }}
-              className="mt-10 grid grid-cols-3 gap-6 border-t border-white/15 pt-8"
+              className="mt-10 grid grid-cols-3 gap-4 border-t border-white/10 pt-8 sm:gap-6"
             >
               {[
-                { value: `${totalBuilds}`, label: "Builds shipped" },
-                { value: `${industries.length}`, label: "Industries served" },
-                { value: `${expertise.length}`, label: "Core disciplines" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <div className="font-display text-4xl font-bold text-[#BFCA16]">
-                    {stat.value}
+                {
+                  value: `${totalBuilds}`,
+                  label: "Builds shipped",
+                  hint: "and counting",
+                },
+                {
+                  value: `${industries.length}`,
+                  label: "Industries served",
+                  hint: "global reach",
+                },
+                {
+                  value: `${expertise.length}`,
+                  label: "Core disciplines",
+                  hint: "in-house",
+                },
+              ].map((stat, idx) => (
+                <div key={stat.label} className="group relative">
+                  <div className="flex items-baseline gap-2">
+                    <div className="font-display text-4xl font-bold text-[#BFCA16] tabular-nums sm:text-5xl">
+                      {stat.value}
+                    </div>
+                    <div className="font-mono text-[10px] font-bold uppercase tracking-wider text-white/30">
+                      0{idx + 1}
+                    </div>
                   </div>
-                  <div className="mt-2 font-mono text-xs font-bold uppercase tracking-wide text-white/55">
+                  <div className="mt-2 font-mono text-xs font-bold uppercase tracking-wide text-white/70">
                     {stat.label}
                   </div>
+                  <div className="mt-1 text-xs text-white/40">{stat.hint}</div>
                 </div>
               ))}
             </motion.div>
           </div>
+
+          {/* Service Marquee */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.9, duration: 0.8 }}
+            className="mt-8 overflow-hidden"
+          >
+            <div className="flex animate-marquee whitespace-nowrap">
+              {[
+                "Web Development",
+                "Mobile Apps",
+                "CRM Systems",
+                "E-commerce",
+                "Custom Software",
+                "UI/UX Design",
+                "Web Development",
+                "Mobile Apps",
+                "CRM Systems",
+                "E-commerce",
+                "Custom Software",
+                "UI/UX Design",
+              ].map((service, i) => (
+                <span
+                  key={i}
+                  className="mx-6 flex items-center gap-6 font-mono text-sm font-bold uppercase tracking-[0.2em] text-white/40"
+                >
+                  {service}
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16]" />
+                </span>
+              ))}
+            </div>
+          </motion.div>
         </div>
+
+        <style jsx>{`
+          @keyframes marquee {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          .animate-marquee {
+            animation: marquee 30s linear infinite;
+          }
+        `}</style>
       </section>
 
       {/* Expertise */}
       <section className="mx-auto max-w-6xl px-6 py-20">
+        {/* Section Header */}
         <motion.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
           variants={fadeUp}
-          className="mb-10 flex items-end justify-between gap-4 border-b border-white/10 pb-4"
+          className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
         >
           <div>
             <FigureLabel>Capabilities</FigureLabel>
-            <h2 className="font-display mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-              Our expertise
+            <h2 className="font-display mt-2 text-3xl font-bold tracking-tight sm:text-5xl">
+              Our <span className="text-[#BFCA16] italic">expertise</span>
             </h2>
           </div>
+          <p className="max-w-md text-sm font-medium leading-relaxed text-white/60">
+            A focused set of disciplines we&apos;ve refined over years of
+            building products for startups, agencies, and enterprise teams.
+          </p>
         </motion.div>
 
+        {/* Bento Grid */}
         <motion.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {expertise.map((item) => {
+          {expertise.map((item, index) => {
             const Icon = item.icon;
+            const isFeatured = index === 0;
+
             return (
               <motion.div
                 key={item.title}
                 variants={fadeUp}
-                className="group rounded-3xl bg-zinc-900/40 p-8 border border-zinc-800/80 hover:border-[#BFCA16] hover:shadow-lg transition-all duration-300"
+                className={`group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-linear-to-br from-zinc-900/60 to-zinc-950/60 p-7 backdrop-blur-sm transition-all duration-300 hover:border-[#BFCA16]/40  ${
+                  isFeatured ? "lg:col-span-2" : ""
+                }`}
               >
-                <Icon className="h-6 w-6 text-[#BFCA16]" strokeWidth={2} />
-                <h3 className="font-display mt-5 text-lg font-bold">
+                {/* Corner accents */}
+                <div className="absolute top-0 left-0 h-4 w-4 border-t border-l border-[#BFCA16]/0 rounded-tl-2xl transition-colors duration-300 group-hover:border-[#BFCA16]/50" />
+                <div className="absolute top-0 right-0 h-4 w-4 border-t border-r border-[#BFCA16]/0 rounded-tr-2xl transition-colors duration-300 group-hover:border-[#BFCA16]/50" />
+                <div className="absolute bottom-0 left-0 h-4 w-4 border-b border-l border-[#BFCA16]/0 rounded-bl-2xl transition-colors duration-300 group-hover:border-[#BFCA16]/50" />
+                <div className="absolute bottom-0 right-0 h-4 w-4 border-b border-r border-[#BFCA16]/0 rounded-br-2xl transition-colors duration-300 group-hover:border-[#BFCA16]/50" />
+
+                {/* Background glow */}
+                <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#BFCA16]/0 blur-3xl transition-all duration-500 group-hover:bg-[#BFCA16]/10" />
+
+                {/* Header: Index + Icon */}
+                <div className="relative flex items-start justify-between">
+                  <div className="flex items-center gap-3">
+                    <span className="font-mono text-[11px] font-bold tracking-[0.2em] text-[#BFCA16]/70">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div className="h-px w-6 bg-linear-to-r from-[#BFCA16]/40 to-transparent" />
+                  </div>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10 transition-all duration-300 group-hover:bg-[#BFCA16]/10 group-hover:ring-[#BFCA16]/30">
+                    <Icon
+                      className="h-5 w-5 text-white/60 transition-colors group-hover:text-[#BFCA16]"
+                      strokeWidth={1.8}
+                    />
+                  </div>
+                </div>
+
+                {/* Title */}
+                <h3
+                  className={`font-display relative mt-6 font-bold leading-tight text-white transition-colors group-hover:text-[#BFCA16] ${
+                    isFeatured ? "text-2xl sm:text-3xl" : "text-xl"
+                  }`}
+                >
                   {item.title}
                 </h3>
-                <p className="mt-3 text-base font-medium leading-relaxed text-white/70">
+
+                {/* Description */}
+                <p
+                  className={`relative mt-3 leading-relaxed text-white/60 ${
+                    isFeatured ? "text-base sm:text-lg" : "text-sm"
+                  }`}
+                >
                   {item.description}
                 </p>
+
+                {/* Footer indicator */}
+                <div className="relative mt-auto pt-5">
+                  <div className="flex items-center justify-between border-t border-white/10 pt-4">
+                    <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
+                      Core discipline
+                    </span>
+                    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/5 transition-all duration-300 group-hover:bg-[#BFCA16]">
+                      <ArrowUpRight className="h-3.5 w-3.5 text-white/50 transition-colors group-hover:text-black" />
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             );
           })}
@@ -611,7 +765,7 @@ export default function Portfolio() {
             className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
           >
             <AnimatePresence mode="popLayout">
-              {visibleProjects.map((project) => {
+              {visibleProjects.map((project, index) => {
                 const Icon = project.icon;
 
                 if (activeFilter === "Project List") {
@@ -619,48 +773,72 @@ export default function Portfolio() {
                     <motion.article
                       key={project.code}
                       layout
-                      initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                      initial={{ opacity: 0, scale: 0.95, y: 20 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                      exit={{ opacity: 0, scale: 0.95, y: 20 }}
                       transition={{
                         type: "spring",
                         stiffness: 300,
                         damping: 25,
+                        delay: index * 0.05,
                       }}
-                      whileHover={{ y: -4 }}
-                      className="group relative flex flex-col rounded-3xl border border-white/10 bg-zinc-900/40 p-8 transition-colors hover:border-[#BFCA16]"
+                      whileHover={{ y: -6 }}
+                      className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-linear-to-br from-zinc-900/60 to-zinc-950/60 p-7 backdrop-blur-sm transition-all duration-300 hover:border-[#BFCA16]/40"
                     >
-                      <div className="flex items-center justify-between">
-                        <span className="font-mono text-xs font-bold tracking-wide text-white/40">
-                          {project.code}
-                        </span>
-                        <Icon
-                          className="h-5 w-5 text-white/50 transition-colors group-hover:text-[#BFCA16]"
-                          strokeWidth={2}
-                        />
+                      {/* Header: Index + Icon */}
+                      <div className="relative flex items-start justify-between">
+                        <div className="flex items-center gap-3">
+                          <span className="font-mono text-[11px] font-bold tracking-[0.2em] text-[#BFCA16]/70">
+                            {project.code}
+                          </span>
+                        </div>
+                        <div className="flex h-10 w-10 items-center justify-center rounded-xl">
+                          <Icon
+                            className="h-5 w-5 text-white/60 transition-colors group-hover:text-[#BFCA16]"
+                            strokeWidth={1.8}
+                          />
+                        </div>
                       </div>
 
-                      <h3 className="font-display mt-5 text-xl font-bold leading-snug">
-                        {project.name}
-                      </h3>
-                      <span className="mt-2 font-mono text-xs font-bold uppercase tracking-[0.15em] text-[#BFCA16]">
-                        {project.category}
-                      </span>
-                      <p className="mt-4 text-base font-medium leading-relaxed text-white/70">
+                      {/* Title + Category */}
+                      <div className="relative mt-6">
+                        <h3 className="font-display text-2xl font-bold leading-tight text-white transition-colors group-hover:text-[#BFCA16]">
+                          {project.name}
+                        </h3>
+                        <span className="mt-2 inline-block font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">
+                          {project.category}
+                        </span>
+                      </div>
+
+                      {/* Description */}
+                      <p className="relative mt-4 text-sm leading-relaxed text-white/60">
                         {project.description}
                       </p>
 
-                      <ul className="mt-5 space-y-2 border-t border-white/10 pt-5">
-                        {project.features.slice(0, 4).map((feature) => (
-                          <li
+                      {/* Features as pills */}
+                      <div className="relative mt-6 flex flex-wrap gap-2">
+                        {project.features.slice(0, 3).map((feature) => (
+                          <span
                             key={feature}
-                            className="flex items-start gap-3 text-sm font-medium text-white/70"
+                            className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium text-white/70 transition-colors group-hover:border-[#BFCA16]/20 group-hover:text-white/90"
                           >
-                            <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-white/45" />
+                            <CheckCircle2 className="h-3 w-3 text-[#BFCA16]/60" />
                             {feature}
-                          </li>
+                          </span>
                         ))}
-                      </ul>
+                      </div>
+
+                      {/* Bottom divider with arrow */}
+                      <div className="relative mt-auto pt-5">
+                        <div className="flex items-center justify-between border-t border-white/10 pt-4">
+                          <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
+                            {project.features.length}+ features
+                          </span>
+                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 transition-all duration-300 group-hover:bg-[#BFCA16] group-hover:text-black">
+                            <ArrowUpRight className="h-4 w-4 text-white/50 transition-colors group-hover:text-black" />
+                          </div>
+                        </div>
+                      </div>
                     </motion.article>
                   );
                 }
@@ -669,60 +847,83 @@ export default function Portfolio() {
                   <motion.article
                     key={project.code}
                     layout
-                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                    initial={{ opacity: 0, scale: 0.95, y: 20 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                    whileHover={{ y: -4 }}
-                    className="group relative flex flex-col rounded-3xl border border-white/10 bg-zinc-900/40 p-2.5 transition-colors hover:border-[#BFCA16]"
+                    exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 25,
+                      delay: index * 0.05,
+                    }}
+                    whileHover={{ y: -6 }}
+                    className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 transition-all duration-300 hover:border-[#BFCA16]/40"
                   >
-                    {/* Image Section */}
-                    <div className="relative aspect-4/3 w-full rounded-2xl overflow-hidden bg-zinc-800">
+                    {/* Image Section with overlay */}
+                    <div className="relative aspect-4/3 w-full overflow-hidden bg-zinc-800">
                       <Image
                         src={project.image || "/Img/about_peltown.webp"}
                         alt={project.name}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
                       />
-                      {/* Top Left Badge: Category */}
-                      <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full text-[11px] font-bold tracking-wide text-white border border-white/10 shadow-sm">
-                        {project.category}
+                      {/* Gradient overlay */}
+                      <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
+                      <div className="absolute inset-0 bg-linear-to-br from-[#BFCA16]/0 via-transparent to-transparent" />
+
+                      {/* Top badges */}
+                      <div className="absolute top-4 left-4 right-4 flex items-start justify-between">
+                        <div className="flex items-center gap-2 rounded-full bg-black/50 px-3 py-1.5 backdrop-blur-md">
+                          <div className="h-1.5 w-1.5 rounded-full bg-[#BFCA16]" />
+                          <span className="font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-white">
+                            {project.category}
+                          </span>
+                        </div>
+                        <div className="rounded-full bg-black/50 p-2 backdrop-blur-md transition-all duration-300 group-hover:bg-[#BFCA16]">
+                          <ArrowUpRight className="h-3.5 w-3.5 text-white transition-colors group-hover:text-black" />
+                        </div>
+                      </div>
+
+                      {/* Bottom content overlay */}
+                      <div className="absolute bottom-0 left-0 right-0 p-5">
+                        <h3 className="mt-1 font-display text-xl font-bold leading-tight text-white">
+                          {project.name}
+                        </h3>
                       </div>
                     </div>
 
                     {/* Content Section */}
-                    <div className="px-3 pt-4 pb-2 flex flex-col grow">
-                      <div className="flex items-start justify-between gap-3">
-                        <div className="flex-1 min-w-0">
-                          <h3 className="font-display text-lg font-bold text-white leading-tight truncate transition-colors group-hover:text-[#BFCA16]">
-                            {project.name}
-                          </h3>
-                          <p className="mt-1 text-sm text-white/70 truncate font-medium">
-                            {project.description}
-                          </p>
-                        </div>
-                        {/* Live Link Button */}
+                    <div className="flex flex-1 flex-col p-5">
+                      <p className="text-sm leading-relaxed text-white/60">
+                        {project.description}
+                      </p>
+
+                      {/* Features */}
+                      <div className="mt-4 flex flex-wrap gap-1.5">
+                        {project.features.slice(0, 3).map((feature, idx) => (
+                          <span
+                            key={idx}
+                            className="inline-flex items-center gap-1 rounded-md bg-white/5 px-2 py-1 text-[11px] font-medium text-white/70 transition-colors group-hover:bg-[#BFCA16]/10 group-hover:text-white/90"
+                          >
+                            <CheckCircle2 className="h-3 w-3 text-[#BFCA16]/60" />
+                            {feature}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Footer with visit link */}
+                      <div className="mt-auto pt-4">
                         <a
                           href={project.link || "#"}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="shrink-0 inline-flex items-center gap-1 text-[#BFCA16] font-bold text-sm transition-transform hover:scale-105"
+                          className="group/link inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.15em] text-white/70 transition-colors hover:text-[#BFCA16]"
                         >
-                          Visit
-                          <ArrowUpRight className="h-4 w-4" />
+                          <span>Visit Project</span>
+                          <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/10 transition-all group-hover/link:bg-[#BFCA16] group-hover/link:text-black">
+                            <ArrowUpRight className="h-3 w-3" />
+                          </span>
                         </a>
-                      </div>
-
-                      <div className="mt-4 pt-3 border-t border-white/10 flex items-center gap-4 overflow-hidden text-[13px] font-medium text-white/60">
-                        {project.features.slice(0, 3).map((feature, idx) => (
-                          <div
-                            key={idx}
-                            className="flex items-center gap-1.5 shrink-0"
-                          >
-                            <CheckCircle2 className="h-3.5 w-3.5 text-white/40 transition-colors group-hover:text-[#BFCA16]" />
-                            <span className="truncate max-w-30">{feature}</span>
-                          </div>
-                        ))}
                       </div>
                     </div>
                   </motion.article>
@@ -804,22 +1005,31 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      {/* Industries  */}
+      {/* Industries */}
       <section className="bg-black py-20">
         <div className="mx-auto max-w-6xl px-6">
+          {/* Section Header */}
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-80px" }}
             variants={fadeUp}
-            className="mb-10 border-b border-white/10 pb-4"
+            className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
           >
-            <FigureLabel>Coverage</FigureLabel>
-            <h2 className="font-display mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-              Industries we serve
-            </h2>
+            <div>
+              <FigureLabel>Coverage</FigureLabel>
+              <h2 className="font-display mt-2 text-3xl font-bold tracking-tight sm:text-5xl">
+                Industries we{" "}
+                <span className="text-[#BFCA16] italic">serve</span>
+              </h2>
+            </div>
+            <p className="max-w-md text-sm font-medium leading-relaxed text-white/60">
+              From early-stage startups to established enterprises, we&apos;ve
+              delivered solutions across diverse sectors.
+            </p>
           </motion.div>
 
+          {/* Industries Grid */}
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -833,13 +1043,27 @@ export default function Portfolio() {
                 <motion.div
                   key={ind.name}
                   variants={fadeUp}
-                  className="flex items-center gap-3 rounded-2xl border border-white/10 bg-zinc-900/40 px-5 py-4 transition-colors hover:border-[#BFCA16]"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-linear-to-br from-zinc-900/60 to-zinc-950/60 p-5 backdrop-blur-sm transition-all duration-300 hover:border-[#BFCA16]/40 hover:shadow-[0_0_30px_-8px_rgba(191,202,22,0.25)]"
                 >
-                  <Icon
-                    className="h-5 w-5 flex-none text-white/60"
-                    strokeWidth={2}
-                  />
-                  <span className="text-base font-bold leading-snug">
+                  {/* Corner accents */}
+                  <div className="absolute top-0 left-0 h-3 w-3 border-t border-l border-[#BFCA16]/0 rounded-tl-2xl transition-colors duration-300 group-hover:border-[#BFCA16]/50" />
+                  <div className="absolute top-0 right-0 h-3 w-3 border-t border-r border-[#BFCA16]/0 rounded-tr-2xl transition-colors duration-300 group-hover:border-[#BFCA16]/50" />
+                  <div className="absolute bottom-0 left-0 h-3 w-3 border-b border-l border-[#BFCA16]/0 rounded-bl-2xl transition-colors duration-300 group-hover:border-[#BFCA16]/50" />
+                  <div className="absolute bottom-0 right-0 h-3 w-3 border-b border-r border-[#BFCA16]/0 rounded-br-2xl transition-colors duration-300 group-hover:border-[#BFCA16]/50" />
+
+                  {/* Background glow */}
+                  <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#BFCA16]/0 blur-2xl transition-all duration-500 group-hover:bg-[#BFCA16]/10" />
+
+                  {/* Icon container */}
+                  <div className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10 transition-all duration-300 group-hover:bg-[#BFCA16]/10 group-hover:ring-[#BFCA16]/30">
+                    <Icon
+                      className="h-4.5 w-4.5 text-white/60 transition-colors group-hover:text-[#BFCA16]"
+                      strokeWidth={1.8}
+                    />
+                  </div>
+
+                  {/* Industry name */}
+                  <span className="relative mt-3 text-sm font-bold leading-snug text-white transition-colors group-hover:text-[#BFCA16]">
                     {ind.name}
                   </span>
                 </motion.div>
