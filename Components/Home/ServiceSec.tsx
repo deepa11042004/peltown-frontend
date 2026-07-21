@@ -132,7 +132,7 @@ export default function ServiceSec() {
                 return (
                   <div
                     key={index}
-                    className="w-75 md:w-90 aspect-[1/1.1] shrink-0 bg-cardBgColor border border-cardBorderColor rounded-4xl p-8 flex flex-col justify-between text-left relative overflow-hidden transition-all duration-300 group cursor-pointer hover:bg-[#BFCA16]"
+                    className="h-80 w-75 md:w-90 shrink-0 bg-cardBgColor border border-cardBorderColor rounded-4xl p-8 flex flex-col justify-between text-left relative overflow-hidden transition-all duration-300 group cursor-pointer hover:bg-[#BFCA16]"
                   >
                     {/* ICON VECTOR OBJECT CONTAINER */}
                     <div className="flex items-center justify-between w-full relative z-10">

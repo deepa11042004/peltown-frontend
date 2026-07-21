@@ -235,7 +235,8 @@ const projects: Project[] = [
       "Contact management",
     ],
     icon: Stethoscope,
-    link: "",
+    image: "/Img/hospital.webp",
+    link: "https://saraswatihospitaldelhi.com/",
   },
   {
     code: "P11",
@@ -266,7 +267,8 @@ const projects: Project[] = [
       "Application tracking",
     ],
     icon: Briefcase,
-    link: "https://stack-solution-frontend.vercel.app/",
+    image: "/Img/stack.webp",
+    link: "https://stacksolutions.in/",
   },
   {
     code: "P13",
@@ -281,7 +283,8 @@ const projects: Project[] = [
       "Student resources",
     ],
     icon: GraduationCap,
-    link: "",
+    image: "/Img/upmi.webp",
+    link: "https://upmi.in/",
   },
   {
     code: "P14",
@@ -298,6 +301,23 @@ const projects: Project[] = [
     icon: Megaphone,
     image: "/Img/watnidea.webp",
     link: "https://watnidea.com/",
+  },
+
+  {
+    code: "P15",
+    name: "Mandarin Travel",
+    category: "Travel & Tourism",
+    description:
+      "A travel services site showcasing tour packages, destinations, and booking inquiries.",
+    features: [
+      "Tour package management",
+      "Destination showcase",
+      "Inquiry forms",
+      "Customer support integration",
+    ],
+    icon: Plane,
+    image: "/Img/mandarin.webp",
+    link: "https://vacation-frontend-xi.vercel.app/",
   },
 ];
 

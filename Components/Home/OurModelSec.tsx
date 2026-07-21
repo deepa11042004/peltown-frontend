@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 // --- DATA ---
 const STEPS = [
@@ -10,36 +11,42 @@ const STEPS = [
     title: "Brainstorming Ideas",
     desc: "Generate innovative ideas and concepts to set a solid foundation for your project.",
     rotation: "-rotate-3",
+    img: "/Img/brain.webp",
   },
   {
     num: "2",
     title: "Product Design",
     desc: "Craft modern, intuitive UI/UX layouts tailored to your business needs.",
     rotation: "rotate-2",
+    img: "/Img/design.webp",
   },
   {
     num: "3",
     title: "Front-End Development",
     desc: "Transform designs into responsive, pixel-perfect, and ultra-fast client-side interfaces.",
     rotation: "-rotate-1",
+    img: "/Img/front.webp",
   },
   {
     num: "4",
     title: "Digital Marketing",
     desc: "Deploy data-driven marketing campaigns to reach the target audience and boost business growth.",
     rotation: "rotate-3",
+    img: "/Img/marketing.webp",
   },
   {
     num: "5",
     title: "SEO Optimization",
     desc: "Implement search engine best practices to enhance visibility and drive organic traffic.",
     rotation: "-rotate-2",
+    img: "/Img/seo.webp",
   },
   {
     num: "6",
     title: "Back-End Development",
     desc: "Engineer secure, scalable databases and robust backend logic to power the platform.",
     rotation: "rotate-1",
+    img: "/Img/back.webp",
   },
 ];
 
@@ -66,7 +73,8 @@ export default function OurModelSec() {
       const numCards = 6;
       // padding is px-[5vw] on both sides, which totals 10vw of window width
       const padding = width * 0.1;
-      const totalTrackWidth = cardWidth * numCards + gap * (numCards - 1) + padding;
+      const totalTrackWidth =
+        cardWidth * numCards + gap * (numCards - 1) + padding;
 
       // target translation puts the right edge of track at the right edge of viewport
       const targetTranslationPx = width - totalTrackWidth;
@@ -121,11 +129,20 @@ export default function OurModelSec() {
             {STEPS.map((step, index) => (
               <div
                 key={index}
-                className={`w-75 sm:w-87.5 md:w-95 aspect-[4/4.2] shrink-0 bg-cardBgColor border border-cardBorderColor hover:border-(--highlight) rounded-3xl p-8 md:p-10 shadow-xl shadow-zinc-400/20 flex flex-col justify-between transform ${step.rotation} transition-transform duration-300 hover:rotate-0 hover:scale-[1.02] group text-left`}
+                className={`relative w-75 sm:w-87.5 md:w-95 aspect-[4/4.2] shrink-0 bg-cardBgColor border border-cardBorderColor hover:border-(--highlight) rounded-3xl p-8 md:p-10 shadow-xl shadow-zinc-400/20 flex flex-col justify-center gap-20 transform ${step.rotation} transition-transform duration-300 hover:rotate-0 hover:scale-[1.02] group text-left`}
               >
                 {/* Large Counter Step ID Metric */}
                 <div className="text-6xl md:text-7xl font-light tracking-tighter text-zinc-900 select-none font-sans">
                   {step.num}
+                </div>
+
+                <div className="img-container absolute top-10 right-6">
+                  <Image
+                    src={step.img}
+                    alt={step.title}
+                    width={120}
+                    height={120}
+                  />
                 </div>
 
                 {/* Info Text Stack Mapped cleanly */}

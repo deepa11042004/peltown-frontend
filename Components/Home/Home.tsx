@@ -93,7 +93,7 @@ export default function Home() {
   };
 
   return (
-    <main className="relative min-h-screen bg-black text-white flex flex-col justify-between py-24 px-6 md:px-12 lg:px-20 overflow-hidden select-none">
+    <main className="relative min-h-screen bg-[#BFCA16] text-white flex flex-col justify-between py-24 px-6 md:px-12 lg:px-20 overflow-hidden select-none">
       {/* Background Subtle Glow */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.03),transparent_45%)] pointer-events-none" />
 
@@ -127,7 +127,7 @@ export default function Home() {
                   className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-400 shadow-xs text-left"
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-[#BFCA16] animate-pulse" />
-                  <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-black uppercase">
+                  <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-(--headingColor) uppercase">
                     {HERO_CONTENT[index].tagline}
                   </span>
                 </motion.div>
@@ -138,7 +138,7 @@ export default function Home() {
                   </span>
                 </h1>
                 {HERO_CONTENT[index].desc && (
-                  <p className="mt-4 text-neutral-300 text-sm sm:text-base max-w-xl leading-relaxed">
+                  <p className="mt-4 text-white text-sm sm:text-base max-w-xl leading-relaxed">
                     {HERO_CONTENT[index].desc}
                   </p>
                 )}
@@ -151,12 +151,12 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center"
             variants={itemVariants}
           >
-            <button className="px-6 py-3 sm:px-8 sm:py-4 bg-neutral-300 text-black font-medium rounded-full text-base sm:text-lg hover:bg-white transition-colors duration-200 shadow-lg active:scale-98 flex items-center justify-center gap-2 group w-full sm:w-auto">
+            <button className="px-6 py-3 sm:px-8 sm:py-4 bg-neutral-300 text-black font-medium rounded-full text-base sm:text-lg hover:bg-white transition-colors duration-200 shadow-lg active:scale-98 flex items-center justify-center gap-2 group w-full sm:w-auto cursor-pointer">
               Get Started
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
 
-            <button className="px-6 py-3 sm:px-8 sm:py-4 bg-zinc-900 text-neutral-300 font-medium rounded-full text-base sm:text-lg border border-neutral-800 hover:bg-[#1f1f1f] hover:border-neutral-700 transition-all duration-200 active:scale-98 w-full sm:w-auto text-center">
+            <button className="px-6 py-3 sm:px-8 sm:py-4 bg-zinc-900 text-neutral-300 font-medium rounded-full text-base sm:text-lg border border-neutral-800 hover:bg-[#1f1f1f] hover:border-neutral-700 transition-all duration-200 active:scale-98 w-full sm:w-auto text-center cursor-pointer">
               Learn more
             </button>
           </motion.div>
@@ -185,8 +185,8 @@ export default function Home() {
         transition={{ delay: 0.6, duration: 0.5 }}
       >
         {/* Left & Right Blending Edge Fades */}
-        <div className="absolute left-0 top-8 bottom-0 w-16 bg-linear-to-r from-black to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-8 bottom-0 w-16 bg-linear-to-l from-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-8 bottom-0 w-16 bg-linear-to-r from-[#BFCA16] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-8 bottom-0 w-16 bg-linear-to-l from-[#BFCA16] to-transparent z-10 pointer-events-none" />
 
         {/* Marquee Track */}
         <div className="flex overflow-hidden w-full gap-6">

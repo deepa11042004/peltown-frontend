@@ -9,7 +9,7 @@
 }
 
 .hero-subtext {
-  color: var(--highlight);
+  color: var(--headingColor);
 }
 
 @theme {
