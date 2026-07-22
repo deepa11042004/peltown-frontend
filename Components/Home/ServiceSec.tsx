@@ -10,32 +10,38 @@ import {
   SearchCode,
   Server,
 } from "lucide-react";
+import Image from "next/image";
 
 const SERVICES = [
   {
     icon: Monitor,
     title: "Website Design",
     desc: "Sleek, SEO-friendly, and business-driven websites tailored to your goals.",
+    img: "/Img/web-dev.png",
   },
   {
     icon: Smartphone,
     title: "Mobile App Development",
     desc: "Transform your ideas into fully functional, high-performing mobile applications.",
+    img: "/Img/app-dev.png",
   },
   {
     icon: Database,
     title: "CRM Solutions",
     desc: "Enhance customer experiences and streamline management with custom CRMs.",
+    img: "/Img/crm-sol.png",
   },
   {
     icon: SearchCode,
     title: "SEO & Marketing",
     desc: "Increase online visibility and drive organic traffic with proven strategies.",
+    img: "/Img/seo-market.png",
   },
   {
     icon: Server,
     title: "Hosting & Server",
     desc: "Reliable hosting solutions from basic breeze to turbo titan performance.",
+    img: "/Img/host-server.png",
   },
 ];
 
@@ -51,16 +57,16 @@ export default function ServiceSec() {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      
+
       // Determine card width based on screen size
       let cardWidth = 360; // md:w-90 = 22.5rem = 360px
       if (width < 768) {
         cardWidth = 300; // w-75 = 18.75rem = 300px
       }
-      
+
       const gap = 24; // gap-6 = 1.5rem = 24px
       const numCards = 5;
-      
+
       // The parent of the slider track has left/right padding:
       // px-6 (24px) on mobile, md:px-16 (64px) on tablet, lg:px-24 (96px) on desktop.
       // And it's constrained by max-w-7xl (1280px) centered.
@@ -70,18 +76,19 @@ export default function ServiceSec() {
       } else if (width >= 768) {
         leftOffset = 64;
       }
-      
+
       const rightOffset = leftOffset;
       const contentWidth = cardWidth * numCards + gap * (numCards - 1);
-      
+
       // Target translation moves the track to line up the last card's right edge with the screen's right edge
-      const targetTranslationPx = width - leftOffset - rightOffset - contentWidth;
-      
+      const targetTranslationPx =
+        width - leftOffset - rightOffset - contentWidth;
+
       // The motion.div has padding-right: pr-[20vw]
-      const elementWidth = contentWidth + (width * 0.2);
+      const elementWidth = contentWidth + width * 0.2;
       const endPercent = (targetTranslationPx / elementWidth) * 100;
       const finalEndPercent = Math.min(0, endPercent);
-      
+
       setXRange(["0%", `${finalEndPercent}%`]);
     };
 
@@ -128,17 +135,20 @@ export default function ServiceSec() {
           <div className="w-full relative z-10 flex items-center">
             <motion.div style={{ x }} className="flex gap-6 pr-[20vw]">
               {SERVICES.map((feat, index) => {
-                const IconComponent = feat.icon;
                 return (
                   <div
                     key={index}
                     className="h-80 w-75 md:w-90 shrink-0 bg-cardBgColor border border-cardBorderColor rounded-4xl p-8 flex flex-col justify-between text-left relative overflow-hidden transition-all duration-300 group cursor-pointer hover:bg-[#BFCA16]"
                   >
-                    {/* ICON VECTOR OBJECT CONTAINER */}
-                    <div className="flex items-center justify-between w-full relative z-10">
-                      <div className="w-12 h-12 rounded-2xl bg-white text-zinc-900 flex items-center justify-center transition-all duration-300 group-hover:bg-white/10 group-hover:text-white shadow-xs">
-                        <IconComponent className="w-5 h-5 stroke-[1.75]" />
-                      </div>
+                    {/* IMAGE CONTAINER */}
+                    <div className="relative h-20 w-full">
+                      <Image
+                        src={feat.img}
+                        alt={feat.title}
+                        width={150}
+                        height={150}
+                        className="absolute -left-8"
+                      />
                     </div>
 
                     {/* CONTENT ELEMENT COPIES */}

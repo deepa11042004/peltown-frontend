@@ -10,11 +10,13 @@ import {
   TrendingUp,
   Sliders,
 } from "lucide-react";
+import Image from "next/image";
 
 export interface LogoBannerTool {
   name: string;
+  img?: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  icon: React.ComponentType<any>;
+  icon?: React.ComponentType<any>;
 }
 
 export interface LogoBannerProps {
@@ -50,7 +52,7 @@ export default function LogoBanner({
           </div>
         )}
 
-        {/* ================= INFINITE MARQUEE WITH EDGE BLEND MASKS ================= */}
+        {/*  INFINITE MARQUEE WITH EDGE BLEND MASKS  */}
         <div className="relative w-full overflow-hidden before:absolute before:left-0 before:top-0 before:bottom-0 before:w-16 md:before:w-32 before:bg-linear-to-r before:from-white before:to-transparent before:z-10 after:absolute after:right-0 after:top-0 after:bottom-0 after:w-16 md:after:w-32 after:bg-linear-to-l after:from-white after:to-transparent after:z-10">
           <div className="flex w-max">
             <motion.div
@@ -69,8 +71,18 @@ export default function LogoBanner({
                     key={`${tool.name}-${idx}`}
                     className="flex items-center gap-2.5 text-zinc-400 hover:text-[#BFCA16] transition-colors duration-300 group cursor-pointer"
                   >
-                    {/* Icon configuration */}
-                    <ToolIcon className="w-8 h-8 text-black group-hover:text-[#BFCA16] group-hover:scale-105 transition-all duration-300 stroke-[1.75]" />
+                    {/* Icon or Image configuration */}
+                    {ToolIcon ? (
+                      <ToolIcon className="w-8 h-8 text-black group-hover:text-[#BFCA16] group-hover:scale-105 transition-all duration-300 stroke-[1.75]" />
+                    ) : tool.img ? (
+                      <Image
+                        src={tool.img}
+                        alt={tool.name}
+                        width={32}
+                        height={32}
+                        className="w-8 h-8 object-contain group-hover:scale-105 transition-all duration-300"
+                      />
+                    ) : null}
 
                     {/* Typography label mapping */}
                     <span className="text-base md:text-xl font-bold tracking-tight text-zinc-500 group-hover:text-[#BFCA16] transition-colors duration-300">

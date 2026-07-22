@@ -3,14 +3,7 @@
 import React, { useRef } from "react";
 import { usePathname } from "next/navigation";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import {
-  User,
-  Infinity,
-  Zap,
-  Clock,
-  ArrowRight,
-  LucideIcon,
-} from "lucide-react";
+import Image from "next/image";
 
 // Word-fill Text Reveal
 
@@ -62,12 +55,12 @@ function WordFillReveal({
 //  Feature Card
 
 function FeatureCard({
-  icon,
+  img,
   title,
   description,
   isAccented = false,
 }: {
-  icon: React.ReactNode;
+  img: string;
   title: string;
   description: string;
   isAccented?: boolean;
@@ -83,32 +76,31 @@ function FeatureCard({
       `}
     >
       <div className="space-y-4">
-        <div
-          className={`w-12 h-12 rounded-xl border flex items-center justify-center transition-all duration-300
-            ${
-              isAccented
-                ? "bg-white/10 border-white/20 text-white"
-                : "bg-white border-zinc-200 text-zinc-600 group-hover:text-[#BFCA16] group-hover:border-[#BFCA16]"
-            }
-          `}
-        >
-          {icon}
+        {/* IMAGE CONTAINER */}
+        <div className="relative h-20 w-full">
+          <Image
+            src={img}
+            alt={title}
+            width={150}
+            height={150}
+            className="absolute -left-8"
+          />
         </div>
-        <h3
-          className={`font-bold text-xl md:text-2xl tracking-tight leading-snug
+      </div>
+      <h3
+        className={`font-bold text-xl md:text-2xl tracking-tight leading-snug
             ${isAccented ? "text-white" : "text-zinc-950"}
           `}
-        >
-          {title}
-        </h3>
-        <p
-          className={`text-base md:text-lg leading-relaxed
+      >
+        {title}
+      </h3>
+      <p
+        className={`text-base md:text-lg leading-relaxed
             ${isAccented ? "text-white/80 font-normal" : "text-zinc-600 font-medium"}
           `}
-        >
-          {description}
-        </p>
-      </div>
+      >
+        {description}
+      </p>
     </div>
   );
 }
@@ -118,8 +110,7 @@ function FeatureCard({
 export interface ServiceFeatureItem {
   title: string;
   desc: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  icon?: React.ComponentType<any> | LucideIcon;
+  img?: string;
 }
 
 export interface ServiceFeatureProps {
@@ -203,22 +194,22 @@ export default function ServiceFeature({
     {
       title: "Your designer, from day one",
       desc: "A senior product designer fully dedicated to your company. Working like a founding designer, without the hiring process.",
-      icon: User,
+      img: "/Img/web-dev.png",
     },
     {
       title: "Unlimited design requests",
       desc: "Submit as many tasks as you need. No per-task billing, no cap, no waiting list. Just continuous output.",
-      icon: Infinity,
+      img: "/Img/web-dev.png",
     },
     {
       title: "Fast turnaround",
       desc: "Get your designs delivered in 24-48 hours. Quick iterations and rapid prototyping for your products.",
-      icon: Zap,
+      img: "/Img/web-dev.png",
     },
     {
       title: "Always available",
       desc: "Your designer is available during your working hours. Real-time collaboration and instant feedback.",
-      icon: Clock,
+      img: "/Img/web-dev.png",
     },
   ];
 
@@ -295,11 +286,10 @@ export default function ServiceFeature({
                 className="flex gap-6 pl-[max(2rem,calc(50vw-190px))] pr-24"
               >
                 {displayList.map((item, index) => {
-                  const IconComp = item.icon;
                   return (
                     <FeatureCard
                       key={index}
-                      icon={IconComp ? <IconComp className="w-6 h-6" /> : null}
+                      img={item.img || "/placeholder.png"}
                       title={item.title}
                       description={item.desc}
                     />
@@ -308,7 +298,7 @@ export default function ServiceFeature({
 
                 {list.length === 0 && (
                   <FeatureCard
-                    icon={<ArrowRight className="w-6 h-6" />}
+                    img="/placeholder.png"
                     title="Ready to start?"
                     description="Join hundreds of companies already designing with UMANO. Start your design journey today."
                     isAccented={true}

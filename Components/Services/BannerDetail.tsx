@@ -9,14 +9,16 @@ import {
   TrendingUp,
   ArrowRight,
 } from "lucide-react";
+import Image from "next/image";
 
 // --- DATA STRUCTURE MAPPED DIRECTLY FROM THE SCREENSHOT ---
 export interface BannerDetailStep {
   num: string;
   title: string;
   desc: string;
+  img?: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  icon: React.ComponentType<any>;
+  icon?: React.ComponentType<any>;
 }
 
 export interface BannerDetailProps {
@@ -87,7 +89,7 @@ export default function BannerDetail({
   return (
     <section className="bg-white text-black py-24 px-6 md:px-12 lg:px-20 w-full flex items-center justify-center font-sans antialiased">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
-        {/* ================= LEFT NARRATIVE COLUMN (5/12 Width) ================= */}
+        {/* LEFT NARRATIVE COLUMN (5/12 Width) */}
         <div className="lg:col-span-5 space-y-6 text-left">
           {tag && (
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-400 shadow-xs text-left">
@@ -118,7 +120,7 @@ export default function BannerDetail({
           )}
         </div>
 
-        {/* ================= RIGHT STEPS HUB COLUMN (7/12 Width) ================= */}
+        {/* RIGHT STEPS HUB COLUMN (7/12 Width) */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -137,8 +139,18 @@ export default function BannerDetail({
               >
                 {/* Top Action Metrics Bar */}
                 <div className="flex items-center justify-between w-full">
-                  <div className="w-10 h-10 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-zinc-400 group-hover:text-[#BFCA16] group-hover:border-[#BFCA16] transition-all duration-300 shadow-xs">
-                    <IconComponent className="w-4 h-4 stroke-2" />
+                  <div className="relative h-full w-full">
+                    {step.img ? (
+                      <Image
+                        src={step.img}
+                        alt={step.title}
+                        width={60}
+                        height={60}
+                        className="absolute -left-4"
+                      />
+                    ) : IconComponent ? (
+                      <IconComponent className="w-4 h-4 stroke-2" />
+                    ) : null}
                   </div>
                   <span className="text-xl font-mono font-bold text-black group-hover:text-[#BFCA16] transition-colors duration-300">
                     {step.num}

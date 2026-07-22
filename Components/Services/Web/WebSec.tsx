@@ -1,28 +1,22 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Cpu,
-  Smartphone,
   Search,
   Sparkles,
-  Zap,
   ShieldCheck,
-  ShoppingBag,
   Users,
   Layers,
   Gauge,
-  Building2,
   CheckCircle2,
   XCircle,
   Target,
-  Server,
-  Globe,
 } from "lucide-react";
 import IndustrySec, { IndustrySecProps } from "./IndustrySec";
 import ProcessSec, { ProcessSecProps } from "./ProcessSec";
+import Image from "next/image";
 import LogoBanner, { LogoBannerProps } from "../LogoBanner";
 import BannerDetail, { BannerDetailProps } from "../BannerDetail";
 import ServicesHero from "../ServiceHero";
@@ -47,7 +41,7 @@ export interface DefinitionConfig {
 export interface ItemConfig {
   title: string;
   desc: string;
-  icon: React.ComponentType<any>;
+  img?: string;
 }
 
 export interface AudienceConfig {
@@ -88,7 +82,7 @@ export interface DeepDiveConfig {
 export interface DominanceCardConfig {
   title: string;
   desc: React.ReactNode;
-  icon: React.ComponentType<any>;
+  img?: string;
 }
 
 export interface LocalDominanceConfig {
@@ -197,27 +191,27 @@ const DEFAULT_AUDIENCE: AudienceConfig = {
     {
       title: "Startups & New Ventures",
       desc: "Building MVP (Minimum Viable Product) websites in as little as 4 weeks to help you enter the market quickly.",
-      icon: Zap,
+      img: "/Img/web-dev.png",
     },
     {
       title: "Small to Mid-Sized Businesses",
       desc: "Cost-effective, high-conversion sites designed to build trust and improve local brand visibility in the Delhi NCR region.",
-      icon: Users,
+      img: "/Img/app-dev.png",
     },
     {
       title: "Ecommerce Brands",
       desc: "Scalable platforms using Shopify, WooCommerce, or custom solutions designed to reduce cart abandonment and manage complex inventory.",
-      icon: ShoppingBag,
+      img: "/Img/crm-sol.png",
     },
     {
       title: "Industry Professionals",
       desc: "Targeted landing pages for doctors, lawyers, boutique stores, and travel agencies in Delhi.",
-      icon: Layers,
+      img: "/Img/seo-market.png",
     },
     {
       title: "Enterprise Companies",
       desc: "Complex web applications requiring advanced backend functionality via Laravel or high-speed frontend performance via Next.js.",
-      icon: Cpu,
+      img: "/Img/host-server.png",
     },
   ],
 };
@@ -228,27 +222,27 @@ const DEFAULT_FEATURES: FeaturesConfig = {
   list: [
     {
       title: "AI-Powered Personalization",
-      icon: Sparkles,
+      img: "/Img/web-dev.png",
       desc: "We integrate AI chatbots for small business websites to automate lead generation and provide 24/7 customer support.",
     },
     {
       title: "Mobile-First Responsive Design",
-      icon: Smartphone,
+      img: "/Img/app-dev.png",
       desc: 'With most Indian users browsing on smartphones, we ensure your site is "thumb-friendly" and passes all mobile SEO benchmarks.',
     },
     {
       title: "Core Web Vitals & Speed Optimization",
-      icon: Gauge,
+      img: "/Img/crm-sol.png",
       desc: "We optimize scripts, caching, and images to ensure lightning-fast loading speeds, which directly improves search rankings and user retention.",
     },
     {
       title: "SEO-Friendly Architecture",
-      icon: Search,
+      img: "/Img/seo-market.png",
       desc: "Beyond basic keywords, we implement proper heading hierarchy, schema markup, internal linking, and crawl-friendly code to ensure visibility.",
     },
     {
       title: "Advanced Security",
-      icon: ShieldCheck,
+      img: "/Img/host-server.png",
       desc: "Every site includes SSL integration, secure coding practices, and malware protection to safeguard business and customer data.",
     },
   ],
@@ -267,27 +261,27 @@ const DEFAULT_TECH_STACK: TechStackConfig = {
     {
       title: "Laravel Development",
       desc: "Ideal for enterprise-level solutions and custom web applications that require robust backend security and complex logic.",
-      icon: Server,
+      img: "/Img/web-dev.png",
     },
     {
       title: "React.js & Next.js",
       desc: "The gold standard for modern, ultra-fast websites that offer superior user experiences and high scalability.",
-      icon: Zap,
+      img: "/Img/app-dev.png",
     },
     {
       title: "Custom WordPress",
       desc: "For businesses that need flexible content management without sacrificing SEO support or design freedom.",
-      icon: Globe,
+      img: "/Img/crm-sol.png",
     },
     {
       title: "Shopify & Ecommerce",
       desc: "Secure and scalable online store solutions designed to reduce cart abandonment and manage complex inventory.",
-      icon: ShoppingBag,
+      img: "/Img/host-server.png",
     },
     {
       title: "Headless CMS",
       desc: "Separating content from design for businesses looking for multi-platform delivery and future-proof tech stacks.",
-      icon: Layers,
+      img: "/Img/seo-market.png",
     },
   ],
 };
@@ -361,7 +355,7 @@ const DEFAULT_LOCAL_DOMINANCE: LocalDominanceConfig = {
   cards: [
     {
       title: "Hyper-Targeted Engineering",
-      icon: Target,
+      img: "/Img/web-dev.png",
       desc: (
         <>
           We structurally integrate{" "}
@@ -384,7 +378,7 @@ const DEFAULT_LOCAL_DOMINANCE: LocalDominanceConfig = {
     },
     {
       title: "Sector-Specific Domination",
-      icon: Building2,
+      img: "/Img/app-dev.png",
       desc: (
         <>
           Whether targeting{" "}
@@ -634,7 +628,6 @@ export default function WebSec({
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {audience.list.map((feat, idx) => {
-                const FeatIcon = feat.icon;
                 return (
                   <div
                     key={idx}
@@ -642,8 +635,16 @@ export default function WebSec({
                   >
                     <div className="space-y-4">
                       {/* Icon Container */}
-                      <div className="w-12 h-12 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-zinc-600 group-hover:text-[#BFCA16] group-hover:border-[#BFCA16] transition-all duration-300">
-                        <FeatIcon className="w-6 h-6" />
+                      <div className="relative h-20 w-full">
+                        {feat.img && (
+                          <Image
+                            src={feat.img}
+                            alt={feat.title}
+                            width={100}
+                            height={100}
+                            className="absolute -left-5"
+                          />
+                        )}
                       </div>
 
                       {/* Title */}
@@ -705,7 +706,6 @@ export default function WebSec({
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {techStack.list.map((feat, idx) => {
-                const FeatIcon = feat.icon;
                 return (
                   <div
                     key={idx}
@@ -713,8 +713,16 @@ export default function WebSec({
                   >
                     <div className="space-y-4">
                       {/* Icon Container */}
-                      <div className="w-12 h-12 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-zinc-600 group-hover:text-[#BFCA16] group-hover:border-[#BFCA16] transition-all duration-300">
-                        <FeatIcon className="w-6 h-6" />
+                      <div className="relative h-20 w-full">
+                        {feat.img && (
+                          <Image
+                            src={feat.img}
+                            alt={feat.title}
+                            width={100}
+                            height={100}
+                            className="absolute -left-5"
+                          />
+                        )}
                       </div>
 
                       {/* Title */}
@@ -817,7 +825,6 @@ export default function WebSec({
             {/*  CARDS SECTION  */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-12">
               {localDominance.cards.map((card, idx) => {
-                const CardIcon = card.icon;
                 return (
                   <motion.div
                     key={idx}
@@ -825,8 +832,15 @@ export default function WebSec({
                     className="group p-8 rounded-3xl bg-cardBgColor border border-cardBorderColor hover:border-[#BFCA16] hover:bg-white hover:shadow-xl hover:shadow-zinc-200/40 transition-all duration-300"
                   >
                     <div className="flex flex-col gap-6 text-left">
-                      <div className="w-12 h-12 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-zinc-400 group-hover:text-[#BFCA16] group-hover:border-[#BFCA16] transition-all">
-                        <CardIcon className="w-5 h-5" />
+                      <div className="relative w-12 h-12 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-zinc-400 group-hover:text-[#BFCA16] group-hover:border-[#BFCA16] transition-all">
+                        {card.img && (
+                          <Image
+                            src={card.img}
+                            alt={card.title}
+                            width={20}
+                            height={20}
+                          />
+                        )}
                       </div>
                       <div className="space-y-3">
                         <h3 className="text-xl font-bold tracking-tight text-headingColor flex items-center gap-2">
