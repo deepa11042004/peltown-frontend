@@ -832,13 +832,15 @@ export default function WebSec({
                     className="group p-8 rounded-3xl bg-cardBgColor border border-cardBorderColor hover:border-[#BFCA16] hover:bg-white hover:shadow-xl hover:shadow-zinc-200/40 transition-all duration-300"
                   >
                     <div className="flex flex-col gap-6 text-left">
-                      <div className="relative w-12 h-12 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-zinc-400 group-hover:text-[#BFCA16] group-hover:border-[#BFCA16] transition-all">
+                      {/* Icon Container */}
+                      <div className="relative h-20 w-full">
                         {card.img && (
                           <Image
                             src={card.img}
                             alt={card.title}
-                            width={20}
-                            height={20}
+                            width={100}
+                            height={100}
+                            className="absolute -left-5"
                           />
                         )}
                       </div>

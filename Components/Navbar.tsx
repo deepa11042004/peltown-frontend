@@ -162,10 +162,22 @@ const productsData = [
     category: "Commerce",
     icon: ShoppingBag,
     items: [
-      { name: "E-commerce Suite", icon: ShoppingBag, href: "/products/ecommerce-suite" },
-      { name: "Quick Commerce (10-Min)", icon: Zap, href: "/products/quick-commerce" },
+      {
+        name: "E-commerce Suite",
+        icon: ShoppingBag,
+        href: "/products/ecommerce-suite",
+      },
+      {
+        name: "Quick Commerce (10-Min)",
+        icon: Zap,
+        href: "/products/quick-commerce",
+      },
       { name: "Cloud POS System", icon: Monitor, href: "/products/cloud-pos" },
-      { name: "Fleet Delivery App", icon: Truck, href: "/products/fleet-delivery" },
+      {
+        name: "Fleet Delivery App",
+        icon: Truck,
+        href: "/products/fleet-delivery",
+      },
     ],
   },
   {
@@ -173,29 +185,73 @@ const productsData = [
     icon: Briefcase,
     items: [
       { name: "Cloud ERP System", icon: Cpu, href: "/products/cloud-erp" },
-      { name: "HRMS & Payroll", icon: Briefcase, href: "/products/hrms-payroll" },
-      { name: "Omni-channel CRM", icon: Database, href: "/products/omnichannel-crm" },
-      { name: "Invoicing & Billing", icon: Receipt, href: "/products/invoicing-billing" },
+      {
+        name: "HRMS & Payroll",
+        icon: Briefcase,
+        href: "/products/hrms-payroll",
+      },
+      {
+        name: "Omni-channel CRM",
+        icon: Database,
+        href: "/products/omnichannel-crm",
+      },
+      {
+        name: "Invoicing & Billing",
+        icon: Receipt,
+        href: "/products/invoicing-billing",
+      },
     ],
   },
   {
     category: "Industry Specific",
     icon: Layers,
     items: [
-      { name: "Travel Agency System", icon: Plane, href: "/products/travel-agency" },
-      { name: "Real Estate Portal", icon: HomeIcon, href: "/products/real-estate" },
-      { name: "Restaurant Management", icon: Utensils, href: "/products/restaurant-management" },
-      { name: "Learning Management", icon: GraduationCap, href: "/products/learning-management" },
+      {
+        name: "Travel Agency System",
+        icon: Plane,
+        href: "/products/travel-agency",
+      },
+      {
+        name: "Real Estate Portal",
+        icon: HomeIcon,
+        href: "/products/real-estate",
+      },
+      {
+        name: "Restaurant Management",
+        icon: Utensils,
+        href: "/products/restaurant-management",
+      },
+      {
+        name: "Learning Management",
+        icon: GraduationCap,
+        href: "/products/learning-management",
+      },
     ],
   },
   {
     category: "Communications",
     icon: MessageSquare,
     items: [
-      { name: "Bulk WhatsApp API", icon: MessageSquare, href: "/products/bulk-whatsapp" },
-      { name: "Email Automation", icon: Mail, href: "/products/email-automation" },
-      { name: "Helpdesk Ticketing", icon: Bell, href: "/products/helpdesk-ticketing" },
-      { name: "Appointment Booking", icon: Calendar, href: "/products/appointment-booking" },
+      {
+        name: "Bulk WhatsApp API",
+        icon: MessageSquare,
+        href: "/products/bulk-whatsapp",
+      },
+      {
+        name: "Email Automation",
+        icon: Mail,
+        href: "/products/email-automation",
+      },
+      {
+        name: "Helpdesk Ticketing",
+        icon: Bell,
+        href: "/products/helpdesk-ticketing",
+      },
+      {
+        name: "Appointment Booking",
+        icon: Calendar,
+        href: "/products/appointment-booking",
+      },
     ],
   },
 ];
@@ -207,7 +263,11 @@ const companyData = [
     items: [
       { name: "About Us", icon: Info, href: "/about" },
       { name: "How We Do", icon: Workflow, href: "/about/how-we-do" },
-      { name: "Testimonials", icon: HeartHandshake, href: "/about/testimonials" },
+      {
+        name: "Testimonials",
+        icon: HeartHandshake,
+        href: "/about/testimonials",
+      },
     ],
   },
   {
@@ -215,7 +275,11 @@ const companyData = [
     icon: FolderGit2,
     items: [
       { name: "Careers", icon: Briefcase, href: "/about/careers" },
-      { name: "Background Verification", icon: UserCheck, href: "/about/background-verification" },
+      {
+        name: "Background Verification",
+        icon: UserCheck,
+        href: "/about/background-verification",
+      },
       { name: "FAQs", icon: HelpCircle, href: "/about/faqs" },
     ],
   },
@@ -224,7 +288,11 @@ const companyData = [
     icon: Headphones,
     items: [
       { name: "Contact Us", icon: Headphones, href: "/about/contact" },
-      { name: "Cost Calculator", icon: Calculator, href: "/about/cost-calculator" },
+      {
+        name: "Cost Calculator",
+        icon: Calculator,
+        href: "/about/cost-calculator",
+      },
       { name: "Terms & Conditions", icon: FileText, href: "/about/terms" },
       { name: "Refund Policy", icon: Undo2, href: "/about/refund-policy" },
     ],
@@ -240,9 +308,7 @@ const companyData = [
   {
     category: "Portfolio",
     icon: FolderGit2,
-    items: [
-      { name: "Portfolio", icon: FolderGit2, href: "/about/portfolio" },
-    ],
+    items: [{ name: "Portfolio", icon: FolderGit2, href: "/about/portfolio" }],
   },
 ];
 
@@ -255,7 +321,11 @@ function MobileAccordion({
 }: {
   label: string;
   href: string;
-  data: { category: string; icon: any; items: { name: string; icon: any; href: string }[] }[];
+  data: {
+    category: string;
+    icon: any;
+    items: { name: string; icon: any; href: string }[];
+  }[];
   onNavigate: () => void;
 }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -390,7 +460,9 @@ export default function Navbar() {
       >
         <div
           className={`pointer-events-auto w-full max-w-7xl bg-white/95 backdrop-blur-md border border-zinc-200/80 shadow-lg transition-all duration-300 ease-in-out relative overflow-hidden ${
-            activeMenu || mobileMenuOpen ? "rounded-3xl sm:rounded-4xl" : "rounded-3xl sm:rounded-4xl"
+            activeMenu || mobileMenuOpen
+              ? "rounded-3xl sm:rounded-4xl"
+              : "rounded-3xl sm:rounded-4xl"
           }`}
         >
           <div className="px-4 sm:px-6 lg:px-10 h-14 sm:h-16 flex items-center justify-between">
@@ -423,13 +495,17 @@ export default function Navbar() {
                 <Link
                   href="/services"
                   className={`flex items-center gap-1 text-sm font-bold px-4 py-2 rounded-md transition-colors ${
-                    activeMenu === "services" ? "text-[#BFCA16] bg-zinc-50" : "text-zinc-600 hover:text-black"
+                    activeMenu === "services"
+                      ? "text-[#BFCA16] bg-zinc-50"
+                      : "text-zinc-600 hover:text-black"
                   }`}
                 >
                   Services
                   <ChevronDown
                     className={`w-4 h-4 transition-transform duration-200 ${
-                      activeMenu === "services" ? "rotate-180 text-[#BFCA16]" : ""
+                      activeMenu === "services"
+                        ? "rotate-180 text-[#BFCA16]"
+                        : ""
                     }`}
                   />
                 </Link>
@@ -443,13 +519,17 @@ export default function Navbar() {
                 <Link
                   href="/products"
                   className={`flex items-center gap-1 text-sm font-bold px-4 py-2 rounded-md transition-colors ${
-                    activeMenu === "products" ? "text-[#BFCA16] bg-zinc-50" : "text-zinc-600 hover:text-black"
+                    activeMenu === "products"
+                      ? "text-[#BFCA16] bg-zinc-50"
+                      : "text-zinc-600 hover:text-black"
                   }`}
                 >
                   Products
                   <ChevronDown
                     className={`w-4 h-4 transition-transform duration-200 ${
-                      activeMenu === "products" ? "rotate-180 text-[#BFCA16]" : ""
+                      activeMenu === "products"
+                        ? "rotate-180 text-[#BFCA16]"
+                        : ""
                     }`}
                   />
                 </Link>
@@ -470,15 +550,26 @@ export default function Navbar() {
                 <Link
                   href="/about"
                   className={`flex items-center gap-1 text-sm font-bold px-4 py-2 rounded-md transition-colors ${
-                    activeMenu === "company" ? "text-[#BFCA16] bg-zinc-50" : "text-zinc-600 hover:text-black"
+                    activeMenu === "company"
+                      ? "text-[#BFCA16] bg-zinc-50"
+                      : "text-zinc-600 hover:text-black"
                   }`}
                 >
                   Company
                   <ChevronDown
                     className={`w-4 h-4 transition-transform duration-200 ${
-                      activeMenu === "company" ? "rotate-180 text-[#BFCA16]" : ""
+                      activeMenu === "company"
+                        ? "rotate-180 text-[#BFCA16]"
+                        : ""
                     }`}
                   />
+                </Link>
+
+                <Link
+                  href="/about/portfolio"
+                  className="text-sm font-bold text-zinc-600 hover:text-black px-4 py-2 rounded-md transition-colors"
+                >
+                  Portfolio
                 </Link>
               </div>
             </nav>
@@ -490,9 +581,6 @@ export default function Navbar() {
                 href="tel:+919818381669"
                 className="hidden xl:flex items-center gap-3 text-right group"
               >
-                <div className="w-9 h-9 rounded-full bg-zinc-50 flex items-center justify-center border border-zinc-100 group-hover:bg-[#BFCA16]/5 group-hover:border-[#BFCA16]/10 transition-colors">
-                  <Phone className="w-3.5 h-3.5 text-zinc-500 group-hover:text-[#BFCA16] transition-colors" />
-                </div>
                 <div className="flex flex-col">
                   <span className="text-[11px] font-bold text-[#BFCA16] uppercase tracking-wider flex items-center justify-end gap-0.5">
                     Call Us <ArrowUpRight className="w-3 h-3" />
@@ -583,7 +671,9 @@ export default function Navbar() {
                             }`}
                           >
                             <div className="flex items-center gap-3">
-                              <Icon className={`w-4 h-4 transition-colors ${isActive ? "text-[#BFCA16]" : "text-zinc-400 group-hover:text-zinc-600"}`} />
+                              <Icon
+                                className={`w-4 h-4 transition-colors ${isActive ? "text-[#BFCA16]" : "text-zinc-400 group-hover:text-zinc-600"}`}
+                              />
                               <span className="text-sm">{cat.category}</span>
                             </div>
                             {isActive && (
@@ -608,7 +698,9 @@ export default function Navbar() {
                             }`}
                           >
                             <div className="flex items-center gap-3">
-                              <Icon className={`w-4 h-4 transition-colors ${isActive ? "text-[#BFCA16]" : "text-zinc-400 group-hover:text-zinc-600"}`} />
+                              <Icon
+                                className={`w-4 h-4 transition-colors ${isActive ? "text-[#BFCA16]" : "text-zinc-400 group-hover:text-zinc-600"}`}
+                              />
                               <span className="text-sm">{cat.category}</span>
                             </div>
                             {isActive && (
@@ -633,7 +725,9 @@ export default function Navbar() {
                             }`}
                           >
                             <div className="flex items-center gap-3">
-                              <Icon className={`w-4 h-4 transition-colors ${isActive ? "text-[#BFCA16]" : "text-zinc-400 group-hover:text-zinc-600"}`} />
+                              <Icon
+                                className={`w-4 h-4 transition-colors ${isActive ? "text-[#BFCA16]" : "text-zinc-400 group-hover:text-zinc-600"}`}
+                              />
                               <span className="text-sm">{cat.category}</span>
                             </div>
                             {isActive && (
@@ -655,11 +749,20 @@ export default function Navbar() {
                       {(() => {
                         let activeItems: any[] = [];
                         if (activeMenu === "services") {
-                          activeItems = servicesData.find((cat) => cat.category === activeSubTab)?.items || [];
+                          activeItems =
+                            servicesData.find(
+                              (cat) => cat.category === activeSubTab,
+                            )?.items || [];
                         } else if (activeMenu === "products") {
-                          activeItems = productsData.find((cat) => cat.category === activeSubTab)?.items || [];
+                          activeItems =
+                            productsData.find(
+                              (cat) => cat.category === activeSubTab,
+                            )?.items || [];
                         } else if (activeMenu === "company") {
-                          activeItems = companyData.find((cat) => cat.category === activeSubTab)?.items || [];
+                          activeItems =
+                            companyData.find(
+                              (cat) => cat.category === activeSubTab,
+                            )?.items || [];
                         }
 
                         return activeItems.map((item, idx) => {
@@ -693,14 +796,20 @@ export default function Navbar() {
                           Peltown Studio
                         </span>
                         <h4 className="text-base font-bold text-white leading-snug">
-                          {activeMenu === "services" && "Scale Your Operations with Custom CRM & ERP"}
-                          {activeMenu === "products" && "Accelerate Your Business with Cloud SaaS Tools"}
-                          {activeMenu === "company" && "Partner with Top-Tier Engineers & Marketers"}
+                          {activeMenu === "services" &&
+                            "Scale Your Operations with Custom CRM & ERP"}
+                          {activeMenu === "products" &&
+                            "Accelerate Your Business with Cloud SaaS Tools"}
+                          {activeMenu === "company" &&
+                            "Partner with Top-Tier Engineers & Marketers"}
                         </h4>
                         <p className="text-xs text-zinc-400 leading-relaxed">
-                          {activeMenu === "services" && "Get custom-designed enterprise software matching your exact operational workflows."}
-                          {activeMenu === "products" && "Launch high-performance apps built on robust Next.js framework for fast scaling."}
-                          {activeMenu === "company" && "Learn more about our collaborative process and structural engineering methodology."}
+                          {activeMenu === "services" &&
+                            "Get custom-designed enterprise software matching your exact operational workflows."}
+                          {activeMenu === "products" &&
+                            "Launch high-performance apps built on robust Next.js framework for fast scaling."}
+                          {activeMenu === "company" &&
+                            "Learn more about our collaborative process and structural engineering methodology."}
                         </p>
                       </div>
 
@@ -727,7 +836,13 @@ export default function Navbar() {
                     Looking for custom engineering solutions outside this model?
                   </span>
                   <Link
-                    href={activeMenu === "services" ? "/services" : activeMenu === "products" ? "/products" : "/about"}
+                    href={
+                      activeMenu === "services"
+                        ? "/services"
+                        : activeMenu === "products"
+                          ? "/products"
+                          : "/about"
+                    }
                     onClick={() => setActiveMenu(null)}
                     className="text-xs font-bold text-[#BFCA16] hover:text-[#9ba40e] flex items-center gap-1 transition-colors group"
                   >
