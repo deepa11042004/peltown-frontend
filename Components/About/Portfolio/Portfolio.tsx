@@ -235,8 +235,8 @@ const projects: Project[] = [
       "Contact management",
     ],
     icon: Stethoscope,
-    image: "/Img/hospital.webp",
-    link: "https://saraswatihospitaldelhi.com/",
+    image: "/Img/saraswati.png",
+    link: "https://saraswatihospitalynr.com/",
   },
   {
     code: "P11",

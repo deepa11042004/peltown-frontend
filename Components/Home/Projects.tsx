@@ -8,6 +8,7 @@ import {
   Megaphone,
   Home,
   ArrowUpRight,
+  Plane,
 } from "lucide-react";
 import Image from "next/image";
 import React from "react";
@@ -43,23 +44,6 @@ const projects: ProjectData[] = [
   },
   {
     code: "P02",
-    name: "BSERC Website",
-    category: "Education",
-    description:
-      "A corporate and educational site delivering announcements, courses, and services to its community.",
-    features: [
-      "Dynamic content management",
-      "Responsive design",
-      "News & updates",
-      "Contact management",
-      "SEO optimization",
-    ],
-    icon: GraduationCap,
-    image: "/Img/bserc.webp",
-    link: "https://bserc.in/",
-  },
-  {
-    code: "P03",
     name: "Callories",
     category: "Wellness",
     description:
@@ -75,7 +59,7 @@ const projects: ProjectData[] = [
     link: "https://callories.com/",
   },
   {
-    code: "P04",
+    code: "P03",
     name: "Everace Dry Fruits",
     category: "E-commerce",
     description:
@@ -92,7 +76,7 @@ const projects: ProjectData[] = [
     link: "https://everce.com/",
   },
   {
-    code: "P05",
+    code: "P04",
     name: "What N Idea",
     category: "Marketing",
     description:
@@ -108,7 +92,7 @@ const projects: ProjectData[] = [
     link: "https://watnidea.com/",
   },
   {
-    code: "P06",
+    code: "P05",
     name: "JMV Real Estate",
     category: "Real Estate",
     description:
@@ -123,6 +107,22 @@ const projects: ProjectData[] = [
     icon: Home,
     image: "/Img/jvm.webp",
     link: "https://jvmrealestate.com/",
+  },
+  {
+    code: "P06",
+    name: "Mandarin Travel",
+    category: "Travel & Tourism",
+    description:
+      "A travel services site showcasing tour packages, destinations, and booking inquiries.",
+    features: [
+      "Tour package management",
+      "Destination showcase",
+      "Inquiry forms",
+      "Customer support integration",
+    ],
+    icon: Plane,
+    image: "/Img/mandarin.webp",
+    link: "https://vacation-frontend-xi.vercel.app/",
   },
 ];
 
